@@ -1,0 +1,23 @@
+// Place all the styles related to the blogs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+header{
+ width: 100%;
+ height: 70px;
+ background-color: #FFDEAD;
+}
+
+
+
+.introduce-visual{
+ width: 100%;
+ height: 720px;
+ text-align: cover;
+ color: #FAFAFA;
+ background-image: url(img/dsc_0102.jpg);
+ background-size: cover;
+ background-position: center;
+}

@@ -1,0 +1,28 @@
+// Place all the styles related to the homes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.anime {
+    width: 300px;                   /* 幅指定 */
+    text-align:  center;            /* 文字中央揃え */
+    display: block;                 /* ブロック要素にする */
+    padding:  15px;                 /* 余白指定 */
+    font-size:  20px;               /* 文字サイズ指定 */
+    text-decoration: none;          /* デフォルトCSS打ち消し */
+    color:  #fff;                   /* 文字色指定 */
+    background-color: #00BCD4;      /* 背景色指定 */
+    border-radius:  5px;            /* 角丸指定 */
+    transition: 0.5s;               /* アニメーション指定 */
+    margin:  0 auto;                /* 要素中央揃え */
+
+}
+.anime:hover {
+    opacity:  0.7;                  /* 透明度指定 */
+    width: 340px;                   /* 幅指定 */
+}
+
+.title {
+ width: 200px;
+ height: 300p;
+}
