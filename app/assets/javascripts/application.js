@@ -14,5 +14,24 @@
 //= require activestorage
 //= require turbolinks
   //= require jquery
+  //= require jquery_ujs
   //= require bootstrap-sprockets
 //= require_tree .
+
+
+
+
+$(document).ready(function () {
+  $("#theTarget").skippr({
+      transition : 'slide',
+      speed : 2000,
+      easing : 'easeOutQuart',
+      navType : 'block',
+      childrenElementType : 'div',
+      arrows : true,
+      autoPlay : true,
+      autoPlayDuration : 3000,
+      keyboardOnAlways : true,
+      hidePrevious : false
+  });
+});

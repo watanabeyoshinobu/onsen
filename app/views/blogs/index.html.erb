@@ -1,20 +1,24 @@
 
 
 <body>
-       <header>
+  <header>
 
-      <%= image_tag 'img/yunokokoti.png',class:"photo" %>
+        <%= image_tag 'img/yunokokoti.png',class:"photo" %>
 
-</header>
+  </header>
 
-  <div class="main-visual clearfix">
-   <section id="mv">
-<!--     <div class="container"> -->
-      <h1 class="mv-title">湯のここち</h1>
-      <p class="mv-text">『湯のここち』へようこそ！！</p>
-<!--     </div> -->
-  </section>
+<div class="main-visual clearfix">
+  <div id=container-js>
+     <div id="theTarget">
+        <div class="image1"></div>
+        <div class="image2"></div>
+        <div class="image3"></div>
+        <div class="image4"></div>
+        <div class="image5"></div>
+    </div>
+  </div>
 </div>
+
   <section id="portfolio">
     <div class="container1">
       <h2 class="heading">
@@ -25,17 +29,27 @@
       温泉という至福のひと時はいかがでしょうか・・・♨️</font>
       </p>
      <div class="portfolio-images clearfix">
-      <%= link_to blog_path(:id) do %>
-      <div class="portfolio_image1">
-      </div>
-      <% end %>
-              <h2 class="portforio-title">横濱スパヒルズ　竜泉寺の湯</h2>
-        <p class="portforio-text">
-          横浜市旭区にある『横濱スパヒルズ　竜泉寺の湯』は2019年12月上旬に『竜泉寺の湯』を紹介します！
-        </p>
-      <div class="portfolio_image2"></div>
+          <div class ="portfolio-set clearfix">
+           <%= link_to blog_path(:id) do %>
+              <div class="portfolio_image1"></div>
+          　<% end %>
+                <h2 class="portfolio-title">横濱スパヒルズ　竜泉寺の湯</h2>
+            <p class="portfolio-text">
+            横浜市旭区にある『横濱スパヒルズ　竜泉寺の湯』は
+            2019年12月上旬に『竜泉寺の湯』を紹介します！
+            </p><br>
+          </div>
+          <div class ="portfolio-set clearfix">
+          <%= link_to see_path do %>
+            <div class="portfolio_image2"></div>
+          <% end %>
+          <h3 class="portfolio-title2">お風呂の王様</h3>
+          <p class="portfolio-text2">
+            私の地元の近くにあるお風呂の王様<br>
+            以前から気になっていたので、今回取材してみました！
+          </p>
+          </div>
     </div>
-  </div>
     </section>
         <section id="profile">
              <div class="container2">
@@ -58,7 +72,7 @@
                       </p>
                       <h3 class="discription-title">マイブーム</h3>
                       <p class="discription-text">
-                        最近は『岩盤浴』にはまりました！<br>
+                        最近『岩盤浴』にはまりました！<br>
                         岩盤浴は、新陳代謝を上げるだけではなく『美容』にも良いと言われています。<br>
                         皆さんもご興味があれば是非、岩盤浴に入ってみてください。<br>
                         きっとクセになりますよ〜！<br>
@@ -92,3 +106,5 @@
      </div>
   </section>
 <footer>
+  <p class="">© yocchi</p>
+</footer>

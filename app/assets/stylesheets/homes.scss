@@ -15,14 +15,8 @@
     border-radius:  5px;            /* 角丸指定 */
     transition: 0.5s;               /* アニメーション指定 */
     margin:  0 auto;                /* 要素中央揃え */
-
 }
 .anime:hover {
     opacity:  0.7;                  /* 透明度指定 */
     width: 340px;                   /* 幅指定 */
-}
-
-.title {
- width: 200px;
- height: 300p;
 }

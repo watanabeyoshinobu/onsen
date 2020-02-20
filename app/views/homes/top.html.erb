@@ -1,13 +1,24 @@
 
 
 <body>
-<h1 class="title">▽ここをクリック!!▽</h1>
+	<header>
 
+        <%= image_tag 'img/yunokokoti.png',class:"photo" %>
 
-<li class="">
-	<a class="anime" href="URL">
-	CLICK!
-	</a>
-   <%= link_to '', blogs_path %>
-</li>
+	</header>
+
+	<li class="">
+		<%= link_to new_user_session_path do %>
+		<div class="anime login">
+		ログイン！
+		</div>
+		<% end %>
+
+	</li>
+	<li class="">
+		<%= link_to new_user_registration_path do %>
+		<div class="anime login">
+		新規登録はこちら♪
+		</div>
+		<% end %>	</li>
 </body>

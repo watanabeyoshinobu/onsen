@@ -12,4 +12,6 @@ class BlogsController < ApplicationController
 
   def edit
   end
+  def see
+  end
 end

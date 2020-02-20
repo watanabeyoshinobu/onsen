@@ -9,7 +9,28 @@ header{
  height: 70px;
  background-color: #FFDEAD;
 }
-
+.portfolio-set
+{
+	display:block;
+}
+.portfolio_image1{
+ background-image: url(img/dsc_0102.jpg);
+ height :250px;
+ width: 300px;
+ background-size: cover;
+ background-position: center;
+ margin: 0 auto;
+ float: left;
+}
+.portfolio_image2{
+ background-image: url(img/dsc_0111.jpg);
+ height :250px;
+ width: 300px;
+ background-size: cover;
+ background-position: center;
+ margin: 0 auto;
+ float: left;
+}
 
 
 .introduce-visual{
@@ -20,4 +41,63 @@ header{
  background-image: url(img/dsc_0102.jpg);
  background-size: cover;
  background-position: center;
+}
+
+.container4 {
+ width: 100%;
+ height: 1200px;
+ margin: 0 auto;
+}
+
+.beginning {
+ width: 100%;
+ height: 200px;
+ background-color: #ADD8E6;
+}
+
+.bv-title {
+ color: red;
+}
+
+.container6 {
+ width: 100%;
+ height: 1500px;
+ background-color: #FFE4E1;
+}
+
+.introduce {
+ color: red;
+}
+
+.forest-villa1 {
+ color: blue;
+}
+introduce-image1 {
+ 
+}
+
+.forest-villa2 {
+ color: blue;
+}
+.forest-villa3 {
+ color: blue;
+}
+.forest-villa4 {
+ color: blue;
+}
+
+
+
+
+
+
+
+
+
+
+
+.container7 {
+ width: 100%;
+ height: 600px;
+ background-color: #FFF0F5;
 }
