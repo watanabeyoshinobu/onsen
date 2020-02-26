@@ -7,7 +7,27 @@
 
   </header>
 
-<div class="main-visual clearfix">
+  <div id="sp-menu">
+    <h2>MENU</h2>
+      <ul>
+        <li><%= link_to '横濱スパヒルズ　竜泉寺の湯', blog_path(:id) %></li>
+        <li><%= link_to 'お風呂の王様', see_path %></li>
+        <li><%= link_to '自己紹介', "#profile" %></li>
+        <li><%= link_to 'SNS', "#sns" %></li>
+        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+      </ul>
+  </div>
+
+  <div id="hm-icon">
+    <a id="menu-trigger" href="#">
+      <span></span>
+      <span></span>
+      <span></span>
+    </a>
+  </div>
+
+
+<div class="main-visual">
   <div id=container-js>
      <div id="theTarget">
         <div class="image1"></div>
@@ -22,28 +42,31 @@
   <section id="portfolio">
     <div class="container1">
       <h2 class="heading">
-        スーパ銭湯紹介！
+        ♨️ スーパ銭湯紹介!　♨️
       </h2>
       <p class="heading-text">
       <font size="5">日々仕事で疲れてる方々へ<br>
       温泉という至福のひと時はいかがでしょうか・・・♨️</font>
       </p>
+
+
      <div class="portfolio-images clearfix">
           <div class ="portfolio-set clearfix">
            <%= link_to blog_path(:id) do %>
               <div class="portfolio_image1"></div>
           　<% end %>
-                <h2 class="portfolio-title">横濱スパヒルズ　竜泉寺の湯</h2>
+                <h2 class="portfolio-title">♨️　横濱スパヒルズ　竜泉寺の湯　♨️</h2>
             <p class="portfolio-text">
             横浜市旭区にある『横濱スパヒルズ　竜泉寺の湯』は
             2019年12月上旬に『竜泉寺の湯』を紹介します！
             </p><br>
           </div>
+
           <div class ="portfolio-set clearfix">
           <%= link_to see_path do %>
             <div class="portfolio_image2"></div>
           <% end %>
-          <h3 class="portfolio-title2">お風呂の王様</h3>
+          <h2 class="portfolio-title2">♨️　お風呂の王様　♨️</h2>
           <p class="portfolio-text2">
             私の地元の近くにあるお風呂の王様<br>
             以前から気になっていたので、今回取材してみました！
@@ -51,10 +74,12 @@
           </div>
     </div>
     </section>
+
+
         <section id="profile">
              <div class="container2">
                <h2 class="heading">
-                 自己紹介
+                 ♨️　自己紹介　♨️
                </h2>
                 <p class="heading-text">
                  今回ブログ風紹介サイト『湯のここち』というサイトを作りました <br>
@@ -75,16 +100,18 @@
                         最近『岩盤浴』にはまりました！<br>
                         岩盤浴は、新陳代謝を上げるだけではなく『美容』にも良いと言われています。<br>
                         皆さんもご興味があれば是非、岩盤浴に入ってみてください。<br>
-                        きっとクセになりますよ〜！<br>
+                        きっとクセになりますよ〜♪<br>
                       </p>
                       </div>
                 </div>
              </div>
          </section>
+
+
        <section id="sns">
          <div class="container3">
            <h2 class="heading">
-             SNS
+             ♨️　SNS　♨️
            </h2>
            <p class="heading-text">
               まだ登録したばかりで何も活動はしておりませんが、SNSを始めました！<br>
@@ -93,18 +120,16 @@
            </p>
            <div class="contact-group clearfix">
 
-           <div class="right-content">
-            <div class="right-contact">
-              <h3 class="discription-title">SNS</h3>
-              <i class="fa fa-facebook fa-x"aria-hidden="true"></i>
-              <i class="fa fa-twitter fa-x"aria-hidden="true"></i>
-              <i class="fa fa-instagram fa-x"aria-hidden="true"></i>
+             <div class="right-content">
+              <div class="right-contact">
+                <h3 class="discription-title">SNS</h3>
+                <i class="fa fa-facebook fa-x"aria-hidden="true"></i>
+                <i class="fa fa-twitter fa-x"aria-hidden="true"></i>
+                <i class="fa fa-instagram fa-x"aria-hidden="true"></i>
+              </div>
+             </div>
             </div>
-           </div>
-         </div>
        </section>
      </div>
-  </section>
-<footer>
-  <p class="">© yocchi</p>
-</footer>
+
+</body>

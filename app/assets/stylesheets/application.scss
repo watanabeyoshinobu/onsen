@@ -39,14 +39,10 @@ header{
  background-color: #FFDEAD;
 }
 
-.container{
- width: 1024px;
- height: 800px;
- margin: 0 auto;
-}
 
-.logo{
- width: 140px;
+
+.photo{
+ width: 180px;
  height: 70px;
  margin: 0 auto;
  padding: 0;
@@ -69,10 +65,201 @@ float: right;
 .nav-list a{
  color: #000000;
 }
+.main-visual{
+ width: 100%;
+ height: 720px;
+ color: #FAFAFA;
+ background-size: cover;
+ background-position: center;
+}
+#container-js {
+ width: 100%;
+ height: 720px;
+}
+.image1 {
+ background-image: url(img/NGseitensama_TP_V.jpeg);
+}
+.image2 {
+ background-image: url(img/SAYAPAKU4745_TP_V.jpeg);
+}
+.image3 {
+ background-image: url(img/YAMA_DSC1813_TP_V.jpeg);
+}
+.image4 {
+ background-image: url(img/YAMA_DSC0947_TP_V.jpg);
+}
+.image5 {
+ background-image: url(img/YAMA_DSC3126_TP_V.jpg);
+}
+
+
+.mv-title{
+ padding-top: 200px;
+ color: #000000;
+ font-family: "Century Gothic",sans-serif;
+ font-size: 64px;
+}
+.mv.text{
+ padding-top: 10px;
+ color: #000000;
+ font-size: 20px;
+}
+p.mv-text{
+ color: #000000;
+ font-size: 20px;
+ padding: 10px 0px 0px;
+}
+
+.heading{
+ padding-top: 90px;
+ text-align: center;
+ font-family: "Century Gothic",sans-serif;
+ font-size: 32px;
+}
+#portfolio{
+ background-color: #FFF0F5;
+}
+
+main {
+ height: 1000px;
+
+}
+h2.heading{
+ font-size: 32px;
+ padding: 60px 0 0 80px;
+ padding-bottom: 10px;
+ color: red;
+ margin-top: 0;
+}
+h2.heading::after{
+ background-color: #FFC0CB;
+ margin: 8px auto 0 auto;
+ content: "";
+ display: block;
+ width: 150px;
+ height: 3px;
+}
+p.heading-text{
+ padding-top: 30px;
+ padding-bottom: 40px;
+ text-align: center;
+ font-size: 16px;
+ color: #000000;
+}
+.container1{
+ width: 100%;
+ height: 1000px;
+ margin: 0 auto;
+}
+
+.portfolio-images{
+ width: 100%;
+ height: 1000px;
+ padding: 30px 0 90px 0;
+ margin: 0 auto;
+}
+.portfolio_image1 {
+ margin-right: 40px;
+}
+
+.portfolio_image2 {
+ margin-top: 70px;
+ margin-right: 40px;
+}
+
+.portfolio-title {
+ color: blue;
+}
+.portfolio-title2 {
+ margin-top: 70px;
+ color: blue;
+}
+
+
+
+
+#profile{
+ background-color: #FFE4E1;
+}
+.container2{
+ width: 1024px;
+ height: 700px;
+ margin: 0 auto;
+}
+
+.profile-group{
+ padding: 30px 0 90px 0;
+ font-size: 16px;
+}
+.left-content{
+ width: 50%;
+ float: left;
+}
+.right-content{
+ width: 50%;
+ float: right;
+}
+.my-face{
+ width: 250px;
+ height: 250px;
+ background-size: cover;
+ margin: 0 auto;
+ border-radius: 50%;
+ background-image: url(img/okinawa8312326_TP_V.jpg);
+}
+.discription-title{
+ margin: 20px 0 5px 0;
+ font-size: 20px;
+ color: #000000;
+ margin-bottom: 20;
+}
+.discription-title:first-child{
+ margin-top: 0;
+}
+.discription-text{
+ color: #000000;
+}
+
+#sns {
+ background-color: #FFC0CB;
+}
+.container3{
+ width: 1024px;
+ height: 500px;
+ margin: 0 auto;
+}
+
+.sns-group{
+ width: 800px;
+ padding: 30px 0 90px;
+ margin: 0 auto;
+}
+.right-content{
+ width: 50%;
+ float: right;
+}
+.right-contact{
+ margin: 0 auto;
+ width: 200px;
+}
+.right-contact .fa {
+ margin:0 auto;
+ font-size: 50px;
+}
+
+.copyright{
+ font-size: 16px;
+ color: #000000;
+ text-align: center;
+}
 
 footer{
  width: 100%;
  height: 60px;
+ text-align: center;
  background-color: #FFDEAD;
  line-height: 60px;
 }
+
+
+

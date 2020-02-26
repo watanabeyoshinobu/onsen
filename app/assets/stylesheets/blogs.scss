@@ -3,15 +3,104 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+#hm-icon {
+ position: fixed;
+ right: 20px;
+ top: 20px;
+ z-index: 10;
+}
+
+#menu-trigger,
+#menu-trigger span {
+  display: inline-block;
+  transition: all .4s;
+  box-sizing: border-box;
+}
+
+#menu-trigger {
+  position: relative;
+  width: 50px;
+  height: 44px;
+}
+
+#menu-trigger span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #000;
+  border-radius: 4px;
+}
+
+#menu-trigger span:nth-of-type(1) {
+  top: 0;
+}
+
+#menu-trigger span:nth-of-type(2) {
+  top: 20px;
+}
+
+#menu-trigger span:nth-of-type(3) {
+  bottom: 0;
+}
+
+#menu-trigger.active span:nth-of-type(1) {
+  -webkit-transform: translateY(20px) rotate(-45deg);
+  transform: translateY(20px) rotate(-45deg);
+  background-color: #fff;
+}
+
+#menu-trigger.active span:nth-of-type(2) {
+  opacity: 0;
+}
+
+#menu-trigger.active span:nth-of-type(3) {
+  -webkit-transform: translateY(-20px) rotate(45deg);
+  transform: translateY(-20px) rotate(45deg);
+  background-color: #fff;
+}
+
+
+
+#sp-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  color: #fff;
+  width: 100%;
+  min-height: 100%;
+  display: none;
+  z-index: 9;
+}
+
+#sp-menu li{
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#sp-menu a{
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+
+
+
+
+
+
 
 header{
  width: 100%;
  height: 70px;
  background-color: #FFDEAD;
 }
-.portfolio-set
-{
-	display:block;
+
+
+.portfolio-set {
+ display:block;
 }
 .portfolio_image1{
  background-image: url(img/dsc_0102.jpg);
@@ -43,6 +132,7 @@ header{
  background-position: center;
 }
 
+
 .container4 {
  width: 100%;
  height: 1200px;
@@ -51,46 +141,413 @@ header{
 
 .beginning {
  width: 100%;
- height: 200px;
- background-color: #ADD8E6;
+ height: 400px;
+ background-color: #7FFFD4;
 }
 
 .bv-title {
  color: red;
+ text-align: center;
+ padding-bottom: 20px;
 }
+.bv-introduce {
+ text-align: center;
+}
+.bv-manners{
+ text-align: center;
+ padding-top: 20px;
+ color: red;
+}
+.bv-manners2 {
+ text-align: center;
+ padding-top: 20px;
+}
+
+
 
 .container6 {
  width: 100%;
- height: 1500px;
- background-color: #FFE4E1;
+ height: 5000px;
+ background-color: #98FB98;
 }
 
 .introduce {
  color: red;
+ text-align: center;
+ padding-bottom: 40px;
 }
 
+.introduce-set{
+ padding: 30px 0 90px 0;
+ font-size: 16px;
+}
+
+
+.introduce-set1 {
+ padding: 30px 0 90px 0;
+ font-size: 16px;
+ paddimg-top: 150px;
+}
 .forest-villa1 {
  color: blue;
+ width: 50%;
+ float: right;
+ padding-right: 20px;
 }
-introduce-image1 {
- 
+.introduce-image1 {
+ width:300px;
+ height:250px;
+ background-image: url(img/dsc_0122.jpg);
+ background-size: cover;
+ margin-left: 250px;
+ float: left;
+}
+.introduce-text1 {
+ width: 50%;
+ float: right;
 }
 
+
+.introduce-set2{
+ padding: 30px 0 90px 0;
+ font-size: 16px;
+ padding-top: 50px;
+}
 .forest-villa2 {
  color: blue;
+ width: 50%;
+ float: right;
+ padding-bottom: 30px;
+ padding-left: 20ox;
+}
+.introduce-image2 {
+ width: 300px;
+ height: 250px;
+ background-image: url(img/dsc_0123_720.jpg);
+ background-size: cover;
+ margin-left: 250px;
+ float: left;
+
+}
+.introduce-text2 {
+ width: 50%;
+ float: right;
+ margin-right: 20px;
+}
+
+
+.introduce-set3 {
+ padding: 30px 0 120px 0;
+ font-size: 16px;
 }
 .forest-villa3 {
  color: blue;
+ width: 50%;
+ float: right;
+ padding-top: 30px;
+ padding-bottom: 30px;
+ padding-left: 20ox;
 }
+.introduce-image3 {
+ width: 300px;
+ height: 250px;
+ background-image: url(img/sauna.jpg);
+ background-size: cover;
+ margin-left: 250px;
+ margin-top: 30px;
+ float: left;
+
+}
+.introduce-text3 {
+ width: 50%;
+ float: right;
+ margin-right: 20px;
+}
+
+
+introduce-set4 {
+text-align: center;
+}
+
 .forest-villa4 {
- color: blue;
+ color: red;
+ text-align: center;
+ padding-top: 30px;
+ padding-bottom: 30px;
+}
+.introduce-text4 {
+ padding-bottom:30px;
+ text-align: center;
+}
+
+.hotspa-images {
+ width: 950px;
+ padding: 30px 0 90px 0;
+ margin: 0 auto;
+}
+
+.introduce-image4 {
+ width: 300px;
+ height: 250px;
+ margin-top: 0;
+ background-size: cover;
+ background-position: center;
+ float: left;
+ margin: 0 10px 0 0;
+ background-image: url(img/dsc_0114.jpg);
+}
+.introduce-image5 {
+ width: 300px;
+ height: 250px;
+ margin-top: 0;
+ background-size: cover;
+ background-position: center;
+ float: left;
+ margin: 0 10px 0px 0;
+ background-image: url(img/dsc_0116.jpg);
+}
+.introduce-image6 {
+ width: 300px;
+ height: 250px;
+ margin-top: 0;
+ background-size: cover;
+ background-position: center;
+ float: left;
+ margin: 0 10px 0 0;
+ background-image: url(img/dsc_0117.jpg);
+}
+.introduce-image7 {
+ width: 300px;
+ height: 250px;
+ margin-top: 0;
+ background-size: cover;
+ background-position: center;
+ float: left;
+ margin: 10px 10px 0 0;
+ background-image: url(img/dsc_0118.jpg);
+}
+.introduce-image8 {
+ width: 300px;
+ height: 250px;
+ margin-top: 0;
+ background-size: cover;
+ background-position: center;
+ float: left;
+ margin: 10px 10px 0 0;
+ background-image: url(img/dsc_0119.jpg);
+}
+.introduce-image9 {
+ width: 300px;
+ height: 250px;
+ margin-top: 0;
+ background-size: cover;
+ background-position: center;
+ float: left;
+ margin: 10px 0 0 0;
+ background-image: url(img/dsc_0120.jpg);
 }
 
 
 
 
+.introduce-set5 {
+ padding: 30px 0 120px 0;
+ font-size: 16px;
+ padding-top: 100px;
+}
+.food-erea {
+ color: blue;
+ width: 50%;
+ float: right;
+ padding-top: 30px;
+ padding-bottom: 30px;
+ margin-right: 20ox;
+}
+.introduce-image10 {
+ width: 300px;
+ height: 250px;
+ background-image: url(img/Yamasha181026061.jpg);
+ background-size: cover;
+ margin-left: 250px;
+ margin-top: 30px;
+ float: left;
+}
+.introduce-text5 {
+ width: 50%;
+ float: right;
+ margin-right: 50px;
+}
 
 
+
+introduce-set6 {
+ padding: 30px 0 120px 0;
+ font-size: 16px;
+ padding-top: 50px;
+}
+.food-menu {
+ color: blue;
+ width: 50%;
+ float: right;
+ padding-top: 30px;
+ padding-bottom: 30px;
+ padding-left: 20ox;
+}
+.introduce-image11 {
+ width: 300px;
+ height: 250px;
+ background-image: url(img/dsc_0124.jpg);
+ background-size: cover;
+ margin-left: 250px;
+ margin-top: 30px;
+ float: left;
+}
+
+introduce-set7 {
+ padding: 30px 0 120px 0;
+ font-size: 16px;
+
+}
+.onsen-spa {
+ color: blue;
+ width: 50%;
+ float: right;
+ padding-top: 100px;
+ padding-bottom: 30px;
+ padding-left: 20ox;
+}
+.introduce-image12 {
+ width: 300px;
+ height: 250px;
+ background-image: url(img/dsc_0124.jpg);
+ background-size: cover;
+ margin-left: 250px;
+ margin-top: 30px;
+ float: left;
+}
+.introduce-text6 {
+ width: 50%;
+ float: right;
+ margin-right: 50px;
+ margin-bottpm: 30px;
+}
+
+
+
+.introduce-set7 {
+ padding: 30px 0 80px 0;
+ font-size: 16px;
+ }
+
+.onsen-spa {
+ color: blue;
+ width: 50%;
+ float: right;
+ padding-top: 100px;
+ padding-left: 20ox;
+}
+.introduce-image12 {
+ width: 300px;
+ height: 250px;
+ background-image: url(img/dsc_0124.jpg);
+ background-size: cover;
+ margin-left: 250px;
+ margin-top: 100px;
+ float: left;
+}
+.introduce-text6 {
+ width: 50%;
+ float: right;
+ margin-right: 50px;
+ padding-top: 50px;
+ }
+
+
+.introduce-set8 {
+ padding: 30px 0 120px 0;
+ font-size: 16px;
+ margin-top: 100px;
+ }
+
+ .onsen-spa2 {
+ color: red;
+ text-align: center;
+ padding-top: 40px;
+}
+.introduce-image13 {
+ width: 300px;
+ height: 250px;
+ background-image: url(img/dsc_0124.jpg);
+ background-size: cover;
+ margin-left: 250px;
+ margin-top: 100px;
+ float: left;
+}
+.introduce-title7 {
+ text-align: center;
+ padding-right: 150px;
+ padding-top: 100px;
+}
+.introduce-text7 {
+ width: 50%;
+ float: right;
+ margin-right: 50px;
+ padding-top: 40px;
+ }
+
+
+
+.introduce-set9 {
+ padding: 30px 0 120px 0;
+ font-size: 16px;
+ }
+ .introduce-image14 {
+ width: 300px;
+ height: 250px;
+ background-image: url(img/dsc_0124.jpg);
+ background-size: cover;
+ margin-left: 250px;
+ margin-top: 100px;
+ float: left;
+}
+.introduce-title8 {
+ text-align: center;
+ padding-right: 150px;
+ padding-top: 100px;
+}
+.introduce-text8 {
+ width: 50%;
+ float: right;
+ margin-right: 50px;
+ padding-top: 30px;
+ }
+
+
+
+.introduce-set10 {
+ padding: 30px 0 120px 0;
+ font-size: 16px;
+ }
+.introduce-image15 {
+ width: 300px;
+ height: 250px;
+ background-image: url(img/dsc_0124.jpg);
+ background-size: cover;
+ margin-left: 250px;
+ margin-top: 100px;
+ float: left;
+}
+.introduce-title9 {
+ text-align: center;
+ padding-right: 50px;
+ padding-top: 100px;
+}
+.introduce-text9 {
+ width: 50%;
+ float: right;
+ margin-right: 50px;
+ padding-top: 40px;
+ }
 
 
 
@@ -98,6 +555,92 @@ introduce-image1 {
 
 .container7 {
  width: 100%;
- height: 600px;
- background-color: #FFF0F5;
+ height: 800px;
+ background-color: #90EE90;
+}
+.access {
+ color: red;
+ text-align: center;
+
+}
+
+.introduce-set12 {
+ background-color: #FFC0CB;
+ padding-bottom: 20px;
+ width: 500px;
+}
+.address {
+ text-align: center;
+ padding-bottom: 20px;
+ color: red;
+}
+
+.address-text {
+ tect-align: center;
+ font-size: 24px;
+}
+
+.introduce-price {
+ width: 100%;
+}
+
+.price {
+ width: 30%;
+ margin-bottom: 50px;
+ margin-top: 40px;
+ color: red;
+}
+
+.introduce-set14 {
+ margin-top: 50px;
+ padding-bottom: 20px;
+ width: 500px;
+ color: red;
+}
+
+
+.introduce-set15 {
+ color: red;
+}
+
+.map {
+ width: 130%;
+ margin-top: -600px;
+}
+
+.map-image {
+ padding-top: 30px;
+ width: 300px;
+ height: 300px;
+ background-image: url(img/map.jpg;)
+
+}
+
+
+
+
+
+
+
+.introduce-visual2 {
+ width: 100%;
+ height: 720px;
+ text-align: cover;
+ color: #FAFAFA;
+ background-image: url(img/dsc_0125.jpg);
+ background-size: cover;
+ background-position: center;
+}
+
+.container8 {
+ width: 100%;
+ height: 400px;
+ background-color: #FFFACD;
+}
+
+
+.container9 {
+ width: 100%;
+ height: 1500px;
+ background-color: #FFFACD;
 }
