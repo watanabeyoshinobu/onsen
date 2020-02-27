@@ -77,19 +77,20 @@ float: right;
  height: 720px;
 }
 .image1 {
- background-image: url(img/NGseitensama_TP_V.jpeg);
+ background-image: image-url('img/NGseitensama_TP_V.jpeg');
+ /*background-image: url(img/NGseitensama_TP_V.jpeg);*/
 }
 .image2 {
- background-image: url(img/SAYAPAKU4745_TP_V.jpeg);
+ background-image: image-url('img/SAYAPAKU4745_TP_V.jpeg');
 }
 .image3 {
- background-image: url(img/YAMA_DSC1813_TP_V.jpeg);
+ background-image: image-url('img/YAMA_DSC1813_TP_V.jpeg');
 }
 .image4 {
- background-image: url(img/YAMA_DSC0947_TP_V.jpg);
+ background-image: image-url('img/YAMA_DSC0947_TP_V.jpg');
 }
 .image5 {
- background-image: url(img/YAMA_DSC3126_TP_V.jpg);
+ background-image: image-url('img/YAMA_DSC3126_TP_V.jpg');
 }
 
 
