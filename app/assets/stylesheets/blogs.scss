@@ -103,7 +103,7 @@ header{
  display:block;
 }
 .portfolio_image1{
- background-image: url(/assets/img/dsc_0102.jpg);
+ background-image: image-url('img/dsc_0102.jpg');
  height :250px;
  width: 300px;
  background-size: cover;
@@ -112,7 +112,7 @@ header{
  float: left;
 }
 .portfolio_image2{
- background-image: url(img/dsc_0111.jpg);
+ background-image: image-url('img/dsc_0111.jpg');
  height :250px;
  width: 300px;
  background-size: cover;
@@ -127,7 +127,7 @@ header{
  height: 720px;
  text-align: cover;
  color: #FAFAFA;
- background-image: url(img/dsc_0102.jpg);
+ background-image: image-url('img/dsc_0102.jpg');
  background-size: cover;
  background-position: center;
 }
@@ -197,7 +197,7 @@ header{
 .introduce-image1 {
  width:300px;
  height:250px;
- background-image: url(img/dsc_0122.jpg);
+ background-image: image-url('img/dsc_0122.jpg');
  background-size: cover;
  margin-left: 250px;
  float: left;
@@ -223,7 +223,7 @@ header{
 .introduce-image2 {
  width: 300px;
  height: 250px;
- background-image: url(img/dsc_0123_720.jpg);
+ background-image: image-url('img/dsc_0123_720.jpg');
  background-size: cover;
  margin-left: 250px;
  float: left;
@@ -251,7 +251,7 @@ header{
 .introduce-image3 {
  width: 300px;
  height: 250px;
- background-image: url(img/sauna.jpg);
+ background-image: image-url('img/sauna.jpg');
  background-size: cover;
  margin-left: 250px;
  margin-top: 30px;
@@ -294,7 +294,7 @@ text-align: center;
  background-position: center;
  float: left;
  margin: 0 10px 0 0;
- background-image: url(img/dsc_0114.jpg);
+ background-image: image-url('img/dsc_0114.jpg');
 }
 .introduce-image5 {
  width: 300px;
@@ -304,7 +304,7 @@ text-align: center;
  background-position: center;
  float: left;
  margin: 0 10px 0px 0;
- background-image: url(img/dsc_0116.jpg);
+ background-image: image-url('img/dsc_0116.jpg');
 }
 .introduce-image6 {
  width: 300px;
@@ -314,7 +314,7 @@ text-align: center;
  background-position: center;
  float: left;
  margin: 0 10px 0 0;
- background-image: url(img/dsc_0117.jpg);
+ background-image: image-url('img/dsc_0117.jpg');
 }
 .introduce-image7 {
  width: 300px;
@@ -324,7 +324,7 @@ text-align: center;
  background-position: center;
  float: left;
  margin: 10px 10px 0 0;
- background-image: url(img/dsc_0118.jpg);
+ background-image: image-url('img/dsc_0118.jpg');
 }
 .introduce-image8 {
  width: 300px;
@@ -334,7 +334,7 @@ text-align: center;
  background-position: center;
  float: left;
  margin: 10px 10px 0 0;
- background-image: url(img/dsc_0119.jpg);
+ background-image: image-url('img/dsc_0119.jpg');
 }
 .introduce-image9 {
  width: 300px;
@@ -344,7 +344,7 @@ text-align: center;
  background-position: center;
  float: left;
  margin: 10px 0 0 0;
- background-image: url(img/dsc_0120.jpg);
+ background-image: image-url('img/dsc_0120.jpg');
 }
 
 
@@ -366,7 +366,7 @@ text-align: center;
 .introduce-image10 {
  width: 300px;
  height: 250px;
- background-image: url(img/Yamasha181026061.jpg);
+ background-image: image-url('img/Yamasha181026061.jpg');
  background-size: cover;
  margin-left: 250px;
  margin-top: 30px;
@@ -396,7 +396,7 @@ introduce-set6 {
 .introduce-image11 {
  width: 300px;
  height: 250px;
- background-image: url(img/dsc_0124.jpg);
+ background-image: image-url('img/dsc_0124.jpg');
  background-size: cover;
  margin-left: 250px;
  margin-top: 30px;
@@ -420,7 +420,7 @@ introduce-set6 {
 .introduce-image12 {
  width: 300px;
  height: 250px;
- background-image: url(img/onsen.jpeg);
+ background-image: image-url('img/onsen.jpeg');
  background-size: cover;
  margin-left: 250px;
  margin-top: 30px;
@@ -449,7 +449,7 @@ introduce-set6 {
 .introduce-image13 {
  width: 300px;
  height: 250px;
- background-image: url(img/dsc_0128.jpg);
+ background-image: image-url('img/dsc_0128.jpg');
  background-size: cover;
  margin-left: 250px;
  margin-top: 100px;
@@ -478,7 +478,7 @@ introduce-set6 {
  .introduce-image14 {
  width: 300px;
  height: 250px;
- background-image: url(img/dsc_0131_720.jpg);
+ background-image: image-url('img/dsc_0131_720.jpg');
  background-size: cover;
  margin-left: 250px;
  margin-top: 100px;
@@ -505,7 +505,7 @@ introduce-set6 {
 .introduce-image15 {
  width: 300px;
  height: 250px;
- background-image: url(img/dsc_0130.jpg);
+ background-image: image-url('img/dsc_0130.jpg');
  background-size: cover;
  margin-left: 250px;
  margin-top: 100px;
@@ -587,7 +587,7 @@ introduce-set6 {
  margin-left: 800px;
  width: 500px;
  height: 500px;
- background-image: url(img/map.jpg;)
+ background-image: image-url('img/map.jpg;')
 }
 
 
@@ -601,7 +601,7 @@ introduce-set6 {
  height: 720px;
  text-align: cover;
  color: #FAFAFA;
- background-image: url(img/dsc_0125.jpg);
+ background-image: image-url('img/dsc_0125.jpg');
  background-size: cover;
  background-position: center;
 }
@@ -633,7 +633,7 @@ introduce-set21 {
 .introduce-image21 {
  width:300px;
  height:250px;
- background-image: url(img/kokochi_ebina1.jpg);
+ background-image: image-url('img/kokochi_ebina1.jpg');
  background-size: cover;
  margin-left: 250px;
  float: left;
@@ -657,7 +657,7 @@ introduce-set21 {
 .introduce-image22 {
  width: 300px;
  height: 250px;
- background-image: url(img/Yamasha181026061.jpg);
+ background-image: image-url('img/Yamasha181026061.jpg');
  background-size: cover;
  margin-top: 30px;
  margin-left: 250px;
@@ -686,7 +686,7 @@ introduce-set21 {
 .introduce-image23 {
  width: 300px;
  height: 250px;
- background-image: url(img/restaurant-menu.jpg);
+ background-image: image-url('img/restaurant-menu.jpg');
  background-size: cover;
  margin-left: 250px;
  margin-top: 30px;
@@ -718,7 +718,7 @@ introduce-set21 {
 .introduce-image24 {
  width: 300px;
  height: 250px;
- background-image: url(img/onsen.jpeg);
+ background-image: image-url('img/onsen.jpeg');
  background-size: cover;
  margin-left: 250px;
  margin-top: 30px;
@@ -740,7 +740,7 @@ introduce-set21 {
  .introduce-image25 {
  width: 300px;
  height: 250px;
- background-image: url(img/ADHH08010201.jpg);
+ background-image: image-url('img/ADHH08010201.jpg');
  background-size: cover;
  margin-left: 250px;
  margin-top: 100px;
@@ -772,7 +772,7 @@ introduce-set21 {
  margin-left: 800px;
  width: 300px;
  height: 300px;
- background-image: url(img/maps2.jpg;)
+ background-image: image-url('img/maps2.jpg;')
  }
 
 
