@@ -400,38 +400,9 @@ introduce-set6 {
  background-size: cover;
  margin-left: 250px;
  margin-top: 30px;
+ margin-bottom: 50px;
  float: left;
 }
-
-introduce-set7 {
- padding: 30px 0 120px 0;
- font-size: 16px;
-
-}
-.onsen-spa {
- color: blue;
- width: 50%;
- float: right;
- padding-top: 100px;
- padding-bottom: 30px;
- padding-left: 20ox;
-}
-.introduce-image12 {
- width: 300px;
- height: 250px;
- background-image: url(img/dsc_0124.jpg);
- background-size: cover;
- margin-left: 250px;
- margin-top: 30px;
- float: left;
-}
-.introduce-text6 {
- width: 50%;
- float: right;
- margin-right: 50px;
- margin-bottpm: 30px;
-}
-
 
 
 .introduce-set7 {
@@ -449,11 +420,12 @@ introduce-set7 {
 .introduce-image12 {
  width: 300px;
  height: 250px;
- background-image: url(img/dsc_0124.jpg);
+ background-image: url(img/onsen.jpeg);
  background-size: cover;
  margin-left: 250px;
- margin-top: 100px;
+ margin-top: 30px;
  float: left;
+ padding-top: 30px;
 }
 .introduce-text6 {
  width: 50%;
@@ -477,7 +449,7 @@ introduce-set7 {
 .introduce-image13 {
  width: 300px;
  height: 250px;
- background-image: url(img/dsc_0124.jpg);
+ background-image: url(img/dsc_0128.jpg);
  background-size: cover;
  margin-left: 250px;
  margin-top: 100px;
@@ -494,7 +466,9 @@ introduce-set7 {
  margin-right: 50px;
  padding-top: 40px;
  }
-
+.onsen-text {
+ text-align: center;
+}
 
 
 .introduce-set9 {
@@ -504,7 +478,7 @@ introduce-set7 {
  .introduce-image14 {
  width: 300px;
  height: 250px;
- background-image: url(img/dsc_0124.jpg);
+ background-image: url(img/dsc_0131_720.jpg);
  background-size: cover;
  margin-left: 250px;
  margin-top: 100px;
@@ -531,7 +505,7 @@ introduce-set7 {
 .introduce-image15 {
  width: 300px;
  height: 250px;
- background-image: url(img/dsc_0124.jpg);
+ background-image: url(img/dsc_0130.jpg);
  background-size: cover;
  margin-left: 250px;
  margin-top: 100px;
@@ -604,16 +578,16 @@ introduce-set7 {
 }
 
 .map {
- width: 130%;
+ width: 145%;
  margin-top: -600px;
 }
 
 .map-image {
- padding-top: 30px;
- width: 300px;
- height: 300px;
+ margin-top: 30px;
+ margin-left: 800px;
+ width: 500px;
+ height: 500px;
  background-image: url(img/map.jpg;)
-
 }
 
 
@@ -641,6 +615,174 @@ introduce-set7 {
 
 .container9 {
  width: 100%;
- height: 1500px;
- background-color: #FFFACD;
+ height: 3500px;
+ background-color: #FFF8DC;
 }
+
+introduce-set21 {
+ padding: 30px 0 90px 0;
+ font-size: 16px;
+ paddimg-top: 150px;
+}
+.all {
+ color: blue;
+ width: 50%;
+ float: right;
+ padding-right: 20px;
+}
+.introduce-image21 {
+ width:300px;
+ height:250px;
+ background-image: url(img/kokochi_ebina1.jpg);
+ background-size: cover;
+ margin-left: 250px;
+ float: left;
+}
+
+
+
+.introduce-set22{
+ padding: 30px 0 90px 0;
+ font-size: 16px;
+ padding-top: 50px;
+}
+.food-erea2 {
+ color: blue;
+ width: 50%;
+ float: right;
+ padding-top: 40px;
+ padding-bottom: 30px;
+ padding-left: 20ox;
+}
+.introduce-image22 {
+ width: 300px;
+ height: 250px;
+ background-image: url(img/dsc_0123_720.jpg);
+ background-size: cover;
+ margin-top: 30px;
+ margin-left: 250px;
+ float: left;
+
+}
+.introduce-text22 {
+ width: 50%;
+ float: right;
+ margin-right: 20px;
+}
+
+
+.introduce-set23 {
+ padding: 30px 0 120px 0;
+ font-size: 16px;
+}
+.forest-villa23 {
+ color: blue;
+ width: 50%;
+ float: right;
+ padding-top: 30px;
+ padding-bottom: 30px;
+ padding-left: 20ox;
+}
+.introduce-image23 {
+ width: 300px;
+ height: 250px;
+ background-image: url(img/restaurant-menu.jpg);
+ background-size: cover;
+ margin-left: 250px;
+ margin-top: 30px;
+ float: left;
+
+}
+.introduce-text23 {
+ width: 50%;
+ float: right;
+ margin-right: 20px;
+}
+
+
+.introduce-set24 {
+ padding: 30px 0 80px 0;
+ font-size: 16px;
+ }
+
+.onsen-spa24 {
+ color: blue;
+ width: 50%;
+ float: right;
+ padding-top: 100px;
+ padding-left: 20ox;
+}
+.onsen-text2 {
+ text-align: center;
+}
+.introduce-image24 {
+ width: 300px;
+ height: 250px;
+ background-image: url(img/onsen.jpeg);
+ background-size: cover;
+ margin-left: 250px;
+ margin-top: 30px;
+ float: left;
+ padding-top: 30px;
+}
+.introduce-text24 {
+ width: 50%;
+ float: right;
+ margin-right: 50px;
+ padding-top: 50px;
+ }
+
+
+ .introduce-set25 {
+ padding: 30px 0 120px 0;
+ font-size: 16px;
+ }
+ .introduce-image25 {
+ width: 300px;
+ height: 250px;
+ background-image: url(img/ADHH08010201.jpg);
+ background-size: cover;
+ margin-left: 250px;
+ margin-top: 100px;
+ float: left;
+}
+.introduce-title25 {
+ text-align: center;
+ padding-right: 150px;
+ padding-top: 100px;
+}
+.introduce-text25 {
+ width: 50%;
+ float: right;
+ margin-right: 50px;
+ padding-top: 30px;
+ }
+
+ .introduce-set26 {
+ color: red;
+}
+
+.map2 {
+ width: 130%;
+ margin-top: -600px;
+}
+
+.map-image2 {
+ margin-top: 30px;
+ margin-left: 800px;
+ width: 300px;
+ height: 300px;
+ background-image: url(img/maps2.jpg;)
+ }
+
+#back {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+}
+
+#back img {
+  width: 50px;
+}
+
+

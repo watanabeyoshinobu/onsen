@@ -11,7 +11,7 @@
     <h2>MENU</h2>
       <ul>
         <li><%= link_to '横濱スパヒルズ　竜泉寺の湯', blog_path(:id) %></li>
-        <li><%= link_to 'お風呂の王様', see_path %></li>
+        <li><%= link_to 'おふろの王様', see_path %></li>
         <li><%= link_to '自己紹介', "#profile" %></li>
         <li><%= link_to 'SNS', "#sns" %></li>
         <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
@@ -66,7 +66,7 @@
           <%= link_to see_path do %>
             <div class="portfolio_image2"></div>
           <% end %>
-          <h2 class="portfolio-title2">♨️　お風呂の王様　♨️</h2>
+          <h2 class="portfolio-title2">♨️　おふろの王様　♨️</h2>
           <p class="portfolio-text2">
             私の地元の近くにあるお風呂の王様<br>
             以前から気になっていたので、今回取材してみました！
@@ -131,5 +131,11 @@
             </div>
        </section>
      </div>
+
+    <span id="back">
+      <a href="#">
+        <img src="img/arrow.png" alt="">
+      </a>
+    </span>
 
 </body>
