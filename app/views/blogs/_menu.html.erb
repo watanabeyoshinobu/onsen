@@ -1,0 +1,17 @@
+  <div id="sp-menu">
+    <h2>MENU</h2>
+      <ul>
+        <li><%= link_to 'トップページ', blogs_path %></li>
+        <li><%= link_to '横濱スパヒルズ　竜泉寺の湯', blog_path(:id) %></li>
+        <li><%= link_to 'おふろの王様', see_path %></li>
+        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+      </ul>
+  </div>
+
+  <div id="hm-icon">
+    <a id="menu-trigger" href="#">
+      <span></span>
+      <span></span>
+      <span></span>
+    </a>
+  </div>

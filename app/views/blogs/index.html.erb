@@ -2,25 +2,9 @@
 
 <body>
 
-  <div id="sp-menu">
-    <h2>MENU</h2>
-      <ul>
-        <li><%= link_to '横濱スパヒルズ　竜泉寺の湯', blog_path(:id) %></li>
-        <li><%= link_to 'おふろの王様', see_path %></li>
-        <li><%= link_to '自己紹介', "#profile" %></li>
-        <li><%= link_to 'SNS', "#sns" %></li>
-        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
-      </ul>
-  </div>
+<%= render 'menu' %>
 
-  <div id="hm-icon">
-    <a id="menu-trigger" href="#">
-      <span></span>
-      <span></span>
-      <span></span>
-    </a>
-  </div>
-
+<%= render 'btn' %>
 
 <div class="main-visual">
   <div id=container-js>
@@ -34,7 +18,6 @@
   </div>
 </div>
 
-<%= render 'btn' %>
 
 
   <section id="portfolio">
@@ -80,16 +63,16 @@
                  ♨️　自己紹介　♨️
                </h2>
                 <p class="heading-text">
-                 今回ブログ風紹介サイト『湯のここち』というサイトを作りました <br>
-                 なぜこのサイトを制作したかというと、私自身もスーパー銭湯が好きで以前はよく通っていました。 <br>
-                 少しでも皆さんにもスーパー銭湯の素晴らしさを知ってもらえたら嬉しいです(笑)
+                 今回ブログ風紹介サイト『湯のここち』というサイトを作りました! <br>
+                 なぜこのサイトを制作したかというと、私自身スーパー銭湯が好きで以前はよく通っていました。 <br>
+                 少しでも皆さんにもスーパー銭湯の魅力や素晴らしさを知ってもらえたら嬉しいです(笑)
                </p>
                  <div class="profile-group clearfix">
                   <div class="left-content">
                    <div class="my-face"></div>
                   </div>
                       <div class="">
-                      <h3 class="discription-title">MyName</h3>
+                      <h3 class="discription-title">名前</h3>
                       <p class="discription-text">
                         渡邊義信
                       </p>
@@ -114,7 +97,7 @@
            <p class="heading-text">
               まだ登録したばかりで何も活動はしておりませんが、SNSを始めました！<br>
               日々思ったことを気ままに書いていこうと思いますので<br>
-              ご興味のある方は是非みに来てくださいね！
+              興味のある方は是非みに来てくださいね！
            </p>
            <div class="contact-group clearfix">
 

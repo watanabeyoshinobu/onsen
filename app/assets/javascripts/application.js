@@ -26,7 +26,7 @@ $(function() {
       transition : 'slide',
       speed : 2000,
       easing : 'easeOutQuart',
-      navType : 'block',
+      navType : 'bubble',
       childrenElementType : 'div',
       arrows : true,
       autoPlay : true,
