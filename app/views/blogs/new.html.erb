@@ -1,2 +1,11 @@
-<h1>Blogs#new</h1>
-<p>Find me in app/views/blogs/new.html.erb</p>
+<h1>感想はこちら♪</h1>
+
+<%= form_for(@blog, url: '/blogs') do |f| %>
+
+	<h4>名前</h4>
+	<%= f.text_field :title %>
+
+	<h4>感想</h4>
+	<%= f.text_area :body %>
+	<%= f.submit '投稿！' %>
+<% end %>
