@@ -73,6 +73,7 @@ Things you may want to cover:
 ・javascriptによるトップに戻るボタンの作成
 ・ログイン機能
 
+
 #設計書
 ##ワイヤーフレーム
 ・https://app.diagrams.net/#G185c3z1FQH85vynnJtKnXm1J2t1FhWQja
@@ -97,6 +98,9 @@ Things you may want to cover:
 ・渡邊義信
 
 
+#以下追加したもの
+・twitter,facebookのリンク先に飛ばせるようにしました。
+・ログイン機能の日本語化を現在進行中で追加しています。
 
 
 

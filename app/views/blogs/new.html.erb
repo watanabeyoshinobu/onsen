@@ -1,11 +1,26 @@
-<h1>感想はこちら♪</h1>
+<div class="box3">
+	<div class="box-inner3">
+		<h1>感想はこちら♪</h1>
 
-<%= form_for(@blog, url: '/blogs') do |f| %>
+		<%= form_for(@blog, url: '/blogs') do |f| %>
 
-	<h4>名前</h4>
-	<%= f.text_field :title %>
+			<div class="name-box3">
+				<h4>名前</h4>
+				<%= f.text_field :title %>
+			</div>
 
-	<h4>感想</h4>
-	<%= f.text_area :body %>
-	<%= f.submit '投稿！' %>
-<% end %>
+
+			<div class="impress-box3">
+				<h4>感想</h4>
+				<%= f.text_area :body %>
+			</div>
+
+
+			<div class="push-box3">
+				<%= f.submit '投稿！' %>
+			</div>
+
+
+		<% end %>
+	</div>
+</div>
