@@ -1,7 +1,8 @@
 class BlogsController < ApplicationController
 	before_action :authenticate_user!
+
   def index
-  	@blogs = Blog.all
+    @blogs = Blog.all
   end
 
   def show
@@ -21,6 +22,12 @@ class BlogsController < ApplicationController
     blog = Blog.new(blog_params)
     blog.save
     redirect_to '/blogs'
+  end
+
+  def look
+  end
+
+  def browse
   end
 
   private

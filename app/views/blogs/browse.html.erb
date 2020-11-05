@@ -1,0 +1,128 @@
+<body>
+
+<%= render 'menu' %>
+
+<%= render 'btn' %>
+
+<div class="main-visual">
+  <div id=container-js>
+     <div id="theTarget">
+        <div class="image1"></div>
+        <div class="image2"></div>
+        <div class="image3"></div>
+        <div class="image4"></div>
+        <div class="image5"></div>
+    </div>
+  </div>
+</div>
+
+
+
+  <section id="portfolio">
+    <div class="container1">
+      <h2 class="heading">
+        ♨️〜スーパ銭湯紹介!〜♨️
+      </h2>
+      <p class="heading-text">
+      <font size="5">日々お仕事を一生懸命働いている皆様へ・・・<br>
+      温泉という至福のひと時はいかがでしょうか・・・♨️</font>
+      </p>
+
+
+     <div class="portfolio-images clearfix">
+          <div class ="portfolio-set clearfix">
+           <%= link_to look_path do %>
+              <div class="portfolio_image1"></div>
+          　<% end %>
+                <h2 class="portfolio-title">♨️〜横濱スパヒルズ　竜泉寺の湯〜♨️</h2>
+            <p class="portfolio-text">
+            横浜市旭区にある『横濱スパヒルズ　竜泉寺の湯』は、2019年12月上旬にリニューアルオープンしました！<br>
+            そんな『横濱スパヒルズ　竜泉寺の湯』ですが、以前よりもさらに綺麗になっていて内装も一新したので是非紹介したいと思い今回取材しました！<br>
+            リニューアルオープンした新しい『横濱スパヒルズ　竜泉寺の湯』をどうぞご覧ください♪<br>
+            </p>
+          </div>
+
+          <div class ="portfolio-set clearfix">
+          <%= link_to see_path do %>
+            <div class="portfolio_image2"></div>
+          <% end %>
+          <h2 class="portfolio-title2">♨️〜ゆめみ処　おふろの王様〜♨️</h2>
+          <p class="portfolio-text2">
+            私の地元の近くにあるお風呂の王様というスーパー銭湯です！<br>
+            以前から気になっていたものの中々行く機会がなかったので、今回取材してみました！<br>
+            『ゆめみ処　お風呂の王様』は他にも町田や瀬谷にもあります。<br>
+            他店舗の違いを楽しみながらご覧ください♪
+          </p>
+          </div>
+    </div>
+    </section>
+
+
+        <section id="profile">
+             <div class="container2">
+               <h2 class="heading">
+                 ♨️〜自己紹介〜♨️
+               </h2>
+                <p class="heading-text">
+                 今回ブログ風紹介サイト『湯のここち』というサイトを制作しました! <br>
+                 なぜこのサイトを制作したかというと、私自身スーパー銭湯が好きで以前はよく通っていました。 <br>
+                 少しでも皆さんにスーパー銭湯の魅力や素晴らしさを知ってもらえたら嬉しいです(笑)
+               </p>
+                 <div class="profile-group clearfix">
+                  <div class="left-content">
+                   <div class="my-face"></div>
+                  </div>
+                      <div class="">
+                      <h3 class="discription-title">名前</h3>
+                      <p class="discription-text">
+                        渡邊義信と申します。
+                      </p>
+                      <h3 class="discription-title">マイブーム</h3>
+                      <p class="discription-text">
+                        最近『岩盤浴』にはまりました！<br>
+                        岩盤浴は、新陳代謝を上げるだけではなく『美容』にも良いと言われています。<br>
+                        さらには新陳代謝を上げるので、ダイエットにもいいと言われております。<br>
+                        皆さんもご興味があれば是非、岩盤浴に入ってみてください。<br>
+                        きっとクセになると思います♪<br>
+                      </p>
+                      </div>
+                </div>
+             </div>
+         </section>
+
+
+       <section id="sns">
+         <div class="container3">
+           <h2 class="heading">
+             ♨️〜その他〜♨️
+           </h2>
+           <p class="heading-text">
+              まだ登録したばかりで何も活動はしておりませんが、SNSを始めました！<br>
+              日々思ったことや気になったプログラミング情報を書いていこうと思いますので<br>
+              興味のある方は是非見に来て下さい！<br>
+              フォローもして頂けると嬉しいです♪<br>
+              感想のコメントを閲覧したい方はこちらからどうぞ！<br>
+           </p>
+           <div class="contact-group clearfix">
+
+             <div class="right-content">
+              <div class="right-contact">
+                <h3 class="discription-title">SNS</h3>
+
+                  <%= link_to ("https://twitter.com/yosshi_ike1720") do %>
+                    <span class="fa fa-twitter fa-x"aria-hidden="true"></span>
+                  <% end %>
+
+                  <%= link_to ("http://facebook.com/yosshi.freedom1720") do %>
+                    <span class="fa fa-facebook fa-x"aria-hidden="true"></span>
+                  <% end %>
+
+                <i class="fa fa-instagram fa-x"aria-hidden="true"></i>
+              </div>
+             </div>
+            </div>
+       </section>
+     </div>
+
+
+</body>

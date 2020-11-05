@@ -13,4 +13,6 @@ Rails.application.routes.draw do
   root 'homes#top'
   get 'top' => 'homes#top'
   get 'see' => 'blogs#see'
+  get 'look' => 'blogs#look'
+  get 'browse' => 'blogs#browse'
 end
