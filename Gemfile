@@ -70,6 +70,11 @@ gem 'jquery-rails'
 gem 'rails-i18n'
 
 gem 'dotenv-rails'
+
+gem 'kaminari','~> 1.2.1'
+
+gem 'kaminari-bootstrap', '~> 3.0.1'
+
 group :production do
   gem 'mysql2'
 end

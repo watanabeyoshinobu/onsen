@@ -2,10 +2,11 @@ class BlogsController < ApplicationController
 	before_action :authenticate_user!
 
   def index
-    @blogs = Blog.all
+    @blogs = Blog.page(params[:page]).reverse_order
   end
 
   def show
+    @blog = Blog.find(params[:id])
   end
 
   def new
