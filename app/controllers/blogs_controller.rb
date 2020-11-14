@@ -20,8 +20,7 @@ class BlogsController < ApplicationController
   end
 
   def create
-    blog = Blog.new(blog_params)
-    blog.save
+    @blog = Blog.new(blog_params)
     redirect_to '/blogs'
   end
 
