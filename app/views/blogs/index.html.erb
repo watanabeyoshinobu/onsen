@@ -1,8 +1,8 @@
 <h1>感想欄一覧</h1>
 <% @blogs.each do |blog| %>
 	<p>名前</p>
-	<span><% blog.title %></span>
+	<span><%= blog.title %></span>
 	<p>感想</p>
-	<span><% blog.body %></span>
+	<span><%= blog.body %></span>
 <% end %>
 <%= paginate @blogs  %>
