@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'users/index'
   post 'blogs' => 'blogs#create'
   get 'blogs' => 'blogs#index'
+  get 'blogs' => 'blogs#new'
   get 'blogs/:id' => 'blogs#show'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'homes#top'
