@@ -19,7 +19,7 @@
             <th><%= blog.id %></th>
             <td><%= blog.title %></td>
             <td><%= blog.body %></td>
-            <td><%= blog.created_at.strftime('%Y/%m/%d %H:%M') %></td>
+            <td><%= blog.created_at.to_s(:datetime_base) %></td>
         </tr>
       <% end %>
   </tbody>
