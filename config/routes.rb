@@ -5,9 +5,12 @@ Rails.application.routes.draw do
   		get '/users', to: redirect("/users/sign_up")
   	end
 
-  resources :blogs, only: [:index, :new, :create, :show]
+  resources :blogs
+  resources :comments, only: %i[create destroy]
   get 'users/show'
   get 'users/index'
+  get 'comments/create'
+  get 'comments/destroy'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'homes#top'

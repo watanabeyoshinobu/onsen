@@ -137,6 +137,10 @@ h1 {
   padding: 20px 26px;
 }
 
+.name-box2 {
+  margin-bottom: 13px;
+}
+
 .email-box2 {
   margin-bottom: 13px;
 }
@@ -149,14 +153,14 @@ h1 {
   margin-bottom: 52px;
 }
 
-.email-box2 label, .password-box2 label, .repassword-box2 label {
+.name-box2 label, .email-box2 label, .password-box2 label, .repassword-box2 label {
   font-weight: 700;
   font-size: 13px;
   padding-left: 2px;
   padding-bottom: 2px;
 }
 
-.email-box2 input[type="email"], .password-box2 input[type="password"], .repassword-box2 input[type="password"] {
+ .name-box2 input[type="name"], .email-box2 input[type="email"], .password-box2 input[type="password"], .repassword-box2 input[type="password"] {
   border-style: none;
   box-sizing: border-box;
   width: 100%;

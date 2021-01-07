@@ -1,36 +1,10 @@
-    <div class="d-flex align-items-center">
+<%= render 'menu' %>
+
+    <div class="d-flex align-items-center" mt-4 mb-4>
       <h1>感想はこちら♪</h1>
+      <div class="ml-auto blogs_button">
+          <%= link_to "感想一覧", blogs_path, class: 'btn btn-outline-info' %>
+      </div>
     </div>
 
-    <%= form_for @blog do |f| %>
-
-        <div class="box-inner3">
-            <%= f.label :title, '名前' %>
-            <%= f.text_field :title, class: 'form-control' %>
-            <small id="poster-tip" class="form-text text-muted">
-                名前を入力してください♪
-            </small>
-        </div>
-        <div class="box-inner3">
-            <%= f.label :title, 'タイトル' %>
-            <%= f.text_field :title, class: 'form-control' %>
-            <small id="title-tip" class="form-text text-muted">
-                タイトルを入力してください♪
-            </small>
-        </div>
-        <div class="box-inner3">
-            <%= f.label :body, '投稿内容' %>
-            <%= f.text_area :body, class: 'form-control', rows:10 %>
-            <small id=content-tip" class="form-text text-muted">
-                投稿内容を入力してください♪
-            </small>
-        </div>
-
-        <div class="box-inner3">
-            <%= f.submit '投稿!', class: 'btn btn-info btn-block' %>
-            <small id="submit-tip" class="form-text text-muted">
-                投稿する前に投稿内容を見直してください
-            </small>
-        </div>
-
-    <% end %>
+        <%= render partial: 'form', locals: { blog: @blog} %>

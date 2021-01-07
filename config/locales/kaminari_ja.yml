@@ -6,3 +6,11 @@ ja:
       previous: "&lsaquo; 前"
       next: "次 &rsaquo;"
       truncate: "..."
+
+    activerecord:
+        attributes:
+            blogs:
+                title: タイトル
+                content: 投稿内容
+            comment:
+                comment: コメント

@@ -1,27 +1,47 @@
 class BlogsController < ApplicationController
 	before_action :authenticate_user!
+  before_action :set_target_blog, only: %i[show edit update destroy]
 
   def index
     @blogs = Blog.page(params[:page]).reverse_order
   end
 
   def show
-    @blog = Blog.find(params[:id])
+    @comment = Comment.new(blog_id: @blog.id)
   end
 
   def new
-    @blog = Blog.new
+    @blog = Blog.new(flash[:board])
   end
 
   def edit
+
   end
 
-  def see
+  def update
+    @blog.update(blog_params)
+    flash[:notice] = "「#{@blog.title}」の感想を更新しました!"
+    redirect_to blog_path
   end
 
   def create
     @blog = Blog.new(blog_params)
-    redirect_to '/blogs'
+    @blog.user_id = current_user.id
+      if @blog.save
+        flash[:notice] = "「#{@blog.title}」の感想が投稿されました!"
+        redirect_to '/blogs'
+      else
+        render = 'new'
+      end
+  end
+
+  def destroy
+    @blog.delete
+    flash[:notice] = "「#{@blog.title}」の感想を削除しました!"
+    redirect_to blogs_path
+  end
+
+  def see
   end
 
   def look
@@ -31,7 +51,12 @@ class BlogsController < ApplicationController
   end
 
   private
-  def blog_params
-    params.require(:blog).permit(:title, :body, :name)
-  end
+    def blog_params
+      params.require(:blog).permit(:title, :body, :name).merge(user_id: current_user.id)
+    end
+
+    def set_target_blog
+      @blog = Blog.find(params[:id])
+    end
+
 end

@@ -1,11 +1,16 @@
-<div class="d-flex align-items-center">
-	<h1>編集</h1>
-	<div class="ml-auto blogs_button">
-		<%= link_to "感想一覧", blogs_path, class: 'btn btn-outline-info' %>
-	</div>
-</div>
+<% if flash[:error_massages] %>
+    <div class="alert alert-danger">
+        <ul>
+            <% flash[:error_massages].each do |massage| %>
+                <li><<%= massage %></li>
+            <% end %>
+        </ul>
+    </div>
+<% end %>
 
-<%= form_for @blog do |f| %>
+    <%= render 'shared/error_messages' %>
+
+    <%= form_for @blog do |f| %>
 
         <div class="box-inner3">
             <%= f.label :title, 'タイトル' %>
@@ -29,4 +34,4 @@
             </small>
         </div>
 
-<% end %>
+    <% end %>

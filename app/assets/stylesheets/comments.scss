@@ -1,0 +1,36 @@
+.b-comment__formBox {
+  margin: 30px auto;
+  border: 5px solid #e8e8e8;
+  padding: 25px;
+  border-radius: 14px;
+}
+
+.b-comment__formTitle {
+  border-bottom: 2px solid #dfdfdf;
+  padding-bottom: 5px;
+}
+
+.b-comment__listTitle {
+  border-bottom: 2px solid #dfdfdf;
+  padding-bottom: 5px;
+}
+
+.b-comment__list {
+  margin: 38px 0;
+  padding: 20px;
+}
+
+.b-comment__item {
+  padding: 18px;
+  border-bottom: 2px dotted #dfdfdf;
+}
+
+.b-comment__bottomLine {
+  font-size: 15px;
+  text-align: right;
+
+  > span {
+    font-size: 14px;
+    margin: 0 12px;
+  }
+}
