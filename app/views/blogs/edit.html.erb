@@ -1,32 +1,34 @@
 <div class="d-flex align-items-center">
 	<h1>編集</h1>
 	<div class="ml-auto blogs_button">
-		<%= link_to "感想一覧", blogs_path, class: 'btn btn-outline-info' %>
+		<%= button_to "感想一覧", blogs_path, class: 'btn btn-outline-info', method: :get %>
 	</div>
 </div>
 
 <%= form_for @blog do |f| %>
 
-        <div class="box-inner3">
+    <div class="b-blog__formbox">
+         <div class="b-title_box">
             <%= f.label :title, 'タイトル' %>
             <%= f.text_field :title, class: 'form-control' %>
             <small id="title-tip" class="form-text text-muted">
                 タイトルを入力してください♪
             </small>
         </div>
-        <div class="box-inner3">
+        <div class="b-content_box">
             <%= f.label :body, '投稿内容' %>
-            <%= f.text_area :body, class: 'form-control', rows:10 %>
+            <%= f.text_area :body, class: 'form-control', rows: 8 %>
             <small id=content-tip" class="form-text text-muted">
                 投稿内容を入力してください♪
             </small>
         </div>
 
-        <div class="box-inner3">
-            <%= f.submit '投稿!', class: 'btn btn-info btn-block' %>
+        <div class="b-push_box">
+            <%= f.submit '更新!', class: 'btn btn-info btn-block' %>
             <small id="submit-tip" class="form-text text-muted">
                 投稿する前に投稿内容を見直してください
             </small>
         </div>
+    </div>
 
 <% end %>

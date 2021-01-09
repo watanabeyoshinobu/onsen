@@ -1,7 +1,7 @@
 <div class="b-comment__item">
   <p><%= simple_format(comment.comment) %></p>
   <div class="b-comment__bottomLine">
-    <span><%= comment.user.name %></span>
+    <span><%= @comment.user.name %></span>
     <span><%= comment.created_at.to_s(:datetime_base) %></span>
   </div>
 </div>

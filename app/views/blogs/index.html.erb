@@ -1,8 +1,10 @@
 
+<%= render 'menu' %>
+
 <div clas="d-flex align-items-center">
 	<h1>感想一覧</h1>
   <div class="ml-auto blogs_button">
-    <%= link_to '感想へ戻る', new_blog_path, class: "btn btn-outline-info" %>
+    <%= button_to '感想へ戻る', new_blog_path, class: "btn btn-outline-info", method: :get %>
   </div>
 </div>
 
@@ -13,6 +15,7 @@
       <th scope="col" style="width: 700px">感想タイトル</th>
       <th scope="col">名前</th>
       <th scope="col">投稿日</th>
+      <th scope="col">更新日時</th>
       <th></th>
       <th></th>
     </tr>
@@ -25,8 +28,9 @@
             <td><%= blog.title %></td>
             <td><%= blog.user.name %></td>
             <td><%= blog.created_at.to_s(:datetime_base) %></td>
-            <td><%= link_to 'コメント詳細', blog, id: "detail-" + blog.id.to_s, class: 'btn btn-outline-info' %></td>
-            <td><%= link_to "削除" , blog, class: 'btn btn-outline-info', method: :delete, data: {confirm: "投稿記事を削除しますか？", cancel: "キャンセル", commit: "削除する", title: "削除の確認"} %></td>
+            <td><%= blog.updated_at.to_s(:datetime_base) %></td>
+            <td><%= button_to 'コメント', blog, id: "detail-" + blog.id.to_s, class: 'btn btn-outline-info', method: :get %></td>
+            <td><%= button_to "削除" , blog, class: 'btn btn-outline-info', method: :delete, data: {confirm: "投稿記事を削除しますか？", cancel: "キャンセル", commit: "削除する", title: "削除の確認"} %></td>
         </tr>
       <% end %>
   </tbody>

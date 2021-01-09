@@ -1,12 +1,19 @@
-<div class="card">
-  <div class="card-header bg-info text-white">
-      <h4><%= @blog.title %></h4>
-  </div>
-  <div class="card-body">
-      <p class="card-text"><%= simple_format(@blog.body) %></p>
-  </div>
-  <div class="card-footer">
-      <p class="text-right font-weight-bold mr-10"><%= @blog.user.name %></p>
-  </div>
+<div class="b-card_box">
+	<div class="card">
+	  <div class="card-header bg-info text-white">
+	      <h4><%= @blog.title %></h4>
+	  </div>
+
+	  <div class="card-body">
+	     <p class="card-text"><%= simple_format(@blog.body) %></p>
+	  </div>
+
+	  <div class="card-footer">
+	      <p class="text-right font-weight-bold mr-10"><%= @blog.user.name %></p>
+	  </div>
+	</div>
+
 </div>
+
+
 
