@@ -3,8 +3,8 @@
 
 <div clas="d-flex align-items-center">
 	<h1>感想一覧</h1>
-  <div class="ml-auto blogs_button">
-    <%= button_to '感想へ戻る', new_blog_path, class: "btn btn-outline-info", method: :get %>
+  <div class="col-sm-2 col-md-offset-10">
+    <%= button_to '感想へ戻る', new_blog_path, class: "btn btn-info btn-block", method: :get %>
   </div>
 </div>
 
@@ -16,8 +16,8 @@
       <th scope="col">名前</th>
       <th scope="col">投稿日</th>
       <th scope="col">更新日時</th>
-      <th></th>
-      <th></th>
+      <th scope="col">コメント詳細</th>
+      <th scope="col">削除</th>
     </tr>
   </thead>
 
@@ -29,8 +29,8 @@
             <td><%= blog.user.name %></td>
             <td><%= blog.created_at.to_s(:datetime_base) %></td>
             <td><%= blog.updated_at.to_s(:datetime_base) %></td>
-            <td><%= button_to 'コメント', blog, id: "detail-" + blog.id.to_s, class: 'btn btn-outline-info', method: :get %></td>
-            <td><%= button_to "削除" , blog, class: 'btn btn-outline-info', method: :delete, data: {confirm: "投稿記事を削除しますか？", cancel: "キャンセル", commit: "削除する", title: "削除の確認"} %></td>
+            <td><%= button_to 'コメント', blog, id: "detail-" + blog.id.to_s, class: 'btn btn-success btn-block', method: :get %></td>
+            <td><%= button_to "削除", blog, class: 'btn btn-danger btn-block', method: :delete, data: {confirm: "投稿記事を削除しますか？", cancel: "キャンセル", commit: "削除する", title: "削除の確認"} %></td>
         </tr>
       <% end %>
   </tbody>

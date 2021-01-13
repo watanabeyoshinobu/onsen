@@ -108,9 +108,8 @@
 
             <div class="left-content">
                <div class="kansou">
-                <%= link_to new_blog_path do %>
-                 <h3 class="kansou-title">感想はこちら♪</h3>
-                 <% end %>
+                <%= button_to '感想はこちら♪', new_blog_path, class: 'btn btn-info btn-block', method: :get %>
+
                </div>
             </div>
 
