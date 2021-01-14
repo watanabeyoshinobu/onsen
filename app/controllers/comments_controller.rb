@@ -1,17 +1,19 @@
 class CommentsController < ApplicationController
 
 	def create
-	    comment = Comment.new(comment_params)
+	    	@comment = Comment.new(comment_params)
     		@comment.user_id = current_user.id
-	    if comment.save
-	        flash[:notice] = 'コメントを投稿しました！'
-	        redirect_to '/blogs'
-	    else
-	        redirect_to :back, flash: {
-	            comment: comment,
-	            error_messages: comment.errors.full_messages
-	        }
-      	end
+		    if @comment.save
+		        flash[:notice] = 'コメントを投稿しました！'
+		        redirect_back(fallback_location: 'blog[:id')
+
+
+		    else
+		        redirect_to :back, flash: {
+		            comment: comment,
+		            error_messages: comment.errors.full_messages
+		        }
+	      	end
 	end
 
 	def destroy
@@ -23,7 +25,7 @@ class CommentsController < ApplicationController
 	private
 
 	def comment_params
-		params.require(:comment).permit(:comment).merge(user_id: current_user.id)
+		params.require(:comment).permit(:comment,:reply_comment).merge(user_id: current_user.id, blog_id: params[:blog_id])
 	end
 
 end
