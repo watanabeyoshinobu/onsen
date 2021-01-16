@@ -10,8 +10,8 @@ class CommentsController < ApplicationController
 
 		    else
 		        redirect_to :back, flash: {
-		            comment: comment,
-		            error_messages: comment.errors.full_messages
+		            comment: @comment,
+		            error_messages: @comment.errors.full_messages
 		        }
 	      	end
 	end
