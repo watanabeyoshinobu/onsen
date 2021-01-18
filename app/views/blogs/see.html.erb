@@ -9,7 +9,7 @@
 			</section>
 		</div>
 			<!-- スーパー銭湯の紹介 -->
-			<div class="beginning">
+			<div class="beginning2">
 				<section id="bv">
 					<div class="container8">
 								<div class="introduce-set clearfix">
@@ -186,11 +186,9 @@
 								近くには喫茶店やスーパーなどもありますので、お帰りの際に如何でしょうか♪？
 							</p>
 
-							<p class="kansou clearfix">
-								<%= link_to new_blog_path(:id) do %>
-								<h3 class="kansouran">感想はこちら♪</h3>
-							</p>
-							<% end %>
+							<div class="col-md-6">
+								<%= button_to '感想はこちら♪', new_blog_path, class: 'btn btn-info btn-block', method: :get %>
+							</div>
 					</div>
 					<div class="introduce-set26 clearfix">
 						<h2 class="map2">♨️〜地図〜♨️</h2>

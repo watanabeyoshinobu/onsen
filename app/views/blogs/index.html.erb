@@ -12,7 +12,6 @@
   <table class="table table-bordered border-primary table-hover table-sm blogs_table">
   <thead class="thead-dark">
     <tr>
-      <th scope="col" style="width: 40px">No.</th>
       <th scope="col" style="width: 700px">感想タイトル</th>
       <th scope="col">名前</th>
       <th scope="col">投稿日</th>
@@ -25,7 +24,6 @@
   <tbody>
       <% @blogs.each do |blog| %>
         <tr>
-            <th><%= blog.id %></th>
             <td><%= blog.title %></td>
             <td><%= blog.user.name %></td>
             <td><%= blog.created_at.to_s(:datetime_base) %></td>

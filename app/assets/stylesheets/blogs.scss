@@ -97,6 +97,66 @@
 
 
 
+main {
+ height: 1000px;
+
+}
+h2.heading{
+ font-size: 36px;
+ padding: 60px 0 0 30px;
+ padding-bottom: 10px;
+ color: red;
+ margin-top: 0;
+}
+h2.heading::after{
+ background-color: #F08080;
+ margin: 8px auto 0 auto;
+ content: "";
+ display: block;
+ width: 250px;
+ height: 2px;
+}
+p.heading-text{
+ padding-top: 30px;
+ padding-bottom: 40px;
+ text-align: center;
+ font-size: 16px;
+ color: #000000;
+}
+
+.container1{
+ width: 100%;
+ height: 1000px;
+ margin: 0 auto;
+}
+
+.portfolio-images{
+ width: 100%;
+ height: 1000px;
+ padding: 30px 0 90px 0;
+ margin: 0 auto;
+}
+.portfolio_image1 {
+ margin-right: 40px;
+ margin-bottom: 100px;
+}
+
+.portfolio_image2 {
+ margin-top: 70px;
+ margin-right: 40px;
+}
+
+.portfolio-title {
+ color: blue;
+}
+.portfolio-title2 {
+ margin-top: 70px;
+ color: blue;
+}
+
+
+
+
 
 
 
@@ -141,6 +201,8 @@ header{
 }
 
 
+/*look画面*/
+
 .container4 {
  width: 100%;
  height: 1200px;
@@ -149,8 +211,8 @@ header{
 
 .beginning {
  width: 100%;
- height: 400px;
- background-color: #7FFFD4;
+ height: 450px;
+ background-color: #E0FFFF;
 }
 
 .bv-title {
@@ -176,7 +238,7 @@ header{
 .container6 {
  width: 100%;
  height: 5500px;
- background-color: #98FB98;
+ background-color: #F5FFFA;
 }
 
 .introduce {
@@ -538,7 +600,7 @@ text-align: center;
 .container7 {
  width: 100%;
  height: 800px;
- background-color: #90EE90;
+ background-color: #F0FFF0;
 }
 .access {
  color: red;
@@ -614,9 +676,9 @@ text-align: center;
  background-position: center;
 }
 
-.container8 {
+.beginning2 {
  width: 100%;
- height: 400px;
+ height: 450px;
  background-color: #FFFACD;
 }
 
@@ -770,6 +832,13 @@ text-align: center;
  color: red;
 }
 
+
+.container10 {
+ width: 100%;
+ height: 820px;
+ background-color: #FFFFE0;
+}
+
 .map2 {
  width: 130%;
  margin-top: -600px;
@@ -782,14 +851,6 @@ text-align: center;
  height: 300px;
  background-image: image-url('img/maps2.jpg');
  }
-
-
-
-.container10 {
- width: 100%;
- height: 800px;
- background-color: #EEE8AA;
-}
 
 
 
@@ -915,4 +976,10 @@ text-align: center;
 
 .col-sm-2 {
  margin-bottom: 10px;
+}
+
+
+.col-md-6 {
+ margin-left: 120px;
+ margin-top: 30px;
 }

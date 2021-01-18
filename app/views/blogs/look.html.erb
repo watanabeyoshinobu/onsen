@@ -244,11 +244,9 @@
 								電車で竜泉寺の湯に行く際にはぜひご利用してください♪
 							</p>
 
-							<p class="kansou clearfix">
-								<%= link_to new_blog_path(:id) do %>
-								<h3 class="kansouran">感想はこちら♪</h3>
-							</p>
-							<% end %>
+							<div class="col-md-6">
+								<%= button_to '感想はこちら♪', new_blog_path, class: 'btn btn-info btn-block', method: :get %>
+							</div>
 					</div>
 					<div class="introduce-set15 clearfix">
 						<h2 class="map">♨️〜地図〜♨️</h2>
