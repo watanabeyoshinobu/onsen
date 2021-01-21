@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users
+  resources :blogs
+  resources :comments, only: [:create, :destroy]
 
   	devise_scope :users do
   		get '/users', to: redirect("/users/sign_up")
   	end
 
-  resources :blogs
-  resources :comments, only: %i[create destroy]
+
   get 'users/show'
   get 'users/index'
   get 'comments/create'

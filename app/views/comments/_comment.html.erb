@@ -2,9 +2,9 @@
 	<div class="b-comment__item">
 	  <p><%= simple_format(@comment.comment) %></p>
 	  <div class="b-comment__bottomLine">
-	    <span><%= @comment.user.name %></span>
-	    <span><%= @comment.created_at.to_s(:datetime_base) %></span>
-	    <span><%= button_to "削除", @comment, class: 'btn btn-danger btn-block', method: :delete, data: {confirm: "コメントを削除しますか？", cancel: "キャンセル", commit: "削除する", title: "削除の確認"} %></span>
+	    <span><%= comment.user.name %></span>
+	    <span><%= comment.created_at.to_s(:datetime_base) %></span>
+	    <span><%= button_to "削除", comment, class: 'btn btn-danger btn-block', method: :delete, data: {confirm: "コメントを削除しますか？", cancel: "キャンセル", commit: "削除する", title: "削除の確認"} %></span>
 	  </div>
 	</div>
 
