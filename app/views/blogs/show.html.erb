@@ -19,5 +19,6 @@
 </div>
 
 
-
-<%= render partial: 'comments/form', locals: { comment: @comment } %>
+<% if user_signed_in? %>
+	<%= render partial: 'comments/form', locals: { comment: @comment } %>
+<% end %>
