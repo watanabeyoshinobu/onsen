@@ -23,7 +23,7 @@ $(function() {
 
   $(document).ready(function () {
     $("#theTarget").skippr({
-      transition : 'slide',
+      transition : 'fade',
       speed : 2000,
       easing : 'easeOutQuart',
       navType : 'bubble',
