@@ -19,4 +19,5 @@ Rails.application.routes.draw do
   get 'see' => 'blogs#see'
   get 'look' => 'blogs#look'
   get 'browse' => 'blogs#browse'
+  get 'mypage' => 'users#mypage'
 end

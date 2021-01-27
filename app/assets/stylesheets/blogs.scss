@@ -949,23 +949,23 @@ text-align: center;
 
 /*投稿詳細画面*/
 .b-card_box {
-  overflow: auto;
-  margin: 10px auto;
+
+  margin: auto;
   border-radius: 14px;
   border: 5px solid #e8e8e8;
 }
 
 .card {
- height: 400px;
- line-height: 60px;
+ height: auto;
+ line-height: 50px;
 }
 .card-header {
   padding: 7px;
   background-color: #87CEFA;
 }
 
-
 .card-footer {
+  text-align: right;
   margin: 0 auto;
   background-color: #E0FFFF;
 }

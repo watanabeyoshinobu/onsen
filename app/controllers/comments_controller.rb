@@ -1,9 +1,9 @@
 class CommentsController < ApplicationController
 
 	def create
-	    @comment = Comment.new(comment_params)
-    	@comment.user_id = current_user.id
-		if @comment.save
+	    comment = Comment.new(comment_params)
+    	comment.user_id = current_user.id
+		if comment.save
 		    flash[:notice] = 'コメントを投稿しました！'
 		    redirect_back(fallback_location: 'blog[:id]')
 
@@ -16,8 +16,8 @@ class CommentsController < ApplicationController
 	end
 
 	def destroy
-		@comment = Comment.find(params[:id])
-		@comment.delete
+		comment = Comment.find(params[:id])
+		comment.delete
 		redirect_to comment.blog, flash: { notice: 'コメントが削除されました' }
 	end
 
