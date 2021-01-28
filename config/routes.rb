@@ -18,6 +18,10 @@ Rails.application.routes.draw do
   get 'top' => 'homes#top'
   get 'see' => 'blogs#see'
   get 'look' => 'blogs#look'
+  get 'saw' => 'blogs#saw'
+  get 'watch' => 'blogs#watch'
+  get 'seeing' => 'blogs#seeing'
+  get 'looking' => 'blogs#looking'
   get 'browse' => 'blogs#browse'
   get 'mypage' => 'users#mypage'
 end

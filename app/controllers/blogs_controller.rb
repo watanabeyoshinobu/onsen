@@ -50,6 +50,18 @@ class BlogsController < ApplicationController
   def look
   end
 
+  def saw
+  end
+
+  def watch
+  end
+
+  def seeing
+  end
+
+  def looking
+  end
+
   def browse
   end
 

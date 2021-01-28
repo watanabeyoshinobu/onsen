@@ -104,6 +104,7 @@ main {
 h2.heading{
  font-size: 36px;
  padding: 60px 0 0 30px;
+ margin-right: 50px;
  padding-bottom: 10px;
  color: red;
  margin-top: 0;
@@ -118,45 +119,10 @@ h2.heading::after{
 }
 p.heading-text{
  padding-top: 30px;
- padding-bottom: 40px;
  text-align: center;
  font-size: 16px;
  color: #000000;
 }
-
-.container1{
- width: 100%;
- height: 1000px;
- margin: 0 auto;
-}
-
-.portfolio-images{
- width: 100%;
- height: 1000px;
- padding: 30px 0 90px 0;
- margin: 0 auto;
-}
-.portfolio_image1 {
- margin-right: 40px;
- margin-bottom: 100px;
-}
-
-.portfolio_image2 {
- margin-top: 70px;
- margin-right: 40px;
-}
-
-.portfolio-title {
- color: blue;
-}
-.portfolio-title2 {
- margin-top: 70px;
- color: blue;
-}
-
-
-
-
 
 
 
@@ -170,25 +136,101 @@ header{
 .portfolio-set {
  display:block;
 }
+
+.container1{
+ width: 100%;
+ height: 1100px;
+ margin: 0 auto;
+ position: center;
+}
+
+.spa-images1 {
+ width: 1030px;
+ height: 350px;
+ margin: 0 auto;
+ margin-top: 50px;
+/* padding: 40px 40px 90px 30px;*/
+}
+
 .portfolio_image1{
  background-image: image-url('img/dsc_0102.jpg');
  height :250px;
  width: 300px;
  background-size: cover;
  background-position: center;
- margin: 0 auto;
+ margin:  0 40px 0 0;
  float: left;
 }
+
 .portfolio_image2{
  background-image: image-url('img/dsc_0111.jpg');
  height :250px;
  width: 300px;
  background-size: cover;
  background-position: center;
- margin: 0 auto;
+ margin: 0 40px 0 0;
  float: left;
 }
 
+.portfolio-title2 {
+ width: 300px;
+ color: blue;
+ float: left;
+}
+
+.portfolio_image3{
+ background-image: image-url('img/yokohamanoyu.jpg');
+ height :250px;
+ width: 300px;
+ margin-top: 0;
+ background-size: cover;
+ background-position: center;
+ margin: 0 40px 0 0;
+ float: left;
+}
+
+.spa-images2 {
+ width: 1030px;
+ height: 1000px;
+ margin: 0 auto;
+/* padding: 40px 40px 90px 30px;*/
+}
+
+.portfolio_image4{
+ background-image: image-url('img/manten.jpg');
+ height :250px;
+ width: 300px;
+ margin-top: 0;
+ background-size: cover;
+ background-position: center;
+ margin: 10px 40px 0 0;
+ float: left;
+}
+
+.portfolio_image5{
+ background-image: image-url('img/oyugiwa.jpg');
+ height :250px;
+ width: 300px;
+ margin-top: 0;
+ background-size: cover;
+ background-position: center;
+ margin: 10px 40px 0 0;
+ float: left;
+}
+
+.portfolio_image6{
+ background-image: image-url('img/atsugi.jpg');
+ height :250px;
+ width: 300px;
+ margin-top: 0;
+ background-size: cover;
+ background-position: center;
+ margin: 10px 40px 0 0;
+ float: left;
+}
+
+
+/*look画面*/
 
 .introduce-visual{
  width: 100%;
@@ -199,9 +241,6 @@ header{
  background-size: cover;
  background-position: center;
 }
-
-
-/*look画面*/
 
 .container4 {
  width: 100%;
