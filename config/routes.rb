@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   get 'users/show'
   get 'users/index'
+  get 'users/edit'
   get 'comments/create'
   get 'comments/destroy'
 
@@ -23,5 +24,4 @@ Rails.application.routes.draw do
   get 'seeing' => 'blogs#seeing'
   get 'looking' => 'blogs#looking'
   get 'browse' => 'blogs#browse'
-  get 'mypage' => 'users#mypage'
 end
