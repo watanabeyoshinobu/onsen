@@ -24,4 +24,5 @@ Rails.application.routes.draw do
   get 'seeing' => 'blogs#seeing'
   get 'looking' => 'blogs#looking'
   get 'browse' => 'blogs#browse'
+  get 'withdraw' => 'users#withdraw'
 end

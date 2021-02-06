@@ -12,4 +12,7 @@ class UsersController < ApplicationController
   def update
   end
 
+  def withdraw
+  end
+
 end
