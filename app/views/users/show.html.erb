@@ -1,26 +1,23 @@
 <%= render 'blogs/menu' %>
 
-<h1>マイページ</h1>
+<h1>~ My Page ~</h1>
 
 	<div class="row">
 		<div class="col-md-2"><%= button_to '編集', users_edit_path, class: 'btn btn-info btn-block', method: :get %></div>
-<!--  -->
+		<div class="col-md-2"><%= button_to '退会', withdraw_path, class: 'btn btn-danger btn-block', method: :get %></div>
 		<div class="col-md-8"></div>
 	</div>
 
 <div class ="mypage">
 <table class="table my_table">
 	<tr>
-		<th class="">No.</th><th class="my_text"><%= @user.id %></th>
-	</tr>
-	<tr>
 		<th class="panel my_panel">アカウント名</th><th class="my_text"><%= @user.name%></th>
 	</tr>
 	<tr>
-		<th class="panel my_panel">アドレス</th class="my_text"></th>
+		<th class="panel my_panel">アドレス</th><th class="my_text"><%= @user.email %></th>
 	</tr>
 	<tr>
-		<th class="panel my_panel">パスワード</th>
+		<th class="panel my_panel">パスワード</th><th class="my_text"><%= @user.password %></th>
 	</tr>
 </table>
 </div>

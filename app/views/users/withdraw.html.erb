@@ -1,0 +1,15 @@
+<h1>退会</h1>
+
+<div class="container">
+    <h2 class="text-center ">本当に退会しますか？</h2>
+  </div>
+<div class="container">
+    <h4 class="text-center">退会すると、会員登録情報や<br>
+  	サイトの閲覧ができなくなります。</h4>
+</div>
+<div class="container">
+<p class="text-center btn-none-withdraw"><%= link_to '戻る',users_show_path,class: "btn-sm btn-success text-center btn-block"%></p>
+</div>
+<div class="container">
+<p class="text-center btn-withdraw"><%= link_to '退会する',users_path(@user), method: :delete ,class: "btn-sm btn-danger text-center btn-block",data: { confirm: '削除しますか？' }%></p>
+</div>
