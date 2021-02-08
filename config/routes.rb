@@ -1,6 +1,24 @@
 Rails.application.routes.draw do
+
   devise_for :users
-  resources :blogs
+
+  resources :blogs do
+    collection do
+      get 'see' => 'blogs#see'
+      get 'look' => 'blogs#look'
+      get 'saw' => 'blogs#saw'
+      get 'watch' => 'blogs#watch'
+      get 'seeing' => 'blogs#seeing'
+      get 'looking' => 'blogs#looking'
+    end
+  end
+
+  resources :users do
+    collection do
+      get 'withdraw' => 'users#withdraw'
+    end
+  end
+
   resources :comments, only: [:create, :destroy]
 
   	devise_scope :users do
@@ -17,12 +35,5 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'homes#top'
   get 'top' => 'homes#top'
-  get 'see' => 'blogs#see'
-  get 'look' => 'blogs#look'
-  get 'saw' => 'blogs#saw'
-  get 'watch' => 'blogs#watch'
-  get 'seeing' => 'blogs#seeing'
-  get 'looking' => 'blogs#looking'
   get 'browse' => 'blogs#browse'
-  get 'withdraw' => 'users#withdraw'
 end
