@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   devise_for :users
 
+  get 'users/:id/profile', to: 'users#show', as: 'user_profile'
+
   resources :blogs do
     collection do
       get 'see' => 'blogs#see'

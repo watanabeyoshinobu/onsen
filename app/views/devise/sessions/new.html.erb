@@ -2,6 +2,12 @@
   <div class="box-inner">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <h2>ログイン</h2>
+
+    <div class="box-name">
+      <%= f.label :name, "アカウント名" %>
+      <%= f.text_field :name, autofocus: true, class: "form-control", placeholder: "最大10文字", maxlength: 10 %>
+    </div>
+
       <div class="box-email">
         <%= f. label :email,"Eメール" %><br />
         <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
