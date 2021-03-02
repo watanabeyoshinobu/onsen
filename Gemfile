@@ -82,6 +82,8 @@ gem 'annotate'
 
 gem 'sass-rails'
 
+gem 'carrierwave'
+
 group :production do
   gem 'mysql2'
 end
