@@ -38,4 +38,9 @@ class UsersController < ApplicationController
   def withdraw
   end
 
-end
+  private
+    def user_params
+      params.require(:user).permit(:name, :email, :password, :password_confirmation, :profile_image)
+    end
+
+  end
