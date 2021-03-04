@@ -9,9 +9,7 @@
 
         <div class = 'form-group'>
           <% if @user.profile_image? %>
-            <%= image_tag @user.image.url %>
-          <% else %>
-            <%= image_tag "/assets/no_image.jpg", :size => '100x100' %>
+            <%= image_tag @user.profile_image.url %>
           <% end %>
 
           <button type="button" class="btn btn-outline-secondary rounded-pill">
