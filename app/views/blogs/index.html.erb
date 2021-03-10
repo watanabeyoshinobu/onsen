@@ -25,7 +25,9 @@
       <% @blogs.each do |blog| %>
         <tr>
             <td><%= blog.title %></td>
+          <%= link_to users_index_path do %>
             <td><%= blog.user.name %></td>
+          <% end %>
             <td><%= blog.created_at.to_s(:datetime_base) %></td>
             <td><%= blog.updated_at.to_s(:datetime_base) %></td>
             <td><%= button_to 'コメント', blog, id: "detail-" + blog.id.to_s, class: 'btn btn-success btn-block', method: :get %></td>

@@ -11,3 +11,48 @@
 .mypage {
 font-family: 'Cherry Swash', cursive;
 }
+
+.user_formbox {
+  width: 100%;
+  margin: 15px auto;
+  border: 5px solid #e8e8e8;
+  padding: 25px;
+  border-radius: 14px;
+  background-color: #FFF0F5;
+}
+
+.left_profile {
+ background-position: left;
+}
+
+.right_profile {
+
+}
+
+.name_group {
+text-align: right;
+}
+.profile_name {
+ display: inline;
+ color: white;
+ background-color: #F08080;
+ border-radius: 14px;
+ margin-right: 50px;
+}
+.user_name {
+ display: inline;
+ color: #8B4513;
+}
+.name_group{ 
+  position: relative;
+  padding: 0.3em;
+}
+.name_group:after {
+  content: '';
+  position: absolute;
+  left: 1150px;
+  bottom: 0;
+  width: 250px;
+  height: 7px;
+  background: repeating-linear-gradient(-45deg, orange, orange 2px, white 2px, white 4px);
+}

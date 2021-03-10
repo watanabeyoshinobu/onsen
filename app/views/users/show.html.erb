@@ -1,25 +1,36 @@
 <%= render 'blogs/menu' %>
 <div class="mypage">
-	<h1>~ My Page ~</h1>
+	<h1>~ MY PAGE ~</h1>
 </div>
 
 
 	<div class="row">
-		<div class="col-md-8"></div>
+		<div class="col-md-9"></div>
 		<div class="col-md-2"><%= button_to 'アカウント編集', edit_user_registration_path, class: 'btn btn-info btn-block', method: :get %></div>
-		<div class="col-md-2"><%= button_to '退会', withdraw_users_path, class: 'btn btn-danger btn-block', method: :get %></div>
+		<div class="col-md-1"><%= button_to '退会', withdraw_users_path, class: 'btn btn-danger btn-block', method: :get %></div>
 	</div>
 
-<div class ="pageshow">
-<table class="table my_table">
-	<tr>
-		<th class="panel my_panel">アカウント名</th><th class="my_text"><%= @user.name%></th>
-	</tr>
-	<tr>
-		<th class="panel my_panel">アドレス</th><th class="my_text"><%= @user.email %></th>
-	</tr>
-	<tr>
-		<th class="panel my_panel">パスワード</th><th class="my_text">******</th>
-	</tr>
-</table>
-</div>
+	<div class="user_formbox">
+		<div class="left_profile">
+			<div class="user-face"><%= @user.profile_image.url %></div>
+		</div>
+
+		<div class="right_profile">
+			<div class="name_group">
+	            <h5 class="profile_name">アカウント名</h5>
+	            <h3 class="user_name"><%= @user.name%></h3>			
+			</div>
+
+			<div class="name_group">
+	            <h5 class="profile_name">アドレス</h5>
+	            <h3 class="user_name"><%= @user.email %></h3>			
+			</div>
+
+			<div class="name_group">
+	            <h5 class="profile_name">パスワード</h5>
+	            <h3 class="user_name">******</h3>			
+			</div>
+
+		</div>
+
+	</div>
