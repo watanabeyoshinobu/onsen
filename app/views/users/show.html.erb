@@ -12,7 +12,7 @@
 
 	<div class="user_formbox">
 		<div class="left_profile">
-			<div class="user-face"><%= @user.profile_image.url %></div>
+			<div class="user-face"><%= attachment_image_tag(user, :profile_image, :fill, 100, 100, fallback: "no_image.jpg") %><</div>
 		</div>
 
 		<div class="right_profile">

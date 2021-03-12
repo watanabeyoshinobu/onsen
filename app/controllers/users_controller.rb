@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def show
-  	@user = current_user
+    @user = User.where(user_id: current_user.id).where.not(image: nil)
   end
 
   def index
@@ -41,5 +41,5 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:name, :email, :password, :password_confirmation, :profile_image)
     end
-    
+
 end
