@@ -12,23 +12,23 @@
 
 	<div class="user_formbox">
 		<div class="left_profile">
-			<div class="user-face"><%= attachment_image_tag(user, :profile_image, :fill, 100, 100, fallback: "no_image.jpg") %><</div>
+			<div class="user-face"></div>
 		</div>
 
 		<div class="right_profile">
-			<div class="name_group">
+			<div class="profile_group">
 	            <h5 class="profile_name">アカウント名</h5>
-	            <h3 class="user_name"><%= @user.name%></h3>			
+	            <h3 class="user_name"><%= @user.name%></h3>
 			</div>
 
-			<div class="name_group">
-	            <h5 class="profile_name">アドレス</h5>
-	            <h3 class="user_name"><%= @user.email %></h3>			
+			<div class="profile_group">
+	            <h5 class="profile_email">アドレス</h5>
+	            <h3 class="user_email"><%= @user.email %></h3>
 			</div>
 
-			<div class="name_group">
-	            <h5 class="profile_name">パスワード</h5>
-	            <h3 class="user_name">******</h3>			
+			<div class="profile_group">
+	            <h5 class="profile_password">パスワード</h5>
+	            <h3 class="user_password">******</h3>
 			</div>
 
 		</div>

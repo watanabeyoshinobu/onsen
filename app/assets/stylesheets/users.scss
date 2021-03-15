@@ -15,11 +15,13 @@ font-family: 'Cherry Swash', cursive;
 .user_formbox {
   width: 800px;
   margin: 15px auto;
-  border: 5px solid #e8e8e8;
+  border: 10px solid #87CEFA;
+  border-style: ridge;
   padding: 25px;
-  border-radius: 14px;
   background-color: #FFF0F5;
 }
+
+
 
 .left_profile {
  background-position: left;
@@ -29,9 +31,26 @@ font-family: 'Cherry Swash', cursive;
 
 }
 
-.name_group {
+.profile_group {
 text-align: right;
 }
+
+.profile_group{
+  position: relative;
+  padding: 0.3em;
+  padding-top: 30px;
+  padding-bottom: 10px;
+}
+.profile_group:after {
+  content: '';
+  position: absolute;
+  left: 505px;
+  bottom: 0;
+  width: 250px;
+  height: 7px;
+  background: repeating-linear-gradient(-45deg, orange, orange 2px, white 2px, white 4px);
+}
+
 .profile_name {
  display: inline;
  color: white;
@@ -43,16 +62,27 @@ text-align: right;
  display: inline;
  color: #8B4513;
 }
-.name_group{ 
-  position: relative;
-  padding: 0.3em;
+
+.profile_email {
+ display: inline;
+ color: white;
+ background-color: #F08080;
+ border-radius: 14px;
+ margin-right: 50px;
 }
-.name_group:after {
-  content: '';
-  position: absolute;
-  left: 510px;
-  bottom: 0;
-  width: 250px;
-  height: 7px;
-  background: repeating-linear-gradient(-45deg, orange, orange 2px, white 2px, white 4px);
+.user_email {
+ display: inline;
+ color: #8B4513;
+}
+
+.profile_password {
+ display: inline;
+ color: white;
+ background-color: #F08080;
+ border-radius: 14px;
+ margin-right: 50px;
+}
+.user_password {
+ display: inline;
+ color: #8B4513;
 }
