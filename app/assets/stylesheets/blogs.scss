@@ -1031,12 +1031,19 @@ text-align: center;
 }
 
 
+.b-new__comment {
+ width: 320px;
+ border: 5px solid pink;
+ border-style: inset;
+ background: linear-gradient(to right, #FFC0CB, #FFFAFA);
+}
+
 .b-blog__formbox {
   margin: 55px auto;
   border: 5px solid #e8e8e8;
   padding: 25px;
-  border-radius: 14px;
-
+  border-radius: 10px;
+  background: linear-gradient(to right, #FFF0F5, #FFFAFA);
 }
 
 .b-title_Box {

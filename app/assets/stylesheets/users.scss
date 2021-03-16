@@ -9,7 +9,12 @@
 }
 
 .mypage {
+ text-align: center;
 font-family: 'Cherry Swash', cursive;
+border: 5px solid #87CEFA;
+border-style: inset;
+width: 250px;
+background: linear-gradient(to right, #FFC0CB, #FFFAFA);
 }
 
 .user_formbox {
@@ -18,7 +23,7 @@ font-family: 'Cherry Swash', cursive;
   border: 10px solid #87CEFA;
   border-style: ridge;
   padding: 25px;
-  background-color: #FFF0F5;
+  background: linear-gradient(to right, #FFC0CB, #FFFAFA);
 }
 
 
