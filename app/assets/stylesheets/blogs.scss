@@ -214,6 +214,7 @@ h2.heading::after{
  height: 2px;
 }
 p.heading-text{
+ font-family: 'Yu Mincho、游明朝', serif;
  text-align: center;
  color: #000000;
 }
@@ -324,6 +325,9 @@ header{
  float: left;
  border-radius: 20px;
  animation: fadeIn 4s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
+ overflow: hidden;
+ position: relative;
+ cursor: pointer;
 }
 @keyframes fadeIn {
   0% {
@@ -333,11 +337,42 @@ header{
     opacity: 1;
   }
 }
-
-.portfolio-title2 {
- width: 300px;
- color: blue;
- float: left;
+.portfolio_image2::before {
+  background-color: #fff;
+  content: "";
+  display: block;
+  position: absolute;
+  top: -100px;
+  left: 0;
+  width: 30px;
+  height: 100%;
+  opacity: 0;
+  transition: cubic-bezier(0.32, 0, 0.67, 0);
+  }
+.portfolio_image2:hover::before {
+  animation: kiran 1s linear 1;
+}
+@keyframes kiran {
+  0% {
+    transform: scale(2) rotate(45deg);
+    opacity: 0;
+  }
+  20% {
+    transform: scale(20) rotate(45deg);
+    opacity: 0.6;
+  }
+  40% {
+    transform: scale(30) rotate(45deg);
+    opacity: 0.4;
+  }
+  80% {
+    transform: scale(45) rotate(45deg);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(50) rotate(45deg);
+    opacity: 0;
+  }
 }
 
 .portfolio_image3{
@@ -351,6 +386,9 @@ header{
  float: left;
  border-radius: 20px;
  animation: fadeIn 4s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
+ overflow: hidden;
+ position: relative;
+ cursor: pointer;
 }
 @keyframes fadeIn {
   0% {
@@ -360,12 +398,48 @@ header{
     opacity: 1;
   }
 }
+.portfolio_image3::before {
+  background-color: #fff;
+  content: "";
+  display: block;
+  position: absolute;
+  top: -100px;
+  left: 0;
+  width: 30px;
+  height: 100%;
+  opacity: 0;
+  transition: cubic-bezier(0.32, 0, 0.67, 0);
+  }
+.portfolio_image3:hover::before {
+  animation: kiran 1s linear 1;
+}
+@keyframes kiran {
+  0% {
+    transform: scale(2) rotate(45deg);
+    opacity: 0;
+  }
+  20% {
+    transform: scale(20) rotate(45deg);
+    opacity: 0.6;
+  }
+  40% {
+    transform: scale(30) rotate(45deg);
+    opacity: 0.4;
+  }
+  80% {
+    transform: scale(45) rotate(45deg);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(50) rotate(45deg);
+    opacity: 0;
+  }
+}
 
 .spa-images2 {
  width: 1030px;
  height: 1000px;
  margin: 0 auto;
-/* padding: 40px 40px 90px 30px;*/
 }
 
 .portfolio_image4{
@@ -379,6 +453,9 @@ header{
  float: left;
  border-radius: 20px;
  animation: fadeIn 4s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
+ overflow: hidden;
+ position: relative;
+ cursor: pointer;
 }
 @keyframes fadeIn {
   0% {
@@ -386,6 +463,43 @@ header{
   }
   100% {
     opacity: 1;
+  }
+}
+.portfolio_image4::before {
+  background-color: #fff;
+  content: "";
+  display: block;
+  position: absolute;
+  top: -100px;
+  left: 0;
+  width: 30px;
+  height: 100%;
+  opacity: 0;
+  transition: cubic-bezier(0.32, 0, 0.67, 0);
+  }
+.portfolio_image4:hover::before {
+  animation: kiran 1s linear 1;
+}
+@keyframes kiran {
+  0% {
+    transform: scale(2) rotate(45deg);
+    opacity: 0;
+  }
+  20% {
+    transform: scale(20) rotate(45deg);
+    opacity: 0.6;
+  }
+  40% {
+    transform: scale(30) rotate(45deg);
+    opacity: 0.4;
+  }
+  80% {
+    transform: scale(45) rotate(45deg);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(50) rotate(45deg);
+    opacity: 0;
   }
 }
 
@@ -400,6 +514,9 @@ header{
  float: left;
  border-radius: 20px;
  animation: fadeIn 4s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
+ overflow: hidden;
+ position: relative;
+ cursor: pointer;
 }
 @keyframes fadeIn {
   0% {
@@ -407,6 +524,43 @@ header{
   }
   100% {
     opacity: 1;
+  }
+}
+.portfolio_image5::before {
+  background-color: #fff;
+  content: "";
+  display: block;
+  position: absolute;
+  top: -100px;
+  left: 0;
+  width: 30px;
+  height: 100%;
+  opacity: 0;
+  transition: cubic-bezier(0.32, 0, 0.67, 0);
+  }
+.portfolio_image5:hover::before {
+  animation: kiran 1s linear 1;
+}
+@keyframes kiran {
+  0% {
+    transform: scale(2) rotate(45deg);
+    opacity: 0;
+  }
+  20% {
+    transform: scale(20) rotate(45deg);
+    opacity: 0.6;
+  }
+  40% {
+    transform: scale(30) rotate(45deg);
+    opacity: 0.4;
+  }
+  80% {
+    transform: scale(45) rotate(45deg);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(50) rotate(45deg);
+    opacity: 0;
   }
 }
 
@@ -421,6 +575,9 @@ header{
  float: left;
  border-radius: 20px;
  animation: fadeIn 4s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
+ overflow: hidden;
+ position: relative;
+ cursor: pointer;
 }
 @keyframes fadeIn {
   0% {
@@ -430,7 +587,43 @@ header{
     opacity: 1;
   }
 }
-
+.portfolio_image6::before {
+  background-color: #fff;
+  content: "";
+  display: block;
+  position: absolute;
+  top: -100px;
+  left: 0;
+  width: 30px;
+  height: 100%;
+  opacity: 0;
+  transition: cubic-bezier(0.32, 0, 0.67, 0);
+  }
+.portfolio_image6:hover::before {
+  animation: kiran 1s linear 1;
+}
+@keyframes kiran {
+  0% {
+    transform: scale(2) rotate(45deg);
+    opacity: 0;
+  }
+  20% {
+    transform: scale(20) rotate(45deg);
+    opacity: 0.6;
+  }
+  40% {
+    transform: scale(30) rotate(45deg);
+    opacity: 0.4;
+  }
+  80% {
+    transform: scale(45) rotate(45deg);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(50) rotate(45deg);
+    opacity: 0;
+  }
+}
 
 
 #profile{
@@ -480,7 +673,7 @@ header{
   transition: cubic-bezier(0.32, 0, 0.67, 0);
   }
 .my-face:hover::before {
-  animation: kiran 2s linear 1;
+  animation: kiran 1s linear 1;
 }
 @keyframes kiran {
   0% {
@@ -516,10 +709,16 @@ header{
 }
 .discription-text{
  color: #000000;
+ font-family: 'Yu Mincho、游明朝', serif;
+}
+.admin-name{
+ font-family: "YHiragino Mincho ProN", "ヒラギノ明朝 ProN", "Hiragino", serif;
 }
 
 #sns {
- background-color: #FFF0F5;
+ color: #FFF0F5;
+ font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+
 }
 .container3{
  width: 100%;
@@ -532,6 +731,13 @@ header{
  width: 800px;
  padding: 30px 0 90px;
  margin: 0 auto;
+}
+.SNS {
+ color: #FFF0F5;
+ font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+ font-style: italic;
+ letter-spacing: .1em;
+ text-shadow: -3px 2px 0 #fff;
 }
 
 .left-content{
@@ -1322,7 +1528,23 @@ text-align: center;
  color: #FAFAFA;
  background-image: image-url('img/yokohamanoyu.jpg');
  background-size: cover;
+ background-position: center;
+ animation: fadeup 2s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
 }
+@keyframes fadeup {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 .beginning3 {
  width: 100%;
@@ -1340,7 +1562,23 @@ text-align: center;
  color: #FAFAFA;
  background-image: image-url('img/manten.jpg');
  background-size: cover;
+ background-position: center;
+ animation: fadeup 2s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
 }
+@keyframes fadeup {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 .beginning4 {
  width: 100%;
@@ -1359,7 +1597,23 @@ text-align: center;
  color: #FAFAFA;
  background-image: image-url('img/oyugiwa.jpg');
  background-size: cover;
+ background-position: center;
+ animation: fadeup 2s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
 }
+@keyframes fadeup {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 .beginning5 {
  width: 100%;
@@ -1378,7 +1632,10 @@ text-align: center;
  color: #FAFAFA;
  background-image: image-url('img/atsugi.jpg');
  background-size: cover;
+ background-position: center;
+ animation: fadeup 2s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
 }
+
 
 .beginning6 {
  width: 100%;
@@ -1461,11 +1718,23 @@ text-align: center;
 
 
 .b-new__comment {
- width: 340px;
+ width: 380px;
+ text-align: center;
  font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
  border: 5px solid pink;
  border-style: inset;
  background: linear-gradient(to right, #FFC0CB, #FFFAFA);
+ animation: zoomIn 1s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
+}
+@keyframes zoomIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .b-blog__formbox {
@@ -1474,7 +1743,7 @@ text-align: center;
   padding: 25px;
   border-radius: 10px;
   background: linear-gradient(to right, #FFF0F5, #FFFAFA);
-  animation: zoomIn 0.8s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
+  animation: zoomIn 1s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
 }
 @keyframes zoomIn {
   0% {
@@ -1501,11 +1770,13 @@ text-align: center;
 }
 
 .b-index__comment {
- width: 240px;
+ font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+ width: 280px;
+ text-align: center;
  border: 5px solid pink;
  border-style: inset;
  background: linear-gradient(to right, #FFC0CB, #FFFAFA);
- animation: poyoyon3 2.5s infinite;
+ animation: poyoyon3 3s infinite;
  opacity: 1;
 }
 @keyframes poyoyon3 {
@@ -1536,11 +1807,34 @@ text-align: center;
 }
 
 .b-show__comment {
- width: 160px;
+ font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+ width: 240px;
+ text-align: center;
  border: 5px solid pink;
  border-style: inset;
  background: linear-gradient(to right, #FFC0CB, #FFFAFA);
- animation: zoomIn 2s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
+ animation: zoomIn 1s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
+}
+@keyframes zoomIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.b-edit__comment {
+ font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+ width: 180px;
+ letter-spacing: 5px;
+ text-align: center;
+ border: 5px solid pink;
+ border-style: inset;
+ background: linear-gradient(to right, #FFC0CB, #FFFAFA);
+ animation: zoomIn 1s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
 }
 @keyframes zoomIn {
   0% {
@@ -1559,7 +1853,7 @@ text-align: center;
   margin: auto;
   border-radius: 14px;
   border: 5px solid #e8e8e8;
-  animation: zoomIn 2s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
+  animation: zoomIn 1s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
 }
 @keyframes zoomIn {
   0% {
