@@ -869,11 +869,11 @@ header{
 .beginning {
  width: 100%;
  height: 450px;
- background-color: #E0FFFF;
+ background: linear-gradient(to right, #FFB6C1, #FFFAFA);
+ font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
 }
 
 .bv-title {
- font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
  color: red;
  text-align: center;
  padding-bottom: 20px;
@@ -895,14 +895,15 @@ header{
 
 .container6 {
  width: 100%;
- height: 5500px;
- background-color: #F5FFFA;
+ height: 5350px;
+ background: linear-gradient(to right, #FFE4E1, #FFFAFA);
+ font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
 }
 
 .introduce {
  color: red;
  text-align: center;
- padding-bottom: 40px;
+ padding-bottom: 60px;
 }
 
 .introduce-set{
@@ -914,13 +915,13 @@ header{
 .introduce-set1 {
  padding: 30px 0 90px 0;
  font-size: 16px;
- padding-top: 150px;
 }
 .forest-villa1 {
  color: blue;
  width: 50%;
  float: right;
- padding-right: 20px;
+ padding-left: 20px;
+ padding-bottom: 40px;
 }
 .introduce-image1 {
  width:300px;
@@ -933,8 +934,8 @@ header{
 .introduce-text1 {
  width: 50%;
  float: right;
+ margin-right: 100px;
 }
-
 
 .introduce-set2{
  padding: 30px 0 90px 0;
@@ -960,7 +961,7 @@ header{
 .introduce-text2 {
  width: 50%;
  float: right;
- margin-right: 20px;
+ margin-right: 100px;
 }
 
 
@@ -989,14 +990,12 @@ header{
 .introduce-text3 {
  width: 50%;
  float: right;
- margin-right: 20px;
+ margin-right: 100px;
 }
-
 
 .introduce-set4 {
 text-align: center;
 }
-
 .forest-villa4 {
  color: red;
  text-align: center;
@@ -1007,13 +1006,11 @@ text-align: center;
  padding-bottom:30px;
  text-align: center;
 }
-
 .hotspa-images {
  width: 950px;
  padding: 30px 0 90px 0;
  margin: 0 auto;
 }
-
 .introduce-image4 {
  width: 300px;
  height: 250px;
@@ -1076,8 +1073,6 @@ text-align: center;
 }
 
 
-
-
 .introduce-set5 {
  padding: 30px 0 120px 0;
  font-size: 16px;
@@ -1103,7 +1098,8 @@ text-align: center;
 .introduce-text5 {
  width: 50%;
  float: right;
- margin-right: 50px;
+ margin-right: 70px;
+
 }
 
 
@@ -1142,8 +1138,6 @@ text-align: center;
  color: blue;
  width: 50%;
  float: right;
- padding-top: 100px;
- padding-left: 20px;
 }
 .introduce-image12 {
  width: 300px;
@@ -1158,7 +1152,7 @@ text-align: center;
 .introduce-text6 {
  width: 50%;
  float: right;
- margin-right: 50px;
+ margin-right: 80px;
  padding-top: 50px;
  }
 
@@ -1166,7 +1160,7 @@ text-align: center;
 .introduce-set8 {
  padding: 30px 0 120px 0;
  font-size: 16px;
- margin-top: 100px;
+ margin-top: 40px;
  }
 
  .onsen-spa2 {
@@ -1187,6 +1181,7 @@ text-align: center;
  text-align: center;
  padding-right: 150px;
  padding-top: 100px;
+ color: blue;
 }
 .introduce-text7 {
  width: 50%;
@@ -1200,7 +1195,7 @@ text-align: center;
 
 
 .introduce-set9 {
- padding: 30px 0 120px 0;
+ padding: 30px 0 80px 0;
  font-size: 16px;
  }
  .introduce-image14 {
@@ -1215,7 +1210,8 @@ text-align: center;
 .introduce-title8 {
  text-align: center;
  padding-right: 150px;
- padding-top: 100px;
+ padding-top: 80px;
+ color: blue;
 }
 .introduce-text8 {
  width: 50%;
@@ -1227,7 +1223,7 @@ text-align: center;
 
 
 .introduce-set10 {
- padding: 30px 0 120px 0;
+ padding: 30px 0 80px 0;
  font-size: 16px;
  }
 .introduce-image15 {
@@ -1243,6 +1239,7 @@ text-align: center;
  text-align: center;
  padding-right: 50px;
  padding-top: 100px;
+ color: blue;
 }
 .introduce-text9 {
  width: 50%;
@@ -1254,13 +1251,13 @@ text-align: center;
 
 .container7 {
  width: 100%;
- height: 800px;
- background-color: #F0FFF0;
+ height: 850px;
+ background: linear-gradient(to left, #FFE4E1, #FFF0F5);
+ font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
 }
 .access {
  color: red;
  text-align: center;
-
 }
 
 .introduce-set12 {
@@ -1346,6 +1343,8 @@ text-align: center;
  width: 100%;
  height: 450px;
  background-color: #FFFACD;
+ font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+ background: linear-gradient(to right, #EEE8AA, #FFFFF0);
 }
 
 
@@ -1353,6 +1352,8 @@ text-align: center;
  width: 100%;
  height: 3800px;
  background-color: #FFF8DC;
+ font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+ background: linear-gradient(to right, #F5DEB3, #FFFFE0);
 }
 
 .introduce-set21 {
@@ -1365,6 +1366,7 @@ text-align: center;
  width: 50%;
  float: right;
  padding-right: 20px;
+ padding-bottom: 20px;
 }
 .introduce-image21 {
  width:300px;
@@ -1388,7 +1390,6 @@ text-align: center;
  float: right;
  padding-top: 40px;
  padding-bottom: 30px;
- padding-left: 20px;
 }
 .introduce-image22 {
  width: 300px;
@@ -1403,7 +1404,7 @@ text-align: center;
 .introduce-text22 {
  width: 50%;
  float: right;
- margin-right: 20px;
+ margin-right: 80px;
 }
 
 
@@ -1411,7 +1412,7 @@ text-align: center;
  padding: 30px 0 120px 0;
  font-size: 16px;
 }
-.forest-villa23 {
+.food-set23 {
  color: blue;
  width: 50%;
  float: right;
@@ -1425,14 +1426,14 @@ text-align: center;
  background-image: image-url('img/restaurant-menu.jpg');
  background-size: cover;
  margin-left: 250px;
- margin-top: 30px;
+ margin-top: 50px;
  float: left;
 
 }
 .introduce-text23 {
  width: 50%;
  float: right;
- margin-right: 20px;
+ margin-right: 80px;
 }
 
 
@@ -1464,7 +1465,7 @@ text-align: center;
 .introduce-text24 {
  width: 50%;
  float: right;
- margin-right: 50px;
+ margin-right: 100px;
  padding-top: 50px;
  }
 
@@ -1484,13 +1485,14 @@ text-align: center;
 }
 .introduce-title25 {
  text-align: center;
- padding-right: 150px;
+ padding-right: 180px;
  padding-top: 100px;
+ color: blue;
 }
 .introduce-text25 {
  width: 50%;
  float: right;
- margin-right: 50px;
+ margin-right: 100px;
  padding-top: 30px;
  }
 
@@ -1503,6 +1505,8 @@ text-align: center;
  width: 100%;
  height: 820px;
  background-color: #FFFFE0;
+ font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+ background: linear-gradient(to left, #EEE8AA, #FFFFF0);
 }
 
 .map2 {
@@ -1805,6 +1809,9 @@ text-align: center;
     transform: skew(0.3deg, 0.3deg);
   }
 }
+
+
+
 
 .b-show__comment {
  font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
