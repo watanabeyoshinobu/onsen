@@ -15,7 +15,21 @@
  border-style: inset;
  width: 250px;
  background: linear-gradient(to right, #FFCC66, #FFFF99);
+ animation: slide-skew 0.4s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
 }
+@keyframes slide-skew {
+ 0% {
+  transform: translate(180px, 30px);
+  opacity: 0;
+ }
+ 100% {
+  transform: translate(0,0);
+ }
+ 20%, 100% {
+  opacity: 1;
+ }
+}
+
 
 .user_formbox {
   width: 800px;
