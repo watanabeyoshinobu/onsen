@@ -18,7 +18,7 @@
 //= require_tree .
 
 
-
+// スライドショー 
 $(function() {
 
   $(document).ready(function () {
@@ -36,6 +36,7 @@ $(function() {
     });
   });
 
+// ハンバーガー
   $('#menu-trigger').on('click', function() {
     $(this).toggleClass('active')
     $('#sp-menu').fadeToggle();
@@ -47,9 +48,9 @@ $(function() {
     $('#sp-menu').fadeToggle();
   });
 
-
 });
 
+// 戻るボタン
 $(function() {
 
   $('#back a').on('click',function(){
@@ -60,4 +61,13 @@ $(function() {
   });
 
 });
+
+// 文字アニメーション別々に動かす
+$('.introduce-visual .line').children().addBack().contents().each(function(){
+  if (this.nodeType == 3) {
+   var $this = $(this);
+   $this.replaceWith($this.text().reprace(/(\S)/g, '<span class="letter">$&</span>'));
+  }
+});
+
 

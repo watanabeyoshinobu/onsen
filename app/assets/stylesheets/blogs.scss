@@ -868,32 +868,59 @@ header{
 .introduce-visual{
  width: 100%;
  height: 720px;
- text-align: cover;
- color: #FAFAFA;
+ margin: auto;
+ position: relative;
  background-image: image-url('img/dsc_0102.jpg');
  background-size: cover;
- background-position: center;
- animation: fadeup 2s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
-}
-@keyframes fadeup {
-  0% {
-    transform: translateY(30px);
-    opacity: 0;
-  }
-  80% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
-.container4 {
- width: 100%;
- height: 1200px;
- margin: 0 auto;
+.introduce-visual .mask {
+ position: absolute;
+ top: 0;
+ bottom: 0;
+ left: 0;
+ right: 0;
 }
+.introduce-visual .text {
+ font-size: 0;
+ line-height: 1;
+ position: absolute;
+ top: 85px;
+ left: 40px;
+ padding-top: 10px;
+ letter-spacing: 5px;
+ line-height: 150px;
+}
+.introduce-visual .line {
+ display: block;
+ font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+ font-size: 80px;
+ font-weight: bold;
+}
+.introduce-visual .line + .line {
+ margin-top: 15px;
+}
+.introduce-visual .letter {
+ display: inline-block;
+ padding-top: 5px;
+}
+.introduce-visual .large {
+ font-size: 100px;
+}
+.introduce-visual .mask.normal {
+ color: #00cce1;
+ -webkit-clip-path: polygon(0 0, 462px 0, 462px 660px, 0 660px);
+ clip-path: polygon(0 0, 462px 0, 462px 660px, 0 660px);
+}
+.introduce-visual .mask.burn {
+ color: #004156;
+ -webkit-clip-path: polygon(462px 0, 1062px 0, 1062px 660px, 462px 660px);
+ clip-path: polygon(462px 0, 1062px 0, 1062px 660px, 462px 660px);
+}
+.mask.burn {
+ mix-blend-mode: color-burn;
+}
+
 
 .beginning {
  width: 100%;
@@ -901,7 +928,6 @@ header{
  background: linear-gradient(to right, #FFB6C1, #FFFAFA);
  font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
 }
-
 .bv-title {
  color: red;
  text-align: center;
