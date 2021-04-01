@@ -18,7 +18,7 @@
 //= require_tree .
 
 
-// スライドショー 
+// スライドショー
 $(function() {
 
   $(document).ready(function () {
@@ -62,12 +62,46 @@ $(function() {
 
 });
 
-// 文字アニメーション別々に動かす
-$('.introduce-visual .line').children().addBack().contents().each(function(){
-  if (this.nodeType == 3) {
-   var $this = $(this);
-   $this.replaceWith($this.text().reprace(/(\S)/g, '<span class="letter">$&</span>'));
-  }
+
+$(function(){
+  $('.introduce-visual .line').children().addBack().contents().each(function(){
+    if (this.nodeType == 3) {
+      var $this = $(this);
+      $this.replaceWith($this.text().replace(/(\S)/g, '<span class="letter">$&</span>'));
+    }
+  });
+
+  $('.introduce-visual .letter').each(function () {
+    var letters = $(this).closest('.text').find('.letter');
+    var index = $(letters).index(this);
+    var time = index * 0.09;
+    $(this).css('animation-delay', time + 's');
+  });
+});
+
+$(window).on('load', function(){
+  $('.introduce-visual').addClass('is-visible');
+});
+
+
+$(function(){
+  $('.introduce-visual2 .line').children().addBack().contents().each(function(){
+    if (this.nodeType == 3) {
+      var $this = $(this);
+      $this.replaceWith($this.text().replace(/(\S)/g, '<span class="letter">$&</span>'));
+    }
+  });
+
+  $('.introduce-visual2 .letter').each(function () {
+    var letters = $(this).closest('.text').find('.letter');
+    var index = $(letters).index(this);
+    var time = index * 0.09;
+    $(this).css('animation-delay', time + 's');
+  });
+});
+
+$(window).on('load', function(){
+  $('.introduce-visual2').addClass('is-visible');
 });
 
 
