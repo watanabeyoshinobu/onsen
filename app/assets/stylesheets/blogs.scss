@@ -1699,8 +1699,70 @@ text-align: center;
     transform: translateY(0);
   }
 }
+.introduce-visual3 .mask {
+ position: absolute;
+ top: 0;
+ bottom: 0;
+ left: 0;
+ right: 0;
+}
+.introduce-visual3 .text {
+ font-size: 0;
+ line-height: 1;
+ position: absolute;
+ top: 85px;
+ left: 40px;
+ padding-top: 50px;
+}
+.introduce-visual3 .line {
+ display: block;
+ padding: 10px;
+ font-family: 'Hiragino Kaku Gothic Std',sans-serif;
+ font-size: 80px;
+ font-weight: bold;
+}
+.introduce-visual3 .line + .line {
+ margin-top: 15px;
+}
+.introduce-visual3 .letter {
+ display: inline-block;
+ padding-top: 5px;
+}
+.introduce-visual3 .mask.normal {
+ -webkit-clip-path: polygon(0 0, 1062px 0, 862px 1060px, 0 1160px);
+ clip-path: polygon(0 0, 862px 0, 1062px 1060px, 0 1160px);
+}
+.introduce-visual3 .mask.burn {
+ -webkit-clip-path: polygon(862px 0, 1662px 0, 1462px 1060px, 862px 1160px);
+ clip-path: polygon(862px 0, 1662px 0, 1462px 1060px, 862px 1160px);
+}
+.mask.burn {
+ mix-blend-mode: color-burn;
+}
+.introduce-visual3 .line,
+.introduce-visual3 .letter {
+ opacity: 0;
+}
 
-
+.introduce-visual3.is-visible .line {
+ opacity: 1;
+}
+.introduce-visual3.is-visible .letter {
+ color: #FFFFFF;
+ font-style: italic;
+ text-shadow: -3px 2px 0 #A9A9A9;
+ animation: slideIn .8s cubic-bezier(0,1.2,.13,1.5) forwards;
+}
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translate3d(-100px,0,0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0,0,0);
+  }
+}
 .beginning3 {
  width: 100%;
  height: 500px;
@@ -1709,9 +1771,7 @@ text-align: center;
 }
 
 
-
 /*watch画面*/
-
 .introduce-visual4 {
  width: 100%;
  height: 720px;
@@ -1734,6 +1794,71 @@ text-align: center;
     transform: translateY(0);
   }
 }
+.introduce-visual4 .mask {
+ position: absolute;
+ top: 0;
+ bottom: 0;
+ left: 0;
+ right: 0;
+}
+.introduce-visual4 .text {
+ font-size: 0;
+ line-height: 1;
+ position: absolute;
+ top: 85px;
+ left: 40px;
+ padding-top: 50px;
+}
+.introduce-visual4 .line {
+ display: block;
+ padding: 10px;
+ font-family: 'Hiragino Kaku Gothic Std',sans-serif;
+ font-size: 80px;
+ font-weight: bold;
+}
+.introduce-visual4 .line + .line {
+ margin-top: 15px;
+}
+.introduce-visual4 .letter {
+ display: inline-block;
+ padding-top: 5px;
+}
+.introduce-visual4 .mask.normal {
+ -webkit-clip-path: polygon(0 0, 862px 0, 862px 1060px, 0 1060px);
+ clip-path: polygon(0 0, 862px 0, 862px 1060px, 0 1060px);
+}
+.introduce-visual4 .mask.burn {
+ -webkit-clip-path: polygon(862px 0, 1462px 0, 1462px 1060px, 862px 1060px);
+ clip-path: polygon(862px 0, 1462px 0, 1462px 1060px, 862px 1060px);
+}
+.mask.burn {
+ mix-blend-mode: color-burn;
+}
+.introduce-visual4 .line,
+.introduce-visual4 .letter {
+ opacity: 0;
+}
+
+.introduce-visual4.is-visible .line {
+ opacity: 1;
+}
+.introduce-visual4.is-visible .letter {
+ color: #FFFFFF;
+ font-style: italic;
+ text-shadow: -3px 2px 0 #A9A9A9;
+ animation: slideIn .8s cubic-bezier(0,1.2,.13,1.5) forwards;
+}
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translate3d(-100px,0,0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0,0,0);
+  }
+}
+
 .beginning4 {
  width: 100%;
  height: 500px;
@@ -1768,6 +1893,71 @@ text-align: center;
     transform: translateY(0);
   }
 }
+.introduce-visual5 .mask {
+ position: absolute;
+ top: 0;
+ bottom: 0;
+ left: 0;
+ right: 0;
+}
+.introduce-visual5 .text {
+ font-size: 0;
+ line-height: 1;
+ position: absolute;
+ top: 85px;
+ left: 40px;
+ padding-top: 50px;
+}
+.introduce-visual5 .line {
+ display: block;
+ padding: 10px;
+ font-family: 'Hiragino Kaku Gothic Std',sans-serif;
+ font-size: 80px;
+ font-weight: bold;
+}
+.introduce-visual5 .line + .line {
+ margin-top: 15px;
+}
+.introduce-visual5 .letter {
+ display: inline-block;
+ padding-top: 5px;
+}
+.introduce-visual5 .mask.normal {
+ -webkit-clip-path: polygon(0 0, 862px 0, 862px 1060px, 0 1060px);
+ clip-path: polygon(0 0, 862px 0, 862px 1060px, 0 1060px);
+}
+.introduce-visual5 .mask.burn {
+ -webkit-clip-path: polygon(862px 0, 1462px 0, 1462px 1060px, 862px 1060px);
+ clip-path: polygon(862px 0, 1462px 0, 1462px 1060px, 862px 1060px);
+}
+.mask.burn {
+ mix-blend-mode: color-burn;
+}
+.introduce-visual5 .line,
+.introduce-visual5 .letter {
+ opacity: 0;
+}
+
+.introduce-visual5.is-visible .line {
+ opacity: 1;
+}
+.introduce-visual5.is-visible .letter {
+ color: #FFFFFF;
+ font-style: italic;
+ text-shadow: -3px 2px 0 #A9A9A9;
+ animation: slideIn .8s cubic-bezier(0,1.2,.13,1.5) forwards;
+}
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translate3d(-100px,0,0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0,0,0);
+  }
+}
+
 .beginning5 {
  width: 100%;
  height: 500px;
@@ -1775,11 +1965,7 @@ text-align: center;
  font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
 }
 
-
-
-
 /*looking画面*/
-
 .introduce-visual6 {
  width: 100%;
  height: 720px;
@@ -1802,6 +1988,71 @@ text-align: center;
     transform: translateY(0);
   }
 }
+.introduce-visual6 .mask {
+ position: absolute;
+ top: 0;
+ bottom: 0;
+ left: 0;
+ right: 0;
+}
+.introduce-visual6 .text {
+ font-size: 0;
+ line-height: 1;
+ position: absolute;
+ top: 85px;
+ left: 40px;
+ padding-top: 50px;
+}
+.introduce-visual6 .line {
+ display: block;
+ padding: 10px;
+ font-family: 'Hiragino Kaku Gothic Std',sans-serif;
+ font-size: 80px;
+ font-weight: bold;
+}
+.introduce-visual6 .line + .line {
+ margin-top: 15px;
+}
+.introduce-visual6 .letter {
+ display: inline-block;
+ padding-top: 5px;
+}
+.introduce-visual6 .mask.normal {
+ -webkit-clip-path: polygon(0 0, 862px 0, 862px 1060px, 0 1060px);
+ clip-path: polygon(0 0, 862px 0, 862px 1060px, 0 1060px);
+}
+.introduce-visual6 .mask.burn {
+ -webkit-clip-path: polygon(862px 0, 1462px 0, 1462px 1060px, 862px 1060px);
+ clip-path: polygon(862px 0, 1462px 0, 1462px 1060px, 862px 1060px);
+}
+.mask.burn {
+ mix-blend-mode: color-burn;
+}
+.introduce-visual6 .line,
+.introduce-visual6 .letter {
+ opacity: 0;
+}
+
+.introduce-visual6.is-visible .line {
+ opacity: 1;
+}
+.introduce-visual6.is-visible .letter {
+ color: #FFFFFF;
+ font-style: italic;
+ text-shadow: -3px 2px 0 #A9A9A9;
+ animation: slideIn .8s cubic-bezier(0,1.2,.13,1.5) forwards;
+}
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translate3d(-100px,0,0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0,0,0);
+  }
+}
+
 .beginning6 {
  width: 100%;
  height: 500px;
