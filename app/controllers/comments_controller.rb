@@ -6,12 +6,11 @@ class CommentsController < ApplicationController
 		if comment.save
 		    flash[:notice] = 'コメントを投稿しました！'
 		    redirect_back(fallback_location: 'blog[:id]')
-
 		else
 		    redirect_to :back, flash: {
-		    comment: comment,
+		    comment: @comment,
 		    error_messages: @comment.errors.full_messages
-		        }
+		    }
 	    end
 	end
 

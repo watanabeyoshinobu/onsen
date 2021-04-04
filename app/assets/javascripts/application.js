@@ -30,7 +30,7 @@ $(function() {
       childrenElementType : 'div',
       arrows : true,
       autoPlay : true,
-      autoPlayDuration : 4000,
+      autoPlayDuration : 5000,
       keyboardOnAlways : true,
       hidePrevious : false
     });
