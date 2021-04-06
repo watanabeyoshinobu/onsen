@@ -8,8 +8,8 @@ class CommentsController < ApplicationController
 		    redirect_back(fallback_location: 'blog[:id]')
 		else
 		    redirect_to :back, flash: {
-		    comment: @comment,
-		    error_messages: @comment.errors.full_messages
+		    comment: comment,
+		    error_messages: comment.errors.full_messages
 		    }
 	    end
 	end
