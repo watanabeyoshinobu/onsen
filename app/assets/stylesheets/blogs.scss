@@ -872,7 +872,7 @@ header{
 
 /*look画面*/
 /*文字アニメーション*/
-.introduce-visual{
+.onsen-visual{
  width: 100%;
  height: 720px;
  margin: auto;
@@ -894,14 +894,14 @@ header{
     transform: translateY(0);
   }
 }
-.introduce-visual .mask {
+.onsen-visual .mask {
  position: absolute;
  top: 0;
  bottom: 0;
  left: 0;
  right: 0;
 }
-.introduce-visual .text {
+.onsen-visual .text {
  font-size: 0;
  line-height: 1;
  position: absolute;
@@ -909,40 +909,40 @@ header{
  left: 40px;
  padding-top: 50px;
 }
-.introduce-visual .line {
+.onsen-visual .line {
  display: block;
  padding: 10px;
  font-family: 'Hiragino Kaku Gothic Std',sans-serif;
  font-size: 80px;
  font-weight: bold;
 }
-.introduce-visual .line + .line {
+.onsen-visual .line + .line {
  margin-top: 15px;
 }
-.introduce-visual .letter {
+.onsen-visual .letter {
  display: inline-block;
  padding-top: 5px;
 }
-.introduce-visual .mask.normal {
+.onsen-visual .mask.normal {
  -webkit-clip-path: polygon(0 0, 862px 0, 862px 1060px, 0 1060px);
  clip-path: polygon(0 0, 862px 0, 862px 1060px, 0 1060px);
 }
-.introduce-visual .mask.burn {
+.onsen-visual .mask.burn {
  -webkit-clip-path: polygon(862px 0, 1462px 0, 1462px 1060px, 862px 1060px);
  clip-path: polygon(862px 0, 1462px 0, 1462px 1060px, 862px 1060px);
 }
 .mask.burn {
  mix-blend-mode: color-burn;
 }
-.introduce-visual .line,
-.introduce-visual .letter {
+.onsen-visual .line,
+.onsen-visual .letter {
  opacity: 0;
 }
 
-.introduce-visual.is-visible .line {
+.onsen-visual.is-visible .line {
  opacity: 1;
 }
-.introduce-visual.is-visible .letter {
+.onsen-visual.is-visible .letter {
  color: #FFFFFF;
  font-style: italic;
  text-shadow: -3px 2px 0 #A9A9A9;
@@ -1408,7 +1408,7 @@ text-align: center;
 
 /*see画面*/
 
-.introduce-visual2 {
+.onsen-visual2 {
  width: 100%;
  height: 720px;
  text-align: cover;
@@ -1431,14 +1431,14 @@ text-align: center;
     transform: translateY(0);
   }
 }
-.introduce-visual2 .mask {
+.onsen-visual2 .mask {
  position: absolute;
  top: 0;
  bottom: 0;
  left: 0;
  right: 0;
 }
-.introduce-visual2 .text {
+.onsen-visual2 .text {
  font-size: 0;
  line-height: 1;
  position: absolute;
@@ -1446,40 +1446,40 @@ text-align: center;
  left: 40px;
  padding-top: 50px;
 }
-.introduce-visual2 .line {
+.onsen-visual2 .line {
  display: block;
  padding: 10px;
  font-family: 'Hiragino Kaku Gothic Std',sans-serif;
  font-size: 80px;
  font-weight: bold;
 }
-.introduce-visual2 .line + .line {
+.onsen-visual2 .line + .line {
  margin-top: 15px;
 }
-.introduce-visual2 .letter {
+.onsen-visual2 .letter {
  display: inline-block;
  padding-top: 5px;
 }
-.introduce-visual2 .mask.normal {
+.onsen-visual2 .mask.normal {
  -webkit-clip-path: polygon(0 0, 862px 0, 862px 1060px, 0 1060px);
  clip-path: polygon(0 0, 862px 0, 862px 1060px, 0 1060px);
 }
-.introduce-visual2 .mask.burn {
+.onsen-visual2 .mask.burn {
  -webkit-clip-path: polygon(862px 0, 1462px 0, 1462px 1060px, 862px 1060px);
  clip-path: polygon(862px 0, 1462px 0, 1462px 1060px, 862px 1060px);
 }
 .mask.burn {
  mix-blend-mode: color-burn;
 }
-.introduce-visual2 .line,
-.introduce-visual2 .letter {
+.onsen-visual2 .line,
+.onsen-visual2 .letter {
  opacity: 0;
 }
 
-.introduce-visual2.is-visible .line {
+.onsen-visual2.is-visible .line {
  opacity: 1;
 }
-.introduce-visual2.is-visible .letter {
+.onsen-visual2.is-visible .letter {
  color: #FFFFFF;
  font-style: italic;
  text-shadow: -3px 2px 0 #A9A9A9;
@@ -1684,11 +1684,10 @@ text-align: center;
 
 
 /*saw画面*/
-
-.introduce-visual3 {
+.onsen-visual3 {
  width: 100%;
  height: 720px;
- color: #FAFAFA;
+ text-align: cover;
  background-image: image-url('img/yokohamanoyu.jpg');
  background-size: cover;
  background-position: center;
@@ -1707,14 +1706,14 @@ text-align: center;
     transform: translateY(0);
   }
 }
-.introduce-visual3 .mask {
+.onsen-visual3 .mask {
  position: absolute;
  top: 0;
  bottom: 0;
  left: 0;
  right: 0;
 }
-.introduce-visual3 .text {
+.onsen-visual3 .text {
  font-size: 0;
  line-height: 1;
  position: absolute;
@@ -1722,40 +1721,40 @@ text-align: center;
  left: 40px;
  padding-top: 50px;
 }
-.introduce-visual3 .line {
+.onsen-visual3 .line {
  display: block;
  padding: 10px;
  font-family: 'Hiragino Kaku Gothic Std',sans-serif;
  font-size: 80px;
  font-weight: bold;
 }
-.introduce-visual3 .line + .line {
+.onsen-visual3 .line + .line {
  margin-top: 15px;
 }
-.introduce-visual3 .letter {
+.onsen-visual3 .letter {
  display: inline-block;
  padding-top: 5px;
 }
-.introduce-visual3 .mask.normal {
+.onsen-visual3 .mask.normal {
  -webkit-clip-path: polygon(0 0, 1062px 0, 862px 1060px, 0 1160px);
  clip-path: polygon(0 0, 862px 0, 1062px 1060px, 0 1160px);
 }
-.introduce-visual3 .mask.burn {
+.onsen-visual3 .mask.burn {
  -webkit-clip-path: polygon(862px 0, 1662px 0, 1462px 1060px, 862px 1160px);
  clip-path: polygon(862px 0, 1662px 0, 1462px 1060px, 862px 1160px);
 }
 .mask.burn {
  mix-blend-mode: color-burn;
 }
-.introduce-visual3 .line,
-.introduce-visual3 .letter {
+.onsen-visual3 .line,
+.onsen-visual3 .letter {
  opacity: 0;
 }
 
-.introduce-visual3.is-visible .line {
+.onsen-visual3.is-visible .line {
  opacity: 1;
 }
-.introduce-visual3.is-visible .letter {
+.onsen-visual3.is-visible .letter {
  color: #FFFFFF;
  font-style: italic;
  text-shadow: -3px 2px 0 #A9A9A9;
@@ -1774,13 +1773,13 @@ text-align: center;
 .beginning3 {
  width: 100%;
  height: 500px;
- background-color: #FFFACD;
+ background: linear-gradient(to right, #FFDEAD, #FDF5E6);
  font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
 }
 
 
 /*watch画面*/
-.introduce-visual4 {
+.onsen-visual4 {
  width: 100%;
  height: 720px;
  color: #FAFAFA;
@@ -1802,14 +1801,14 @@ text-align: center;
     transform: translateY(0);
   }
 }
-.introduce-visual4 .mask {
+.onsen-visual4 .mask {
  position: absolute;
  top: 0;
  bottom: 0;
  left: 0;
  right: 0;
 }
-.introduce-visual4 .text {
+.onsen-visual4 .text {
  font-size: 0;
  line-height: 1;
  position: absolute;
@@ -1817,40 +1816,40 @@ text-align: center;
  left: 40px;
  padding-top: 50px;
 }
-.introduce-visual4 .line {
+.onsen-visual4 .line {
  display: block;
  padding: 10px;
  font-family: 'Hiragino Kaku Gothic Std',sans-serif;
  font-size: 80px;
  font-weight: bold;
 }
-.introduce-visual4 .line + .line {
+.onsen-visual4 .line + .line {
  margin-top: 15px;
 }
-.introduce-visual4 .letter {
+.onsen-visual4 .letter {
  display: inline-block;
  padding-top: 5px;
 }
-.introduce-visual4 .mask.normal {
+.onsen-visual4 .mask.normal {
  -webkit-clip-path: polygon(0 0, 862px 0, 862px 1060px, 0 1060px);
  clip-path: polygon(0 0, 862px 0, 862px 1060px, 0 1060px);
 }
-.introduce-visual4 .mask.burn {
+.onsen-visual4 .mask.burn {
  -webkit-clip-path: polygon(862px 0, 1462px 0, 1462px 1060px, 862px 1060px);
  clip-path: polygon(862px 0, 1462px 0, 1462px 1060px, 862px 1060px);
 }
 .mask.burn {
  mix-blend-mode: color-burn;
 }
-.introduce-visual4 .line,
-.introduce-visual4 .letter {
+.onsen-visual4 .line,
+.onsen-visual4 .letter {
  opacity: 0;
 }
 
-.introduce-visual4.is-visible .line {
+.onsen-visual4.is-visible .line {
  opacity: 1;
 }
-.introduce-visual4.is-visible .letter {
+.onsen-visual4.is-visible .letter {
  color: #FFFFFF;
  font-style: italic;
  text-shadow: -3px 2px 0 #A9A9A9;
@@ -1879,7 +1878,7 @@ text-align: center;
 
 /*seeing画面*/
 
-.introduce-visual5 {
+.onsen-visual5 {
  width: 100%;
  height: 720px;
  color: #FAFAFA;
@@ -1901,14 +1900,14 @@ text-align: center;
     transform: translateY(0);
   }
 }
-.introduce-visual5 .mask {
+.onsen-visual5 .mask {
  position: absolute;
  top: 0;
  bottom: 0;
  left: 0;
  right: 0;
 }
-.introduce-visual5 .text {
+.onsen-visual5 .text {
  font-size: 0;
  line-height: 1;
  position: absolute;
@@ -1916,40 +1915,40 @@ text-align: center;
  left: 40px;
  padding-top: 50px;
 }
-.introduce-visual5 .line {
+.onsen-visual5 .line {
  display: block;
  padding: 10px;
  font-family: 'Hiragino Kaku Gothic Std',sans-serif;
  font-size: 80px;
  font-weight: bold;
 }
-.introduce-visual5 .line + .line {
+.onsen-visual5 .line + .line {
  margin-top: 15px;
 }
-.introduce-visual5 .letter {
+.onsen-visual5 .letter {
  display: inline-block;
  padding-top: 5px;
 }
-.introduce-visual5 .mask.normal {
+.onsen-visual5 .mask.normal {
  -webkit-clip-path: polygon(0 0, 862px 0, 862px 1060px, 0 1060px);
  clip-path: polygon(0 0, 862px 0, 862px 1060px, 0 1060px);
 }
-.introduce-visual5 .mask.burn {
+.onsen-visual5 .mask.burn {
  -webkit-clip-path: polygon(862px 0, 1462px 0, 1462px 1060px, 862px 1060px);
  clip-path: polygon(862px 0, 1462px 0, 1462px 1060px, 862px 1060px);
 }
 .mask.burn {
  mix-blend-mode: color-burn;
 }
-.introduce-visual5 .line,
-.introduce-visual5 .letter {
+.onsen-visual5 .line,
+.onsen-visual5 .letter {
  opacity: 0;
 }
 
-.introduce-visual5.is-visible .line {
+.onsen-visual5.is-visible .line {
  opacity: 1;
 }
-.introduce-visual5.is-visible .letter {
+.onsen-visual5.is-visible .letter {
  color: #FFFFFF;
  font-style: italic;
  text-shadow: -3px 2px 0 #A9A9A9;
@@ -1974,7 +1973,7 @@ text-align: center;
 }
 
 /*looking画面*/
-.introduce-visual6 {
+.onsen-visual6 {
  width: 100%;
  height: 720px;
  color: #FAFAFA;
@@ -1996,14 +1995,14 @@ text-align: center;
     transform: translateY(0);
   }
 }
-.introduce-visual6 .mask {
+.onsen-visual6 .mask {
  position: absolute;
  top: 0;
  bottom: 0;
  left: 0;
  right: 0;
 }
-.introduce-visual6 .text {
+.onsen-visual6 .text {
  font-size: 0;
  line-height: 1;
  position: absolute;
@@ -2011,40 +2010,40 @@ text-align: center;
  left: 40px;
  padding-top: 50px;
 }
-.introduce-visual6 .line {
+.onsen-visual6 .line {
  display: block;
  padding: 10px;
  font-family: 'Hiragino Kaku Gothic Std',sans-serif;
  font-size: 80px;
  font-weight: bold;
 }
-.introduce-visual6 .line + .line {
+.onsen-visual6 .line + .line {
  margin-top: 15px;
 }
-.introduce-visual6 .letter {
+.onsen-visual6 .letter {
  display: inline-block;
  padding-top: 5px;
 }
-.introduce-visual6 .mask.normal {
+.onsen-visual6 .mask.normal {
  -webkit-clip-path: polygon(0 0, 862px 0, 862px 1060px, 0 1060px);
  clip-path: polygon(0 0, 862px 0, 862px 1060px, 0 1060px);
 }
-.introduce-visual6 .mask.burn {
+.onsen-visual6 .mask.burn {
  -webkit-clip-path: polygon(862px 0, 1462px 0, 1462px 1060px, 862px 1060px);
  clip-path: polygon(862px 0, 1462px 0, 1462px 1060px, 862px 1060px);
 }
 .mask.burn {
  mix-blend-mode: color-burn;
 }
-.introduce-visual6 .line,
-.introduce-visual6 .letter {
+.onsen-visual6 .line,
+.onsen-visual6 .letter {
  opacity: 0;
 }
 
-.introduce-visual6.is-visible .line {
+.onsen-visual6.is-visible .line {
  opacity: 1;
 }
-.introduce-visual6.is-visible .letter {
+.onsen-visual6.is-visible .letter {
  color: #FFFFFF;
  font-style: italic;
  text-shadow: -3px 2px 0 #A9A9A9;

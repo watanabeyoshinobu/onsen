@@ -64,14 +64,14 @@ $(function() {
 
 // look画面
 $(function(){
-  $('.introduce-visual .line').children().addBack().contents().each(function(){
+  $('.onsen-visual .line').children().addBack().contents().each(function(){
     if (this.nodeType == 3) {
       var $this = $(this);
       $this.replaceWith($this.text().replace(/(\S)/g, '<span class="letter">$&</span>'));
     }
   });
 
-  $('.introduce-visual .letter').each(function () {
+  $('.onsen-visual .letter').each(function () {
     var letters = $(this).closest('.text').find('.letter');
     var index = $(letters).index(this);
     var time = index * 0.09;
@@ -80,19 +80,20 @@ $(function(){
 });
 
 $(window).on('load', function(){
-  $('.introduce-visual').addClass('is-visible');
+  $('.onsen-visual').addClass('is-visible');
 });
+
 
 // see画面
 $(function(){
-  $('.introduce-visual2 .line').children().addBack().contents().each(function(){
+  $('.onsen-visual2 .line').children().addBack().contents().each(function(){
     if (this.nodeType == 3) {
       var $this = $(this);
       $this.replaceWith($this.text().replace(/(\S)/g, '<span class="letter">$&</span>'));
     }
   });
 
-  $('.introduce-visual2 .letter').each(function () {
+  $('.onsen-visual2 .letter').each(function () {
     var letters = $(this).closest('.text').find('.letter');
     var index = $(letters).index(this);
     var time = index * 0.09;
@@ -101,19 +102,20 @@ $(function(){
 });
 
 $(window).on('load', function(){
-  $('.introduce-visual2').addClass('is-visible');
+  $('.onsen-visual2').addClass('is-visible');
 });
+
 
 // saw画面
 $(function(){
-  $('.introduce-visual3 .line').children().addBack().contents().each(function(){
+  $('.onsen-visual3 .line').children().addBack().contents().each(function(){
     if (this.nodeType == 3) {
       var $this = $(this);
       $this.replaceWith($this.text().replace(/(\S)/g, '<span class="letter">$&</span>'));
     }
   });
 
-  $('.introduce-visual3 .letter').each(function () {
+  $('.onsen-visual3 .letter').each(function () {
     var letters = $(this).closest('.text').find('.letter');
     var index = $(letters).index(this);
     var time = index * 0.09;
@@ -122,19 +124,20 @@ $(function(){
 });
 
 $(window).on('load', function(){
-  $('.introduce-visual3').addClass('is-visible');
+  $('.onsen-visual3').addClass('is-visible');
 });
+
 
 // watch画面
 $(function(){
-  $('.introduce-visual4 .line').children().addBack().contents().each(function(){
+  $('.onsen-visual4 .line').children().addBack().contents().each(function(){
     if (this.nodeType == 3) {
       var $this = $(this);
       $this.replaceWith($this.text().replace(/(\S)/g, '<span class="letter">$&</span>'));
     }
   });
 
-  $('.introduce-visual4 .letter').each(function () {
+  $('.onsen-visual4 .letter').each(function () {
     var letters = $(this).closest('.text').find('.letter');
     var index = $(letters).index(this);
     var time = index * 0.09;
@@ -143,19 +146,20 @@ $(function(){
 });
 
 $(window).on('load', function(){
-  $('.introduce-visual4').addClass('is-visible');
+  $('.onsen-visual4').addClass('is-visible');
 });
+
 
 // seeing画面
 $(function(){
-  $('.introduce-visual5 .line').children().addBack().contents().each(function(){
+  $('.onsen-visual5 .line').children().addBack().contents().each(function(){
     if (this.nodeType == 3) {
       var $this = $(this);
       $this.replaceWith($this.text().replace(/(\S)/g, '<span class="letter">$&</span>'));
     }
   });
 
-  $('.introduce-visual5 .letter').each(function () {
+  $('.onsen-visual5 .letter').each(function () {
     var letters = $(this).closest('.text').find('.letter');
     var index = $(letters).index(this);
     var time = index * 0.09;
@@ -164,19 +168,20 @@ $(function(){
 });
 
 $(window).on('load', function(){
-  $('.introduce-visual5').addClass('is-visible');
+  $('.onsen-visual5').addClass('is-visible');
 });
+
 
 // looking画面
 $(function(){
-  $('.introduce-visual6 .line').children().addBack().contents().each(function(){
+  $('.onsen-visual6 .line').children().addBack().contents().each(function(){
     if (this.nodeType == 3) {
       var $this = $(this);
       $this.replaceWith($this.text().replace(/(\S)/g, '<span class="letter">$&</span>'));
     }
   });
 
-  $('.introduce-visual6 .letter').each(function () {
+  $('.onsen-visual6 .letter').each(function () {
     var letters = $(this).closest('.text').find('.letter');
     var index = $(letters).index(this);
     var time = index * 0.09;
@@ -185,5 +190,5 @@ $(function(){
 });
 
 $(window).on('load', function(){
-  $('.introduce-visual6').addClass('is-visible');
+  $('.onsen-visual6').addClass('is-visible');
 });
