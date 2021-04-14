@@ -121,7 +121,7 @@
  position: relative;
  background-size: cover;
  font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
- background: linear-gradient(to left, #FFFFE0, #EEE8AA);
+ background: linear-gradient(to right, #FFF0F5, #fffcdc);
 }
 
 .yunokokoti {
@@ -475,7 +475,7 @@ header{
 
 .spa-images2 {
  width: 1030px;
- height: 1000px;
+ height: 350px;
  margin: 0 auto;
 }
 
@@ -661,6 +661,196 @@ header{
     opacity: 0;
   }
 }
+/*
+.spa-images3 {
+ width: 1030px;
+ height: 350px;
+ margin: 0 auto;
+ margin-top: 50px;
+}
+.portfolio_image7{
+ background-image: image-url('img/manten.jpg');
+ height :250px;
+ width: 300px;
+ margin-top: 0;
+ background-size: cover;
+ background-position: center;
+ margin: 10px 40px 0 0;
+ float: left;
+ border-radius: 20px;
+ animation: fadeIn 4s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
+ overflow: hidden;
+ position: relative;
+ cursor: pointer;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.portfolio_image7::before {
+  background-color: #fff;
+  content: "";
+  display: block;
+  position: absolute;
+  top: -100px;
+  left: 0;
+  width: 30px;
+  height: 100%;
+  opacity: 0;
+  transition: cubic-bezier(0.32, 0, 0.67, 0);
+  }
+.portfolio_image7:hover::before {
+  animation: kiran 1s linear 1;
+}
+@keyframes kiran {
+  0% {
+    transform: scale(2) rotate(45deg);
+    opacity: 0;
+  }
+  20% {
+    transform: scale(20) rotate(45deg);
+    opacity: 0.6;
+  }
+  40% {
+    transform: scale(30) rotate(45deg);
+    opacity: 0.4;
+  }
+  80% {
+    transform: scale(45) rotate(45deg);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(50) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+.portfolio_image8{
+ background-image: image-url('img/oyugiwa.jpg');
+ height :250px;
+ width: 300px;
+ margin-top: 0;
+ background-size: cover;
+ background-position: center;
+ margin: 10px 40px 0 0;
+ float: left;
+ border-radius: 20px;
+ animation: fadeIn 4s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
+ overflow: hidden;
+ position: relative;
+ cursor: pointer;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.portfolio_image8::before {
+  background-color: #fff;
+  content: "";
+  display: block;
+  position: absolute;
+  top: -100px;
+  left: 0;
+  width: 30px;
+  height: 100%;
+  opacity: 0;
+  transition: cubic-bezier(0.32, 0, 0.67, 0);
+  }
+.portfolio_image8:hover::before {
+  animation: kiran 1s linear 1;
+}
+@keyframes kiran {
+  0% {
+    transform: scale(2) rotate(45deg);
+    opacity: 0;
+  }
+  20% {
+    transform: scale(20) rotate(45deg);
+    opacity: 0.6;
+  }
+  40% {
+    transform: scale(30) rotate(45deg);
+    opacity: 0.4;
+  }
+  80% {
+    transform: scale(45) rotate(45deg);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(50) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+.portfolio_image9{
+ background-image: image-url('img/atsugi.jpg');
+ height :250px;
+ width: 300px;
+ margin-top: 0;
+ background-size: cover;
+ background-position: center;
+ margin: 10px 40px 0 0;
+ float: left;
+ border-radius: 20px;
+ animation: fadeIn 4s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
+ overflow: hidden;
+ position: relative;
+ cursor: pointer;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.portfolio_image9::before {
+  background-color: #fff;
+  content: "";
+  display: block;
+  position: absolute;
+  top: -100px;
+  left: 0;
+  width: 30px;
+  height: 100%;
+  opacity: 0;
+  transition: cubic-bezier(0.32, 0, 0.67, 0);
+  }
+.portfolio_image9:hover::before {
+  animation: kiran 1s linear 1;
+}
+@keyframes kiran {
+  0% {
+    transform: scale(2) rotate(45deg);
+    opacity: 0;
+  }
+  20% {
+    transform: scale(20) rotate(45deg);
+    opacity: 0.6;
+  }
+  40% {
+    transform: scale(30) rotate(45deg);
+    opacity: 0.4;
+  }
+  80% {
+    transform: scale(45) rotate(45deg);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(50) rotate(45deg);
+    opacity: 0;
+  }
+}
+*/
 
 
 #profile{
@@ -1193,9 +1383,6 @@ text-align: center;
  margin-right: 70px;
 
 }
-
-
-
 .introduce-set6 {
  padding: 30px 0 120px 0;
  font-size: 16px;
@@ -1499,7 +1686,6 @@ text-align: center;
 .beginning2 {
  width: 100%;
  height: 450px;
- background-color: #FFFACD;
  font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
  background: linear-gradient(to right, #EEE8AA, #FFFFF0);
 }
@@ -1777,6 +1963,71 @@ text-align: center;
  font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
 }
 
+.container3-1 {
+ width: 100%;
+ height: 850px;
+ background: linear-gradient(to left, #FFDEAD, #FDF5E6);
+ font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+}
+.access3 {
+ color: red;
+ text-align: center;
+}
+.introduce-set3-2 {
+ background-color: #FFC0CB;
+ padding-bottom: 20px;
+ width: 500px;
+}
+.address3 {
+ text-align: center;
+ padding-bottom: 20px;
+ color: red;
+}
+.address-text3 {
+ text-align: center;
+ font-size: 24px;
+}
+.introduce-price3 {
+ width: 100%;
+}
+.price3 {
+ width: 30%;
+ margin-bottom: 50px;
+ margin-top: 40px;
+ color: red;
+}
+.introduce-set3-4 {
+ margin-top: 20px;
+ padding-bottom: 20px;
+ width: 500px;
+ color: red;
+}
+
+.introduce-set3-5 {
+ text-align: left;
+ margin-left: 20px;
+ color: red;
+}
+.kansou3 {
+ padding-top: 30px;
+}
+
+.map3 {
+ text-align: right;
+ margin-right: 300px;
+ margin-top: -600px;
+ color: red;
+}
+
+.map-image3 {
+ margin-top: 30px;
+ margin-left: 800px;
+ background-size: cover;
+ width: 500px;
+ height: 500px;
+ background-image: image-url('img/map_manyou.jpg');
+}
+
 
 /*watch画面*/
 .onsen-visual4 {
@@ -1869,15 +2120,78 @@ text-align: center;
 .beginning4 {
  width: 100%;
  height: 500px;
- background-color: #FFFACD;
+ background: linear-gradient(to right, #FFB6C1, #FFFAFA);
  font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+}
+
+.container4-2 {
+ width: 100%;
+ height: 850px;
+ background: linear-gradient(to left, #FFE4E1, #FFFAFA);
+ font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+}
+.access4 {
+ color: red;
+ text-align: center;
+}
+.introduce-set4-2 {
+ background-color: #FFC0CB;
+ padding-bottom: 20px;
+ width: 520px;
+}
+.address4 {
+ text-align: center;
+ padding-bottom: 20px;
+ color: red;
+}
+.address-text4 {
+ text-align: center;
+ font-size: 24px;
+}
+.introduce-price4 {
+ width: 100%;
+}
+.price4 {
+ width: 30%;
+ margin-bottom: 50px;
+ margin-top: 40px;
+ color: red;
+}
+.introduce-set4-4 {
+ margin-top: 20px;
+ padding-bottom: 20px;
+ width: 500px;
+ color: red;
+}
+
+.introduce-set4-5 {
+ text-align: left;
+ margin-left: 20px;
+ color: red;
+}
+.kansou4 {
+ padding-top: 30px;
+}
+
+.map4 {
+ text-align: right;
+ margin-right: 250px;
+ margin-top: -650px;
+ color: red;
+}
+
+.map-image4 {
+ margin-top: 30px;
+ margin-left: 700px;
+ background-size: cover;
+ width: 700px;
+ height: 500px;
+ background-image: image-url('img/map_manten.jpg');
 }
 
 
 
-
 /*seeing画面*/
-
 .onsen-visual5 {
  width: 100%;
  height: 720px;
@@ -1964,13 +2278,77 @@ text-align: center;
     transform: translate3d(0,0,0);
   }
 }
-
 .beginning5 {
  width: 100%;
  height: 500px;
- background-color: #FFFACD;
+ background: linear-gradient(to right, #EEE8AA, #FFFFF0);
  font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
 }
+.container5-2 {
+ width: 100%;
+ height: 850px;
+ background: linear-gradient(to left, #EEE8AA, #FFFFF0);
+ font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+}
+.access5 {
+ color: red;
+ text-align: center;
+}
+.introduce-set5-2 {
+ background-color: #FFC0CB;
+ padding-bottom: 20px;
+ width: 500px;
+}
+.address5 {
+ text-align: center;
+ padding-bottom: 20px;
+ color: red;
+}
+.address-text5 {
+ text-align: center;
+ font-size: 24px;
+}
+.introduce-price5 {
+ width: 100%;
+}
+.price5 {
+ width: 30%;
+ margin-bottom: 50px;
+ margin-top: 40px;
+ color: red;
+}
+.introduce-set5-4 {
+ margin-top: 20px;
+ padding-bottom: 20px;
+ width: 500px;
+ color: red;
+}
+
+.introduce-set5-5 {
+ text-align: left;
+ margin-left: 20px;
+ color: red;
+}
+.kansou5 {
+ padding-top: 30px;
+}
+
+.map5 {
+ text-align: right;
+ margin-right: 250px;
+ margin-top: -700px;
+ color: red;
+}
+
+.map-image5 {
+ margin-top: 30px;
+ margin-left: 700px;
+ background-size: cover;
+ width: 700px;
+ height: 500px;
+ background-image: image-url('img/map_oyugiwa.jpg');
+}
+
 
 /*looking画面*/
 .onsen-visual6 {
@@ -2063,11 +2441,78 @@ text-align: center;
 .beginning6 {
  width: 100%;
  height: 500px;
- background-color: #FFFACD;
+ background: linear-gradient(to right, #FFDEAD, #FDF5E6);
  font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
 }
 
+.container6-2 {
+ width: 100%;
+ height: 900px;
+ background: linear-gradient(to left, #FFDEAD, #FDF5E6);
+ font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+}
+.access6 {
+ color: red;
+ text-align: center;
+}
+.introduce-set6-2 {
+ background-color: #FFC0CB;
+ padding-bottom: 20px;
+ width: 500px;
+}
+.address6 {
+ text-align: center;
+ padding-bottom: 20px;
+ color: red;
+}
+.address-text6 {
+ text-align: center;
+ font-size: 24px;
+}
+.introduce-price6 {
+ width: 100%;
+}
+.price6 {
+ width: 30%;
+ margin-bottom: 50px;
+ margin-top: 40px;
+ color: red;
+}
+.introduce-set6-4 {
+ margin-top: 20px;
+ padding-bottom: 20px;
+ width: 500px;
+ color: red;
+}
 
+.introduce-set6-5 {
+ text-align: left;
+ margin-left: 20px;
+ color: red;
+}
+.kansou6 {
+ padding-top: 30px;
+}
+
+.map6 {
+ text-align: right;
+ margin-right: 250px;
+ margin-top: -700px;
+ color: red;
+}
+.map-text6 {
+ text-align: right;
+ margin-right: 170px;
+}
+
+.map-image6 {
+ margin-top: 30px;
+ margin-left: 700px;
+ background-size: cover;
+ width: 700px;
+ height: 600px;
+ background-image: image-url('img/map_yukaraku.jpg');
+}
 
 
 /*devise周辺*/
