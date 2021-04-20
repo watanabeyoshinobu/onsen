@@ -669,7 +669,7 @@ header{
  margin-top: 10px;
 }
 .portfolio_image7{
- background-image: image-url('img/manten.jpg');
+ background-image: image-url('img/zama.jpg');
  height :250px;
  width: 300px;
  margin-top: 0;
@@ -730,7 +730,7 @@ header{
 }
 
 .portfolio_image8{
- background-image: image-url('img/oyugiwa.jpg');
+ background-image: image-url('img/kawasaki.jpg');
  height :250px;
  width: 300px;
  margin-top: 0;
@@ -791,7 +791,7 @@ header{
 }
 
 .portfolio_image9{
- background-image: image-url('img/atsugi.jpg');
+ background-image: image-url('img/serigaya.jpg');
  height :250px;
  width: 300px;
  margin-top: 0;
@@ -1152,7 +1152,7 @@ header{
 .beginning {
  width: 100%;
  height: 450px;
- background: linear-gradient(to right, #FFB6C1, #FFFAFA);
+ background: linear-gradient(to right, #f4b3c2, #FFFAFA);
  font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
 }
 .bv-title {
@@ -1177,8 +1177,8 @@ header{
 
 .container6 {
  width: 100%;
- height: 5350px;
- background: linear-gradient(to right, #FFE4E1, #FFFAFA);
+ height: 5200px;
+ background: linear-gradient(to right, #f5b1aa, #FFFAFA);
  font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
 }
 
@@ -1439,13 +1439,13 @@ text-align: center;
 .introduce-set8 {
  padding: 30px 0 120px 0;
  font-size: 16px;
- margin-top: 40px;
+ margin-top: 5px;
  }
 
  .onsen-spa2 {
  color: red;
  text-align: center;
- padding-top: 40px;
+ padding-top: 20px;
 }
 .introduce-image13 {
  width: 300px;
@@ -1530,8 +1530,8 @@ text-align: center;
 
 .container7 {
  width: 100%;
- height: 850px;
- background: linear-gradient(to left, #FFE4E1, #FFFAFA);
+ height: 870px;
+ background: linear-gradient(to right, #FFE4E1, #FFFAFA);
  font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
 }
 .access {
@@ -2123,12 +2123,45 @@ text-align: center;
 
 .beginning4 {
  width: 100%;
- height: 500px;
+ height: 510px;
  background: linear-gradient(to right, #FFB6C1, #FFFAFA);
  font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
 }
 
 .container4-2 {
+ width: 100%;
+ height: 600px;
+ text-align: center;
+ background: linear-gradient(to right, #FFE4E1, #FFFAFA);
+ font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+}
+.introduce4 {
+ margin: 0 auto;
+ color: red;
+ padding-top: 50px;
+ padding-bottom: 10px;
+ border-bottom: 1px solid red;
+ width: 400px;
+}
+.introduce-image4-1 {
+ width: 300px;
+ height: 300px;
+ background-image: image-url('img/manten-yu2.jpeg');
+ background-size: cover;
+ margin-top: 30px;
+ margin-left: 150px;
+ margin-right: 30px;
+ float: left;
+}
+.introduce-text4-1 {
+ padding-top: 60px;
+ padding-left: 30px;
+ text-align: justify;
+　text-justify: inter-ideograph;
+}
+
+
+.container4-4 {
  width: 100%;
  height: 850px;
  background: linear-gradient(to left, #FFE4E1, #FFFAFA);
@@ -2455,7 +2488,7 @@ text-align: center;
 
 .container6-2 {
  width: 100%;
- height: 900px;
+ height: 950px;
  background: linear-gradient(to left, #FFDEAD, #FDF5E6);
  font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
 }
@@ -2514,14 +2547,295 @@ text-align: center;
  text-align: right;
  margin-right: 170px;
 }
-
 .map-image6 {
  margin-top: 30px;
  margin-left: 700px;
  background-size: cover;
  width: 700px;
- height: 600px;
+ height: 700px;
  background-image: image-url('img/map_yukaraku.jpg');
+}
+
+/*check画面*/
+.onsen-visual7 {
+ width: 100%;
+ height: 720px;
+ background-image: image-url('img/zama.jpg');
+ background-size: cover;
+ background-position: center;
+ animation: fadeup 2s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
+}
+@keyframes fadeup {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.onsen-visual7 .mask {
+ position: absolute;
+ top: 0;
+ bottom: 0;
+ left: 0;
+ right: 0;
+}
+.onsen-visual7 .text {
+ font-size: 0;
+ line-height: 1;
+ position: absolute;
+ top: 85px;
+ left: 40px;
+ padding-top: 50px;
+}
+.onsen-visual7 .line {
+ display: block;
+ padding: 10px;
+ font-family: 'Hiragino Kaku Gothic Std',sans-serif;
+ font-size: 80px;
+ font-weight: bold;
+}
+.onsen-visual7 .line + .line {
+ margin-top: 15px;
+}
+.onsen-visual7 .letter {
+ display: inline-block;
+ padding-top: 5px;
+}
+.onsen-visual7 .mask.normal {
+ -webkit-clip-path: polygon(0 0, 862px 0, 862px 1060px, 0 1060px);
+ clip-path: polygon(0 0, 862px 0, 862px 1060px, 0 1060px);
+}
+.onsen-visual7 .mask.burn {
+ -webkit-clip-path: polygon(862px 0, 1462px 0, 1462px 1060px, 862px 1060px);
+ clip-path: polygon(862px 0, 1462px 0, 1462px 1060px, 862px 1060px);
+}
+.mask.burn {
+ mix-blend-mode: color-burn;
+}
+.onsen-visual7 .line,
+.onsen-visual7 .letter {
+ opacity: 0;
+}
+
+.onsen-visual7.is-visible .line {
+ opacity: 1;
+}
+.onsen-visual7.is-visible .letter {
+ color: #FFFFFF;
+ font-style: italic;
+ text-shadow: -3px 2px 0 #A9A9A9;
+ animation: slideIn .8s cubic-bezier(0,1.2,.13,1.5) forwards;
+}
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translate3d(-100px,0,0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0,0,0);
+  }
+}
+
+.beginning7 {
+ width: 100%;
+ height: 500px;
+ background: linear-gradient(to right, #FFDEAD, #FDF5E6);
+ font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+}
+
+/*try画面*/
+.onsen-visual8 {
+ width: 100%;
+ height: 720px;
+ background-image: image-url('img/kawasaki.jpg');
+ background-size: cover;
+ background-position: center;
+ animation: fadeup 2s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
+}
+@keyframes fadeup {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.onsen-visual8 .mask {
+ position: absolute;
+ top: 0;
+ bottom: 0;
+ left: 0;
+ right: 0;
+}
+.onsen-visual8 .text {
+ font-size: 0;
+ line-height: 1;
+ position: absolute;
+ top: 85px;
+ left: 40px;
+ padding-top: 50px;
+}
+.onsen-visual8 .line {
+ display: block;
+ padding: 10px;
+ font-family: 'Hiragino Kaku Gothic Std',sans-serif;
+ font-size: 80px;
+ font-weight: bold;
+}
+.onsen-visual8 .line + .line {
+ margin-top: 15px;
+}
+.onsen-visual8 .letter {
+ display: inline-block;
+ padding-top: 5px;
+}
+.onsen-visual8 .mask.normal {
+ -webkit-clip-path: polygon(0 0, 862px 0, 862px 1060px, 0 1060px);
+ clip-path: polygon(0 0, 862px 0, 862px 1060px, 0 1060px);
+}
+.onsen-visual8 .mask.burn {
+ -webkit-clip-path: polygon(862px 0, 1462px 0, 1462px 1060px, 862px 1060px);
+ clip-path: polygon(862px 0, 1462px 0, 1462px 1060px, 862px 1060px);
+}
+.mask.burn {
+ mix-blend-mode: color-burn;
+}
+.onsen-visual8 .line,
+.onsen-visual8 .letter {
+ opacity: 0;
+}
+
+.onsen-visual8.is-visible .line {
+ opacity: 1;
+}
+.onsen-visual8.is-visible .letter {
+ color: #FFFFFF;
+ font-style: italic;
+ text-shadow: -3px 2px 0 #A9A9A9;
+ animation: slideIn .8s cubic-bezier(0,1.2,.13,1.5) forwards;
+}
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translate3d(-100px,0,0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0,0,0);
+  }
+}
+
+.beginning8 {
+ width: 100%;
+ height: 500px;
+ background: linear-gradient(to right, #FFDEAD, #FDF5E6);
+ font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+}
+
+/*gaze画面*/
+.onsen-visual9 {
+ width: 100%;
+ height: 720px;
+ background-image: image-url('img/serigaya2.jpg');
+ background-size: cover;
+ background-position: center;
+ animation: fadeup 2s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
+}
+@keyframes fadeup {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.onsen-visual9 .mask {
+ position: absolute;
+ top: 0;
+ bottom: 0;
+ left: 0;
+ right: 0;
+}
+.onsen-visual9 .text {
+ font-size: 0;
+ line-height: 1;
+ position: absolute;
+ top: 85px;
+ left: 40px;
+ padding-top: 50px;
+}
+.onsen-visual9 .line {
+ display: block;
+ padding: 10px;
+ font-family: 'Hiragino Kaku Gothic Std',sans-serif;
+ font-size: 80px;
+ font-weight: bold;
+}
+.onsen-visual9 .line + .line {
+ margin-top: 15px;
+}
+.onsen-visual9 .letter {
+ display: inline-block;
+ padding-top: 5px;
+}
+.onsen-visual9 .mask.normal {
+ -webkit-clip-path: polygon(0 0, 862px 0, 862px 1060px, 0 1060px);
+ clip-path: polygon(0 0, 862px 0, 862px 1060px, 0 1060px);
+}
+.onsen-visual9 .mask.burn {
+ -webkit-clip-path: polygon(862px 0, 1462px 0, 1462px 1060px, 862px 1060px);
+ clip-path: polygon(862px 0, 1462px 0, 1462px 1060px, 862px 1060px);
+}
+.mask.burn {
+ mix-blend-mode: color-burn;
+}
+.onsen-visual9 .line,
+.onsen-visual9 .letter {
+ opacity: 0;
+}
+
+.onsen-visual9.is-visible .line {
+ opacity: 1;
+}
+.onsen-visual9.is-visible .letter {
+ color: #FFFFFF;
+ font-style: italic;
+ text-shadow: -3px 2px 0 #A9A9A9;
+ animation: slideIn .8s cubic-bezier(0,1.2,.13,1.5) forwards;
+}
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translate3d(-100px,0,0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0,0,0);
+  }
+}
+
+.beginning9 {
+ width: 100%;
+ height: 500px;
+ background: linear-gradient(to right, #FFDEAD, #FDF5E6);
+ font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
 }
 
 
@@ -2600,9 +2914,20 @@ text-align: center;
  width: 380px;
  text-align: center;
  font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
- border: 5px solid pink;
- border-style: inset;
- background: linear-gradient(to right, #FFC0CB, #FFFAFA);
+ background:
+ linear-gradient(90deg, #999 3px, #fff 3px, #fff calc(100% - 3px), #999 calc(100% - 3px)),
+ linear-gradient(180deg, #999 3px, #fff 3px, #fff calc(100% - 3px), #999 calc(100% - 3px)),
+ linear-gradient(45deg,  transparent 10px, #999 11px, #999 12px, #fff 14px),
+ linear-gradient(135deg, transparent 10px, #999 11px, #999 12px, #fff 14px),
+ linear-gradient(225deg, transparent 10px, #999 11px, #999 12px, #fff 14px),
+ linear-gradient(315deg, transparent 10px, #999 11px, #999 12px, #fff 14px);
+ background-position: left 15px, 15px top, bottom left, top left, top right, bottom right;
+ background-size: 100% calc(100% - 30px), calc(100% - 30px) 100%, 20px 20px, 20px 20px, 20px 20px, 20px 20px;
+ background-repeat: no-repeat;
+ position: relative;
+ padding: 10px 10px;
+ font-weight: bold;
+ color: #333;
  animation: zoomIn 1s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
 }
 @keyframes zoomIn {
@@ -2652,38 +2977,33 @@ text-align: center;
  font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
  width: 280px;
  text-align: center;
- border: 5px solid pink;
- border-style: inset;
- background: linear-gradient(to right, #FFC0CB, #FFFAFA);
- animation: poyoyon3 3s infinite;
- opacity: 1;
+ background:
+ radial-gradient(circle at top left, transparent 50%, #999 50%, #999 calc(50% + 3px), transparent calc(50% + 3px)),
+ radial-gradient(circle at top right, transparent 50%, #999 50%, #999 calc(50% + 2px), transparent calc(50% + 3px)),
+ radial-gradient(circle at bottom left, transparent 50%, #999 50%, #999 calc(50% + 2px), transparent calc(50% + 3px)),
+ radial-gradient(circle at bottom right, transparent 50%, #999 50%, #999 calc(50% + 2px), transparent calc(50% + 3px)),
+ linear-gradient(90deg, #999 2px, #fff 3px, #fff calc(100% - 2px), #999 calc(100% - 2px)),
+ linear-gradient(180deg, #999 2px, #fff 3px, #fff calc(100% - 2px), #999 calc(100% - 2px));
+ background-position: top left, top right, bottom left, bottom right, left 15px, 15px top;
+ background-size: 20px 20px, 20px 20px,20px 20px,20px 20px, 100% calc(100% - 30px), calc(100% - 30px) 100%;
+ background-repeat: no-repeat;
+ position: relative;
+ padding: 10px 10px;
+ font-weight: bold;
+ color: #333;
+ animation: zoomIn 1.5s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
 }
-@keyframes poyoyon3 {
- 0%, 40% {
-    transform: skew(0deg, 0deg);
+@keyframes zoomIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
   }
- 5% {
-    transform: skew(5deg, 5deg);
-  }
- 10% {
-    transform: skew(-4deg, -4deg);
-  }
- 15% {
-    transform: skew(3deg, 3deg);
-  }
- 20% {
-    transform: skew(-2deg, -2deg);
-  }
- 25% {
-    transform: skew(1deg, 1deg);
-  }
- 30% {
-    transform: skew(-0.6deg, -0.6deg);
-  }
- 35% {
-    transform: skew(0.3deg, 0.3deg);
+  100% {
+    opacity: 1;
+    transform: scale(1);
   }
 }
+
 
 table {
  width: 100%;
@@ -2739,9 +3059,19 @@ table tr:last-child td:last-child {
  font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
  width: 240px;
  text-align: center;
- border: 5px solid pink;
- border-style: inset;
- background: linear-gradient(to right, #FFC0CB, #FFFAFA);
+ background:
+ linear-gradient(90deg, #999 3px, #fff 3px, #fff calc(100% - 3px), #999 calc(100% - 3px)),
+ linear-gradient(180deg, #999 3px, #fff 3px, #fff calc(100% - 3px), #999 calc(100% - 3px)),
+ linear-gradient(45deg,  transparent 10px, #999 11px, #999 12px, #fff 14px),
+ linear-gradient(135deg, transparent 10px, #999 11px, #999 12px, #fff 14px),
+ linear-gradient(225deg, transparent 10px, #999 11px, #999 12px, #fff 14px),
+ linear-gradient(315deg, transparent 10px, #999 11px, #999 12px, #fff 14px);
+ background-position: left 15px, 15px top, bottom left, top left, top right, bottom right;
+ background-size: 100% calc(100% - 30px), calc(100% - 30px) 100%, 20px 20px, 20px 20px, 20px 20px, 20px 20px;
+ background-repeat: no-repeat;
+ position: relative;
+ padding: 10px 10px;
+ font-weight: bold;
  animation: zoomIn 1s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
 }
 @keyframes zoomIn {
@@ -2760,9 +3090,19 @@ table tr:last-child td:last-child {
  width: 180px;
  letter-spacing: 5px;
  text-align: center;
- border: 5px solid pink;
- border-style: inset;
- background: linear-gradient(to right, #FFC0CB, #FFFAFA);
+ background:
+ radial-gradient(circle at top left, transparent 50%, #999 50%, #999 calc(50% + 3px), transparent calc(50% + 3px)),
+ radial-gradient(circle at top right, transparent 50%, #999 50%, #999 calc(50% + 2px), transparent calc(50% + 3px)),
+ radial-gradient(circle at bottom left, transparent 50%, #999 50%, #999 calc(50% + 2px), transparent calc(50% + 3px)),
+ radial-gradient(circle at bottom right, transparent 50%, #999 50%, #999 calc(50% + 2px), transparent calc(50% + 3px)),
+ linear-gradient(90deg, #999 2px, #fff 3px, #fff calc(100% - 2px), #999 calc(100% - 2px)),
+ linear-gradient(180deg, #999 2px, #fff 3px, #fff calc(100% - 2px), #999 calc(100% - 2px));
+ background-position: top left, top right, bottom left, bottom right, left 15px, 15px top;
+ background-size: 20px 20px, 20px 20px,20px 20px,20px 20px, 100% calc(100% - 30px), calc(100% - 30px) 100%;
+ background-repeat: no-repeat;
+ position: relative;
+ padding: 10px 10px;
+ font-weight: bold;
  animation: zoomIn 1s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
 }
 @keyframes zoomIn {
@@ -2801,13 +3141,13 @@ table tr:last-child td:last-child {
 }
 .card-header {
   padding: 7px;
-  background-color: #87CEFA;
+  background-color: #f6bfbc;
 }
 
 .card-footer {
   text-align: right;
   margin: 0 auto;
-  background-color: #E0FFFF;
+  background-color: #fdeff2;
 }
 
 
