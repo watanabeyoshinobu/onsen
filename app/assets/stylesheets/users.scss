@@ -2,6 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+.title-name {
+ font-family: 'Noto Serif JP', serif;
+}
+
 .form-button {
  padding: 10px 0 20px 50px;
  margin-right: 10px;
@@ -10,23 +15,31 @@
 
 .mypage {
  text-align: center;
- font-family: 'Cherry Swash', cursive;
- border: 5px solid #FFCC66;
- border-style: inset;
- width: 250px;
- background: linear-gradient(to right, #FFCC66, #FFFF99);
- animation: slide-skew 0.4s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
+ font-family: 'Noto Serif JP', serif;
+ width: 300px;
+ background:
+ radial-gradient(circle at top left, transparent 50%, #999 50%, #999 calc(50% + 3px), transparent calc(50% + 3px)),
+ radial-gradient(circle at top right, transparent 50%, #999 50%, #999 calc(50% + 2px), transparent calc(50% + 3px)),
+ radial-gradient(circle at bottom left, transparent 50%, #999 50%, #999 calc(50% + 2px), transparent calc(50% + 3px)),
+ radial-gradient(circle at bottom right, transparent 50%, #999 50%, #999 calc(50% + 2px), transparent calc(50% + 3px)),
+ linear-gradient(90deg, #999 2px, #fff 3px, #fff calc(100% - 2px), #999 calc(100% - 2px)),
+ linear-gradient(180deg, #999 2px, #fff 3px, #fff calc(100% - 2px), #999 calc(100% - 2px));
+ background-position: top left, top right, bottom left, bottom right, left 15px, 15px top;
+ background-size: 20px 20px, 20px 20px,20px 20px,20px 20px, 100% calc(100% - 30px), calc(100% - 30px) 100%;
+ background-repeat: no-repeat;
+ position: relative;
+ padding: 10px 10px;
+ font-weight: bold;
+ animation: zoomIn 1s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
 }
-@keyframes slide-skew {
+@keyframes zoomIn {
  0% {
-  transform: translate(180px, 30px);
+  transform: scale(0.8);
   opacity: 0;
  }
  100% {
-  transform: translate(0,0);
- }
- 20%, 100% {
   opacity: 1;
+  transform: scale(1);
  }
 }
 

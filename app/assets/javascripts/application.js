@@ -24,7 +24,7 @@ $(function() {
   $(document).ready(function () {
     $("#theTarget").skippr({
       transition : 'fade',
-      speed : 2000,
+      speed : 3000,
       easing : 'easeOutQuart',
       navType : 'bubble',
       childrenElementType : 'div',

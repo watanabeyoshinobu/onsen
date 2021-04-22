@@ -72,6 +72,7 @@
   min-height: 100%;
   display: none;
   z-index: 9;
+  font-family: 'Noto Serif JP', serif;
 }
 
 #sp-menu li{
@@ -120,7 +121,7 @@
  margin: auto;
  position: relative;
  background-size: cover;
- font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+ font-family: 'Noto Serif JP', serif;
  background: linear-gradient(to right, #FFF0F5, #fffcdc);
 }
 
@@ -156,7 +157,7 @@ main {
  height: 1000px;
 }
 .heading1{
- font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+ font-family: 'Noto Serif JP', serif;
  padding: 60px 0 0 30px;
  margin-right: 50px;
  padding-bottom: 10px;
@@ -185,7 +186,7 @@ main {
 }
 
 .heading2{
- font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+ font-family: 'Noto Serif JP', serif;
  padding: 60px 0 0 30px;
  margin-right: 50px;
  padding-bottom: 10px;
@@ -213,7 +214,7 @@ main {
   }
 }
 .heading3{
- font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+ font-family: 'Noto Serif JP', serif;
  font-size: 36px;
  padding: 60px 0 0 30px;
  margin-right: 50px;
@@ -939,12 +940,12 @@ header{
  font-family: 'Yu Mincho、游明朝', serif;
 }
 .admin-name{
- font-family: "YHiragino Mincho ProN", "ヒラギノ明朝 ProN", "Hiragino", serif;
+ font-family: 'Noto Serif JP', serif;
 }
 
 #sns {
  color: #FFF0F5;
- font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+ font-family: 'Noto Serif JP', serif;
 
 }
 .container3{
@@ -961,7 +962,7 @@ header{
 }
 .SNS {
  color: #FFF0F5;
- font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+ font-family: 'Noto Serif JP', serif;
  font-style: italic;
  letter-spacing: .1em;
  text-shadow: -3px 2px 0 #fff;
@@ -977,65 +978,6 @@ header{
  overflow: hidden;
  position: relative;
  cursor: pointer;
-}
-.kansou::before {
-  background-color: #fff;
-  content: "";
-  display: block;
-  position: absolute;
-  top: -100px;
-  left: 0;
-  width: 30px;
-  height: 100%;
-  opacity: 0;
-  transition: cubic-bezier(0.32, 0, 0.67, 0);
-  }
-.kansou:hover::before {
-  animation: kiran 0.5s linear 1;
-}
-@keyframes kiran {
-  0% {
-    transform: scale(2) rotate(45deg);
-    opacity: 0;
-  }
-  20% {
-    transform: scale(20) rotate(45deg);
-    opacity: 0.6;
-  }
-  40% {
-    transform: scale(30) rotate(45deg);
-    opacity: 0.4;
-  }
-  80% {
-    transform: scale(45) rotate(45deg);
-    opacity: 0.2;
-  }
-  100% {
-    transform: scale(50) rotate(45deg);
-    opacity: 0;
-  }
-}
-@keyframes kiran {
-  0% {
-    transform: scale(2) rotate(45deg);
-    opacity: 0;
-  }
-  20% {
-    transform: scale(20) rotate(45deg);
-    opacity: 0.6;
-  }
-  40% {
-    transform: scale(30) rotate(45deg);
-    opacity: 0.4;
-  }
-  80% {
-    transform: scale(45) rotate(45deg);
-    opacity: 0.2;
-  }
-  100% {
-    transform: scale(50) rotate(45deg);
-    opacity: 0;
-  }
 }
 
 .right-content{
@@ -1153,7 +1095,7 @@ header{
  width: 100%;
  height: 450px;
  background: linear-gradient(to right, #f4b3c2, #FFFAFA);
- font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+ font-family: 'Noto Serif JP', serif;
 }
 .bv-title {
  color: red;
@@ -1179,7 +1121,7 @@ header{
  width: 100%;
  height: 5200px;
  background: linear-gradient(to right, #f5b1aa, #FFFAFA);
- font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+ font-family: 'Noto Serif JP', serif;
 }
 
 .introduce {
@@ -1532,7 +1474,7 @@ text-align: center;
  width: 100%;
  height: 870px;
  background: linear-gradient(to right, #FFE4E1, #FFFAFA);
- font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+ font-family: 'Noto Serif JP', serif;
 }
 .access {
  color: red;
@@ -1543,6 +1485,7 @@ text-align: center;
  background: linear-gradient(to right, #FFB6C1, #FFFAFA);
  border: inset;
  border-color: #FFB6C1;
+ border-radius: 40px;
  padding-bottom: 20px;
  width: 500px;
 }
@@ -1583,7 +1526,7 @@ text-align: center;
 .map {
  text-align: right;
  margin-right: 300px;
- margin-top: -600px;
+ margin-top: -750px;
 }
 
 .map-image {
@@ -1688,7 +1631,7 @@ text-align: center;
 .beginning2 {
  width: 100%;
  height: 450px;
- font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+ font-family: 'Noto Serif JP', serif;
  background: linear-gradient(to right, #EEE8AA, #FFFFF0);
 }
 
@@ -1697,7 +1640,7 @@ text-align: center;
  width: 100%;
  height: 3650px;
  background-color: #FFF8DC;
- font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+ font-family: 'Noto Serif JP', serif;
  background: linear-gradient(to right, #F5DEB3, #FFFFE0);
 }
 
@@ -1850,10 +1793,18 @@ text-align: center;
  width: 100%;
  height: 820px;
  background-color: #FFFFE0;
- font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
- background: linear-gradient(to left, #EEE8AA, #FFFFF0);
+ font-family: 'Noto Serif JP', serif;
+ background: linear-gradient(to right, #EEE8AA, #FFFFF0);
 }
 
+.introduce-set12-2 {
+ background: linear-gradient(to right, #EEE8AA, #FFFFF0);
+ border: inset;
+ border-color: #d7cf3a;
+ border-radius: 40px;
+ padding-bottom: 20px;
+ width: 500px;
+}
 .map2 {
  text-align: right;
  margin-right: 360px;
@@ -1961,24 +1912,25 @@ text-align: center;
 .beginning3 {
  width: 100%;
  height: 500px;
- background: linear-gradient(to right, #FFDEAD, #FDF5E6);
- font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+ background: linear-gradient(to right, #f9c89b, #FDF5E6);
+ font-family: 'Noto Serif JP', serif;
 }
 
 .container3-1 {
  width: 100%;
  height: 850px;
- background: linear-gradient(to left, #FFDEAD, #FDF5E6);
- font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+ background: linear-gradient(to right, #FFDEAD, #FDF5E6);
+ font-family: 'Noto Serif JP', serif;
 }
 .access3 {
  color: red;
  text-align: center;
 }
 .introduce-set3-2 {
- background: linear-gradient(to right, #FFB6C1, #FFFAFA);
+ background: linear-gradient(to right, #f9c89b, #FDF5E6);
  border: inset;
- border-color: #FFB6C1;
+ border-color: #f8b862;
+ border-radius: 40px;
  padding-bottom: 20px;
  width: 500px;
 }
@@ -2124,16 +2076,16 @@ text-align: center;
 .beginning4 {
  width: 100%;
  height: 510px;
- background: linear-gradient(to right, #FFB6C1, #FFFAFA);
- font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+ background: linear-gradient(to right, #eebbcb, #FFFAFA);
+ font-family: 'Noto Serif JP', serif;
 }
 
 .container4-2 {
  width: 100%;
  height: 600px;
  text-align: center;
- background: linear-gradient(to right, #FFE4E1, #FFFAFA);
- font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+ background: linear-gradient(to right, #f4b3c2, #FFFAFA);
+ font-family: 'Noto Serif JP', serif;
 }
 .introduce4 {
  margin: 0 auto;
@@ -2164,8 +2116,8 @@ text-align: center;
 .container4-4 {
  width: 100%;
  height: 850px;
- background: linear-gradient(to left, #FFE4E1, #FFFAFA);
- font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+ background: linear-gradient(to right, #fcbec1, #FFFAFA);
+ font-family: 'Noto Serif JP', serif;
 }
 .access4 {
  color: red;
@@ -2175,6 +2127,7 @@ text-align: center;
  background: linear-gradient(to right, #FFB6C1, #FFFAFA);
  border: inset;
  border-color: #FFB6C1;
+ border-radius: 40px;
  padding-bottom: 20px;
  width: 520px;
 }
@@ -2320,23 +2273,24 @@ text-align: center;
 .beginning5 {
  width: 100%;
  height: 500px;
- background: linear-gradient(to right, #EEE8AA, #FFFFF0);
- font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+ background: linear-gradient(to right, #d8e698, #FFFFF0);
+ font-family: 'Noto Serif JP', serif;
 }
 .container5-2 {
  width: 100%;
  height: 850px;
- background: linear-gradient(to left, #EEE8AA, #FFFFF0);
- font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+ background: linear-gradient(to right, #EEE8AA, #FFFFF0);
+ font-family: 'Noto Serif JP', serif;
 }
 .access5 {
  color: red;
  text-align: center;
 }
 .introduce-set5-2 {
- background: linear-gradient(to right, #FFB6C1, #FFFAFA);
+ background: linear-gradient(to right, #d8e698, #FFFFF0);
  border: inset;
- border-color: #FFB6C1;
+ border-color: #aacf53;
+ border-radius: 40px;
  padding-bottom: 20px;
  width: 500px;
 }
@@ -2482,24 +2436,25 @@ text-align: center;
 .beginning6 {
  width: 100%;
  height: 500px;
- background: linear-gradient(to right, #FFDEAD, #FDF5E6);
- font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+ background: linear-gradient(to right, #fddea5, #FDF5E6);
+ font-family: 'Noto Serif JP', serif;
 }
 
 .container6-2 {
  width: 100%;
  height: 950px;
- background: linear-gradient(to left, #FFDEAD, #FDF5E6);
- font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+ background: linear-gradient(to right, #fff1cf, #FDF5E6);
+ font-family: 'Noto Serif JP', serif;
 }
 .access6 {
  color: red;
  text-align: center;
 }
 .introduce-set6-2 {
- background: linear-gradient(to right, #FFB6C1, #FFFAFA);
+ background: linear-gradient(to right, #fddea5, #FDF5E6);
  border: inset;
- border-color: #FFB6C1;
+ border-color: #eec362;
+ border-radius: 40px;
  padding-bottom: 20px;
  width: 500px;
 }
@@ -2647,7 +2602,7 @@ text-align: center;
  width: 100%;
  height: 500px;
  background: linear-gradient(to right, #FFDEAD, #FDF5E6);
- font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+ font-family: 'Noto Serif JP', serif;
 }
 
 /*try画面*/
@@ -2741,7 +2696,7 @@ text-align: center;
  width: 100%;
  height: 500px;
  background: linear-gradient(to right, #FFDEAD, #FDF5E6);
- font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+ font-family: 'Noto Serif JP', serif;
 }
 
 /*gaze画面*/
@@ -2835,7 +2790,7 @@ text-align: center;
  width: 100%;
  height: 500px;
  background: linear-gradient(to right, #FFDEAD, #FDF5E6);
- font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+ font-family: 'Noto Serif JP', serif;
 }
 
 
@@ -2848,6 +2803,7 @@ text-align: center;
   border: 10px #F5F5F5 solid;
   text-align: center;
   background: linear-gradient(to right, #FFEFD5, #FFFFE0);
+  font-family: 'Noto Serif JP', serif;
 }
 
 .box-inner3 {
@@ -2913,7 +2869,7 @@ text-align: center;
 .b-new__comment {
  width: 380px;
  text-align: center;
- font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+ font-family: 'Noto Serif JP', serif;
  background:
  linear-gradient(90deg, #999 3px, #fff 3px, #fff calc(100% - 3px), #999 calc(100% - 3px)),
  linear-gradient(180deg, #999 3px, #fff 3px, #fff calc(100% - 3px), #999 calc(100% - 3px)),
@@ -2948,6 +2904,7 @@ text-align: center;
   border-radius: 10px;
   background: linear-gradient(to right, #FFF0F5, #FFFAFA);
   animation: zoomIn 1s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
+  font-family: 'Noto Serif JP', serif;
 }
 @keyframes zoomIn {
   0% {
@@ -2974,7 +2931,7 @@ text-align: center;
 }
 
 .b-index__comment {
- font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+ font-family: 'Noto Serif JP', serif;
  width: 280px;
  text-align: center;
  background:
@@ -3009,6 +2966,7 @@ table {
  width: 100%;
  border-collapse: separate;
  border-spacing: 0;
+ font-family: 'Noto Serif JP', serif;
 }
 
 table th:first-child {
@@ -3056,7 +3014,7 @@ table tr:last-child td:last-child {
 
 
 .b-show__comment {
- font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+ font-family: 'Noto Serif JP', serif;
  width: 240px;
  text-align: center;
  background:
@@ -3085,8 +3043,12 @@ table tr:last-child td:last-child {
   }
 }
 
+.b-comment_list {
+ font-family: 'Noto Serif JP', serif;
+}
+
 .b-edit__comment {
- font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+ font-family: 'Noto Serif JP', serif;
  width: 180px;
  letter-spacing: 5px;
  text-align: center;
@@ -3123,6 +3085,7 @@ table tr:last-child td:last-child {
   border-radius: 14px;
   border: 5px solid #e8e8e8;
   animation: zoomIn 1s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
+  font-family: 'Noto Serif JP', serif;
 }
 @keyframes zoomIn {
   0% {
@@ -3141,13 +3104,13 @@ table tr:last-child td:last-child {
 }
 .card-header {
   padding: 7px;
-  background-color: #f6bfbc;
+  background: linear-gradient(to right, #f6bfbc, #f6bfbc);
 }
 
 .card-footer {
   text-align: right;
   margin: 0 auto;
-  background-color: #fdeff2;
+  background: linear-gradient(to right, #f6bfbc, #f6bfbc);
 }
 
 
@@ -3156,11 +3119,13 @@ table tr:last-child td:last-child {
 
 .col-sm-2 {
  margin-bottom: 10px;
+ font-family: 'Noto Serif JP', serif;
 }
 
 
 .col-md-6 {
  margin-left: 120px;
  margin-top: 30px;
+ font-family: 'Noto Serif JP', serif;
 }
 
