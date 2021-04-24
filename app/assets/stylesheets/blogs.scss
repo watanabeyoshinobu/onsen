@@ -117,6 +117,7 @@
  width: 100%;
  height: 330px;
  text-align: center;
+ text-shadow: -3px 2px 0 #fff;
  margin: 0 auto;
  margin: auto;
  position: relative;
@@ -1097,6 +1098,10 @@ header{
  background: linear-gradient(to right, #f4b3c2, #FFFAFA);
  font-family: 'Noto Serif JP', serif;
 }
+.introduce-set{
+ padding: 30px 0 90px 0;
+ font-size: 16px;
+}
 .bv-title {
  color: red;
  text-align: center;
@@ -1116,7 +1121,6 @@ header{
 }
 
 
-
 .container6 {
  width: 100%;
  height: 5200px;
@@ -1124,21 +1128,14 @@ header{
  font-family: 'Noto Serif JP', serif;
 }
 
-.introduce {
- color: red;
- text-align: center;
- padding-bottom: 60px;
-}
-
-.introduce-set{
- padding: 30px 0 90px 0;
- font-size: 16px;
-}
-
-
 .introduce-set1 {
  padding: 30px 0 90px 0;
  font-size: 16px;
+}
+.introduce {
+ color: red;
+ text-align: center;
+ padding-bottom: 20px;
 }
 .forest-villa1 {
  color: blue;
@@ -1187,8 +1184,6 @@ header{
  float: right;
  margin-right: 100px;
 }
-
-
 .introduce-set3 {
  padding: 30px 0 120px 0;
  font-size: 16px;
@@ -1295,8 +1290,6 @@ text-align: center;
  margin: 10px 0 0 0;
  background-image: image-url('img/dsc_0120.jpg');
 }
-
-
 .introduce-set5 {
  padding: 30px 0 120px 0;
  font-size: 16px;
@@ -1348,13 +1341,10 @@ text-align: center;
  margin-bottom: 50px;
  float: left;
 }
-
-
 .introduce-set7 {
  padding: 30px 0 80px 0;
  font-size: 16px;
  }
-
 .onsen-spa {
  color: blue;
  width: 50%;
@@ -1376,18 +1366,15 @@ text-align: center;
  margin-right: 80px;
  padding-top: 50px;
  }
-
-
 .introduce-set8 {
- padding: 30px 0 120px 0;
+ padding: 10px 0 120px 0;
  font-size: 16px;
  margin-top: 5px;
  }
-
  .onsen-spa2 {
  color: red;
  text-align: center;
- padding-top: 20px;
+ padding-top: 5px;
 }
 .introduce-image13 {
  width: 300px;
@@ -1413,8 +1400,6 @@ text-align: center;
 .onsen-text {
  text-align: center;
 }
-
-
 .introduce-set9 {
  padding: 30px 0 80px 0;
  font-size: 16px;
@@ -1440,9 +1425,6 @@ text-align: center;
  margin-right: 50px;
  padding-top: 30px;
  }
-
-
-
 .introduce-set10 {
  padding: 30px 0 80px 0;
  font-size: 16px;
@@ -3104,13 +3086,15 @@ table tr:last-child td:last-child {
 }
 .card-header {
   padding: 7px;
-  background: linear-gradient(to right, #f6bfbc, #f6bfbc);
+  background: #fcdce0;
+  border-radius: 3px;
 }
 
 .card-footer {
   text-align: right;
   margin: 0 auto;
-  background: linear-gradient(to right, #f6bfbc, #f6bfbc);
+  background: #fdeff2;
+  border-radius: 3px;
 }
 
 
