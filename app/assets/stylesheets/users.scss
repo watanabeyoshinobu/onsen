@@ -45,6 +45,7 @@
 
 
 .user_formbox {
+  font-family: 'Noto Serif JP', serif;
   width: 800px;
   margin: 15px auto;
   border: 10px inset #FFC0CB;
@@ -131,4 +132,8 @@ text-align: right;
 .user_password {
  display: inline;
  color: #8B4513;
+}
+
+.row {
+ font-family: 'Noto Serif JP', serif;
 }

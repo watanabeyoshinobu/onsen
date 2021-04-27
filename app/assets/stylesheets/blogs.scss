@@ -1623,7 +1623,7 @@ text-align: center;
  height: 3500px;
  background-color: #FFF8DC;
  font-family: 'Noto Serif JP', serif;
- background: linear-gradient(to right, #F5DEB3, #FFFFE0);
+ background: linear-gradient(to right, #f2f2b0, #FFFFE0);
 }
 
 .introduce-set21 {
@@ -1646,9 +1646,6 @@ text-align: center;
  margin-left: 250px;
  float: left;
 }
-
-
-
 .introduce-set22{
  padding: 30px 0 90px 0;
  font-size: 16px;
@@ -1669,15 +1666,12 @@ text-align: center;
  margin-top: 30px;
  margin-left: 250px;
  float: left;
-
 }
 .introduce-text22 {
  width: 50%;
  float: right;
  margin-right: 80px;
 }
-
-
 .introduce-set23 {
  padding: 30px 0 120px 0;
  font-size: 16px;
@@ -1705,13 +1699,10 @@ text-align: center;
  float: right;
  margin-right: 80px;
 }
-
-
 .introduce-set24 {
  padding: 30px 0 80px 0;
  font-size: 16px;
  }
-
 .onsen-spa24 {
  color: blue;
  width: 50%;
@@ -1738,8 +1729,6 @@ text-align: center;
  margin-right: 100px;
  padding-top: 50px;
  }
-
-
  .introduce-set25 {
  padding: 30px 0 120px 0;
  font-size: 16px;
@@ -1769,8 +1758,6 @@ text-align: center;
  .introduce-set26 {
  color: red;
 }
-
-
 .container10 {
  width: 100%;
  height: 820px;
@@ -1778,7 +1765,6 @@ text-align: center;
  font-family: 'Noto Serif JP', serif;
  background: linear-gradient(to right, #EEE8AA, #FFFFF0);
 }
-
 .introduce-set12-2 {
  background: linear-gradient(to right, #EEE8AA, #FFFFF0);
  border: inset;
@@ -1790,7 +1776,7 @@ text-align: center;
 .map2 {
  text-align: right;
  margin-right: 360px;
- margin-top: -600px;
+ margin-top: -650px;
 }
 
 .map-image2 {
@@ -2093,7 +2079,6 @@ text-align: center;
  text-align: justify;
 　text-justify: inter-ideograph;
 }
-
 
 .container4-4 {
  width: 100%;
@@ -2583,9 +2568,77 @@ text-align: center;
 .beginning7 {
  width: 100%;
  height: 500px;
- background: linear-gradient(to right, #FFDEAD, #FDF5E6);
+ background: linear-gradient(to right, #f4dda5, #FDF5E6);
  font-family: 'Noto Serif JP', serif;
 }
+.container7-4 {
+ width: 100%;
+ height: 850px;
+ background: linear-gradient(to right, #efcd9a, #FDF5E6);
+ font-family: 'Noto Serif JP', serif;
+}
+.access7 {
+ color: red;
+ text-align: center;
+}
+.introduce-set7-2 {
+ background: linear-gradient(to right, #f4dda5, #FDF5E6);
+ border: inset;
+ border-color: #e0c38c;
+ border-radius: 40px;
+ padding-bottom: 20px;
+ width: 520px;
+}
+.address7 {
+ text-align: center;
+ padding-bottom: 20px;
+ color: red;
+}
+.address-text7 {
+ text-align: center;
+ font-size: 24px;
+}
+.introduce-price7 {
+ width: 100%;
+}
+.price7 {
+ width: 30%;
+ margin-bottom: 50px;
+ margin-top: 40px;
+ color: red;
+}
+.introduce-set7-4 {
+ margin-top: 20px;
+ padding-bottom: 20px;
+ width: 500px;
+ color: red;
+}
+
+.introduce-set7-5 {
+ text-align: left;
+ margin-left: 20px;
+ color: red;
+}
+.kansou7 {
+ padding-top: 30px;
+}
+
+.map7 {
+ text-align: right;
+ margin-right: 250px;
+ margin-top: -650px;
+ color: red;
+}
+
+.map-image7 {
+ margin-top: 30px;
+ margin-left: 700px;
+ background-size: cover;
+ width: 700px;
+ height: 500px;
+ background-image: image-url('img/map_manten.jpg');
+}
+
 
 /*try画面*/
 .onsen-visual8 {
@@ -2677,9 +2730,77 @@ text-align: center;
 .beginning8 {
  width: 100%;
  height: 500px;
- background: linear-gradient(to right, #FFDEAD, #FDF5E6);
+ background: linear-gradient(to right, #cee4ae, #FDF5E6);
  font-family: 'Noto Serif JP', serif;
 }
+.container8-4 {
+ width: 100%;
+ height: 950px;
+ background: linear-gradient(to right, #c1d8ac, #FDF5E6);
+ font-family: 'Noto Serif JP', serif;
+}
+.access8 {
+ color: red;
+ text-align: center;
+}
+.introduce-set8-2 {
+ background: linear-gradient(to right, #cee4ae, #FDF5E6);
+ border: inset;
+ border-color: #88cb7f;
+ border-radius: 40px;
+ padding-bottom: 20px;
+ width: 520px;
+}
+.address8 {
+ text-align: center;
+ padding-bottom: 20px;
+ color: red;
+}
+.address-text8 {
+ text-align: center;
+ font-size: 24px;
+}
+.introduce-price8 {
+ width: 100%;
+}
+.price8 {
+ width: 30%;
+ margin-bottom: 50px;
+ margin-top: 40px;
+ color: red;
+}
+.introduce-set8-4 {
+ margin-top: 20px;
+ padding-bottom: 20px;
+ width: 500px;
+ color: red;
+}
+
+.introduce-set8-5 {
+ text-align: left;
+ margin-left: 20px;
+ color: red;
+}
+.kansou8 {
+ padding-top: 30px;
+}
+
+.map8 {
+ text-align: right;
+ margin-right: 250px;
+ margin-top: -650px;
+ color: red;
+}
+
+.map-image8 {
+ margin-top: 30px;
+ margin-left: 700px;
+ background-size: cover;
+ width: 700px;
+ height: 500px;
+ background-image: image-url('img/map_manten.jpg');
+}
+
 
 /*gaze画面*/
 .onsen-visual9 {
@@ -2771,9 +2892,74 @@ text-align: center;
 .beginning9 {
  width: 100%;
  height: 500px;
- background: linear-gradient(to right, #FFDEAD, #FDF5E6);
+ background: linear-gradient(to right, #f19072, #FDF5E6);
  font-family: 'Noto Serif JP', serif;
 }
+.container9-4 {
+ width: 100%;
+ height: 850px;
+ background: linear-gradient(to right, #f6b894, #FDF5E6);
+ font-family: 'Noto Serif JP', serif;
+}
+.access9 {
+ color: red;
+ text-align: center;
+}
+.introduce-set9-2 {
+ background: linear-gradient(to right, #f19072, #FDF5E6);
+ border: inset;
+ border-color: #df7163;
+ border-radius: 40px;
+ padding-bottom: 20px;
+ width: 520px;
+}
+.address9 {
+ text-align: center;
+ padding-bottom: 20px;
+ color: red;
+}
+.address-text9 {
+ text-align: center;
+ font-size: 24px;
+}
+.introduce-price9 {
+ width: 100%;
+}
+.price9 {
+ width: 30%;
+ margin-bottom: 50px;
+ margin-top: 40px;
+ color: red;
+}
+.introduce-set9-4 {
+ margin-top: 20px;
+ padding-bottom: 20px;
+ width: 500px;
+ color: red;
+}
+.introduce-set9-5 {
+ text-align: left;
+ margin-left: 20px;
+ color: red;
+}
+.kansou9 {
+ padding-top: 30px;
+}
+.map9 {
+ text-align: right;
+ margin-right: 250px;
+ margin-top: -650px;
+ color: red;
+}
+.map-image9 {
+ margin-top: 30px;
+ margin-left: 700px;
+ background-size: cover;
+ width: 700px;
+ height: 500px;
+ background-image: image-url('img/map_manten.jpg');
+}
+
 
 
 /*devise周辺*/
