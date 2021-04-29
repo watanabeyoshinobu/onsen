@@ -884,7 +884,7 @@ header{
  background-size: cover;
  margin-left: 300px;
  border-radius: 50%;
- background-image: image-url('img/komorebi.jpg');
+ background-image: image-url('img/ventus.jpg');
  overflow: hidden;
  position: relative;
  cursor: pointer;
@@ -1727,7 +1727,7 @@ text-align: center;
  width: 50%;
  float: right;
  margin-right: 100px;
- padding-top: 50px;
+ padding-top: 100px;
  }
  .introduce-set25 {
  padding: 30px 0 120px 0;
@@ -2050,7 +2050,7 @@ text-align: center;
 
 .container4-2 {
  width: 100%;
- height: 600px;
+ height: 2200px;
  text-align: center;
  background: linear-gradient(to right, #f4b3c2, #FFFAFA);
  font-family: 'Noto Serif JP', serif;
@@ -2060,7 +2060,6 @@ text-align: center;
  color: red;
  padding-top: 50px;
  padding-bottom: 10px;
- border-bottom: 1px solid red;
  width: 400px;
 }
 .introduce-image4-1 {
@@ -2077,7 +2076,89 @@ text-align: center;
  padding-top: 60px;
  padding-left: 30px;
  text-align: justify;
-　text-justify: inter-ideograph;
+ text-justify: inter-ideograph;
+}
+.onsen-introduce4 {
+ color: red;
+ text-align: center;
+ padding-bottom: 20px;
+ padding-top: 120px;
+}
+
+.introduce-image4-2 {
+ width:350px;
+ height:250px;
+ background-image: image-url('img/manten-kannnai.jpg');
+ background-size: cover;
+ margin-left: 220px;
+ margin-top: 20px;
+ float: left;
+}
+.introduce-text4-2 {
+ width: 50%;
+ float: right;
+ margin-right: 100px;
+ padding-top: 70px;
+ text-align: justify;
+ text-justify: inter-ideograph;
+}
+.eat-introduce4 {
+ color: red;
+ text-align: center;
+ padding-bottom: 20px;
+ padding-top: 400px;
+}
+.introduce-image4-3 {
+ width:350px;
+ height:250px;
+ background-image: image-url('img/manten_eat.jpg');
+ background-size: cover;
+ margin-left: 220px;
+ margin-top: 20px;
+ float: left;
+}
+.introduce-text4-3 {
+ width: 50%;
+ float: right;
+ margin-right: 100px;
+ padding-top: 70px;
+ text-align: justify;
+ text-justify: inter-ideograph;
+}
+.spa-introduce4 {
+ color: red;
+ text-align: center;
+ padding-bottom: 20px;
+ padding-top: 400px;
+}
+.introduce-image4-4 {
+ width:350px;
+ height:250px;
+ background-image: image-url('img/manten_onsen.jpg');
+ background-size: cover;
+ margin-left: 220px;
+ margin-top: 20px;
+ float: left;
+}
+.introduce-text4-4 {
+ width: 50%;
+ float: right;
+ margin-right: 100px;
+ padding-top: 30px;
+ text-align: justify;
+ text-justify: inter-ideograph;
+}
+.watch-finish {
+ padding-top: 200px;
+ color: red;
+}
+.manten-introduce {
+ padding-top: 200px;
+ text-align: center;
+}
+.manten-text {
+ padding-top: 20px;
+ text-align: center;
 }
 
 .container4-4 {
@@ -2090,10 +2171,10 @@ text-align: center;
  color: red;
  text-align: center;
 }
-.introduce-set4-2 {
+.introduce-set4-8 {
  background: linear-gradient(to right, #FFB6C1, #FFFAFA);
  border: inset;
- border-color: #FFB6C1;
+ border-color: #eebbcb;
  border-radius: 40px;
  padding-bottom: 20px;
  width: 520px;
@@ -2116,14 +2197,14 @@ text-align: center;
  margin-top: 40px;
  color: red;
 }
-.introduce-set4-4 {
+.introduce-set4-10 {
  margin-top: 20px;
  padding-bottom: 20px;
  width: 500px;
  color: red;
 }
 
-.introduce-set4-5 {
+.introduce-set4-11 {
  text-align: left;
  margin-left: 20px;
  color: red;
