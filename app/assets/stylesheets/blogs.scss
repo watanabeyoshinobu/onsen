@@ -1996,7 +1996,6 @@ text-align: center;
  text-align: center;
 }
 
-
 .container3-4 {
  width: 100%;
  height: 850px;
@@ -2039,7 +2038,6 @@ text-align: center;
  width: 500px;
  color: red;
 }
-
 .introduce-set3-11 {
  text-align: left;
  margin-left: 20px;
@@ -2048,14 +2046,12 @@ text-align: center;
 .kansou3 {
  padding-top: 30px;
 }
-
 .map3 {
  text-align: right;
  margin-right: 300px;
  margin-top: -600px;
  color: red;
 }
-
 .map-image3 {
  margin-top: 30px;
  margin-left: 800px;
@@ -2343,7 +2339,6 @@ text-align: center;
 }
 
 
-
 /*seeing画面*/
 .onsen-visual5 {
  width: 100%;
@@ -2437,17 +2432,131 @@ text-align: center;
  background: linear-gradient(to right, #d8e698, #FFFFF0);
  font-family: 'Noto Serif JP', serif;
 }
+
 .container5-2 {
  width: 100%;
+ height: 2200px;
+ text-align: center;
+ background: linear-gradient(to right, #cee4ae, #FFFAFA);
+ font-family: 'Noto Serif JP', serif;
+}
+.introduce5 {
+ margin: 0 auto;
+ color: red;
+ padding-top: 50px;
+ padding-bottom: 10px;
+ width: 600px;
+}
+.introduce-image5-1 {
+ width: 300px;
+ height: 300px;
+ background-image: image-url('img/oyugiwa_soto.jpeg');
+ background-size: cover;
+ margin-top: 30px;
+ margin-left: 150px;
+ margin-right: 30px;
+ float: left;
+}
+.introduce-text5-1 {
+ padding-top: 60px;
+ padding-left: 30px;
+ text-align: justify;
+ text-justify: inter-ideograph;
+}
+.onsen-introduce5 {
+ color: red;
+ text-align: center;
+ padding-bottom: 20px;
+ padding-top: 120px;
+}
+
+.introduce-image5-2 {
+ width:350px;
+ height:250px;
+ background-image: image-url('img/oyugiwa_kannai.jpg');
+ background-size: cover;
+ margin-left: 220px;
+ margin-top: 20px;
+ float: left;
+}
+.introduce-text5-2 {
+ width: 50%;
+ float: right;
+ margin-right: 100px;
+ padding-top: 40px;
+ text-align: justify;
+ text-justify: inter-ideograph;
+}
+.eat-introduce5 {
+ color: red;
+ text-align: center;
+ padding-bottom: 20px;
+ padding-top: 400px;
+}
+.introduce-image5-3 {
+ width:350px;
+ height:250px;
+ background-image: image-url('img/oyugiwa_eat.jpg');
+ background-size: cover;
+ margin-left: 220px;
+ margin-top: 20px;
+ float: left;
+}
+.introduce-text5-3 {
+ width: 50%;
+ float: right;
+ margin-right: 100px;
+ padding-top: 40px;
+ text-align: justify;
+ text-justify: inter-ideograph;
+}
+.spa-introduce5 {
+ color: red;
+ text-align: center;
+ padding-bottom: 20px;
+ padding-top: 400px;
+}
+.introduce-image5-4 {
+ width:350px;
+ height:250px;
+ background-image: image-url('img/manten_onsen.jpg');
+ background-size: cover;
+ margin-left: 220px;
+ margin-top: 20px;
+ float: left;
+}
+.introduce-text5-4 {
+ width: 50%;
+ float: right;
+ margin-right: 100px;
+ padding-top: 60px;
+ text-align: justify;
+ text-justify: inter-ideograph;
+}
+.seeing-finish {
+ padding-top: 200px;
+ color: red;
+}
+.oyugiwa-introduce {
+ padding-top: 200px;
+ text-align: center;
+}
+.oyugiwa-text {
+ padding-top: 20px;
+ text-align: center;
+}
+
+.container5-4 {
+ width: 100%;
  height: 850px;
- background: linear-gradient(to right, #EEE8AA, #FFFFF0);
+ background: linear-gradient(to right, #e0ebaf, #FFFFF0);
  font-family: 'Noto Serif JP', serif;
 }
 .access5 {
  color: red;
  text-align: center;
 }
-.introduce-set5-2 {
+.introduce-set5-8 {
  background: linear-gradient(to right, #d8e698, #FFFFF0);
  border: inset;
  border-color: #aacf53;
@@ -2473,14 +2582,13 @@ text-align: center;
  margin-top: 40px;
  color: red;
 }
-.introduce-set5-4 {
+.introduce-set5-10 {
  margin-top: 20px;
  padding-bottom: 20px;
  width: 500px;
  color: red;
 }
-
-.introduce-set5-5 {
+.introduce-set5-11 {
  text-align: left;
  margin-left: 20px;
  color: red;
@@ -2488,14 +2596,12 @@ text-align: center;
 .kansou5 {
  padding-top: 30px;
 }
-
 .map5 {
  text-align: right;
  margin-right: 250px;
  margin-top: -700px;
  color: red;
 }
-
 .map-image5 {
  margin-top: 30px;
  margin-left: 700px;
@@ -2597,11 +2703,125 @@ text-align: center;
 .beginning6 {
  width: 100%;
  height: 500px;
- background: linear-gradient(to right, #fddea5, #FDF5E6);
+ background: linear-gradient(to right, #fcd575, #FDF5E6);
  font-family: 'Noto Serif JP', serif;
 }
 
+
 .container6-2 {
+ width: 100%;
+ height: 2200px;
+ text-align: center;
+ background: linear-gradient(to right, #fddea5, #FFFAFA);
+ font-family: 'Noto Serif JP', serif;
+}
+.introduce6 {
+ margin: 0 auto;
+ color: red;
+ padding-top: 50px;
+ padding-bottom: 10px;
+ width: 600px;
+}
+.introduce-image6-1 {
+ width: 350px;
+ height: 250px;
+ background-image: image-url('img/yukaraku_outside.jpeg');
+ background-size: cover;
+ margin-top: 30px;
+ margin-left: 130px;
+ margin-right: 30px;
+ float: left;
+}
+.introduce-text6-1 {
+ padding-top: 60px;
+ padding-left: 30px;
+ text-align: justify;
+ text-justify: inter-ideograph;
+}
+.onsen-introduce6 {
+ color: red;
+ text-align: center;
+ padding-bottom: 20px;
+ padding-top: 120px;
+}
+
+.introduce-image6-2 {
+ width:350px;
+ height:250px;
+ background-image: image-url('img/yukaraku_kannai.jpg');
+ background-size: cover;
+ margin-left: 220px;
+ margin-top: 20px;
+ float: left;
+}
+.introduce-text6-2 {
+ width: 50%;
+ float: right;
+ margin-right: 100px;
+ padding-top: 40px;
+ text-align: justify;
+ text-justify: inter-ideograph;
+}
+.eat-introduce6 {
+ color: red;
+ text-align: center;
+ padding-bottom: 20px;
+ padding-top: 400px;
+}
+.introduce-image6-3 {
+ width:350px;
+ height:250px;
+ background-image: image-url('img/yukaraku_eat.jpg');
+ background-size: cover;
+ margin-left: 220px;
+ margin-top: 20px;
+ float: left;
+}
+.introduce-text6-3 {
+ width: 50%;
+ float: right;
+ margin-right: 100px;
+ padding-top: 40px;
+ text-align: justify;
+ text-justify: inter-ideograph;
+}
+.spa-introduce6 {
+ color: red;
+ text-align: center;
+ padding-bottom: 20px;
+ padding-top: 400px;
+}
+.introduce-image6-4 {
+ width:350px;
+ height:250px;
+ background-image: image-url('img/manten_onsen.jpg');
+ background-size: cover;
+ margin-left: 220px;
+ margin-top: 20px;
+ float: left;
+}
+.introduce-text6-4 {
+ width: 50%;
+ float: right;
+ margin-right: 100px;
+ padding-top: 30px;
+ text-align: justify;
+ text-justify: inter-ideograph;
+}
+.looking-finish {
+ padding-top: 200px;
+ color: red;
+}
+.yukaraku-introduce {
+ padding-top: 200px;
+ text-align: center;
+}
+.yukaraku-text {
+ padding-top: 20px;
+ text-align: center;
+}
+
+.container6-4 {
  width: 100%;
  height: 950px;
  background: linear-gradient(to right, #fff1cf, #FDF5E6);
@@ -2611,8 +2831,8 @@ text-align: center;
  color: red;
  text-align: center;
 }
-.introduce-set6-2 {
- background: linear-gradient(to right, #fddea5, #FDF5E6);
+.introduce-set6-8 {
+ background: linear-gradient(to right, #fcd575, #FDF5E6);
  border: inset;
  border-color: #eec362;
  border-radius: 40px;
@@ -2637,14 +2857,14 @@ text-align: center;
  margin-top: 40px;
  color: red;
 }
-.introduce-set6-4 {
+.introduce-set6-10 {
  margin-top: 20px;
  padding-bottom: 20px;
  width: 500px;
  color: red;
 }
 
-.introduce-set6-5 {
+.introduce-set6-11 {
  text-align: left;
  margin-left: 20px;
  color: red;
