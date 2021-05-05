@@ -1,36 +1,40 @@
 <%= render 'blogs/menu' %>
-<div class="mypage">
-	<h1>~ MY PAGE ~</h1>
+<div class="sakura_container">
+
+	<div class="mypage">
+		<h1>~ MY PAGE ~</h1>
+	</div>
+
+
+		<div class="row">
+			<div class="col-md-9"></div>
+			<div class="col-md-2"><%= button_to 'アカウント編集', edit_user_registration_path, class: 'btn btn-info btn-block', method: :get %></div>
+			<div class="col-md-1"><%= button_to '退会', withdraw_users_path, class: 'btn btn-danger btn-block', method: :get %></div>
+		</div>
+
+		<div class="user_formbox">
+			<div class="left_profile">
+				<div class="user-face"></div>
+			</div>
+
+			<div class="right_profile">
+				<div class="profile_group">
+		            <h5 class="profile_name">アカウント名</h5>
+		            <h3 class="user_name"><%= @user.name%></h3>
+				</div>
+
+				<div class="profile_group">
+		            <h5 class="profile_email">アドレス</h5>
+		            <h3 class="user_email"><%= @user.email %></h3>
+				</div>
+
+				<div class="profile_group">
+		            <h5 class="profile_password">パスワード</h5>
+		            <h3 class="user_password">******</h3>
+				</div>
+
+			</div>
+
+		</div>
+
 </div>
-
-
-	<div class="row">
-		<div class="col-md-9"></div>
-		<div class="col-md-2"><%= button_to 'アカウント編集', edit_user_registration_path, class: 'btn btn-info btn-block', method: :get %></div>
-		<div class="col-md-1"><%= button_to '退会', withdraw_users_path, class: 'btn btn-danger btn-block', method: :get %></div>
-	</div>
-
-	<div class="user_formbox">
-		<div class="left_profile">
-			<div class="user-face"></div>
-		</div>
-
-		<div class="right_profile">
-			<div class="profile_group">
-	            <h5 class="profile_name">アカウント名</h5>
-	            <h3 class="user_name"><%= @user.name%></h3>
-			</div>
-
-			<div class="profile_group">
-	            <h5 class="profile_email">アドレス</h5>
-	            <h3 class="user_email"><%= @user.email %></h3>
-			</div>
-
-			<div class="profile_group">
-	            <h5 class="profile_password">パスワード</h5>
-	            <h3 class="user_password">******</h3>
-			</div>
-
-		</div>
-
-	</div>

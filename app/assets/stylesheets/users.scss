@@ -3,6 +3,55 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+.sakura_container {
+  position: relative;
+  height: 580px;
+  width: 100%;
+  overflow: hidden;
+  background-image: image-url('img/sakura5.jpg');
+  background-size: 100% 600px;
+}
+
+
+.petal {
+  position: absolute;
+  background: linear-gradient(to right, #ffc0cb, #fef4f4);
+  border-radius: 150% 0 150% 0;
+  animation: animate-petal 10s linear;
+}
+
+.petal::after {
+  content: "";
+  position: absolute;
+  top: -14%;
+  left: -10%;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #ffc0cb, #fef4f4);
+  border-radius: 150% 0 150% 0;
+  transform: rotate(15deg);
+}
+
+@keyframes animate-petal {
+  0% {
+    top: 0;
+    opacity: 0;
+    transform: rotate(0deg);
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    top: 100vh;
+    transform: rotate(3000deg);
+  }
+}
+
 .title-name {
  font-family: 'Noto Serif JP', serif;
 }
@@ -47,11 +96,11 @@
 .user_formbox {
   font-family: 'Noto Serif JP', serif;
   width: 800px;
-  margin: 15px auto;
-  border: 10px inset #FFC0CB;
+  margin: 25px auto;
+  border: 5px inset #FFC0CB;
   border-radius: 10px;
-  padding: 25px;
-  background: linear-gradient(to right, #FFC0CB, #FFF0F5);
+  padding: 30px;
+  background: linear-gradient(to right, #ffdbed, #fef4f4);
   animation: fadeup 1s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
 }
 @keyframes fadeup {

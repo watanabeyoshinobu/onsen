@@ -256,3 +256,80 @@ $(function(){
 $(window).on('load', function(){
   $('.onsen-visual9').addClass('is-visible');
 });
+
+
+// 花びらのランダムサイズ
+window.addEventListener('DOMContentLoaded', () => {
+
+  const section = document.querySelector('.sakura_container');
+
+  const createPetal = () => {
+    const petalEl = document.createElement('span');
+    petalEl.className = 'petal';
+    const minSize = 10;
+    const maxSize = 20;
+    const size = Math.random() * (maxSize + 1 - minSize) + minSize;
+    petalEl.style.width = `${size}px`;
+    petalEl.style.height = `${size}px`;
+    petalEl.style.left = Math.random() * innerWidth + 'px';
+    section.appendChild(petalEl);
+    setTimeout(() => {
+      petalEl.remove();
+    }, 10000);
+  }
+
+  setInterval(createPetal, 300);
+});
+
+
+window.addEventListener('DOMContentLoaded', () => {
+
+  const section = document.querySelector('.sakura2_container');
+
+  const createPetal = () => {
+    const petalEl = document.createElement('span');
+    petalEl.className = 'petal2';
+    const minSize = 10;
+    const maxSize = 20;
+    const size = Math.random() * (maxSize + 1 - minSize) + minSize;
+    petalEl.style.width = `${size}px`;
+    petalEl.style.height = `${size}px`;
+    petalEl.style.left = Math.random() * innerWidth + 'px';
+    section.appendChild(petalEl);
+    setTimeout(() => {
+      petalEl.remove();
+    }, 15000);
+  }
+
+  setInterval(createPetal, 300);
+});
+
+
+// window.addEventListener('DOMContentLoaded', () => {
+
+//   const section = document.querySelecter('.sakura2_container');
+
+//   const createPetal = () => {
+//     const patalEl = document.createElement('span');
+//     petalEl.className = 'petal2';
+//     const minSize = 10;
+//     const maxSize = 20;
+//     const size = Math.random() * (maxSize + 1 - minSize) + minSize;
+//     petalEl.style.width = `${size}px`;
+//     petalEl.style.height = `${size}px`;
+//     petalEl.style.left = Math.random() * innerWidth + 'px';
+//     section.appendChild(petalEl);
+//     setTimeout(() => {
+//       petalEl.remove();
+//     }, 15000);
+//   }
+
+//   setInterval(createPetal, 300);
+// });
+
+
+
+
+
+
+
