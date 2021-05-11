@@ -74,7 +74,6 @@ gem 'pry-byebug'
 gem 'annotate'
 gem 'sass-rails'
 gem 'carrierwave'
-gem 'rmagick', '~> 4.2.2'
 
 group :production do
   gem 'mysql2'
