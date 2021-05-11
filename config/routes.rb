@@ -12,6 +12,9 @@ Rails.application.routes.draw do
       get 'watch' => 'blogs#watch'
       get 'seeing' => 'blogs#seeing'
       get 'looking' => 'blogs#looking'
+      get 'check' => "blogs#check"
+      get "try" => "blogs#try"
+      get "gaze" => "blogs#gaze"
     end
   end
 

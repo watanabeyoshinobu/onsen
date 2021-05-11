@@ -1,5 +1,5 @@
 current directory: /home/ec2-user/onsen/vendor/bundle/ruby/2.5.0/gems/rmagick-4.2.2/ext/RMagick
-/home/ec2-user/.rbenv/versions/2.5.7/bin/ruby -r ./siteconf20210405-29406-1yeiemm.rb extconf.rb
+/home/ec2-user/.rbenv/versions/2.5.7/bin/ruby -I /home/ec2-user/.rbenv/versions/2.5.7/lib/ruby/site_ruby/2.5.0 -r ./siteconf20210511-18996-fp0a4x.rb extconf.rb
 checking for brew... no
 checking for pacman... no
 checking for Ruby version >= 2.3.0... yes

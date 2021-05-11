@@ -72,6 +72,7 @@
   min-height: 100%;
   display: none;
   z-index: 9;
+  font-family: 'Noto Serif JP', serif;
 }
 
 #sp-menu li{
@@ -116,12 +117,13 @@
  width: 100%;
  height: 330px;
  text-align: center;
+ text-shadow: -3px 2px 0 #fff;
  margin: 0 auto;
  margin: auto;
  position: relative;
- background-size: cover;
- font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
- background: linear-gradient(to left, #FFFFE0, #EEE8AA);
+ background-size: 100%, cover;
+ font-family: 'Noto Serif JP', serif;
+ background-image:  image-url('img/harukaze.jpg');
 }
 
 .yunokokoti {
@@ -129,14 +131,19 @@
  text-shadow: -3px 2px 0 #fff;
  font-style: italic;
  letter-spacing: .1em;
- animation: fadeIn 3s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
+ animation: fadeup 5s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
 }
-@keyframes fadeIn {
+@keyframes fadeup {
   0% {
-    opacity: 0;
+   transform: translateY(30px);
+   opacity: 0;
+  }
+  80% {
+   opacity: 1;
   }
   100% {
-    opacity: 1;
+   opacity: 1;
+   transform: translateY(0);
   }
 }
 .yunokokoti-text {
@@ -151,7 +158,7 @@ main {
  height: 1000px;
 }
 .heading1{
- font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+ font-family: 'Noto Serif JP', serif;
  padding: 60px 0 0 30px;
  margin-right: 50px;
  padding-bottom: 10px;
@@ -180,7 +187,7 @@ main {
 }
 
 .heading2{
- font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+ font-family: 'Noto Serif JP', serif;
  padding: 60px 0 0 30px;
  margin-right: 50px;
  padding-bottom: 10px;
@@ -208,7 +215,7 @@ main {
   }
 }
 .heading3{
- font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+ font-family: 'Noto Serif JP', serif;
  font-size: 36px;
  padding: 60px 0 0 30px;
  margin-right: 50px;
@@ -266,7 +273,7 @@ header{
 
 .container1{
  width: 100%;
- height: 1100px;
+ height: 1450px;
  margin: 0 auto;
  position: center;
  background: linear-gradient(90deg, #FFC0CB, #FFE4E1, #FFF0F5, #FFE4C4, #FFDEAD);
@@ -322,7 +329,7 @@ header{
   transition: cubic-bezier(0.32, 0, 0.67, 0);
   }
 .portfolio_image1:hover::before {
-  animation: kiran 1s linear 1;
+  animation: kiran 0.7s linear 1;
 }
 @keyframes kiran {
   0% {
@@ -382,7 +389,7 @@ header{
   transition: cubic-bezier(0.32, 0, 0.67, 0);
   }
 .portfolio_image2:hover::before {
-  animation: kiran 1s linear 1;
+  animation: kiran 0.7s linear 1;
 }
 @keyframes kiran {
   0% {
@@ -443,7 +450,7 @@ header{
   transition: cubic-bezier(0.32, 0, 0.67, 0);
   }
 .portfolio_image3:hover::before {
-  animation: kiran 1s linear 1;
+  animation: kiran 0.7s linear 1;
 }
 @keyframes kiran {
   0% {
@@ -470,7 +477,7 @@ header{
 
 .spa-images2 {
  width: 1030px;
- height: 1000px;
+ height: 350px;
  margin: 0 auto;
 }
 
@@ -510,7 +517,7 @@ header{
   transition: cubic-bezier(0.32, 0, 0.67, 0);
   }
 .portfolio_image4:hover::before {
-  animation: kiran 1s linear 1;
+  animation: kiran 0.7s linear 1;
 }
 @keyframes kiran {
   0% {
@@ -571,7 +578,7 @@ header{
   transition: cubic-bezier(0.32, 0, 0.67, 0);
   }
 .portfolio_image5:hover::before {
-  animation: kiran 1s linear 1;
+  animation: kiran 0.7s linear 1;
 }
 @keyframes kiran {
   0% {
@@ -632,7 +639,7 @@ header{
   transition: cubic-bezier(0.32, 0, 0.67, 0);
   }
 .portfolio_image6:hover::before {
-  animation: kiran 1s linear 1;
+  animation: kiran 0.7s linear 1;
 }
 @keyframes kiran {
   0% {
@@ -656,6 +663,196 @@ header{
     opacity: 0;
   }
 }
+
+.spa-images3 {
+ width: 1030px;
+ height: 350px;
+ margin: 0 auto;
+ margin-top: 10px;
+}
+.portfolio_image7{
+ background-image: image-url('img/zama.jpg');
+ height :250px;
+ width: 300px;
+ margin-top: 0;
+ background-size: cover;
+ background-position: center;
+ margin: 10px 40px 0 0;
+ float: left;
+ border-radius: 20px;
+ animation: fadeIn 4s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
+ overflow: hidden;
+ position: relative;
+ cursor: pointer;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.portfolio_image7::before {
+  background-color: #fff;
+  content: "";
+  display: block;
+  position: absolute;
+  top: -100px;
+  left: 0;
+  width: 30px;
+  height: 100%;
+  opacity: 0;
+  transition: cubic-bezier(0.32, 0, 0.67, 0);
+  }
+.portfolio_image7:hover::before {
+  animation: kiran 0.7s linear 1;
+}
+@keyframes kiran {
+  0% {
+    transform: scale(2) rotate(45deg);
+    opacity: 0;
+  }
+  20% {
+    transform: scale(20) rotate(45deg);
+    opacity: 0.6;
+  }
+  40% {
+    transform: scale(30) rotate(45deg);
+    opacity: 0.4;
+  }
+  80% {
+    transform: scale(45) rotate(45deg);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(50) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+.portfolio_image8{
+ background-image: image-url('img/kawasaki.jpg');
+ height :250px;
+ width: 300px;
+ margin-top: 0;
+ background-size: cover;
+ background-position: center;
+ margin: 10px 40px 0 0;
+ float: left;
+ border-radius: 20px;
+ animation: fadeIn 4s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
+ overflow: hidden;
+ position: relative;
+ cursor: pointer;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.portfolio_image8::before {
+  background-color: #fff;
+  content: "";
+  display: block;
+  position: absolute;
+  top: -100px;
+  left: 0;
+  width: 30px;
+  height: 100%;
+  opacity: 0;
+  transition: cubic-bezier(0.32, 0, 0.67, 0);
+  }
+.portfolio_image8:hover::before {
+  animation: kiran 0.7s linear 1;
+}
+@keyframes kiran {
+  0% {
+    transform: scale(2) rotate(45deg);
+    opacity: 0;
+  }
+  20% {
+    transform: scale(20) rotate(45deg);
+    opacity: 0.6;
+  }
+  40% {
+    transform: scale(30) rotate(45deg);
+    opacity: 0.4;
+  }
+  80% {
+    transform: scale(45) rotate(45deg);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(50) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+.portfolio_image9{
+ background-image: image-url('img/serigaya.jpg');
+ height :250px;
+ width: 300px;
+ margin-top: 0;
+ background-size: cover;
+ background-position: center;
+ margin: 10px 40px 0 0;
+ float: left;
+ border-radius: 20px;
+ animation: fadeIn 4s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
+ overflow: hidden;
+ position: relative;
+ cursor: pointer;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.portfolio_image9::before {
+  background-color: #fff;
+  content: "";
+  display: block;
+  position: absolute;
+  top: -100px;
+  left: 0;
+  width: 30px;
+  height: 100%;
+  opacity: 0;
+  transition: cubic-bezier(0.32, 0, 0.67, 0);
+  }
+.portfolio_image9:hover::before {
+  animation: kiran 0.7s linear 1;
+}
+@keyframes kiran {
+  0% {
+    transform: scale(2) rotate(45deg);
+    opacity: 0;
+  }
+  20% {
+    transform: scale(20) rotate(45deg);
+    opacity: 0.6;
+  }
+  40% {
+    transform: scale(30) rotate(45deg);
+    opacity: 0.4;
+  }
+  80% {
+    transform: scale(45) rotate(45deg);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(50) rotate(45deg);
+    opacity: 0;
+  }
+}
+
 
 
 #profile{
@@ -687,7 +884,7 @@ header{
  background-size: cover;
  margin-left: 300px;
  border-radius: 50%;
- background-image: image-url('img/komorebi.jpg');
+ background-image: image-url('img/ventus.jpg');
  overflow: hidden;
  position: relative;
  cursor: pointer;
@@ -705,7 +902,7 @@ header{
   transition: cubic-bezier(0.32, 0, 0.67, 0);
   }
 .my-face:hover::before {
-  animation: kiran 1s linear 1;
+  animation: kiran 0.8s linear 1;
 }
 @keyframes kiran {
   0% {
@@ -744,12 +941,12 @@ header{
  font-family: 'Yu Mincho、游明朝', serif;
 }
 .admin-name{
- font-family: "YHiragino Mincho ProN", "ヒラギノ明朝 ProN", "Hiragino", serif;
+ font-family: 'Noto Serif JP', serif;
 }
 
 #sns {
  color: #FFF0F5;
- font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+ font-family: 'Noto Serif JP', serif;
 
 }
 .container3{
@@ -766,7 +963,7 @@ header{
 }
 .SNS {
  color: #FFF0F5;
- font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+ font-family: 'Noto Serif JP', serif;
  font-style: italic;
  letter-spacing: .1em;
  text-shadow: -3px 2px 0 #fff;
@@ -782,65 +979,6 @@ header{
  overflow: hidden;
  position: relative;
  cursor: pointer;
-}
-.kansou::before {
-  background-color: #fff;
-  content: "";
-  display: block;
-  position: absolute;
-  top: -100px;
-  left: 0;
-  width: 30px;
-  height: 100%;
-  opacity: 0;
-  transition: cubic-bezier(0.32, 0, 0.67, 0);
-  }
-.kansou:hover::before {
-  animation: kiran 0.5s linear 1;
-}
-@keyframes kiran {
-  0% {
-    transform: scale(2) rotate(45deg);
-    opacity: 0;
-  }
-  20% {
-    transform: scale(20) rotate(45deg);
-    opacity: 0.6;
-  }
-  40% {
-    transform: scale(30) rotate(45deg);
-    opacity: 0.4;
-  }
-  80% {
-    transform: scale(45) rotate(45deg);
-    opacity: 0.2;
-  }
-  100% {
-    transform: scale(50) rotate(45deg);
-    opacity: 0;
-  }
-}
-@keyframes kiran {
-  0% {
-    transform: scale(2) rotate(45deg);
-    opacity: 0;
-  }
-  20% {
-    transform: scale(20) rotate(45deg);
-    opacity: 0.6;
-  }
-  40% {
-    transform: scale(30) rotate(45deg);
-    opacity: 0.4;
-  }
-  80% {
-    transform: scale(45) rotate(45deg);
-    opacity: 0.2;
-  }
-  100% {
-    transform: scale(50) rotate(45deg);
-    opacity: 0;
-  }
 }
 
 .right-content{
@@ -867,7 +1005,7 @@ header{
 
 /*look画面*/
 /*文字アニメーション*/
-.introduce-visual{
+.onsen-visual{
  width: 100%;
  height: 720px;
  margin: auto;
@@ -889,14 +1027,14 @@ header{
     transform: translateY(0);
   }
 }
-.introduce-visual .mask {
+.onsen-visual .mask {
  position: absolute;
  top: 0;
  bottom: 0;
  left: 0;
  right: 0;
 }
-.introduce-visual .text {
+.onsen-visual .text {
  font-size: 0;
  line-height: 1;
  position: absolute;
@@ -904,40 +1042,40 @@ header{
  left: 40px;
  padding-top: 50px;
 }
-.introduce-visual .line {
+.onsen-visual .line {
  display: block;
  padding: 10px;
  font-family: 'Hiragino Kaku Gothic Std',sans-serif;
  font-size: 80px;
  font-weight: bold;
 }
-.introduce-visual .line + .line {
+.onsen-visual .line + .line {
  margin-top: 15px;
 }
-.introduce-visual .letter {
+.onsen-visual .letter {
  display: inline-block;
  padding-top: 5px;
 }
-.introduce-visual .mask.normal {
+.onsen-visual .mask.normal {
  -webkit-clip-path: polygon(0 0, 862px 0, 862px 1060px, 0 1060px);
  clip-path: polygon(0 0, 862px 0, 862px 1060px, 0 1060px);
 }
-.introduce-visual .mask.burn {
+.onsen-visual .mask.burn {
  -webkit-clip-path: polygon(862px 0, 1462px 0, 1462px 1060px, 862px 1060px);
  clip-path: polygon(862px 0, 1462px 0, 1462px 1060px, 862px 1060px);
 }
 .mask.burn {
  mix-blend-mode: color-burn;
 }
-.introduce-visual .line,
-.introduce-visual .letter {
+.onsen-visual .line,
+.onsen-visual .letter {
  opacity: 0;
 }
 
-.introduce-visual.is-visible .line {
+.onsen-visual.is-visible .line {
  opacity: 1;
 }
-.introduce-visual.is-visible .letter {
+.onsen-visual.is-visible .letter {
  color: #FFFFFF;
  font-style: italic;
  text-shadow: -3px 2px 0 #A9A9A9;
@@ -957,8 +1095,12 @@ header{
 .beginning {
  width: 100%;
  height: 450px;
- background: linear-gradient(to right, #FFB6C1, #FFFAFA);
- font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+ background: linear-gradient(to right, #f4b3c2, #FFFAFA);
+ font-family: 'Noto Serif JP', serif;
+}
+.introduce-set{
+ padding: 30px 0 90px 0;
+ font-size: 16px;
 }
 .bv-title {
  color: red;
@@ -979,29 +1121,21 @@ header{
 }
 
 
-
 .container6 {
  width: 100%;
- height: 5350px;
- background: linear-gradient(to right, #FFE4E1, #FFFAFA);
- font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+ height: 5200px;
+ background: linear-gradient(to right, #f5b1aa, #FFFAFA);
+ font-family: 'Noto Serif JP', serif;
 }
-
-.introduce {
- color: red;
- text-align: center;
- padding-bottom: 60px;
-}
-
-.introduce-set{
- padding: 30px 0 90px 0;
- font-size: 16px;
-}
-
 
 .introduce-set1 {
  padding: 30px 0 90px 0;
  font-size: 16px;
+}
+.introduce {
+ color: red;
+ text-align: center;
+ padding-bottom: 20px;
 }
 .forest-villa1 {
  color: blue;
@@ -1050,8 +1184,6 @@ header{
  float: right;
  margin-right: 100px;
 }
-
-
 .introduce-set3 {
  padding: 30px 0 120px 0;
  font-size: 16px;
@@ -1158,8 +1290,6 @@ text-align: center;
  margin: 10px 0 0 0;
  background-image: image-url('img/dsc_0120.jpg');
 }
-
-
 .introduce-set5 {
  padding: 30px 0 120px 0;
  font-size: 16px;
@@ -1188,9 +1318,6 @@ text-align: center;
  margin-right: 70px;
 
 }
-
-
-
 .introduce-set6 {
  padding: 30px 0 120px 0;
  font-size: 16px;
@@ -1200,7 +1327,7 @@ text-align: center;
  color: blue;
  width: 50%;
  float: right;
- padding-top: 30px;
+ padding-top: 10px;
  padding-bottom: 30px;
  padding-left: 20px;
 }
@@ -1214,13 +1341,10 @@ text-align: center;
  margin-bottom: 50px;
  float: left;
 }
-
-
 .introduce-set7 {
  padding: 30px 0 80px 0;
  font-size: 16px;
  }
-
 .onsen-spa {
  color: blue;
  width: 50%;
@@ -1242,18 +1366,15 @@ text-align: center;
  margin-right: 80px;
  padding-top: 50px;
  }
-
-
 .introduce-set8 {
- padding: 30px 0 120px 0;
+ padding: 10px 0 120px 0;
  font-size: 16px;
- margin-top: 40px;
+ margin-top: 5px;
  }
-
  .onsen-spa2 {
  color: red;
  text-align: center;
- padding-top: 40px;
+ padding-top: 5px;
 }
 .introduce-image13 {
  width: 300px;
@@ -1279,8 +1400,6 @@ text-align: center;
 .onsen-text {
  text-align: center;
 }
-
-
 .introduce-set9 {
  padding: 30px 0 80px 0;
  font-size: 16px;
@@ -1306,9 +1425,6 @@ text-align: center;
  margin-right: 50px;
  padding-top: 30px;
  }
-
-
-
 .introduce-set10 {
  padding: 30px 0 80px 0;
  font-size: 16px;
@@ -1338,9 +1454,9 @@ text-align: center;
 
 .container7 {
  width: 100%;
- height: 850px;
- background: linear-gradient(to left, #FFE4E1, #FFFAFA);
- font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+ height: 870px;
+ background: linear-gradient(to right, #FFE4E1, #FFFAFA);
+ font-family: 'Noto Serif JP', serif;
 }
 .access {
  color: red;
@@ -1348,7 +1464,10 @@ text-align: center;
 }
 
 .introduce-set12 {
- background-color: #FFC0CB;
+ background: linear-gradient(to right, #FFB6C1, #FFFAFA);
+ border: inset;
+ border-color: #FFB6C1;
+ border-radius: 40px;
  padding-bottom: 20px;
  width: 500px;
 }
@@ -1389,7 +1508,7 @@ text-align: center;
 .map {
  text-align: right;
  margin-right: 300px;
- margin-top: -600px;
+ margin-top: -750px;
 }
 
 .map-image {
@@ -1403,7 +1522,7 @@ text-align: center;
 
 /*see画面*/
 
-.introduce-visual2 {
+.onsen-visual2 {
  width: 100%;
  height: 720px;
  text-align: cover;
@@ -1426,14 +1545,14 @@ text-align: center;
     transform: translateY(0);
   }
 }
-.introduce-visual2 .mask {
+.onsen-visual2 .mask {
  position: absolute;
  top: 0;
  bottom: 0;
  left: 0;
  right: 0;
 }
-.introduce-visual2 .text {
+.onsen-visual2 .text {
  font-size: 0;
  line-height: 1;
  position: absolute;
@@ -1441,40 +1560,40 @@ text-align: center;
  left: 40px;
  padding-top: 50px;
 }
-.introduce-visual2 .line {
+.onsen-visual2 .line {
  display: block;
  padding: 10px;
  font-family: 'Hiragino Kaku Gothic Std',sans-serif;
  font-size: 80px;
  font-weight: bold;
 }
-.introduce-visual2 .line + .line {
+.onsen-visual2 .line + .line {
  margin-top: 15px;
 }
-.introduce-visual2 .letter {
+.onsen-visual2 .letter {
  display: inline-block;
  padding-top: 5px;
 }
-.introduce-visual2 .mask.normal {
+.onsen-visual2 .mask.normal {
  -webkit-clip-path: polygon(0 0, 862px 0, 862px 1060px, 0 1060px);
  clip-path: polygon(0 0, 862px 0, 862px 1060px, 0 1060px);
 }
-.introduce-visual2 .mask.burn {
+.onsen-visual2 .mask.burn {
  -webkit-clip-path: polygon(862px 0, 1462px 0, 1462px 1060px, 862px 1060px);
  clip-path: polygon(862px 0, 1462px 0, 1462px 1060px, 862px 1060px);
 }
 .mask.burn {
  mix-blend-mode: color-burn;
 }
-.introduce-visual2 .line,
-.introduce-visual2 .letter {
+.onsen-visual2 .line,
+.onsen-visual2 .letter {
  opacity: 0;
 }
 
-.introduce-visual2.is-visible .line {
+.onsen-visual2.is-visible .line {
  opacity: 1;
 }
-.introduce-visual2.is-visible .letter {
+.onsen-visual2.is-visible .letter {
  color: #FFFFFF;
  font-style: italic;
  text-shadow: -3px 2px 0 #A9A9A9;
@@ -1494,24 +1613,23 @@ text-align: center;
 .beginning2 {
  width: 100%;
  height: 450px;
- background-color: #FFFACD;
- font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+ font-family: 'Noto Serif JP', serif;
  background: linear-gradient(to right, #EEE8AA, #FFFFF0);
 }
 
 
 .container9 {
  width: 100%;
- height: 3800px;
+ height: 3500px;
  background-color: #FFF8DC;
- font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
- background: linear-gradient(to right, #F5DEB3, #FFFFE0);
+ font-family: 'Noto Serif JP', serif;
+ background: linear-gradient(to right, #f2f2b0, #FFFFE0);
 }
 
 .introduce-set21 {
  padding: 30px 0 90px 0;
  font-size: 16px;
- padding-top: 150px;
+ padding-top: 50px;
 }
 .all {
  color: blue;
@@ -1528,9 +1646,6 @@ text-align: center;
  margin-left: 250px;
  float: left;
 }
-
-
-
 .introduce-set22{
  padding: 30px 0 90px 0;
  font-size: 16px;
@@ -1551,15 +1666,12 @@ text-align: center;
  margin-top: 30px;
  margin-left: 250px;
  float: left;
-
 }
 .introduce-text22 {
  width: 50%;
  float: right;
  margin-right: 80px;
 }
-
-
 .introduce-set23 {
  padding: 30px 0 120px 0;
  font-size: 16px;
@@ -1587,13 +1699,10 @@ text-align: center;
  float: right;
  margin-right: 80px;
 }
-
-
 .introduce-set24 {
  padding: 30px 0 80px 0;
  font-size: 16px;
  }
-
 .onsen-spa24 {
  color: blue;
  width: 50%;
@@ -1618,10 +1727,8 @@ text-align: center;
  width: 50%;
  float: right;
  margin-right: 100px;
- padding-top: 50px;
+ padding-top: 100px;
  }
-
-
  .introduce-set25 {
  padding: 30px 0 120px 0;
  font-size: 16px;
@@ -1651,20 +1758,25 @@ text-align: center;
  .introduce-set26 {
  color: red;
 }
-
-
 .container10 {
  width: 100%;
  height: 820px;
  background-color: #FFFFE0;
- font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
- background: linear-gradient(to left, #EEE8AA, #FFFFF0);
+ font-family: 'Noto Serif JP', serif;
+ background: linear-gradient(to right, #EEE8AA, #FFFFF0);
 }
-
+.introduce-set12-2 {
+ background: linear-gradient(to right, #EEE8AA, #FFFFF0);
+ border: inset;
+ border-color: #d7cf3a;
+ border-radius: 40px;
+ padding-bottom: 20px;
+ width: 500px;
+}
 .map2 {
  text-align: right;
  margin-right: 360px;
- margin-top: -600px;
+ margin-top: -650px;
 }
 
 .map-image2 {
@@ -1679,11 +1791,10 @@ text-align: center;
 
 
 /*saw画面*/
-
-.introduce-visual3 {
+.onsen-visual3 {
  width: 100%;
  height: 720px;
- color: #FAFAFA;
+ text-align: cover;
  background-image: image-url('img/yokohamanoyu.jpg');
  background-size: cover;
  background-position: center;
@@ -1702,14 +1813,14 @@ text-align: center;
     transform: translateY(0);
   }
 }
-.introduce-visual3 .mask {
+.onsen-visual3 .mask {
  position: absolute;
  top: 0;
  bottom: 0;
  left: 0;
  right: 0;
 }
-.introduce-visual3 .text {
+.onsen-visual3 .text {
  font-size: 0;
  line-height: 1;
  position: absolute;
@@ -1717,40 +1828,40 @@ text-align: center;
  left: 40px;
  padding-top: 50px;
 }
-.introduce-visual3 .line {
+.onsen-visual3 .line {
  display: block;
  padding: 10px;
  font-family: 'Hiragino Kaku Gothic Std',sans-serif;
  font-size: 80px;
  font-weight: bold;
 }
-.introduce-visual3 .line + .line {
+.onsen-visual3 .line + .line {
  margin-top: 15px;
 }
-.introduce-visual3 .letter {
+.onsen-visual3 .letter {
  display: inline-block;
  padding-top: 5px;
 }
-.introduce-visual3 .mask.normal {
+.onsen-visual3 .mask.normal {
  -webkit-clip-path: polygon(0 0, 1062px 0, 862px 1060px, 0 1160px);
  clip-path: polygon(0 0, 862px 0, 1062px 1060px, 0 1160px);
 }
-.introduce-visual3 .mask.burn {
+.onsen-visual3 .mask.burn {
  -webkit-clip-path: polygon(862px 0, 1662px 0, 1462px 1060px, 862px 1160px);
  clip-path: polygon(862px 0, 1662px 0, 1462px 1060px, 862px 1160px);
 }
 .mask.burn {
  mix-blend-mode: color-burn;
 }
-.introduce-visual3 .line,
-.introduce-visual3 .letter {
+.onsen-visual3 .line,
+.onsen-visual3 .letter {
  opacity: 0;
 }
 
-.introduce-visual3.is-visible .line {
+.onsen-visual3.is-visible .line {
  opacity: 1;
 }
-.introduce-visual3.is-visible .letter {
+.onsen-visual3.is-visible .letter {
  color: #FFFFFF;
  font-style: italic;
  text-shadow: -3px 2px 0 #A9A9A9;
@@ -1769,13 +1880,190 @@ text-align: center;
 .beginning3 {
  width: 100%;
  height: 500px;
- background-color: #FFFACD;
- font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+ background: linear-gradient(to right, #f9c89b, #FDF5E6);
+ font-family: 'Noto Serif JP', serif;
+}
+.container3-2 {
+ width: 100%;
+ height: 2200px;
+ text-align: center;
+ background: linear-gradient(to right, #fddea5, #FFFAFA);
+ font-family: 'Noto Serif JP', serif;
+}
+.introduce3 {
+ margin: 0 auto;
+ color: red;
+ padding-top: 50px;
+ padding-bottom: 10px;
+ width: 700px;
+}
+.introduce-image3-1 {
+ width: 300px;
+ height: 300px;
+ background-image: image-url('img/manten-yu2.jpeg');
+ background-size: cover;
+ margin-top: 30px;
+ margin-left: 150px;
+ margin-right: 30px;
+ float: left;
+}
+.introduce-text3-1 {
+ padding-top: 60px;
+ padding-left: 30px;
+ text-align: justify;
+ text-justify: inter-ideograph;
+}
+.onsen-introduce3 {
+ color: red;
+ text-align: center;
+ padding-bottom: 20px;
+ padding-top: 120px;
+}
+
+.introduce-image3-2 {
+ width:350px;
+ height:250px;
+ background-image: image-url('img/manyou_kannai.jpg');
+ background-size: cover;
+ margin-left: 220px;
+ margin-top: 20px;
+ float: left;
+}
+.introduce-text3-2 {
+ width: 50%;
+ float: right;
+ margin-right: 100px;
+ padding-top: 20px;
+ text-align: justify;
+ text-justify: inter-ideograph;
+}
+.eat-introduce3 {
+ color: red;
+ text-align: center;
+ padding-bottom: 20px;
+ padding-top: 400px;
+}
+.introduce-image3-3 {
+ width:350px;
+ height:250px;
+ background-image: image-url('img/manyou_eat.jpg');
+ background-size: cover;
+ margin-left: 220px;
+ margin-top: 20px;
+ float: left;
+}
+.introduce-text3-3 {
+ width: 50%;
+ float: right;
+ margin-right: 100px;
+ padding-top: 20px;
+ text-align: justify;
+ text-justify: inter-ideograph;
+}
+.spa-introduce3 {
+ color: red;
+ text-align: center;
+ padding-bottom: 20px;
+ padding-top: 400px;
+}
+.introduce-image3-4 {
+ width:350px;
+ height:250px;
+ background-image: image-url('img/manyou_onsen.jpg');
+ background-size: cover;
+ margin-left: 220px;
+ margin-top: 20px;
+ float: left;
+}
+.introduce-text3-4 {
+ width: 50%;
+ float: right;
+ margin-right: 100px;
+ padding-top: 15px;
+ text-align: justify;
+ text-justify: inter-ideograph;
+}
+.saw-finish {
+ padding-top: 200px;
+ color: red;
+}
+.manyou-introduce {
+ padding-top: 200px;
+ text-align: center;
+}
+.manyou-text {
+ padding-top: 20px;
+ text-align: center;
+}
+
+.container3-4 {
+ width: 100%;
+ height: 850px;
+ background: linear-gradient(to right, #FFDEAD, #FDF5E6);
+ font-family: 'Noto Serif JP', serif;
+}
+.access3 {
+ color: red;
+ text-align: center;
+}
+.introduce-set3-8 {
+ background: linear-gradient(to right, #f9c89b, #FDF5E6);
+ border: inset;
+ border-color: #f8b862;
+ border-radius: 40px;
+ padding-bottom: 20px;
+ width: 500px;
+}
+.address3 {
+ text-align: center;
+ padding-bottom: 20px;
+ color: red;
+}
+.address-text3 {
+ text-align: center;
+ font-size: 24px;
+}
+.introduce-price3 {
+ width: 100%;
+}
+.price3 {
+ width: 30%;
+ margin-bottom: 50px;
+ margin-top: 40px;
+ color: red;
+}
+.introduce-set3-10 {
+ margin-top: 20px;
+ padding-bottom: 20px;
+ width: 500px;
+ color: red;
+}
+.introduce-set3-11 {
+ text-align: left;
+ margin-left: 20px;
+ color: red;
+}
+.kansou3 {
+ padding-top: 30px;
+}
+.map3 {
+ text-align: right;
+ margin-right: 300px;
+ margin-top: -600px;
+ color: red;
+}
+.map-image3 {
+ margin-top: 30px;
+ margin-left: 800px;
+ background-size: cover;
+ width: 500px;
+ height: 500px;
+ background-image: image-url('img/map_manyou.jpg');
 }
 
 
 /*watch画面*/
-.introduce-visual4 {
+.onsen-visual4 {
  width: 100%;
  height: 720px;
  color: #FAFAFA;
@@ -1797,14 +2085,14 @@ text-align: center;
     transform: translateY(0);
   }
 }
-.introduce-visual4 .mask {
+.onsen-visual4 .mask {
  position: absolute;
  top: 0;
  bottom: 0;
  left: 0;
  right: 0;
 }
-.introduce-visual4 .text {
+.onsen-visual4 .text {
  font-size: 0;
  line-height: 1;
  position: absolute;
@@ -1812,40 +2100,40 @@ text-align: center;
  left: 40px;
  padding-top: 50px;
 }
-.introduce-visual4 .line {
+.onsen-visual4 .line {
  display: block;
  padding: 10px;
  font-family: 'Hiragino Kaku Gothic Std',sans-serif;
  font-size: 80px;
  font-weight: bold;
 }
-.introduce-visual4 .line + .line {
+.onsen-visual4 .line + .line {
  margin-top: 15px;
 }
-.introduce-visual4 .letter {
+.onsen-visual4 .letter {
  display: inline-block;
  padding-top: 5px;
 }
-.introduce-visual4 .mask.normal {
+.onsen-visual4 .mask.normal {
  -webkit-clip-path: polygon(0 0, 862px 0, 862px 1060px, 0 1060px);
  clip-path: polygon(0 0, 862px 0, 862px 1060px, 0 1060px);
 }
-.introduce-visual4 .mask.burn {
+.onsen-visual4 .mask.burn {
  -webkit-clip-path: polygon(862px 0, 1462px 0, 1462px 1060px, 862px 1060px);
  clip-path: polygon(862px 0, 1462px 0, 1462px 1060px, 862px 1060px);
 }
 .mask.burn {
  mix-blend-mode: color-burn;
 }
-.introduce-visual4 .line,
-.introduce-visual4 .letter {
+.onsen-visual4 .line,
+.onsen-visual4 .letter {
  opacity: 0;
 }
 
-.introduce-visual4.is-visible .line {
+.onsen-visual4.is-visible .line {
  opacity: 1;
 }
-.introduce-visual4.is-visible .letter {
+.onsen-visual4.is-visible .letter {
  color: #FFFFFF;
  font-style: italic;
  text-shadow: -3px 2px 0 #A9A9A9;
@@ -1864,17 +2152,195 @@ text-align: center;
 
 .beginning4 {
  width: 100%;
+ height: 510px;
+ background: linear-gradient(to right, #eebbcb, #FFFAFA);
+ font-family: 'Noto Serif JP', serif;
+}
+
+.container4-2 {
+ width: 100%;
+ height: 2200px;
+ text-align: center;
+ background: linear-gradient(to right, #f4b3c2, #FFFAFA);
+ font-family: 'Noto Serif JP', serif;
+}
+.introduce4 {
+ margin: 0 auto;
+ color: red;
+ padding-top: 50px;
+ padding-bottom: 10px;
+ width: 400px;
+}
+.introduce-image4-1 {
+ width: 300px;
+ height: 300px;
+ background-image: image-url('img/manten-yu2.jpeg');
+ background-size: cover;
+ margin-top: 30px;
+ margin-left: 150px;
+ margin-right: 30px;
+ float: left;
+}
+.introduce-text4-1 {
+ padding-top: 60px;
+ padding-left: 30px;
+ text-align: justify;
+ text-justify: inter-ideograph;
+}
+.onsen-introduce4 {
+ color: red;
+ text-align: center;
+ padding-bottom: 20px;
+ padding-top: 120px;
+}
+
+.introduce-image4-2 {
+ width:350px;
+ height:250px;
+ background-image: image-url('img/manten-kannnai.jpg');
+ background-size: cover;
+ margin-left: 220px;
+ margin-top: 20px;
+ float: left;
+}
+.introduce-text4-2 {
+ width: 50%;
+ float: right;
+ margin-right: 100px;
+ padding-top: 70px;
+ text-align: justify;
+ text-justify: inter-ideograph;
+}
+.eat-introduce4 {
+ color: red;
+ text-align: center;
+ padding-bottom: 20px;
+ padding-top: 400px;
+}
+.introduce-image4-3 {
+ width:350px;
+ height:250px;
+ background-image: image-url('img/manten_eat.jpg');
+ background-size: cover;
+ margin-left: 220px;
+ margin-top: 20px;
+ float: left;
+}
+.introduce-text4-3 {
+ width: 50%;
+ float: right;
+ margin-right: 100px;
+ padding-top: 70px;
+ text-align: justify;
+ text-justify: inter-ideograph;
+}
+.spa-introduce4 {
+ color: red;
+ text-align: center;
+ padding-bottom: 20px;
+ padding-top: 400px;
+}
+.introduce-image4-4 {
+ width:350px;
+ height:250px;
+ background-image: image-url('img/manten_onsen.jpg');
+ background-size: cover;
+ margin-left: 220px;
+ margin-top: 20px;
+ float: left;
+}
+.introduce-text4-4 {
+ width: 50%;
+ float: right;
+ margin-right: 100px;
+ padding-top: 15px;
+ text-align: justify;
+ text-justify: inter-ideograph;
+}
+.watch-finish {
+ padding-top: 200px;
+ color: red;
+}
+.manten-introduce {
+ padding-top: 200px;
+ text-align: center;
+}
+.manten-text {
+ padding-top: 20px;
+ text-align: center;
+}
+
+.container4-4 {
+ width: 100%;
+ height: 850px;
+ background: linear-gradient(to right, #fcbec1, #FFFAFA);
+ font-family: 'Noto Serif JP', serif;
+}
+.access4 {
+ color: red;
+ text-align: center;
+}
+.introduce-set4-8 {
+ background: linear-gradient(to right, #FFB6C1, #FFFAFA);
+ border: inset;
+ border-color: #eebbcb;
+ border-radius: 40px;
+ padding-bottom: 20px;
+ width: 520px;
+}
+.address4 {
+ text-align: center;
+ padding-bottom: 20px;
+ color: red;
+}
+.address-text4 {
+ text-align: center;
+ font-size: 24px;
+}
+.introduce-price4 {
+ width: 100%;
+}
+.price4 {
+ width: 30%;
+ margin-bottom: 50px;
+ margin-top: 40px;
+ color: red;
+}
+.introduce-set4-10 {
+ margin-top: 20px;
+ padding-bottom: 20px;
+ width: 500px;
+ color: red;
+}
+
+.introduce-set4-11 {
+ text-align: left;
+ margin-left: 20px;
+ color: red;
+}
+.kansou4 {
+ padding-top: 30px;
+}
+
+.map4 {
+ text-align: right;
+ margin-right: 250px;
+ margin-top: -650px;
+ color: red;
+}
+
+.map-image4 {
+ margin-top: 30px;
+ margin-left: 700px;
+ background-size: cover;
+ width: 700px;
  height: 500px;
- background-color: #FFFACD;
- font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+ background-image: image-url('img/map_manten.jpg');
 }
 
 
-
-
 /*seeing画面*/
-
-.introduce-visual5 {
+.onsen-visual5 {
  width: 100%;
  height: 720px;
  color: #FAFAFA;
@@ -1896,14 +2362,14 @@ text-align: center;
     transform: translateY(0);
   }
 }
-.introduce-visual5 .mask {
+.onsen-visual5 .mask {
  position: absolute;
  top: 0;
  bottom: 0;
  left: 0;
  right: 0;
 }
-.introduce-visual5 .text {
+.onsen-visual5 .text {
  font-size: 0;
  line-height: 1;
  position: absolute;
@@ -1911,40 +2377,40 @@ text-align: center;
  left: 40px;
  padding-top: 50px;
 }
-.introduce-visual5 .line {
+.onsen-visual5 .line {
  display: block;
  padding: 10px;
  font-family: 'Hiragino Kaku Gothic Std',sans-serif;
  font-size: 80px;
  font-weight: bold;
 }
-.introduce-visual5 .line + .line {
+.onsen-visual5 .line + .line {
  margin-top: 15px;
 }
-.introduce-visual5 .letter {
+.onsen-visual5 .letter {
  display: inline-block;
  padding-top: 5px;
 }
-.introduce-visual5 .mask.normal {
+.onsen-visual5 .mask.normal {
  -webkit-clip-path: polygon(0 0, 862px 0, 862px 1060px, 0 1060px);
  clip-path: polygon(0 0, 862px 0, 862px 1060px, 0 1060px);
 }
-.introduce-visual5 .mask.burn {
+.onsen-visual5 .mask.burn {
  -webkit-clip-path: polygon(862px 0, 1462px 0, 1462px 1060px, 862px 1060px);
  clip-path: polygon(862px 0, 1462px 0, 1462px 1060px, 862px 1060px);
 }
 .mask.burn {
  mix-blend-mode: color-burn;
 }
-.introduce-visual5 .line,
-.introduce-visual5 .letter {
+.onsen-visual5 .line,
+.onsen-visual5 .letter {
  opacity: 0;
 }
 
-.introduce-visual5.is-visible .line {
+.onsen-visual5.is-visible .line {
  opacity: 1;
 }
-.introduce-visual5.is-visible .letter {
+.onsen-visual5.is-visible .letter {
  color: #FFFFFF;
  font-style: italic;
  text-shadow: -3px 2px 0 #A9A9A9;
@@ -1960,16 +2426,194 @@ text-align: center;
     transform: translate3d(0,0,0);
   }
 }
-
 .beginning5 {
  width: 100%;
  height: 500px;
- background-color: #FFFACD;
- font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+ background: linear-gradient(to right, #d8e698, #FFFFF0);
+ font-family: 'Noto Serif JP', serif;
 }
 
+.container5-2 {
+ width: 100%;
+ height: 2200px;
+ text-align: center;
+ background: linear-gradient(to right, #cee4ae, #FFFAFA);
+ font-family: 'Noto Serif JP', serif;
+}
+.introduce5 {
+ margin: 0 auto;
+ color: red;
+ padding-top: 50px;
+ padding-bottom: 10px;
+ width: 600px;
+}
+.introduce-image5-1 {
+ width: 300px;
+ height: 300px;
+ background-image: image-url('img/oyugiwa_soto.jpeg');
+ background-size: cover;
+ margin-top: 30px;
+ margin-left: 150px;
+ margin-right: 30px;
+ float: left;
+}
+.introduce-text5-1 {
+ padding-top: 60px;
+ padding-left: 30px;
+ text-align: justify;
+ text-justify: inter-ideograph;
+}
+.onsen-introduce5 {
+ color: red;
+ text-align: center;
+ padding-bottom: 20px;
+ padding-top: 120px;
+}
+
+.introduce-image5-2 {
+ width:350px;
+ height:250px;
+ background-image: image-url('img/oyugiwa_kannai.jpg');
+ background-size: cover;
+ margin-left: 220px;
+ margin-top: 20px;
+ float: left;
+}
+.introduce-text5-2 {
+ width: 50%;
+ float: right;
+ margin-right: 100px;
+ padding-top: 40px;
+ text-align: justify;
+ text-justify: inter-ideograph;
+}
+.eat-introduce5 {
+ color: red;
+ text-align: center;
+ padding-bottom: 20px;
+ padding-top: 400px;
+}
+.introduce-image5-3 {
+ width:350px;
+ height:250px;
+ background-image: image-url('img/oyugiwa_eat.jpg');
+ background-size: cover;
+ margin-left: 220px;
+ margin-top: 20px;
+ float: left;
+}
+.introduce-text5-3 {
+ width: 50%;
+ float: right;
+ margin-right: 100px;
+ padding-top: 40px;
+ text-align: justify;
+ text-justify: inter-ideograph;
+}
+.spa-introduce5 {
+ color: red;
+ text-align: center;
+ padding-bottom: 20px;
+ padding-top: 400px;
+}
+.introduce-image5-4 {
+ width:350px;
+ height:250px;
+ background-image: image-url('img/manten_onsen.jpg');
+ background-size: cover;
+ margin-left: 220px;
+ margin-top: 20px;
+ float: left;
+}
+.introduce-text5-4 {
+ width: 50%;
+ float: right;
+ margin-right: 100px;
+ padding-top: 60px;
+ text-align: justify;
+ text-justify: inter-ideograph;
+}
+.seeing-finish {
+ padding-top: 200px;
+ color: red;
+}
+.oyugiwa-introduce {
+ padding-top: 200px;
+ text-align: center;
+}
+.oyugiwa-text {
+ padding-top: 20px;
+ text-align: center;
+}
+
+.container5-4 {
+ width: 100%;
+ height: 850px;
+ background: linear-gradient(to right, #e0ebaf, #FFFFF0);
+ font-family: 'Noto Serif JP', serif;
+}
+.access5 {
+ color: red;
+ text-align: center;
+}
+.introduce-set5-8 {
+ background: linear-gradient(to right, #d8e698, #FFFFF0);
+ border: inset;
+ border-color: #aacf53;
+ border-radius: 40px;
+ padding-bottom: 20px;
+ width: 500px;
+}
+.address5 {
+ text-align: center;
+ padding-bottom: 20px;
+ color: red;
+}
+.address-text5 {
+ text-align: center;
+ font-size: 24px;
+}
+.introduce-price5 {
+ width: 100%;
+}
+.price5 {
+ width: 30%;
+ margin-bottom: 50px;
+ margin-top: 40px;
+ color: red;
+}
+.introduce-set5-10 {
+ margin-top: 20px;
+ padding-bottom: 20px;
+ width: 500px;
+ color: red;
+}
+.introduce-set5-11 {
+ text-align: left;
+ margin-left: 20px;
+ color: red;
+}
+.kansou5 {
+ padding-top: 30px;
+}
+.map5 {
+ text-align: right;
+ margin-right: 250px;
+ margin-top: -700px;
+ color: red;
+}
+.map-image5 {
+ margin-top: 30px;
+ margin-left: 700px;
+ background-size: cover;
+ width: 700px;
+ height: 500px;
+ background-image: image-url('img/map_oyugiwa.jpg');
+}
+
+
 /*looking画面*/
-.introduce-visual6 {
+.onsen-visual6 {
  width: 100%;
  height: 720px;
  color: #FAFAFA;
@@ -1991,14 +2635,14 @@ text-align: center;
     transform: translateY(0);
   }
 }
-.introduce-visual6 .mask {
+.onsen-visual6 .mask {
  position: absolute;
  top: 0;
  bottom: 0;
  left: 0;
  right: 0;
 }
-.introduce-visual6 .text {
+.onsen-visual6 .text {
  font-size: 0;
  line-height: 1;
  position: absolute;
@@ -2006,40 +2650,40 @@ text-align: center;
  left: 40px;
  padding-top: 50px;
 }
-.introduce-visual6 .line {
+.onsen-visual6 .line {
  display: block;
  padding: 10px;
  font-family: 'Hiragino Kaku Gothic Std',sans-serif;
  font-size: 80px;
  font-weight: bold;
 }
-.introduce-visual6 .line + .line {
+.onsen-visual6 .line + .line {
  margin-top: 15px;
 }
-.introduce-visual6 .letter {
+.onsen-visual6 .letter {
  display: inline-block;
  padding-top: 5px;
 }
-.introduce-visual6 .mask.normal {
+.onsen-visual6 .mask.normal {
  -webkit-clip-path: polygon(0 0, 862px 0, 862px 1060px, 0 1060px);
  clip-path: polygon(0 0, 862px 0, 862px 1060px, 0 1060px);
 }
-.introduce-visual6 .mask.burn {
+.onsen-visual6 .mask.burn {
  -webkit-clip-path: polygon(862px 0, 1462px 0, 1462px 1060px, 862px 1060px);
  clip-path: polygon(862px 0, 1462px 0, 1462px 1060px, 862px 1060px);
 }
 .mask.burn {
  mix-blend-mode: color-burn;
 }
-.introduce-visual6 .line,
-.introduce-visual6 .letter {
+.onsen-visual6 .line,
+.onsen-visual6 .letter {
  opacity: 0;
 }
 
-.introduce-visual6.is-visible .line {
+.onsen-visual6.is-visible .line {
  opacity: 1;
 }
-.introduce-visual6.is-visible .letter {
+.onsen-visual6.is-visible .letter {
  color: #FFFFFF;
  font-style: italic;
  text-shadow: -3px 2px 0 #A9A9A9;
@@ -2059,11 +2703,1022 @@ text-align: center;
 .beginning6 {
  width: 100%;
  height: 500px;
- background-color: #FFFACD;
- font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+ background: linear-gradient(to right, #fcd575, #FDF5E6);
+ font-family: 'Noto Serif JP', serif;
+}
+
+.container6-2 {
+ width: 100%;
+ height: 2200px;
+ text-align: center;
+ background: linear-gradient(to right, #fddea5, #FFFAFA);
+ font-family: 'Noto Serif JP', serif;
+}
+.introduce6 {
+ margin: 0 auto;
+ color: red;
+ padding-top: 50px;
+ padding-bottom: 10px;
+ width: 600px;
+}
+.introduce-image6-1 {
+ width: 350px;
+ height: 250px;
+ background-image: image-url('img/yukaraku_outside.jpeg');
+ background-size: cover;
+ margin-top: 30px;
+ margin-left: 130px;
+ margin-right: 30px;
+ float: left;
+}
+.introduce-text6-1 {
+ padding-top: 60px;
+ padding-left: 30px;
+ text-align: justify;
+ text-justify: inter-ideograph;
+}
+.onsen-introduce6 {
+ color: red;
+ text-align: center;
+ padding-bottom: 20px;
+ padding-top: 120px;
+}
+
+.introduce-image6-2 {
+ width:350px;
+ height:250px;
+ background-image: image-url('img/yukaraku_kannai.jpg');
+ background-size: cover;
+ margin-left: 220px;
+ margin-top: 20px;
+ float: left;
+}
+.introduce-text6-2 {
+ width: 50%;
+ float: right;
+ margin-right: 100px;
+ padding-top: 40px;
+ text-align: justify;
+ text-justify: inter-ideograph;
+}
+.eat-introduce6 {
+ color: red;
+ text-align: center;
+ padding-bottom: 20px;
+ padding-top: 400px;
+}
+.introduce-image6-3 {
+ width:350px;
+ height:250px;
+ background-image: image-url('img/yukaraku_eat.jpg');
+ background-size: cover;
+ margin-left: 220px;
+ margin-top: 20px;
+ float: left;
+}
+.introduce-text6-3 {
+ width: 50%;
+ float: right;
+ margin-right: 100px;
+ padding-top: 40px;
+ text-align: justify;
+ text-justify: inter-ideograph;
+}
+.spa-introduce6 {
+ color: red;
+ text-align: center;
+ padding-bottom: 20px;
+ padding-top: 400px;
+}
+.introduce-image6-4 {
+ width:350px;
+ height:250px;
+ background-image: image-url('img/manten_onsen.jpg');
+ background-size: cover;
+ margin-left: 220px;
+ margin-top: 20px;
+ float: left;
+}
+.introduce-text6-4 {
+ width: 50%;
+ float: right;
+ margin-right: 100px;
+ padding-top: 30px;
+ text-align: justify;
+ text-justify: inter-ideograph;
+}
+.looking-finish {
+ padding-top: 200px;
+ color: red;
+}
+.yukaraku-introduce {
+ padding-top: 200px;
+ text-align: center;
+}
+.yukaraku-text {
+ padding-top: 20px;
+ text-align: center;
+}
+
+.container6-4 {
+ width: 100%;
+ height: 950px;
+ background: linear-gradient(to right, #fff1cf, #FDF5E6);
+ font-family: 'Noto Serif JP', serif;
+}
+.access6 {
+ color: red;
+ text-align: center;
+}
+.introduce-set6-8 {
+ background: linear-gradient(to right, #fcd575, #FDF5E6);
+ border: inset;
+ border-color: #eec362;
+ border-radius: 40px;
+ padding-bottom: 20px;
+ width: 500px;
+}
+.address6 {
+ text-align: center;
+ padding-bottom: 20px;
+ color: red;
+}
+.address-text6 {
+ text-align: center;
+ font-size: 24px;
+}
+.introduce-price6 {
+ width: 100%;
+}
+.price6 {
+ width: 30%;
+ margin-bottom: 50px;
+ margin-top: 40px;
+ color: red;
+}
+.introduce-set6-10 {
+ margin-top: 20px;
+ padding-bottom: 20px;
+ width: 500px;
+ color: red;
+}
+
+.introduce-set6-11 {
+ text-align: left;
+ margin-left: 20px;
+ color: red;
+}
+.kansou6 {
+ padding-top: 30px;
+}
+
+.map6 {
+ text-align: right;
+ margin-right: 250px;
+ margin-top: -700px;
+ color: red;
+}
+.map-text6 {
+ text-align: right;
+ margin-right: 170px;
+}
+.map-image6 {
+ margin-top: 30px;
+ margin-left: 700px;
+ background-size: cover;
+ width: 700px;
+ height: 700px;
+ background-image: image-url('img/map_yukaraku.jpg');
+}
+
+/*check画面*/
+.onsen-visual7 {
+ width: 100%;
+ height: 720px;
+ background-image: image-url('img/zama.jpg');
+ background-size: cover;
+ background-position: center;
+ animation: fadeup 2s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
+}
+@keyframes fadeup {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.onsen-visual7 .mask {
+ position: absolute;
+ top: 0;
+ bottom: 0;
+ left: 0;
+ right: 0;
+}
+.onsen-visual7 .text {
+ font-size: 0;
+ line-height: 1;
+ position: absolute;
+ top: 85px;
+ left: 40px;
+ padding-top: 50px;
+}
+.onsen-visual7 .line {
+ display: block;
+ padding: 10px;
+ font-family: 'Hiragino Kaku Gothic Std',sans-serif;
+ font-size: 80px;
+ font-weight: bold;
+}
+.onsen-visual7 .line + .line {
+ margin-top: 15px;
+}
+.onsen-visual7 .letter {
+ display: inline-block;
+ padding-top: 5px;
+}
+.onsen-visual7 .mask.normal {
+ -webkit-clip-path: polygon(0 0, 862px 0, 862px 1060px, 0 1060px);
+ clip-path: polygon(0 0, 862px 0, 862px 1060px, 0 1060px);
+}
+.onsen-visual7 .mask.burn {
+ -webkit-clip-path: polygon(862px 0, 1462px 0, 1462px 1060px, 862px 1060px);
+ clip-path: polygon(862px 0, 1462px 0, 1462px 1060px, 862px 1060px);
+}
+.mask.burn {
+ mix-blend-mode: color-burn;
+}
+.onsen-visual7 .line,
+.onsen-visual7 .letter {
+ opacity: 0;
+}
+
+.onsen-visual7.is-visible .line {
+ opacity: 1;
+}
+.onsen-visual7.is-visible .letter {
+ color: #FFFFFF;
+ font-style: italic;
+ text-shadow: -3px 2px 0 #A9A9A9;
+ animation: slideIn .8s cubic-bezier(0,1.2,.13,1.5) forwards;
+}
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translate3d(-100px,0,0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0,0,0);
+  }
+}
+
+.beginning7 {
+ width: 100%;
+ height: 500px;
+ background: linear-gradient(to right, #f4dda5, #FDF5E6);
+ font-family: 'Noto Serif JP', serif;
+}
+
+.container7-2 {
+ width: 100%;
+ height: 2200px;
+ text-align: center;
+ background: linear-gradient(to right, #fddea5, #FFFAFA);
+ font-family: 'Noto Serif JP', serif;
+}
+.introduce7 {
+ margin: 0 auto;
+ color: red;
+ padding-top: 50px;
+ padding-bottom: 10px;
+ width: 1000px;
+}
+.introduce-image7-1 {
+ width: 350px;
+ height: 250px;
+ background-image: image-url('img/yukaraku_outside.jpeg');
+ background-size: cover;
+ margin-top: 30px;
+ margin-left: 130px;
+ margin-right: 30px;
+ float: left;
+}
+.introduce-text7-1 {
+ padding-top: 60px;
+ padding-left: 30px;
+ text-align: justify;
+ text-justify: inter-ideograph;
+}
+.onsen-introduce7 {
+ color: red;
+ text-align: center;
+ padding-bottom: 20px;
+ padding-top: 120px;
+}
+
+.introduce-image7-2 {
+ width:350px;
+ height:250px;
+ background-image: image-url('img/yukaraku_kannai.jpg');
+ background-size: cover;
+ margin-left: 220px;
+ margin-top: 20px;
+ float: left;
+}
+.introduce-text7-2 {
+ width: 50%;
+ float: right;
+ margin-right: 100px;
+ padding-top: 40px;
+ text-align: justify;
+ text-justify: inter-ideograph;
+}
+.eat-introduce7 {
+ color: red;
+ text-align: center;
+ padding-bottom: 20px;
+ padding-top: 400px;
+}
+.introduce-image7-3 {
+ width:350px;
+ height:250px;
+ background-image: image-url('img/soukai_eat.jpg');
+ background-size: cover;
+ margin-left: 220px;
+ margin-top: 20px;
+ float: left;
+}
+.introduce-text7-3 {
+ width: 50%;
+ float: right;
+ margin-right: 100px;
+ padding-top: 50px;
+ text-align: justify;
+ text-justify: inter-ideograph;
+}
+.spa-introduce7 {
+ color: red;
+ text-align: center;
+ padding-bottom: 20px;
+ padding-top: 400px;
+}
+.introduce-image7-4 {
+ width:350px;
+ height:250px;
+ background-image: image-url('img/manten_onsen.jpg');
+ background-size: cover;
+ margin-left: 220px;
+ margin-top: 20px;
+ float: left;
+}
+.introduce-text7-4 {
+ width: 50%;
+ float: right;
+ margin-right: 100px;
+ padding-top: 15px;
+ text-align: justify;
+ text-justify: inter-ideograph;
+}
+.check-finish {
+ padding-top: 200px;
+ color: red;
+}
+.soukai-introduce {
+ padding-top: 200px;
+ text-align: center;
+}
+.soukai-text {
+ padding-top: 20px;
+ text-align: center;
+}
+.container7-4 {
+ width: 100%;
+ height: 850px;
+ background: linear-gradient(to right, #efcd9a, #FDF5E6);
+ font-family: 'Noto Serif JP', serif;
+}
+.access7 {
+ color: red;
+ text-align: center;
+}
+.introduce-set7-2 {
+ background: linear-gradient(to right, #f4dda5, #FDF5E6);
+ border: inset;
+ border-color: #e0c38c;
+ border-radius: 40px;
+ padding-bottom: 20px;
+ width: 520px;
+}
+.address7 {
+ text-align: center;
+ padding-bottom: 20px;
+ color: red;
+}
+.address-text7 {
+ text-align: center;
+ font-size: 24px;
+}
+.introduce-price7 {
+ width: 100%;
+}
+.price7 {
+ width: 30%;
+ margin-bottom: 50px;
+ margin-top: 40px;
+ color: red;
+}
+.introduce-set7-4 {
+ margin-top: 20px;
+ padding-bottom: 20px;
+ width: 500px;
+ color: red;
+}
+
+.introduce-set7-5 {
+ text-align: left;
+ margin-left: 20px;
+ color: red;
+}
+.kansou7 {
+ padding-top: 30px;
+}
+
+.map7 {
+ text-align: right;
+ margin-right: 250px;
+ margin-top: -650px;
+ color: red;
+}
+
+.map-image7 {
+ margin-top: 100px;
+ margin-left: 850px;
+ background-size: cover;
+ width: 480px;
+ height: 500px;
+
 }
 
 
+/*try画面*/
+.onsen-visual8 {
+ width: 100%;
+ height: 720px;
+ background-image: image-url('img/kawasaki.jpg');
+ background-size: cover;
+ background-position: center;
+ animation: fadeup 2s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
+}
+@keyframes fadeup {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.onsen-visual8 .mask {
+ position: absolute;
+ top: 0;
+ bottom: 0;
+ left: 0;
+ right: 0;
+}
+.onsen-visual8 .text {
+ font-size: 0;
+ line-height: 1;
+ position: absolute;
+ top: 85px;
+ left: 40px;
+ padding-top: 50px;
+}
+.onsen-visual8 .line {
+ display: block;
+ padding: 10px;
+ font-family: 'Hiragino Kaku Gothic Std',sans-serif;
+ font-size: 80px;
+ font-weight: bold;
+}
+.onsen-visual8 .line + .line {
+ margin-top: 15px;
+}
+.onsen-visual8 .letter {
+ display: inline-block;
+ padding-top: 5px;
+}
+.onsen-visual8 .mask.normal {
+ -webkit-clip-path: polygon(0 0, 862px 0, 862px 1060px, 0 1060px);
+ clip-path: polygon(0 0, 862px 0, 862px 1060px, 0 1060px);
+}
+.onsen-visual8 .mask.burn {
+ -webkit-clip-path: polygon(862px 0, 1462px 0, 1462px 1060px, 862px 1060px);
+ clip-path: polygon(862px 0, 1462px 0, 1462px 1060px, 862px 1060px);
+}
+.mask.burn {
+ mix-blend-mode: color-burn;
+}
+.onsen-visual8 .line,
+.onsen-visual8 .letter {
+ opacity: 0;
+}
+
+.onsen-visual8.is-visible .line {
+ opacity: 1;
+}
+.onsen-visual8.is-visible .letter {
+ color: #FFFFFF;
+ font-style: italic;
+ text-shadow: -3px 2px 0 #A9A9A9;
+ animation: slideIn .8s cubic-bezier(0,1.2,.13,1.5) forwards;
+}
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translate3d(-100px,0,0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0,0,0);
+  }
+}
+
+.beginning8 {
+ width: 100%;
+ height: 500px;
+ background: linear-gradient(to right, #d6e9ca, #FDF5E6);
+ font-family: 'Noto Serif JP', serif;
+}
+
+.container8-2 {
+ width: 100%;
+ height: 2200px;
+ text-align: center;
+ background: linear-gradient(to right, #cee4ae, #FFFAFA);
+ font-family: 'Noto Serif JP', serif;
+}
+.introduce8 {
+ margin: 0 auto;
+ color: red;
+ padding-top: 50px;
+ padding-bottom: 10px;
+ width: 600px;
+}
+.introduce-image8-1 {
+ width: 350px;
+ height: 250px;
+ background-image: image-url('img/kawasaki.jpg');
+ background-size: cover;
+ margin-top: 30px;
+ margin-left: 130px;
+ margin-right: 30px;
+ float: left;
+}
+.introduce-text8-1 {
+ padding-top: 30px;
+ padding-left: 30px;
+ text-align: justify;
+ text-justify: inter-ideograph;
+}
+.onsen-introduce8 {
+ color: red;
+ text-align: center;
+ padding-bottom: 20px;
+ padding-top: 120px;
+}
+
+.introduce-image8-2 {
+ width:350px;
+ height:250px;
+ background-image: image-url('img/yukemuri_kannai.jpg');
+ background-size: cover;
+ margin-left: 220px;
+ margin-top: 20px;
+ float: left;
+}
+.introduce-text8-2 {
+ width: 50%;
+ float: right;
+ margin-right: 100px;
+ padding-top: 40px;
+ text-align: justify;
+ text-justify: inter-ideograph;
+}
+.eat-introduce8 {
+ color: red;
+ text-align: center;
+ padding-bottom: 20px;
+ padding-top: 400px;
+}
+.introduce-image8-3 {
+ width:350px;
+ height:250px;
+ background-image: image-url('img/yukemuri_eat.jpg');
+ background-size: cover;
+ margin-left: 220px;
+ margin-top: 20px;
+ float: left;
+}
+.introduce-text8-3 {
+ width: 50%;
+ float: right;
+ margin-right: 100px;
+ padding-top: 40px;
+ text-align: justify;
+ text-justify: inter-ideograph;
+}
+.spa-introduce8 {
+ color: red;
+ text-align: center;
+ padding-bottom: 20px;
+ padding-top: 400px;
+}
+.introduce-image8-4 {
+ width:350px;
+ height:250px;
+ background-image: image-url('img/manten_onsen.jpg');
+ background-size: cover;
+ margin-left: 220px;
+ margin-top: 20px;
+ float: left;
+}
+.introduce-text8-4 {
+ width: 50%;
+ float: right;
+ margin-right: 100px;
+ padding-top: 15px;
+ text-align: justify;
+ text-justify: inter-ideograph;
+}
+.try-finish {
+ padding-top: 200px;
+ color: red;
+}
+.yukemuri-introduce {
+ padding-top: 200px;
+ text-align: center;
+}
+.yukemuri-text {
+ padding-top: 20px;
+ text-align: center;
+}
+
+.container8-4 {
+ width: 100%;
+ height: 950px;
+ background: linear-gradient(to right, #c1d8ac, #FDF5E6);
+ font-family: 'Noto Serif JP', serif;
+}
+.access8 {
+ color: red;
+ text-align: center;
+}
+.introduce-set8-2 {
+ background: linear-gradient(to right, #d6e9ca, #FDF5E6);
+ border: inset;
+ border-color: #88cb7f;
+ border-radius: 40px;
+ padding-bottom: 20px;
+ width: 520px;
+}
+.address8 {
+ text-align: center;
+ padding-bottom: 20px;
+ color: red;
+}
+.address-text8 {
+ text-align: center;
+ font-size: 24px;
+}
+.introduce-price8 {
+ width: 100%;
+}
+.price8 {
+ width: 30%;
+ margin-bottom: 50px;
+ margin-top: 40px;
+ color: red;
+}
+.introduce-set8-4 {
+ margin-top: 20px;
+ padding-bottom: 20px;
+ width: 500px;
+ color: red;
+}
+
+.introduce-set8-5 {
+ text-align: left;
+ margin-left: 20px;
+ color: red;
+}
+.kansou8 {
+ padding-top: 30px;
+}
+
+.map8 {
+ text-align: right;
+ margin-right: 250px;
+ margin-top: -650px;
+ color: red;
+}
+
+.map-image8 {
+ margin-top: 30px;
+ margin-left: 830px;
+ background-size: 100% 100%;
+ width: 500px;
+ height: 500px;
+ background-image: image-url('img/map_yukemuri.jpg');
+}
+
+
+/*gaze画面*/
+.onsen-visual9 {
+ width: 100%;
+ height: 720px;
+ background-image: image-url('img/serigaya2.jpg');
+ background-size: cover;
+ background-position: center;
+ animation: fadeup 2s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
+}
+@keyframes fadeup {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.onsen-visual9 .mask {
+ position: absolute;
+ top: 0;
+ bottom: 0;
+ left: 0;
+ right: 0;
+}
+.onsen-visual9 .text {
+ font-size: 0;
+ line-height: 1;
+ position: absolute;
+ top: 85px;
+ left: 40px;
+ padding-top: 50px;
+}
+.onsen-visual9 .line {
+ display: block;
+ padding: 10px;
+ font-family: 'Hiragino Kaku Gothic Std',sans-serif;
+ font-size: 80px;
+ font-weight: bold;
+}
+.onsen-visual9 .line + .line {
+ margin-top: 15px;
+}
+.onsen-visual9 .letter {
+ display: inline-block;
+ padding-top: 5px;
+}
+.onsen-visual9 .mask.normal {
+ -webkit-clip-path: polygon(0 0, 862px 0, 862px 1060px, 0 1060px);
+ clip-path: polygon(0 0, 862px 0, 862px 1060px, 0 1060px);
+}
+.onsen-visual9 .mask.burn {
+ -webkit-clip-path: polygon(862px 0, 1462px 0, 1462px 1060px, 862px 1060px);
+ clip-path: polygon(862px 0, 1462px 0, 1462px 1060px, 862px 1060px);
+}
+.mask.burn {
+ mix-blend-mode: color-burn;
+}
+.onsen-visual9 .line,
+.onsen-visual9 .letter {
+ opacity: 0;
+}
+
+.onsen-visual9.is-visible .line {
+ opacity: 1;
+}
+.onsen-visual9.is-visible .letter {
+ color: #FFFFFF;
+ font-style: italic;
+ text-shadow: -3px 2px 0 #A9A9A9;
+ animation: slideIn .8s cubic-bezier(0,1.2,.13,1.5) forwards;
+}
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translate3d(-100px,0,0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0,0,0);
+  }
+}
+
+.beginning9 {
+ width: 100%;
+ height: 500px;
+ background: linear-gradient(to right, #ec6d51, #FDF5E6);
+ font-family: 'Noto Serif JP', serif;
+}
+
+.container9-2 {
+ width: 100%;
+ height: 2200px;
+ text-align: center;
+ background: linear-gradient(to right, #f19072, #FFFAFA);
+ font-family: 'Noto Serif JP', serif;
+}
+.introduce9 {
+ margin: 0 auto;
+ color: red;
+ padding-top: 50px;
+ padding-bottom: 10px;
+ width: 600px;
+}
+.introduce-image9-1 {
+ width: 350px;
+ height: 250px;
+ background-image: image-url('img/serigaya.jpg');
+ background-size: cover;
+ margin-top: 30px;
+ margin-left: 130px;
+ margin-right: 30px;
+ float: left;
+}
+.introduce-text9-1 {
+ padding-top: 50px;
+ padding-left: 30px;
+ text-align: justify;
+ text-justify: inter-ideograph;
+}
+.onsen-introduce9 {
+ color: red;
+ text-align: center;
+ padding-bottom: 20px;
+ padding-top: 120px;
+}
+
+.introduce-image9-2 {
+ width:350px;
+ height:250px;
+ background-image: image-url('img/gokuraku_kannai.jpg');
+ background-size: cover;
+ margin-left: 220px;
+ margin-top: 20px;
+ float: left;
+}
+.introduce-text9-2 {
+ width: 50%;
+ float: right;
+ margin-right: 100px;
+ padding-top: 40px;
+ text-align: justify;
+ text-justify: inter-ideograph;
+}
+.eat-introduce9 {
+ color: red;
+ text-align: center;
+ padding-bottom: 20px;
+ padding-top: 400px;
+}
+.introduce-image9-3 {
+ width:350px;
+ height:250px;
+ background-image: image-url('img/steak.jpg');
+ background-size: cover;
+ margin-left: 220px;
+ margin-top: 20px;
+ float: left;
+}
+.introduce-text9-3 {
+ width: 50%;
+ float: right;
+ margin-right: 100px;
+ padding-top: 40px;
+ text-align: justify;
+ text-justify: inter-ideograph;
+}
+.spa-introduce9 {
+ color: red;
+ text-align: center;
+ padding-bottom: 20px;
+ padding-top: 400px;
+}
+.introduce-image9-4 {
+ width:350px;
+ height:250px;
+ background-image: image-url('img/manten_onsen.jpg');
+ background-size: cover;
+ margin-left: 220px;
+ margin-top: 20px;
+ float: left;
+}
+.introduce-text9-4 {
+ width: 50%;
+ float: right;
+ margin-right: 100px;
+ padding-top: 30px;
+ text-align: justify;
+ text-justify: inter-ideograph;
+}
+.gaze-finish {
+ padding-top: 200px;
+ color: red;
+}
+.gokuraku-introduce {
+ padding-top: 200px;
+ text-align: center;
+}
+.gokuraku-text {
+ padding-top: 20px;
+ text-align: center;
+}
+
+.container9-4 {
+ width: 100%;
+ height: 850px;
+ background: linear-gradient(to right, #f6b894, #FDF5E6);
+ font-family: 'Noto Serif JP', serif;
+}
+.access9 {
+ color: red;
+ text-align: center;
+}
+.introduce-set9-2 {
+ background: linear-gradient(to right, #ec6d51, #FDF5E6);
+ border: inset;
+ border-color: #df7163;
+ border-radius: 40px;
+ padding-bottom: 20px;
+ width: 520px;
+}
+.address9 {
+ text-align: center;
+ padding-bottom: 20px;
+ color: red;
+}
+.address-text9 {
+ text-align: center;
+ font-size: 24px;
+}
+.introduce-price9 {
+ width: 100%;
+}
+.price9 {
+ width: 30%;
+ margin-bottom: 50px;
+ margin-top: 40px;
+ color: red;
+}
+.introduce-set9-4 {
+ margin-top: 20px;
+ padding-bottom: 20px;
+ width: 500px;
+ color: red;
+}
+.introduce-set9-5 {
+ text-align: left;
+ margin-left: 20px;
+ color: red;
+}
+.kansou9 {
+ padding-top: 30px;
+}
+.map9 {
+ text-align: right;
+ margin-right: 250px;
+ margin-top: -650px;
+ color: red;
+}
+.map-image9 {
+ margin-top: 30px;
+ margin-left: 750px;
+ background-size: cover;
+ width: 630px;
+ height: 500px;
+ background-image: image-url('img/gokuraku_map.jpg');
+}
+.map_text9 {
+ text-align: right;
+ padding-top: 20px;
+ padding-right: 250px;
+ opacity: 0.5;
+}
 
 
 /*devise周辺*/
@@ -2075,6 +3730,7 @@ text-align: center;
   border: 10px #F5F5F5 solid;
   text-align: center;
   background: linear-gradient(to right, #FFEFD5, #FFFFE0);
+  font-family: 'Noto Serif JP', serif;
 }
 
 .box-inner3 {
@@ -2140,10 +3796,21 @@ text-align: center;
 .b-new__comment {
  width: 380px;
  text-align: center;
- font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
- border: 5px solid pink;
- border-style: inset;
- background: linear-gradient(to right, #FFC0CB, #FFFAFA);
+ font-family: 'Noto Serif JP', serif;
+ background:
+ linear-gradient(90deg, #999 3px, #fff 3px, #fff calc(100% - 3px), #999 calc(100% - 3px)),
+ linear-gradient(180deg, #999 3px, #fff 3px, #fff calc(100% - 3px), #999 calc(100% - 3px)),
+ linear-gradient(45deg,  transparent 10px, #999 11px, #999 12px, #fff 14px),
+ linear-gradient(135deg, transparent 10px, #999 11px, #999 12px, #fff 14px),
+ linear-gradient(225deg, transparent 10px, #999 11px, #999 12px, #fff 14px),
+ linear-gradient(315deg, transparent 10px, #999 11px, #999 12px, #fff 14px);
+ background-position: left 15px, 15px top, bottom left, top left, top right, bottom right;
+ background-size: 100% calc(100% - 30px), calc(100% - 30px) 100%, 20px 20px, 20px 20px, 20px 20px, 20px 20px;
+ background-repeat: no-repeat;
+ position: relative;
+ padding: 10px 10px;
+ font-weight: bold;
+ color: #333;
  animation: zoomIn 1s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
 }
 @keyframes zoomIn {
@@ -2164,6 +3831,7 @@ text-align: center;
   border-radius: 10px;
   background: linear-gradient(to right, #FFF0F5, #FFFAFA);
   animation: zoomIn 1s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
+  font-family: 'Noto Serif JP', serif;
 }
 @keyframes zoomIn {
   0% {
@@ -2180,7 +3848,6 @@ text-align: center;
   padding: 20px 26px;
 }
 
-
 .b-content_box {
   margin: 20px 0;
 }
@@ -2189,40 +3856,81 @@ text-align: center;
   margin: 20px 0;
 }
 
+/*index画面*/
+.sakura2_container {
+ position: relative;
+ height: 100%;
+ width: 100%;
+ overflow: hidden;
+ background-image: image-url('img/sakura4.jpg');
+ background-size: cover;
+}
+.petal2 {
+ position: absolute;
+ background: linear-gradient(to right, #ffc0cb, #fef4f4);
+ border-radius: 150% 0 150% 0;
+ animation: animate-petal 15s linear;
+}
+.petal2::after {
+ content: "";
+ position: absolute;
+ top: -14%;
+ left: -10%;
+ display: block;
+ width: 100%;
+ height: 100%;
+ background: linear-gradient(to right, #ffc0cb, #fef4f4);
+ border-radius: 150% 0 150% 0;
+ transform: rotate(15deg);
+}
+@keyframes animate-petal {
+  0% {
+    top: 0;
+    opacity: 0;
+    transform: rotate(0deg);
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    top: 100%;
+    transform: rotate(3600deg);
+  }
+}
+
+
 .b-index__comment {
- font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+ font-family: 'Noto Serif JP', serif;
  width: 280px;
  text-align: center;
- border: 5px solid pink;
- border-style: inset;
- background: linear-gradient(to right, #FFC0CB, #FFFAFA);
- animation: poyoyon3 3s infinite;
- opacity: 1;
+ background:
+ radial-gradient(circle at top left, transparent 50%, #999 50%, #999 calc(50% + 3px), transparent calc(50% + 3px)),
+ radial-gradient(circle at top right, transparent 50%, #999 50%, #999 calc(50% + 2px), transparent calc(50% + 3px)),
+ radial-gradient(circle at bottom left, transparent 50%, #999 50%, #999 calc(50% + 2px), transparent calc(50% + 3px)),
+ radial-gradient(circle at bottom right, transparent 50%, #999 50%, #999 calc(50% + 2px), transparent calc(50% + 3px)),
+ linear-gradient(90deg, #999 2px, #fff 3px, #fff calc(100% - 2px), #999 calc(100% - 2px)),
+ linear-gradient(180deg, #999 2px, #fff 3px, #fff calc(100% - 2px), #999 calc(100% - 2px));
+ background-position: top left, top right, bottom left, bottom right, left 15px, 15px top;
+ background-size: 20px 20px, 20px 20px,20px 20px,20px 20px, 100% calc(100% - 30px), calc(100% - 30px) 100%;
+ background-repeat: no-repeat;
+ position: relative;
+ padding: 10px 10px;
+ font-weight: bold;
+ color: #333;
+ animation: zoomIn 1.5s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
 }
-@keyframes poyoyon3 {
- 0%, 40% {
-    transform: skew(0deg, 0deg);
+@keyframes zoomIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
   }
- 5% {
-    transform: skew(5deg, 5deg);
-  }
- 10% {
-    transform: skew(-4deg, -4deg);
-  }
- 15% {
-    transform: skew(3deg, 3deg);
-  }
- 20% {
-    transform: skew(-2deg, -2deg);
-  }
- 25% {
-    transform: skew(1deg, 1deg);
-  }
- 30% {
-    transform: skew(-0.6deg, -0.6deg);
-  }
- 35% {
-    transform: skew(0.3deg, 0.3deg);
+  100% {
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
@@ -2230,6 +3938,7 @@ table {
  width: 100%;
  border-collapse: separate;
  border-spacing: 0;
+ font-family: 'Noto Serif JP', serif;
 }
 
 table th:first-child {
@@ -2277,12 +3986,22 @@ table tr:last-child td:last-child {
 
 
 .b-show__comment {
- font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+ font-family: 'Noto Serif JP', serif;
  width: 240px;
  text-align: center;
- border: 5px solid pink;
- border-style: inset;
- background: linear-gradient(to right, #FFC0CB, #FFFAFA);
+ background:
+ linear-gradient(90deg, #999 3px, #fff 3px, #fff calc(100% - 3px), #999 calc(100% - 3px)),
+ linear-gradient(180deg, #999 3px, #fff 3px, #fff calc(100% - 3px), #999 calc(100% - 3px)),
+ linear-gradient(45deg,  transparent 10px, #999 11px, #999 12px, #fff 14px),
+ linear-gradient(135deg, transparent 10px, #999 11px, #999 12px, #fff 14px),
+ linear-gradient(225deg, transparent 10px, #999 11px, #999 12px, #fff 14px),
+ linear-gradient(315deg, transparent 10px, #999 11px, #999 12px, #fff 14px);
+ background-position: left 15px, 15px top, bottom left, top left, top right, bottom right;
+ background-size: 100% calc(100% - 30px), calc(100% - 30px) 100%, 20px 20px, 20px 20px, 20px 20px, 20px 20px;
+ background-repeat: no-repeat;
+ position: relative;
+ padding: 10px 10px;
+ font-weight: bold;
  animation: zoomIn 1s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
 }
 @keyframes zoomIn {
@@ -2296,14 +4015,28 @@ table tr:last-child td:last-child {
   }
 }
 
+.b-comment_list {
+ font-family: 'Noto Serif JP', serif;
+}
+
 .b-edit__comment {
- font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+ font-family: 'Noto Serif JP', serif;
  width: 180px;
  letter-spacing: 5px;
  text-align: center;
- border: 5px solid pink;
- border-style: inset;
- background: linear-gradient(to right, #FFC0CB, #FFFAFA);
+ background:
+ radial-gradient(circle at top left, transparent 50%, #999 50%, #999 calc(50% + 3px), transparent calc(50% + 3px)),
+ radial-gradient(circle at top right, transparent 50%, #999 50%, #999 calc(50% + 2px), transparent calc(50% + 3px)),
+ radial-gradient(circle at bottom left, transparent 50%, #999 50%, #999 calc(50% + 2px), transparent calc(50% + 3px)),
+ radial-gradient(circle at bottom right, transparent 50%, #999 50%, #999 calc(50% + 2px), transparent calc(50% + 3px)),
+ linear-gradient(90deg, #999 2px, #fff 3px, #fff calc(100% - 2px), #999 calc(100% - 2px)),
+ linear-gradient(180deg, #999 2px, #fff 3px, #fff calc(100% - 2px), #999 calc(100% - 2px));
+ background-position: top left, top right, bottom left, bottom right, left 15px, 15px top;
+ background-size: 20px 20px, 20px 20px,20px 20px,20px 20px, 100% calc(100% - 30px), calc(100% - 30px) 100%;
+ background-repeat: no-repeat;
+ position: relative;
+ padding: 10px 10px;
+ font-weight: bold;
  animation: zoomIn 1s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
 }
 @keyframes zoomIn {
@@ -2324,6 +4057,7 @@ table tr:last-child td:last-child {
   border-radius: 14px;
   border: 5px solid #e8e8e8;
   animation: zoomIn 1s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
+  font-family: 'Noto Serif JP', serif;
 }
 @keyframes zoomIn {
   0% {
@@ -2342,13 +4076,15 @@ table tr:last-child td:last-child {
 }
 .card-header {
   padding: 7px;
-  background-color: #87CEFA;
+  background: #fcdce0;
+  border-radius: 3px;
 }
 
 .card-footer {
   text-align: right;
   margin: 0 auto;
-  background-color: #E0FFFF;
+  background: #fdeff2;
+  border-radius: 3px;
 }
 
 
@@ -2357,11 +4093,13 @@ table tr:last-child td:last-child {
 
 .col-sm-2 {
  margin-bottom: 10px;
+ font-family: 'Noto Serif JP', serif;
 }
 
 
 .col-md-6 {
  margin-left: 120px;
  margin-top: 30px;
+ font-family: 'Noto Serif JP', serif;
 }
 

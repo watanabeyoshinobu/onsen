@@ -1,45 +1,47 @@
 
 <%= render 'menu' %>
 
-<div class="d-flex align-items-center">
-    <div class="b-index__comment">
-      <h1>コメント一覧</h1>
+<div class="sakura2_container">
+
+    <div class="d-flex align-items-center">
+        <div class="b-index__comment">
+          <h1>コメント一覧</h1>
+        </div>
+        <div class="col-sm-2 col-md-offset-10">
+          <%= button_to '戻る', new_blog_path, class: "btn btn-info btn-block", method: :get %>
+        </div>
     </div>
-    <div class="col-sm-2 col-md-offset-10">
-      <%= button_to '戻る', new_blog_path, class: "btn btn-info btn-block", method: :get %>
-    </div>
+
+      <table class="table table-bordered border-primary table-hover table-sm blogs_table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col" style="width: 700px">感想タイトル</th>
+            <th scope="col">名前</th>
+            <th scope="col">投稿日</th>
+            <th scope="col">更新日時</th>
+            <th scope="col">コメント詳細</th>
+            <th scope="col">削除</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            <% @blogs.each do |blog| %>
+              <tr>
+                  <td><%= blog.title %></td>
+                <%= link_to users_index_path do %>
+                  <td><%= blog.user.name %></td>
+                <% end %>
+                  <td><%= blog.created_at.to_s(:datetime_base) %></td>
+                  <td><%= blog.updated_at.to_s(:datetime_base) %></td>
+                  <td><%= button_to 'コメント詳細', blog, id: "detail-" + blog.id.to_s, class: 'btn btn-success btn-block', method: :get %></td>
+                  <% if blog.user_id == current_user.id %>
+                    <td><%= button_to "削除", blog, class: 'btn btn-danger btn-block', method: :delete, data: {confirm: "投稿記事を削除しますか？", cancel: "キャンセル", commit: "削除する", title: "削除の確認"} %></td>
+                  <% end %>
+              </tr>
+            <% end %>
+        </tbody>
+    </table>
+
+  <%= paginate @blogs  %>
 </div>
 
-
-  <table class="table table-bordered border-primary table-hover table-sm blogs_table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col" style="width: 700px">感想タイトル</th>
-      <th scope="col">名前</th>
-      <th scope="col">投稿日</th>
-      <th scope="col">更新日時</th>
-      <th scope="col">コメント詳細</th>
-      <th scope="col">削除</th>
-    </tr>
-  </thead>
-
-  <tbody>
-      <% @blogs.each do |blog| %>
-        <tr>
-            <td><%= blog.title %></td>
-          <%= link_to users_index_path do %>
-            <td><%= blog.user.name %></td>
-          <% end %>
-            <td><%= blog.created_at.to_s(:datetime_base) %></td>
-            <td><%= blog.updated_at.to_s(:datetime_base) %></td>
-            <td><%= button_to 'コメント詳細', blog, id: "detail-" + blog.id.to_s, class: 'btn btn-success btn-block', method: :get %></td>
-            <% if blog.user_id == current_user.id %>
-              <td><%= button_to "削除", blog, class: 'btn btn-danger btn-block', method: :delete, data: {confirm: "投稿記事を削除しますか？", cancel: "キャンセル", commit: "削除する", title: "削除の確認"} %></td>
-            <% end %>
-        </tr>
-      <% end %>
-  </tbody>
-
-</table>
-
-<%= paginate @blogs  %>
