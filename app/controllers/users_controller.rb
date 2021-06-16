@@ -28,7 +28,10 @@ class UsersController < ApplicationController
 
   def update
   	@user =User.find(params[:id])
-  	if @user.update_attributes(user4_params)
+  if params[:image]
+    @user.profile_image = "#{@user.id}.jpg"
+    image = params[:image]
+    File.binwrite("public/user_images/#{@user.profile_image}",image.read)
   	flash[:success] = "「#{@user.name}」を更新しました！"
   	redirect_to users_edit_path
   	else

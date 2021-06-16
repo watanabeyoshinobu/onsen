@@ -9,8 +9,8 @@ class BlogsController < ApplicationController
   def show
     # @comment = Comment.new(blog_id: @blog.id)
     @blog = Blog.includes(:user).find(params[:id])
-    @comments = @blog.comments.includes(:user).all
-    @comment  = @blog.comments.build(user_id: current_user.id) if current_user
+    @comments = @blog.comments
+    @comment = Comment.new
   end
 
   def new

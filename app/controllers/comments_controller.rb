@@ -1,15 +1,15 @@
 class CommentsController < ApplicationController
 
 	def create
-	    comment = Comment.new(comment_params)
-    	comment.user_id = current_user.id
-		if comment.save
+	    @comment = Comment.new(comment_params)
+    	@comment.user_id = current_user.id
+		if @comment.save
 		    flash[:notice] = 'コメントを投稿しました！'
 		    redirect_back(fallback_location: 'blog[:id]')
 		else
 		    redirect_to :back, flash: {
-		    comment: comment,
-		    error_messages: comment.errors.full_messages
+		    comment: @comment,
+		    error_messages: @comment.errors.full_messages
 		    }
 	    end
 	end

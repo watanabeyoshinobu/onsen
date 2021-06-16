@@ -122,20 +122,19 @@
 .left_profile {
  background-position: left;
 }
+.user-face {
+}
 
 .right_profile {
-
+padding-bottom: 15px;
 }
 
 .profile_group {
-text-align: right;
-}
-
-.profile_group{
-  position: relative;
-  padding: 0.3em;
-  padding-top: 30px;
-  padding-bottom: 10px;
+ text-align: right;
+ position: relative;
+ padding: 0.3em;
+ padding-top: 30px;
+ padding-bottom: 10px;
 }
 .profile_group:after {
   content: '';
