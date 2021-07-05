@@ -4,19 +4,20 @@
 
 
 .anime {
-    width: 300px;                   /* 幅指定 */
-    text-align:  center;            /* 文字中央揃え */
-    display: block;                 /* ブロック要素にする */
-    padding:  15px;                 /* 余白指定 */
-    font-size:  20px;               /* 文字サイズ指定 */
-    text-decoration: none;          /* デフォルトCSS打ち消し */
-    color:  #fff;                   /* 文字色指定 */
-    background-color: #00BCD4;      /* 背景色指定 */
-    border-radius:  5px;            /* 角丸指定 */
-    transition: 0.5s;               /* アニメーション指定 */
-    margin:  0 auto;                /* 要素中央揃え */
+ font-family: 'Noto Serif JP', serif;
+ width: 300px;
+ text-align:  center;
+ display: block;
+ padding:  15px;
+ font-size:  20px;
+ text-decoration: none;
+ color:  #fff;
+ background-color: #00BCD4;
+ border-radius:  5px;
+ transition: 0.5s;
+ margin:  0 auto;
 }
 .anime:hover {
-    opacity:  0.7;                  /* 透明度指定 */
-    width: 340px;                   /* 幅指定 */
+ opacity:  0.7;
+ width: 340px;
 }
