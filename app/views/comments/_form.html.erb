@@ -1,3 +1,4 @@
+
 <% if flash[:error_massages] %>
     <div class="alert alert-danger">
         <ul>
@@ -13,7 +14,8 @@
 <div class="b-comment__formBox">
 	<p class="b-comment__formTitle">コメント記入</p>
 	<%= form_for comment do |f| %>
-		<div class="b-comment_box">
+	    <%= f.hidden_field :blog_id, :value => @blog.id %>
+    	<div class="b-comment_box">
 			<%= f.label :comment, 'コメント' %>
 			<%= f.text_area :comment, class: 'form-control', rows: 4 %>
 		</div>

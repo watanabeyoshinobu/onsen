@@ -11,6 +11,7 @@ class BlogsController < ApplicationController
     @blog = Blog.includes(:user).find(params[:id])
     @comments = @blog.comments
     @comment = Comment.new
+    # byebug
   end
 
   def new
