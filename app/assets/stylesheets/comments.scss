@@ -25,7 +25,28 @@
 
 .b-push_box {
   margin: 20px 0;
+  margin-right: 300px;
 }
+.decorated-btn {
+  width: 300px;
+  margin-left: 220px;
+  background-color: gold;
+  font-size: 12px;
+  border-radius: 5px;
+  border-bottom: solid 3px goldenrod;
+  box-shadow: 3px 3px 3px gray;
+  transition: 0.3s;
+}
+
+.click-down:active {
+  transform: translateY(2px);
+  border-bottom: none;
+}
+
+.decorated-btn:hover {
+  background-color: orange;
+}
+
 
 .b-comment__item {
   padding: 18px;

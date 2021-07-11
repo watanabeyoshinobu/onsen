@@ -8,11 +8,11 @@
           <h1>コメント一覧</h1>
         </div>
         <div class="col-sm-2 col-md-offset-10">
-          <%= button_to '戻る', new_blog_path, class: "btn btn-info btn-block", method: :get %>
+          <%= link_to '戻る', new_blog_path, class: "btn btn--pink btn--cubic btn--shadow", method: :get %>
         </div>
     </div>
 
-      <table class="table table-bordered border-primary table-hover table-sm blogs_table">
+      <table class="table table-bordered border-primary table-sm blogs_table">
         <thead class="thead-dark">
           <tr>
             <th scope="col" style="width: 700px">感想タイトル</th>
