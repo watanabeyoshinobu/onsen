@@ -3865,7 +3865,7 @@ text-align: center;
 }
 .b-new_comment_box{
   margin-top: 5px;
-  margin-left: 1100px;
+  margin-left: 1000px;
 }
 
 a.btn--pink {
@@ -3888,7 +3888,7 @@ a.btn--shadow {
 }
 
 .b-blog__formbox {
-  width: 1200px;
+  width: 1000px;
   margin: 20px auto;
   border: 5px solid #e8e8e8;
   padding: 25px;
@@ -3917,9 +3917,9 @@ a.btn--shadow {
 }
 
 .b-push_box {
-  margin: 20px 0;
+  margin-top: 20px;
   width: 500px;
-  padding-left: 300px;
+  padding-left: 220px;
 }
 a.btn-radius-solid {
   width: 500px;
@@ -4021,18 +4021,40 @@ table tr:last-child td:first-child {
 table tr:last-child td:last-child {
   border-radius: 0 0 5px 0;
 }
-
-
-.b-blog__formbox {
-  width: 1200px;
-  margin: 20px auto;
-  border: 5px solid #e8e8e8;
-  padding: 25px;
-  border-radius: 10px;
-  background: linear-gradient(to right, #FFF0F5, #FFFAFA);
-  animation: zoomIn 1s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
-  font-family:'メイリオ', 'Meiryo', sans-serif;
+a.btn--momo {
+  color: #fff;
+  background-color: #e5abbe;
+  border-bottom: 5px solid #c97586;
+  border-radius: 100vh;
 }
+a.btn--momo:hover {
+  margin-top: 3px;
+  color: #fff;
+  background: #e198b4;
+  border-bottom: 2px solid #c97586;
+}
+a.btn--shadow {
+  -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+  box-shadow: 0 3px 5px rgba(1, 0, 0, .3);
+}
+
+a.btn--danger {
+  color: #fff;
+  background-color: #d9333f;
+  border-bottom: 5px solid #a22041;
+  border-radius: 100vh;
+}
+a.btn--danger:hover {
+  margin-top: 3px;
+  color: #fff;
+  background: #c9171e;
+  border-bottom: 2px solid #a22041;
+}
+a.btn--shadow {
+  -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+  box-shadow: 0 3px 5px rgba(1, 0, 0, .3);
+}
+
 
 
 .b-show__comment {
@@ -4063,6 +4085,10 @@ table tr:last-child td:last-child {
     opacity: 1;
     transform: scale(1);
   }
+}
+.b-comment_listTitle {
+ padding-left: 150px;
+ margin-top: 10px;
 }
 
 .b-comment_list {
@@ -4120,11 +4146,15 @@ table tr:last-child td:last-child {
     transform: scale(1);
   }
 }
-
+.b-update_box {
+  margin-top: 20px;
+  width: 500px;
+  padding-left: 100px;
+}
 
 /*投稿詳細画面*/
 .b-card_box {
-  width: 1200px;
+  width: 1000px;
   margin: auto;
   border-radius: 14px;
   border: 5px solid #e8e8e8;

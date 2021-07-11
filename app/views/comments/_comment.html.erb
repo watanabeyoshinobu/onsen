@@ -5,7 +5,7 @@
 	    <span><%= current_user.name %></span>
 	    <span><%= comment.created_at.to_s(:datetime_base) %></span>
 	    <% if user_signed_in? && comment.user == current_user %>
-	    <span><%= button_to "削除", comment, class: 'btn btn-danger btn-block', method: :delete, data: {confirm: "コメントを削除しますか？", cancel: "キャンセル", commit: "削除する", title: "削除の確認"} %></span>
+	    <span><%= link_to "削除", comment, class: 'btn btn--red btn--radius', method: :delete, data: {confirm: "コメントを削除しますか？", cancel: "キャンセル", commit: "削除する", title: "削除の確認"} %></span>
 	    <% end %>
 	  </div>
 	</div>

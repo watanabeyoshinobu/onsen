@@ -1,4 +1,5 @@
 .b-comment__formBox {
+  width: 800px;
   margin: 30px auto;
   padding: 25px;
   font-family:'メイリオ', 'Meiryo', sans-serif;
@@ -23,9 +24,9 @@
   padding: 20px 26px;
 }
 
-.b-push_box {
+.b-send_box {
   margin: 20px 0;
-  margin-right: 300px;
+  margin-right: 140px;
 }
 .decorated-btn {
   width: 300px;
@@ -49,6 +50,8 @@
 
 
 .b-comment__item {
+  width: 800px;
+  margin: 0 auto;
   padding: 18px;
   border-bottom: 2px dotted #dfdfdf;
 }
@@ -62,5 +65,17 @@
     margin: 0 12px;
   }
 }
+.btn--red,
+a.btn--red {
+  color: #fff;
+  background-color: #c9171e;
+}
+.btn--red:hover,
+a.btn--red:hover {
+  color: #fff;
+  background: #c9171e;
+}
 
-
+a.btn--radius {
+   border-radius: 100vh;
+}

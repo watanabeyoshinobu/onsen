@@ -19,14 +19,13 @@
   <body>
   <header>
 
-          <%= link_to browse_path do %>
-            <%= image_tag 'img/yunokokoti.png',class:"photo" %>
-          <% end %>
+    <%= link_to browse_path do %>
+        <%= image_tag 'img/yunokokoti.png',class:"photo" %>
+    <% end %>
 
         <% if user_signed_in? %>
           <%= render 'users/mypage' %>
         <% end %>
-
 
   </header>
   <div class="main-contents">
