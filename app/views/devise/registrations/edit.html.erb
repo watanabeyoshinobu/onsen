@@ -47,10 +47,10 @@
           <%= f.password_field :current_password, autocomplete: "current-password",class: "form-control", placeholder: "必須項目です" %>
         </div>
 
-        <div class="form-button">
-          <%= f.submit "変更する", class: "btn btn-primary form-submit-btn" %>
+        <div class="change-button">
+          <%= f.submit "変更する", class: "btn-border" %>
         </div>
-        <div class="form-button">
+        <div class="back-button">
           <%= link_to  "戻る", users_show_path, class: "btn btn-primary form-submit-btn" %>
         </div>
           <% end %>
