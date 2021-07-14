@@ -4010,14 +4010,14 @@ a.btn--shadow {
 a.btn--pink {
   width: 200px;
   margin-right: 10px;
-  color: #000;
+  color: #fff;
   background-color: #f4b3c2;
   border-bottom: 5px solid #f09199;
 }
 
 a.btn--pink:hover {
   margin-top: 3px;
-  color: #000;
+  color: #fff;
   background: #f2a0a1;
   border-bottom: 2px solid #f09199;
 }
@@ -4056,23 +4056,27 @@ a.btn--shadow {
 }
 
 .b-push_box {
-  margin-top: 20px;
-  width: 500px;
-  padding-left: 80px;
+  margin: 20px;
+  margin-left: 90px;
 }
-a.btn-radius-solid {
-  width: 500px;
-  background: #f1e767;
-  background: -webkit-gradient(linear, left top, left bottom, from(#f1e767), to(#feb645));
-  background: -webkit-linear-gradient(top, #f1e767 0%, #feb645 100%);
-  background: linear-gradient(to bottom, #f1e767 0%, #feb645 100%);
+.decorated-btn {
+  width: 300px;
+  margin-left: 220px;
+  background-color: gold;
+  font-size: 12px;
+  border-radius: 5px;
+  border-bottom: solid 3px goldenrod;
+  box-shadow: 3px 3px 3px gray;
+  transition: 0.3s;
 }
 
-a.btn-radius-solid:hover {
-  width: 500px;
-  background: -webkit-gradient(linear, left bottom, left top, from(#f1e767), to(#feb645));
-  background: -webkit-linear-gradient(bottom, #f1e767 0%, #feb645 100%);
-  background: linear-gradient(to top, #f1e767 0%, #feb645 100%);
+.click-down:active {
+  transform: translateY(2px);
+  border-bottom: none;
+}
+
+.decorated-btn:hover {
+  background-color: orange;
 }
 
 .sakura2_container {
@@ -4163,15 +4167,15 @@ table tr:last-child td:last-child {
 a.btn--back {
   width: 200px;
   margin-right: 10px;
-  color: #000;
-  background-color: #89c3eb;
-  border-bottom: 5px solid #698aab;
+  color: #fff;
+  background-color: #c7dc68;
+  border-bottom: 5px solid #99ab4e;
 }
 a.btn--back:hover {
   margin-top: 3px;
-  color: #000;
-  background: #84a2d4;
-  border-bottom: 2px solid #698aab;
+  color: #fff;
+  background: #aacf53;
+  border-bottom: 2px solid #99ab4e;
 }
 a.btn--shadow {
   -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, .3);

@@ -220,8 +220,24 @@ padding-bottom: 15px;
  font-family:'メイリオ', 'Meiryo', sans-serif;
 }
 
-.change-button {
+.withdraw-container {
+ width: 100%;
+ height: 300px;
+ background: linear-gradient(to right, #f2f2b0, #f8f4e6);
+}
+.withdraw-box {
+ text-align: center;
+ padding-top: 30px;
+ padding-bottom: 20px;
+}
+.withdraw-text {
+ text-align: center;
+ padding-bottom: 20px;
+}
 
+.change-button {
+ width: 50%;
+ float: left;
 }
 .btn-border {
   display: inline-block;
@@ -241,4 +257,44 @@ padding-bottom: 15px;
   background-color: #9ec34b;
   border-color: #cbe585;
   color: #FFF;
+}
+.back-button {
+ width: 50%;
+ float: right;
+}
+.btn-border2 {
+  display: inline-block;
+  max-width: 180px;
+  text-align: left;
+  border: 2px solid #e2041b;
+  font-size: 16px;
+  color: #e2041b;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: .4s;
+}
+
+.btn-border2:hover {
+  background-color: #e2041b;
+  border-color: #e2041b;
+  color: #FFF;
+}
+
+.processing-box {
+
+}
+a.btn--cancel.btn--border-solid {
+  width: 300px;
+  border: 2px solid #839b5c;
+  color: #fff;
+  background-color: #aacf53;
+}
+a.btn--withdraw.btn--border-solid {
+  width: 300px;
+  border: 2px solid #c9171e;
+  color: #fff;
+  background-color: #e2041b;
+
 }
