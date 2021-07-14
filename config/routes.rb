@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'users/:id/profile', to: 'users#show', as: 'user_profile'
 
   resources :blogs do
+    resource :favorites, only: [:create, :destroy]
     collection do
       get 'see' => 'blogs#see'
       get 'look' => 'blogs#look'

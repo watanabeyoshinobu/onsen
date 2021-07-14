@@ -6,12 +6,15 @@ class User < ApplicationRecord
 
   has_many :blogs
   has_many :comments
+  has_many :favorites, dependent: :destroy
 
   mount_uploader :profile_image, ImageUploader
 
   validates :name, presence: true, length: { maximum: 20 }
   validates :email, presence: true, uniqueness: true
   validates :password, presence: true, length: {minimum: 7 }
+
+
 
 def update_without_current_password(params, *options)
     params.delete(:current_password)
@@ -24,5 +27,6 @@ def update_without_current_password(params, *options)
     clean_up_passwords
     result
   end
+
 
 end
