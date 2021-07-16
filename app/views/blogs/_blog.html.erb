@@ -10,7 +10,23 @@
 
 	  <div class="card-footer">
 	      <%= @blog.user.name %>
-<!--  -->
+			<div class="favorite-box">
+				<% if @blog.favorited_by?(current_user) %>
+					<li>
+						<%= link_to blog_favorites_path(@blog), method: :delete do %>
+						  <i class="fa fa-heart" aria-hidden="true" style="color: red;"></i>
+						    <%= @blog.favorites.count %>
+						  <% end %>
+					</li>
+						<% else %>
+					<li>
+						<%= link_to blog_favorites_path(@blog), method: :blog do %>
+						 <i class="fa fa-heart-o" aria-hidden="true"></i>
+						    <%= @blog.favorites.count %>
+						  <% end %>
+					</li>
+				<% end %>
+			</div>
 	  </div>
 	</div>
 

@@ -1,7 +1,7 @@
 class FavoritesController < ApplicationController
 
 	def create
-	    @blog = Blog.find(params[:blog_id])
+	    blog = Blog.find(params[:blog_id])
 	    favorite = current_user.favorites.new(blog_id: blog.id)
 	    favorite.save
 	    redirect_to blog_path(blog)
