@@ -6,5 +6,8 @@ class Blog < ApplicationRecord
 	validates :title, presence: true, length: { maximum: 30 }
 	validates :body, presence: true, length: { maximum: 1000 }
 
+  def favorited_by?(user)
+    Favorite.where(user_id: user.id).exists?
+  end
 
 end

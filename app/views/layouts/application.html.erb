@@ -18,14 +18,21 @@
 
   <body>
   <header>
+        <nav>
+          <ul class="nav navbar-nav navbar-right">
+
+            <% if user_signed_in? %>
+            <li ckass="home"><h4><%= link_to ' ホーム', browse_path(current_user), class: 'glyphicon glyphicon-home home' %></h4></li>
+            <li><h4><%= link_to ' マイページ', users_show_path, class: 'glyphicon glyphicon-user users' %></h4></li>
+            <!--  -->
+
+            <% end %>
+          </ul>
+        </nav>
 
     <%= link_to browse_path do %>
         <%= image_tag 'img/yunokokoti.png',class:"photo" %>
     <% end %>
-
-        <% if user_signed_in? %>
-          <%= render 'users/mypage' %>
-        <% end %>
 
   </header>
   <div class="main-contents">
