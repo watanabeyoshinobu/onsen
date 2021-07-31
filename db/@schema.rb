@@ -12,8 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2021_07_14_052813) do
 
-  create_table "blogs", charset: "utf8", force: :cascade do |t|
+  create_table "blogs", force: :cascade do |t|
     t.string "title"
+    t.string "category"
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -21,9 +22,9 @@ ActiveRecord::Schema.define(version: 2021_07_14_052813) do
     t.integer "user_id"
   end
 
-  create_table "comments", charset: "utf8", force: :cascade do |t|
-    t.bigint "blog_id"
-    t.bigint "user_id"
+  create_table "comments", force: :cascade do |t|
+    t.integer "blog_id"
+    t.integer "user_id"
     t.string "name"
     t.text "comment", null: false
     t.datetime "created_at", null: false
@@ -32,21 +33,20 @@ ActiveRecord::Schema.define(version: 2021_07_14_052813) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
-  create_table "favorites", charset: "utf8", force: :cascade do |t|
+  create_table "favorites", force: :cascade do |t|
     t.integer "user_id"
     t.integer "blog_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "users", charset: "utf8", force: :cascade do |t|
-    t.string "name", null: false
+  create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
-    t.string "password", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "profile_image"
