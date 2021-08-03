@@ -82,6 +82,7 @@ gem 'annotate'
 gem 'sass-rails'
 gem 'carrierwave'
 gem 'rmagick', '~> 4.2.2'
+gem 'geocoder'
 
 gem 'mysql2'
 

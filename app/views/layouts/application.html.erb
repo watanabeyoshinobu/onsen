@@ -18,17 +18,18 @@
 
   <body>
   <header>
-        <nav>
-          <ul class="nav navbar-nav navbar-right">
+          <div class="nav-bar">
 
             <% if user_signed_in? %>
-            <li ckass="home"><h4><%= link_to ' ホーム', browse_path(current_user), class: 'glyphicon glyphicon-home home' %></h4></li>
-            <li><h4><%= link_to ' マイページ', users_show_path, class: 'glyphicon glyphicon-user users' %></h4></li>
-            <!--  -->
+                  <%= link_to browse_path do %>
+                    <div class="home-image"></div>
+                  <% end %>
+                  <%= link_to users_show_path do %>
+                    <div class="profile-image"></div>
+                  <% end %>
 
             <% end %>
-          </ul>
-        </nav>
+          </div>
 
     <%= link_to browse_path do %>
         <%= image_tag 'img/yunokokoti.png',class:"photo" %>

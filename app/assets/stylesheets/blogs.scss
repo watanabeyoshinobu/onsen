@@ -3974,6 +3974,8 @@ a.btn--shadow {
 
 .b-new__comment {
  width: 380px;
+ margin-top: 30px;
+ margin-left: 220px;
  text-align: center;
  font-family:'メイリオ', 'Meiryo', sans-serif;
  background:
@@ -4079,14 +4081,16 @@ a.btn--shadow {
   background-color: orange;
 }
 
-.sakura2_container {
+.sakura2-container {
  background-image: image-url('img/sakura4.jpg');
  background-size: cover;
+ margin-top: 15px;
 }
 
 .b-index__comment {
  font-family:'メイリオ', 'Meiryo', sans-serif;
  width: 280px;
+ padding-top: 100px;
  text-align: center;
  background:
  linear-gradient(90deg, #999 3px, #fff 3px, #fff calc(100% - 3px), #999 calc(100% - 3px)),
@@ -4216,10 +4220,16 @@ a.btn--shadow {
   box-shadow: 0 3px 5px rgba(1, 0, 0, .3);
 }
 
-
+.row-showbox {
+ height: 50px;
+ padding-left: 100px;
+}
 
 .b-show__comment {
  font-family:'メイリオ', 'Meiryo', sans-serif;
+ margin-top: 20px;
+ margin-left: 220px;
+ margin-bottom: 30px;
  width: 240px;
  text-align: center;
  background:
@@ -4259,6 +4269,8 @@ a.btn--shadow {
 .b-edit__comment {
  font-family:'メイリオ', 'Meiryo', sans-serif;
  width: 180px;
+ margin-top: 20px;
+ margin-left: 220px;
  letter-spacing: 5px;
  text-align: center;
  background:
@@ -4316,6 +4328,7 @@ a.btn--shadow {
 /*投稿詳細画面*/
 .b-card_box {
   width: 1000px;
+  margin-top: 100px;
   margin: auto;
   border-radius: 14px;
   border: 5px solid #e8e8e8;
@@ -4345,12 +4358,25 @@ a.btn--shadow {
 
 .card-footer {
   text-align: right;
-  padding-right: 50px;
   margin: 0 auto;
   background: #fdeff2;
   border-radius: 3px;
 }
+.card-footer ul {
+     overflow: hidden;
+}
+.card-footer li {
 
+    background: linear-gradient(to right, #e6cde3, #fdeff2);
+    line-height: 22px;
+    color: #6d3701;
+    font-size: 14px;
+    display: inline-block;
+    padding: 0 18px;
+    border-radius: 100px;
+    font-weight: bold;
+
+}
 
 
 /*ボタンタグ*/

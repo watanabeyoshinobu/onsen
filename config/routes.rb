@@ -16,6 +16,8 @@ Rails.application.routes.draw do
       get 'check' => "blogs#check"
       get "try" => "blogs#try"
       get "gaze" => "blogs#gaze"
+      get "info" => "blogs#info"
+      get "precautions" => "blogs#precautions"
     end
   end
 
@@ -40,6 +42,7 @@ Rails.application.routes.draw do
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'homes#top'
+  post '/homes/guest_sign_in', to: 'homes#guest_sign_in'
   get 'top' => 'homes#top'
   get 'browse' => 'blogs#browse'
 end

@@ -75,6 +75,12 @@ class BlogsController < ApplicationController
   def browse
   end
 
+  def info
+  end
+
+  def precautions
+  end
+
   private
     def blog_params
       params.require(:blog).permit(:title, :body, :name).merge(user_id: current_user.id)

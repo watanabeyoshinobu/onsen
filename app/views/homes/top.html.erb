@@ -2,13 +2,19 @@
   <%= render 'blogs/menu' %>
 <% end %>
 
+<div class="top-box">
+	<body>
+		<li class="">
+			<%= link_to "ログイン！", new_user_session_path, class: "anime login" %>
+		</li>
 
-<body>
-	<li class="">
-		<%= link_to "ログイン！", new_user_session_path, class: "anime login" %>
+		<li class="">
+			<%= link_to 'ゲストログイン（閲覧用）', browse_path, method: :get %>
+		</li>
 
-	</li>
-	<li class="">
-		<%= link_to '新規登録はこちらから♪', new_user_registration_path, class: "anime login" %>
-	</li>
-</body>
+		<li class="">
+			<%= link_to '新規登録はこちらから♪', new_user_registration_path, class: "anime login" %>
+		</li>
+	</body>
+</div>
+
