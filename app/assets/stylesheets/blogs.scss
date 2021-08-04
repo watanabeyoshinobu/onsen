@@ -3971,10 +3971,14 @@ a.btn--shadow {
     }
 }
 
+.b-new_container {
+ background-image: image-url('img/sakura2.jpg');
+ background-size: cover;
+}
 
 .b-new__comment {
  width: 380px;
- margin-top: 30px;
+ margin-top: 15px;
  margin-left: 220px;
  text-align: center;
  font-family:'メイリオ', 'Meiryo', sans-serif;
@@ -4006,6 +4010,7 @@ a.btn--shadow {
 }
 .b-new_comment_box{
   margin-top: 5px;
+  margin-bottom: 5px;
   margin-left: 1000px;
 }
 
@@ -4030,7 +4035,7 @@ a.btn--shadow {
 
 .b-blog__formbox {
   width: 1000px;
-  margin: 20px auto;
+  margin-left: 210px;
   border: 5px solid #e8e8e8;
   padding: 25px;
   border-radius: 10px;
@@ -4225,6 +4230,7 @@ a.btn--shadow {
  padding-left: 100px;
 }
 
+
 .b-show__comment {
  font-family:'メイリオ', 'Meiryo', sans-serif;
  margin-top: 20px;
@@ -4266,10 +4272,14 @@ a.btn--shadow {
  font-family:'メイリオ', 'Meiryo', sans-serif;
 }
 
+.b-edit_container {
+ background-image: image-url('img/sakura3.jpg');
+ background-size: cover;
+}
 .b-edit__comment {
  font-family:'メイリオ', 'Meiryo', sans-serif;
  width: 180px;
- margin-top: 20px;
+ margin-top: 13px;
  margin-left: 220px;
  letter-spacing: 5px;
  text-align: center;
@@ -4375,7 +4385,19 @@ a.btn--shadow {
     padding: 0 18px;
     border-radius: 100px;
     font-weight: bold;
+}
+.precaution-container {
 
+}
+.precaution-box {
+  width: 1000px;
+  margin-left: 210px;
+  border: 5px solid #e8e8e8;
+  padding: 25px;
+  border-radius: 10px;
+  background: linear-gradient(to right, #FFF0F5, #FFFAFA);
+  animation: zoomIn 1s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
+  font-family:'メイリオ', 'Meiryo', sans-serif;
 }
 
 
