@@ -33,7 +33,6 @@ Rails.application.routes.draw do
   		get '/users', to: redirect("/users/sign_up")
   	end
 
-
   get 'users/show'
   get 'users/index'
   get 'users/edit'

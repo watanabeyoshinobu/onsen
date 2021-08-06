@@ -11,7 +11,7 @@
 	  <ul class="card-footer">
 	      <%= @blog.user.name %>
 				<% if @blog.present? %>
-				  <% if @blog.favorited_by?(current_user) %>
+				  <% unless @blog.favorited_by?(current_user) %>
 						<li class="card-footer">
 							<%= link_to blog_favorites_path(@blog), method: :delete do %>
 								<i class="fa fa-heart" aria-hidden="true" style="color: red;"></i>
@@ -22,8 +22,8 @@
 							<% else %>
 
 						<li>
-							<%= link_to blog_favorites_path(@blog), method: :blog do %>
-								<i class="fa fa-heart-o" aria-hidden="true"></i>
+							<%= link_to blog_favorites_path(@blog), method: :post do %>
+								<i class="fa fa-heart" aria-hidden="true" style="color: red;"></i>
 									<%= @blog.favorites.count %>
 							<% end %>
 						</li>
