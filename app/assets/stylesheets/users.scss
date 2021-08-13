@@ -102,7 +102,7 @@ a.btn--shadow {
   border: 5px inset #FFC0CB;
   border-radius: 10px;
   padding: 30px;
-  background: linear-gradient(to right, #ffdbed, #fef4f4);
+  background: linear-gradient(to right, #f6bfbc, #fef4f4);
   animation: fadeup 1s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
 }
 @keyframes fadeup {
@@ -265,4 +265,30 @@ a.btn--withdraw.btn--border-solid {
   color: #fff;
   background-color: #e2041b;
 
+}
+
+
+.user_settings {
+  font-family:'メイリオ', 'Meiryo', sans-serif;
+  text-align: center;
+  width: 800px;
+  margin: 25px auto;
+  border: 3px inset #FFC0CB;
+  border-radius: 10px;
+  padding: 30px;
+  background: linear-gradient(to right, #f6bfbc, #fef4f4);
+  animation: fadeup 1s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
+}
+@keyframes fadeup {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

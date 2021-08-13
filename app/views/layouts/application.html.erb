@@ -32,6 +32,11 @@
                   <%= link_to users_show_path do %>
                     <div class="profile-image"></div>
                   <% end %>
+
+                  <%= link_to destroy_user_session_path, method: :delete do %>
+                    <div class="logout-image"></div>
+                  <% end %>
+
             <% end %>
           </div>
 

@@ -1,1 +1,18 @@
+<%= render 'blogs/menu' %>
+
 <h1>プロフィール編集</h1>
+
+<div class="user_settings">
+	<h1><%= @user.name %>さんのユーザー設定</h1>
+		<div class="user_settings_form">
+			<%= form_for(@user) do |f| %>
+		        <% if @user.profile_image == nil %>
+		          <%= image_tag "https://dummyimage.com/200x200/0b0e4d/23f534.png&text=Profile+Image" %>
+		        <% else %>
+		          <%= image_tag (@user) %>
+		        <% end %>
+		    <% end %>
+		</div>
+</div>
+
+

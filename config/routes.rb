@@ -33,9 +33,11 @@ Rails.application.routes.draw do
   		get '/users', to: redirect("/users/sign_up")
   	end
 
+  resources :users, only: [:show, :edit, :update, :create, :destroy]
   get 'users/show'
   get 'users/index'
   get 'users/edit'
+  patch 'users/update'
   get 'comments/create'
   get 'comments/destroy'
 

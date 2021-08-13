@@ -21,6 +21,8 @@ Things you may want to cover:
 
 * Deployment instructions
 
+Do not use *= require in Sass or your other stylesheets will not be able to access the Bootstrap mixins and variables.
+
 * ...
 
 #アプリケーション名・簡潔な概要・アプリケーションURL
