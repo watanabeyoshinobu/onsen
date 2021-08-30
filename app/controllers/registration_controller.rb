@@ -1,5 +1,8 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   before_action :authenticate_user!
+  before_action :ensure_normal_user, only: %i[update destroy]
+
+
 
 	  protected
 

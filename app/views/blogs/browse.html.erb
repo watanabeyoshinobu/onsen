@@ -89,7 +89,7 @@
       </div>
     </section>
 
-        <section id="profile">
+        <section class="profile">
              <div class="container2">
                <h2 class="heading2">
                  ♨️〜自己紹介〜♨️
@@ -130,7 +130,7 @@
            </h2>
            <p class="heading-text">
               登録したばかりですがSNSを始めました！<br>
-              趣味を乗せたり備忘録としてプログラミング情報を書いていこうと思いますので<br>
+              趣味を乗せたりスーパー銭湯の魅力をお伝えしていきたいので<br>
               興味のある方は是非見に来て下さい♪<br>
               また、みなさまに楽しくご利用していただける様に禁止事項を厳守の上ご利用をお願い致します。<br>
            </p>
@@ -138,12 +138,12 @@
            <div class="contact-group clearfix">
 
             <div class="left-content">
-               <div class="impressions">
-                <%= link_to 'コメントはこちら♪', new_blog_path, class: 'btn btn-c btn--green btn--cubic btn--shadow', method: :get %>
+               <div class="comment-button">
+                <%= link_to 'コメントはこちら♪', new_blog_path, class: 'btn-border-comment' %>
                </div>
 
-               <div class="impressions">
-                <%= link_to '注意事項', precautions_blogs_path, class: 'btn btn-c btn--green btn--cubic btn--shadow', method: :get %>
+               <div class="precautions-button">
+                <%= link_to '注意事項', precautions_blogs_path, class: 'btn-border-precautions' %>
                </div>
             </div>
 

@@ -1,4 +1,4 @@
-FROM ruby:2.5.7
+FROM ruby:2.7.3
 
 RUN apt-get update -qq && \
   apt-get install -y apt-utils \

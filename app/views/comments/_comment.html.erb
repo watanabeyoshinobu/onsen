@@ -3,7 +3,14 @@
 	<div class="b-comment__item">
 	  <p><%= simple_format(comment.comment) %></p>
 	  <div class="b-comment__bottomLine">
-	    <span><%= current_user.name %></span>
+
+<%= link_to current_user.name, show_modal_user_path, remote: true, class: "btn btn-lg, btn-primary" %>
+	  <% if false %>
+		  <%= link_to users_show_path do %>
+		    <span><%= current_user.name %></span>
+		  <% end %>
+	  <% end %>
+
 	    <span><%= comment.created_at.to_s(:datetime_base) %></span>
 	    <% if user_signed_in? && comment.user == current_user %>
 	    <span><%= link_to "削除", comment, class: 'btn btn--red btn--radius', method: :delete, data: {confirm: "コメントを削除しますか？", cancel: "キャンセル", commit: "削除する", title: "削除の確認"} %></span>
@@ -11,6 +18,5 @@
 	  </div>
 	</div>
 </div>
-
 
 

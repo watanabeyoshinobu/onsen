@@ -1,8 +1,15 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+  devise_for :users, controllers: {
+    registrations: 'users/registrations',
+    passwords: 'users/passwords'
+  }
 
-  get 'users/:id/profile', to: 'users#show', as: 'user_profile'
+  devise_scope :users do
+    get '/users', to: redirect("/users/sign_up")
+  end
+
+
 
   resources :blogs do
     resource :favorites, only: [:create, :destroy]
@@ -25,18 +32,19 @@ Rails.application.routes.draw do
     collection do
       get 'withdraw' => 'users#withdraw'
     end
+    member do
+      get 'show_modal' => 'users#show_modal'
+    end
   end
+
 
   resources :comments, only: [:create, :destroy]
 
-  	devise_scope :users do
-  		get '/users', to: redirect("/users/sign_up")
-  	end
+  resources :relationships, only: [:create, :destroy]
 
-  resources :users, only: [:show, :edit, :update, :create, :destroy]
-  get 'users/show'
-  get 'users/index'
-  get 'users/edit'
+  # resources :users, only: [:show, :edit, :update, :create, :destroy, :show_modal]
+
+  get 'users/:id/profile', to: 'users#show', as: 'user_profile'
   patch 'users/update'
   get 'comments/create'
   get 'comments/destroy'

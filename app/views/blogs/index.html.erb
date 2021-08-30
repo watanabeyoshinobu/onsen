@@ -8,7 +8,7 @@
           <h1>コメント一覧</h1>
         </div>
         <div class="col-sm-2 col-md-offset-10">
-          <%= link_to '戻る', new_blog_path, class: "btn btn--back btn--cubic btn--shadow", method: :get %>
+          <%= link_to '戻る', new_blog_path, class: 'btn-border-back' %>
         </div>
     </div>
 
@@ -28,7 +28,7 @@
             <% @blogs.each do |blog| %>
               <tr>
                   <td><%= blog.title %></td>
-                <%= link_to users_index_path do %>
+                <%= link_to users_path do %>
                   <td><%= blog.user.name %></td>
                 <% end %>
                   <td><%= blog.created_at.to_s(:datetime_base) %></td>

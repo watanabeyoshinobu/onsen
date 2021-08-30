@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
 
+  def show_modal
+  end
+
   def show
     @user = current_user
   end
@@ -24,19 +27,25 @@ class UsersController < ApplicationController
   end
 
   def update
-  	@user =User.find(params[:id])
-  if params[:image]
-    @user.profile_image = "#{@user.id}.jpg"
-    image = params[:image]
-    File.binwrite("public/user_images/#{@user.profile_image}",image.read)
-  	flash[:success] = "「#{@user.name}」を更新しました！"
-  	redirect_to users_edit_path
-  	else
-  		render 'edit'
-  	end
+    @user = User.find(params[:id])
+    @user.image = "no_image.jpg"
+    if params[:user_profile_image_update_flg].present?
+      @user.update_attribute(:profile_image, params[:user][:profile_image])
+    else
+      @user.update!(user_params)
+    end
+    redirect_to user_path(@user.id)
+
+
   end
 
   def withdraw
+  end
+
+
+  def set_variables
+    @blog = Blog.find(params[:blog_id])
+    @id_name = "#blog-link-#{@blog.id}"
   end
 
   private
@@ -44,4 +53,7 @@ class UsersController < ApplicationController
       params.require(:user).permit(:name, :email, :password, :password_confirmation, :profile_image)
     end
 
+    def user_profile_image_params
+      params.require(:user).permit(:profile_image)
+    end
 end

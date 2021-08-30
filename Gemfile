@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.5.7'
+ruby '2.7.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.1.3.2'
@@ -68,11 +68,17 @@ group :test do
   gem 'chromedriver-helper'
 end
 
+group :production do
+  gem 'fog'
+end
+
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem "bootstrap-sass", ">= 3.4.1"
 gem 'jquery-rails'
+gem 'rails-ujs'
 gem 'rails-i18n'
 gem 'dotenv-rails'
 gem 'kaminari','~> 1.2.1'
@@ -82,8 +88,9 @@ gem 'annotate'
 gem 'sass-rails'
 gem 'ransack'
 gem 'carrierwave'
-gem 'rmagick', '~> 4.2.2'
+gem 'mini_magick'
 gem 'geocoder'
+gem 'sprockets', '~> 4.0.2'
 
 gem 'mysql2'
 

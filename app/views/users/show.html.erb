@@ -8,17 +8,19 @@
 
 		<div class="row-box">
 			<div class="col-md-5"></div>
-			<div class="col-md-2"><%= link_to 'アカウント編集', edit_user_registration_path, class: 'btn btn--edit btn--cubic btn--shadow', method: :get %></div>
+			<div class="col-md-2"><%= link_to 'アカウント編集', edit_user_registration_path, class: 'btn-border-edit' %></div>
 
-			<div class="col-md-2"><%= link_to 'プロフィール編集', edit_user_path(current_user), class: 'btn btn--edit btn--cubic btn--shadow', method: :get %></div>
+			<div class="col-md-2"><%= link_to 'プロフィール編集', edit_user_path, class: 'btn-border-edit' %></div>
 
-			<div class="col-md-2"><%= link_to '退会', withdraw_users_path, class: 'btn btn--withdrow btn--cubic btn--shadow', method: :get %></div>
+			<div class="col-md-2"><%= link_to '退会', withdraw_users_path, class: 'btn-border-withdraw' %></div>
 		</div>
 
 		<div class="user_formbox">
 			<div class="left_profile">
 				<div class="user-face">
-
+			   <% if @user.profile_image.present? %>
+			      <%= image_tag @user.profile_image.url, :size =>'300x300' %>
+			   <% end %>
 				</div>
 			</div>
 
@@ -34,8 +36,8 @@
 				</div>
 
 				<div class="profile_group">
-		            <h5 class="profile_password">パスワード</h5>
-		            <h3 class="user_password">******</h3>
+		            <h5 class="profile_password">フォロワー</h5>
+		            <h3 class="user_password">人</h3>
 				</div>
 
 			</div>

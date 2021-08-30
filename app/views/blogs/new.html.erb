@@ -7,9 +7,9 @@
     		<h1>コメントはこちら♪</h1>
     	</div>
       <div class="b-new_comment_box">
-            <%= link_to 'コメント一覧', blogs_path, class: "btn btn--pink btn--cubic btn--shadow", method: :get %>
+            <%= link_to 'コメント一覧', blogs_path, class: 'btn-border-button' %>
       </div>
     </div>
 
-        <%= render partial: 'form', locals: { blog: @blog} %>
+        <%= render partial: 'form', locals: { blog: @blog } %>
 </div>

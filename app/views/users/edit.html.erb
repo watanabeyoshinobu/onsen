@@ -6,12 +6,17 @@
 	<h1><%= @user.name %>さんのユーザー設定</h1>
 		<div class="user_settings_form">
 			<%= form_for(@user) do |f| %>
-		        <% if @user.profile_image == nil %>
-		          <%= image_tag "https://dummyimage.com/200x200/0b0e4d/23f534.png&text=Profile+Image" %>
-		        <% else %>
-		          <%= image_tag (@user) %>
-		        <% end %>
-		    <% end %>
+			   <% if @user.profile_image.present? %>
+			      <%= image_tag @user.profile_image.url, :size =>'300x300' %>
+			   <% else %>
+			      <%= image_tag "/assets/default.jpg" %>
+			   <% end %>
+			      <button type="button" class="btn btn-outline-secondary rounded-pill">
+			         <%= f.file_field :profile_image, accept: 'image/jpeg,image/gif,image/png' %>
+			      </button>
+			      <input type="hidden" name="user_profile_image_update_flg" value="user_profile_image_update_flg" >
+			　　<%= f.submit '更新する', class: 'btn btn-primary' %>
+			<% end %>
 		</div>
 </div>
 

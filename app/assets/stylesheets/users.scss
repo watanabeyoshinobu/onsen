@@ -23,8 +23,9 @@
 }
 
 .row-box {
+ width: 100%;
  height: 50px;
- padding-left: 150px;
+ padding-left: 250px;
  padding-top: 20px;
 }
 
@@ -97,7 +98,8 @@ a.btn--shadow {
 
 .user_formbox {
   font-family:'メイリオ', 'Meiryo', sans-serif;
-  width: 800px;
+  width: 900px;
+  height: 400px;
   margin: 25px auto;
   border: 5px inset #FFC0CB;
   border-radius: 10px;
@@ -128,7 +130,7 @@ a.btn--shadow {
 }
 
 .right_profile {
-padding-bottom: 15px;
+  margin-top: -300px;
 }
 
 .profile_group {
@@ -292,3 +294,45 @@ a.btn--withdraw.btn--border-solid {
     transform: translateY(0);
   }
 }
+
+.btn-border-edit {
+  display: inline-block;
+  max-width: 180px;
+  text-align: left;
+  border: 2px solid #e5abbe;
+  font-size: 16px;
+  color: #e5abbe;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: .4s;
+}
+
+.btn-border-edit:hover {
+  background-color: #e198b4;
+  border-color: #e198b4;
+  color: #FFF;
+}
+
+.btn-border-withdraw {
+  display: inline-block;
+  max-width: 180px;
+  text-align: left;
+  border: 2px solid #e2041b;
+  font-size: 16px;
+  color: #e2041b;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: .4s;
+}
+
+.btn-border-withdraw:hover {
+  background-color: #e2041b;
+  border-color: #e2041b;
+  color: #FFF;
+}
+
+

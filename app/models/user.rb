@@ -14,7 +14,7 @@ class User < ApplicationRecord
   has_many :reverse_of_relationships, class_name: 'Relationship', foreign_key: 'follow_id'
   has_many :followers, through: :reverse_of_relationships, source: :user
 
-  mount_uploader :profile_image, ImageUploader
+  mount_uploader :profile_image, ProfileImageUploader
 
   validates :name, presence: true, length: { maximum: 20 }
   validates :email, presence: true, uniqueness: true
@@ -39,6 +39,7 @@ def update_without_current_password(params, *options)
   end
 
 end
+
 
 def follow(other_user)
     unless self == other_user
