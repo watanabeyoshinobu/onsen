@@ -1,33 +1,32 @@
 <%= render 'menu' %>
 
-<div class="d-flex align-items-center">
+<div class="b-show_box">
 	<div class="b-show__comment">
 		<h1>コメント</h1>
 	</div>
-	<div class="row-showbox">
-		<div class="col-md-1"></div>
-		<div class="col-md-5"></div>
-		<div class="col-md-2"><%= link_to 'コメント一覧', blogs_path, class: 'btn-border-button' %></div>
-		<% if @blog.user_id == current_user.id %>
-	    <div class="col-md-2"><%= link_to '編集', edit_blog_path(@blog), class: 'btn-border-button' %></div>
-	  <% end %>
+		<div class="row-showbox">
+			<div class="col-md-1"></div>
+			<div class="col-md-5"></div>
+			<div class="col-md-2"><%= link_to 'コメント一覧', blogs_path, class: 'btn-border-button' %></div>
+			<% if @blog.user_id == current_user.id %>
+		    <div class="col-md-2"><%= link_to '編集', edit_blog_path(@blog), class: 'btn-border-button' %></div>
+		  <% end %>
+		</div>
 	</div>
-</div>
 
-<% if flash[:notice] %>
-	<div class="alert alert-primary"><%= flash[:notice] %></div>
-<% end %>
+		<% if flash[:notice] %>
+			<div class="alert alert-primary"><%= flash[:notice] %></div>
+		<% end %>
 
-<%= render @blog %>
+		<%= render @blog %>
 
-<div class="b-comment_list">
-  <div class="b-comment_listTitle"><h3>コメント<h3></div>
-  <%= render @blog.comments %>
-</div>
+		<div class="b-comment_list">
+		  <div class="b-comment_listTitle"><h3>コメント<h3></div>
+		  <%= render @blog.comments %>
+		</div>
 
 
-<% if user_signed_in? %>
-	<%= render partial: 'comments/form', locals: { comment: @comment, blog: @blog } %>
-<% end %>
-
+		<% if user_signed_in? %>
+			<%= render partial: 'comments/form', locals: { comment: @comment, blog: @blog } %>
+		<% end %>
 </div>

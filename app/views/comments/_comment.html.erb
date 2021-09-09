@@ -4,7 +4,8 @@
 	  <p><%= simple_format(comment.comment) %></p>
 	  <div class="b-comment__bottomLine">
 
-<%= link_to current_user.name, show_modal_user_path, remote: true, class: "btn btn-lg, btn-primary" %>
+
+	<%= link_to current_user.name, show_modal_user_path, remote: true, class: "btn btn-lg, btn-primary" %>
 	  <% if false %>
 		  <%= link_to users_show_path do %>
 		    <span><%= current_user.name %></span>
