@@ -1,0 +1,10 @@
+<div class="follow-box">
+	<div class="follow-image">
+		<%# if @user.profile_image.present? %>
+			<%#= image_tag @user.profile_image.url, :size =>'100x100' %>
+		<%# end %>
+	</div>
+	<div class="follow-reset">
+		<%= link_to 'フォロー解除', "#", class: "btn btn-lg, btn-danger" %>
+	</div>
+</div>

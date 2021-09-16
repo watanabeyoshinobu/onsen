@@ -4302,8 +4302,42 @@ a.btn--shadow {
   font-weight: bold;
 }
 .precaution-container {
-
+  background-image: image-url('img/sakura2.jpg');
+  background-size: cover;
 }
+ .precaution-title{
+   font-family:'メイリオ', 'Meiryo', sans-serif;
+   margin-top: 15px;
+   margin-left: 220px;
+   margin-bottom: 30px;
+   width: 240px;
+   text-align: center;
+   background:
+   radial-gradient(circle at top left, transparent 50%, #999 50%, #999 calc(50% + 3px), transparent calc(50% + 3px)),
+   radial-gradient(circle at top right, transparent 50%, #999 50%, #999 calc(50% + 2px), transparent calc(50% + 3px)),
+   radial-gradient(circle at bottom left, transparent 50%, #999 50%, #999 calc(50% + 2px), transparent calc(50% + 3px)),
+   radial-gradient(circle at bottom right, transparent 50%, #999 50%, #999 calc(50% + 2px), transparent calc(50% + 3px)),
+   linear-gradient(90deg, #999 2px, #fff 3px, #fff calc(100% - 2px), #999 calc(100% - 2px)),
+   linear-gradient(180deg, #999 2px, #fff 3px, #fff calc(100% - 2px), #999 calc(100% - 2px));
+   background-position: top left, top right, bottom left, bottom right, left 15px, 15px top;
+   background-size: 20px 20px, 20px 20px,20px 20px,20px 20px, 100% calc(100% - 30px), calc(100% - 30px) 100%;
+   background-repeat: no-repeat;
+   position: relative;
+   padding: 10px 10px;
+   font-weight: bold;
+   animation: zoomIn 1s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
+  }
+  @keyframes zoomIn {
+    0% {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+ }
+
 .precaution-box {
   width: 1000px;
   margin-left: 210px;

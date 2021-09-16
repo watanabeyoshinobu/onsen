@@ -1,2 +1,4 @@
-alert("test alert");
+// alert("test alert");
 
+$("#user-modal").html("<%= escape_javascript(render 'form') %>")
+$("#user-modal").modal("show")

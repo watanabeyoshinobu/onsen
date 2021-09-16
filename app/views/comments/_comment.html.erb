@@ -2,22 +2,40 @@
 <div class="b-show_container">
 	<div class="b-comment__item">
 	  <p><%= simple_format(comment.comment) %></p>
+	  <p><%= comment.id %></p>
 	  <div class="b-comment__bottomLine">
 
-
-	<%= link_to current_user.name, show_modal_user_path, remote: true, class: "btn btn-lg, btn-primary" %>
-	  <% if false %>
-		  <%= link_to users_show_path do %>
-		    <span><%= current_user.name %></span>
+	<% if comment.user.profile_image.present? %>
+		<%= link_to image_tag(comment.user.profile_image.url, :size =>'50x50'), show_modal_user_path(comment), remote: true, class: "btn btn-lg, btn-primary" %>
+		  <% if false %>
+			  <%= link_to users_show_path do %>
+			    <span><%= comment.user.name %></span>
+			  <% end %>
 		  <% end %>
-	  <% end %>
 
-	    <span><%= comment.created_at.to_s(:datetime_base) %></span>
-	    <% if user_signed_in? && comment.user == current_user %>
-	    <span><%= link_to "削除", comment, class: 'btn btn--red btn--radius', method: :delete, data: {confirm: "コメントを削除しますか？", cancel: "キャンセル", commit: "削除する", title: "削除の確認"} %></span>
-	    <% end %>
-	  </div>
-	</div>
-</div>
+		    <span><%= comment.created_at.to_s(:datetime_base) %></span>
+		    <% if user_signed_in? && comment.user == current_user %>
+		    <span><%= link_to "削除", comment, class: 'btn btn--red btn--radius', method: :delete, data: {confirm: "コメントを削除しますか？", cancel: "キャンセル", commit: "削除する", title: "削除の確認"} %></span>
+		    <% end %>
+		  </div>
+		</div>
+	<% else %>
+		<%= link_to comment.user.name, show_modal_user_path, remote: true, class: "btn btn-lg, btn-primary" %>
+		  <% if false %>
+			  <%= link_to users_show_path do %>
+			    <span><%= comment.user.name %></span>
+			  <% end %>
+		  <% end %>
+
+		    <span><%= comment.created_at.to_s(:datetime_base) %></span>
+		    <% if user_signed_in? && comment.user == current_user %>
+		    <span><%= link_to "削除", comment, class: 'btn btn--red btn--radius', method: :delete, data: {confirm: "コメントを削除しますか？", cancel: "キャンセル", commit: "削除する", title: "削除の確認"} %></span>
+		    <% end %>
+		  </div>
+		</div>
+	<% end %>
 
 
+
+
+<%#= image_tag @user.profile_image.url, :size =>'300x300' %>

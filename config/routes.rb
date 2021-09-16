@@ -5,9 +5,9 @@ Rails.application.routes.draw do
     passwords: 'users/passwords'
   }
 
-  devise_scope :users do
-    get '/users', to: redirect("/users/sign_up")
-  end
+  # devise_scope :users do
+  #   get '/users', to: redirect("/users/sign_up")
+  # end
 
 
 
@@ -31,6 +31,8 @@ Rails.application.routes.draw do
   resources :users do
     collection do
       get 'withdraw' => 'users#withdraw'
+      get 'follows' => 'users#follows'
+      get 'followers' => 'users#followers'
     end
     member do
       get 'show_modal' => 'users#show_modal'

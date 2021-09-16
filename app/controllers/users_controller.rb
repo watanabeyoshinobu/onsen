@@ -2,6 +2,8 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
 
   def show_modal
+    pp params
+    @comment = Comment.find(params[:id])
   end
 
   def show
@@ -28,7 +30,7 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    @user.image = "no_image.jpg"
+
     if params[:user_profile_image_update_flg].present?
       @user.update_attribute(:profile_image, params[:user][:profile_image])
     else
@@ -40,6 +42,12 @@ class UsersController < ApplicationController
   end
 
   def withdraw
+  end
+
+  def follows
+  end
+
+  def followers
   end
 
 

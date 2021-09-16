@@ -1,23 +1,28 @@
 <%= render 'blogs/menu' %>
 
-<h1>プロフィール編集</h1>
+<div class="edit-container">
+	<div class="user-edit">
+		<h1>プロフィール編集</h1>
+	</div>
 
-<div class="user_settings">
-	<h1><%= @user.name %>さんのユーザー設定</h1>
-		<div class="user_settings_form">
-			<%= form_for(@user) do |f| %>
-			   <% if @user.profile_image.present? %>
-			      <%= image_tag @user.profile_image.url, :size =>'300x300' %>
-			   <% else %>
-			      <%= image_tag "/assets/default.jpg" %>
-			   <% end %>
-			      <button type="button" class="btn btn-outline-secondary rounded-pill">
-			         <%= f.file_field :profile_image, accept: 'image/jpeg,image/gif,image/png' %>
-			      </button>
-			      <input type="hidden" name="user_profile_image_update_flg" value="user_profile_image_update_flg" >
-			　　<%= f.submit '更新する', class: 'btn btn-primary' %>
-			<% end %>
-		</div>
+
+	<div class="user_settings">
+		<h1><%= @user.name %>さんのユーザー設定</h1>
+			<div class="user_settings_form">
+				<%= form_for(@user) do |f| %>
+				   <% if @user.profile_image.present? %>
+				      <%= image_tag @user.profile_image.url, :size =>'300x300' %>
+				   <% else %>
+				      <%= image_tag "/assets/default.jpg" %>
+				   <% end %>
+				      <button type="button" class="btn btn-outline-secondary rounded-pill">
+				         <%= f.file_field :profile_image, accept: 'image/jpeg,image/gif,image/png' %>
+				      </button>
+				      <input type="hidden" name="user_profile_image_update_flg" value="user_profile_image_update_flg" >
+				　　<%= f.submit '更新する', class: 'btn btn-primary' %>
+				<% end %>
+			</div>
+	</div>
 </div>
 
 
