@@ -50,7 +50,6 @@ class UsersController < ApplicationController
   def followers
   end
 
-
   def set_variables
     @blog = Blog.find(params[:blog_id])
     @id_name = "#blog-link-#{@blog.id}"

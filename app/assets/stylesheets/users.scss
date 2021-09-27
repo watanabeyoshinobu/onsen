@@ -35,7 +35,7 @@
  font-family:'メイリオ', 'Meiryo', sans-serif;
  width: 300px;
  margin-top: 5px;
- margin-left: 320px;
+ margin-left: 270px;
  background:
  linear-gradient(90deg, #999 3px, #fff 3px, #fff calc(100% - 3px), #999 calc(100% - 3px)),
  linear-gradient(180deg, #999 3px, #fff 3px, #fff calc(100% - 3px), #999 calc(100% - 3px)),
@@ -128,39 +128,78 @@ a.btn--shadow {
  background-position: left;
 }
 .user-face {
+ margin-top: 20px;
+ margin-left: 30px;
 }
 
 .right_profile {
   margin-top: -300px;
 }
 
-.profile_group {
+.profile_group1 {
  text-align: right;
  position: relative;
  padding: 0.3em;
- padding-top: 30px;
+ padding-top: 20px;
  padding-bottom: 10px;
 }
-.profile_group:after {
+.profile_group1:after {
   content: '';
   position: absolute;
-  left: 505px;
+  left: 460px;
   bottom: 0;
-  width: 250px;
+  width: 400px;
+  height: 7px;
+  border-radius: 2px;
+  background: repeating-linear-gradient(-45deg, orange, orange 2px, white 2px, white 4px);
+}
+.profile_group2 {
+ text-align: right;
+ position: relative;
+ padding: 0.3em;
+ padding-top: 40px;
+ padding-bottom: 10px;
+}
+.profile_group2:after {
+  position: fixed;
+  content: '';
+  position: absolute;
+  left: 460px;
+  bottom: 0;
+  width: 400px;
+  height: 7px;
+  border-radius: 2px;
+  background: repeating-linear-gradient(-45deg, orange, orange 2px, white 2px, white 4px);
+}
+.profile_group3 {
+ text-align: right;
+ position: relative;
+ padding: 0.3em;
+ padding-top: 40px;
+ padding-bottom: 10px;
+}
+.profile_group3:after {
+  content: '';
+  position: absolute;
+  left: 460px;
+  bottom: 0;
+  width: 400px;
   height: 7px;
   background: repeating-linear-gradient(-45deg, orange, orange 2px, white 2px, white 4px);
 }
 
 .profile_name {
+　position: fixed;
  display: inline;
- color: white;
+ color: #fff;
  background-color: #F08080;
- border-radius: 14px;
- margin-right: 50px;
+ border-radius: 10px;
+ margin-right: 150px;
 }
 .user_name {
  display: inline;
  color: #8B4513;
+ margin-right: 30px;
 }
 
 .profile_email {
@@ -175,17 +214,6 @@ a.btn--shadow {
  color: #8B4513;
 }
 
-.profile_password {
- display: inline;
- color: white;
- background-color: #F08080;
- border-radius: 14px;
- margin-right: 50px;
-}
-.user_password {
- display: inline;
- color: #8B4513;
-}
 
 .row {
  font-family:'メイリオ', 'Meiryo', sans-serif;
@@ -388,9 +416,137 @@ a.btn--withdraw.btn--border-solid {
 
 
 /*フォロー機能*/
+.follows {
+ text-align: center;
+ font-family:'メイリオ', 'Meiryo', sans-serif;
+ width: 300px;
+ margin-top: 15px;
+ margin-left: 5px;
+ margin-bottom: 20px;
+ background:
+ linear-gradient(90deg, #999 3px, #fff 3px, #fff calc(100% - 3px), #999 calc(100% - 3px)),
+ linear-gradient(180deg, #999 3px, #fff 3px, #fff calc(100% - 3px), #999 calc(100% - 3px)),
+ linear-gradient(45deg,  transparent 10px, #999 11px, #999 12px, #fff 14px),
+ linear-gradient(135deg, transparent 10px, #999 11px, #999 12px, #fff 14px),
+ linear-gradient(225deg, transparent 10px, #999 11px, #999 12px, #fff 14px),
+ linear-gradient(315deg, transparent 10px, #999 11px, #999 12px, #fff 14px);
+ background-position: left 15px, 15px top, bottom left, top left, top right, bottom right;
+ background-size: 100% calc(100% - 30px), calc(100% - 30px) 100%, 20px 20px, 20px 20px, 20px 20px, 20px 20px;
+ background-repeat: no-repeat;
+ position: relative;
+ padding: 10px 10px;
+ font-weight: bold;
+ animation: zoomIn 1s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
+}
+@keyframes zoomIn {
+ 0% {
+  transform: scale(0.8);
+  opacity: 0;
+ }
+ 100% {
+  opacity: 1;
+  transform: scale(1);
+ }
+}
+a.btn--edit {
+  width: 200px;
+  margin-right: 10px;
+  color: #fff;
+  background-color: #f0908d;
+  border-bottom: 5px solid #c97586;
+}
+a.btn--edit:hover {
+  margin-top: 3px;
+  color: #fff;
+  background: #ee827c;
+  border-bottom: 2px solid #c97586;
+}
+a.btn--shadow {
+  -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+}
+
+a.btn--withdrow {
+  width: 200px;
+  margin-right: 10px;
+  color: #fff;
+  background-color: #e2041b;
+  border-bottom: 5px solid #b7282e;
+}
+a.btn--withdrow:hover {
+  margin-top: 3px;
+  color: #fff;
+  background: #c9171e;
+  border-bottom: 2px solid #b7282e;
+}
+a.btn--shadow {
+  -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+}
+
 .follow-box {
- width: 200px;
- height: 250px;
- border: 2px solid #FFC0CB;
- border-radius: 10px;
+ width: 220px;
+ height: 320px;
+ margin-left: 20px;
+ margin-bottom: 30px;
+ border: 1px solid #DCDCDC;
+ border-radius: 5px;
+}
+
+.follow-image {
+ padding-top: 5px;
+ padding-left: 9px;
+}
+.follow-name {
+ text-align: center;
+}
+.follow-reset {
+ padding-left: 40px;
+}
+.btn-border-follow {
+  display: inline-block;
+  margin-left: 15px;
+  max-width: 180px;
+  text-align: left;
+  border: 2px solid #9ec34b;
+  font-size: 16px;
+  color: #9ec34b;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: .4s;
+}
+
+.btn-border-follow:hover {
+  background-color: #9ec34b;
+  border-color: #cbe585;
+  color: #FFF;
+}
+.reset-button {
+ margin: 20px 0 5px 300px;
+ padding-left: 50px;
+ overflow: hidden;
+ position: relative;
+ cursor: pointer;
+
+}
+.btn-border-reset {
+  display: inline-block;
+  max-width: 180px;
+  text-align: left;
+  border: 2px solid #e2041b;
+  font-size: 16px;
+  color: #e2041b;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: .4s;
+}
+
+.btn-border-reset:hover {
+  background-color: #e2041b;
+  border-color: #e2041b;
+  color: #FFF;
 }

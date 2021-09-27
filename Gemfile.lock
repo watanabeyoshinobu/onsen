@@ -623,7 +623,7 @@ DEPENDENCIES
   rails-i18n
   rails-ujs
   ransack
-  rspec-rails (~> 3.0)
+  rspec-rails (~> 3.9)
   rubocop
   rubocop-rails
   sass-rails
@@ -640,4 +640,4 @@ RUBY VERSION
    ruby 2.7.3p183
 
 BUNDLED WITH
-   2.2.26
+   2.2.27

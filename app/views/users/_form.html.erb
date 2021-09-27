@@ -6,8 +6,19 @@
     </div>
     <h3>フォローしますか？</h3>
       <div class="follow-button">
-        <%= link_to "フォローする", "#", remote: true, class: "btn btn-lg, btn-primary" %>
-        <%= link_to "フォロー解除", "#", remote: true, class: "btn btn-lg, btn-danger" %>
+        <% unless current_user == @comment.user %>
+          <% if current_user.following?(@comment.user) %>
+            <%= form_for(current_user.relationships.find_by(follow_id: @comment.user.id), html: { method: :delete }) do |f| %>
+              <%= hidden_field_tag :follow_id, @comment.user.id %>
+              <%= f.submit 'フォロー解除', class: 'btn-border-reset' %>
+            <% end %>
+          <% else %>
+            <%= form_for(current_user.relationships.build) do |f| %>
+              <%= hidden_field_tag :follow_id, @comment.user.id %>
+              <%= f.submit 'フォロー', class: 'btn-border-follow' %>
+            <% end %>
+          <% end %>
+        <% end %>
     </div>
   </div>
 </div>

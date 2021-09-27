@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
 
   devise_for :users, controllers: {
-    registrations: 'users/registrations',
-    passwords: 'users/passwords'
+    # registrations: 'users/registrations',
+    # passwords: 'users/passwords'
   }
 
-  # devise_scope :users do
-  #   get '/users', to: redirect("/users/sign_up")
-  # end
+  devise_scope :users do
+    get '/users', to: redirect("/users/sign_up")
+  end
 
 
 

@@ -42,7 +42,7 @@
                   <%= f.submit "変更する", class: "btn-border" %>
                 </div>
                 <div class="back-button">
-                  <%= link_to  "戻る", users_show_path, class: "btn-border2" %>
+                  <%= link_to  "戻る", "user_path(current_user)", class: "btn-border2" %>
                 </div>
         </div>
           <% end %>

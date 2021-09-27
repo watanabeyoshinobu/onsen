@@ -1,6 +1,6 @@
 <%= render 'blogs/menu' %>
 
-<% current_user.followings.each do |follow_user| %>
+<% current_user.followers.each do |follow_user| %>
 	<div class="follow-box">
 		<div class="follow-image">
 			<% if follow_user.profile_image.present? %>
@@ -22,4 +22,5 @@
           <% end %>
 		</div>
 	</div>
+
 <% end %>
