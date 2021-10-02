@@ -484,6 +484,19 @@ a.btn--shadow {
   box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
 }
 
+.follows-box{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.follows-box > div{
+ width: 220px;
+ height: 320px;
+　font-size: 64px;
+　text-align: center;
+}
+
+
 .follow-box {
  width: 220px;
  height: 320px;

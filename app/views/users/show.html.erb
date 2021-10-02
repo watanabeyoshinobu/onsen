@@ -20,6 +20,8 @@
 				<div class="user-face">
 			   <% if @user.profile_image.present? %>
 			      <%= image_tag @user.profile_image.url, :size =>'300x300' %>
+			   <%# else %>
+			   	  <%#= image_tag "no_image.jpg" %>
 			   <% end %>
 				</div>
 			</div>
