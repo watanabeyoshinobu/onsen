@@ -21,7 +21,7 @@
 			   <% if @user.profile_image.present? %>
 			      <%= image_tag @user.profile_image.url, :size =>'300x300' %>
 			   <% else %>
-			   	  <%= image_tag "no_image.jpg" %>
+			   	  <%= image_tag "img/no_image.jpg", :size =>'300x300' %>
 			   <% end %>
 				</div>
 			</div>
