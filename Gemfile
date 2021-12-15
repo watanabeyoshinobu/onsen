@@ -91,6 +91,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'geocoder'
 gem 'sprockets', '~> 4.0.2'
+gem 'webpacker'
 
 gem 'mysql2'
 
