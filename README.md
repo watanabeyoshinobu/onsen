@@ -34,38 +34,36 @@ Things you may want to cover:
 ##アプリケーションURL
 ・http://52.195.6.237/
 
-##メールアドレス
-・aaa@aaa
-
-##パスワード
-・1234567
-
 
 #アプリケーションの詳細な説明
 ・なぜこの「湯のここち」というサイトを制作したかというと、まず私自身がスーパ銭湯が大好きで、スーパー銭湯の施設や料理、日帰りで温泉に入れるという素晴らしさを皆様にも知って頂きたかったのがきっかけです。
 ・また、現代社会は「ストレス社会」というだけあって皆様日々疲労が溜まっていると思われます。
 その疲れた体や気持ちを少しでも安らぐ事が出来ればと思いから今回制作させて頂きました。
 
-#使われている言語、フレームワーク等
-##言語
-・HTML,CSS,JavaScript,Ruby,SQL
+#使用技術
+フロントエンド
+HTML/CSS
+JavaScript
+Vue.js
 
-##フレームワーク
-・Ruby on Rails
+バックエンド
+Ruby 2.7.3
+Ruby on Rails 6.1.3.2
+MySQL 5.7.32
+Rubocop（コード解析ツール）
+RSpec（テスト）
 
-##CSSフレームワーク
-・Bootstrap
+インフラ
+AWS(IAM/VPC/EC2/RDS/S3/Route53/ACM/ALB)
+Nginx
+Puma
 
-##JSライブラリ
-・jQuery
+開発環境
+VSCode
+Git/GitHub
+Docker/Docker-compose
+Vagrant
 
-
-#インフラ・フロント各々の技術
-##インフラ
-・AWS(EC2,RDS,EIP)
-
-##フロント
-・HTML,CSS,javascript
 
 
 #実装した機能
