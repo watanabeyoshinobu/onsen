@@ -1,6 +1,6 @@
-# [湯のここち](https://www.yunokokochi.com/)
+## [湯のここち](https://www.yunokokochi.com/)
 
-
+[![Image from Gyazo](https://i.gyazo.com/b37a9ba46bfee81208c8e792e26d0970.jpg)](https://gyazo.com/b37a9ba46bfee81208c8e792e26d0970)
 ## アプリの概要
 
 本作品をご覧いただきありがとうございます。
@@ -11,29 +11,30 @@
 アプリケーションURL:[湯のここち](https://www.yunokokochi.com/)
 ## 使用技術
 
-フロントエンド
+### フロントエンド
 * HTML/CSS
 * JavaScript
 * Vue.js
 
-バックエンド
+### バックエンド
 * Ruby 2.7.3
 * Ruby on Rails 6.1.3.2
-* MySQL 5.7.32
-* Rubocop（コード解析ツール）
-* RSpec（テスト）
 
-インフラ
+
+### インフラ
 * AWS(IAM/VPC/EC2/RDS/S3/Route53/ACM/ALB)
+* MySQL 5.7.32
 * Nginx
-* Puma
+* Unicorn
 
-開発環境
+
+### 開発環境
 * VSCode
-* Git/GitHub
 * Docker/Docker-compose
 * Vagrant
-
+### テスト、静的コード解析
+* Rubocop（コード解析ツール）
+* RSpec（テスト）
 ## 湯のここち の開発背景
 **本作品の開発経緯は 2 つあります。**<br>
 1つ目は私自身がスーパー銭湯が大好きで、スーパー銭湯の施設や料理、日帰りで温泉に入れるという素晴らしさを皆様にも知って頂きたかったのがきっかけです。<br>
@@ -62,7 +63,8 @@
 * トップページの自動スライドアニメーション(Javascript で実装)
 * 温泉施設を閲覧した際のアニメーション(Javascriptで実装)
 
-## インフラ構築
+## インフラ構築図
+[![Image from Gyazo](https://i.gyazo.com/0b25dc3f23c76e49bfd48ef41c8284be.png)](https://gyazo.com/0b25dc3f23c76e49bfd48ef41c8284be)
 
 ## ER図
 
