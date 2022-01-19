@@ -1,5 +1,5 @@
 # [湯のここち](https://www.yunokokochi.com/)
-
+[![Image from Gyazo](https://i.gyazo.com/b37a9ba46bfee81208c8e792e26d0970.jpg)](https://gyazo.com/b37a9ba46bfee81208c8e792e26d0970)
 
 ## アプリの概要
 
@@ -11,26 +11,25 @@
 アプリケーションURL:[湯のここち](https://www.yunokokochi.com/)
 ## 使用技術
 
-フロントエンド
+### フロントエンド
 * HTML/CSS
 * JavaScript
 * Vue.js
 
-バックエンド
+### バックエンド
 * Ruby 2.7.3
 * Ruby on Rails 6.1.3.2
-* MySQL 5.7.32
-* Rubocop（コード解析ツール）
-* RSpec（テスト）
 
-インフラ
+### インフラ
 * AWS(IAM/VPC/EC2/RDS/S3/Route53/ACM/ALB)
 * Nginx
-* Puma
-
-開発環境
+* Unicorn
+* MySQL 5.7.32
+### テスト、静的コード解析
+* Rubocop（コード解析ツール）
+* RSpec（テスト）
+### 開発環境
 * VSCode
-* Git/GitHub
 * Docker/Docker-compose
 * Vagrant
 
@@ -54,7 +53,7 @@
 * フォロー、フォロー解除機能
 * フォロー、フォロワー一覧表示機能
 
-### お気に入り機能
+### お気に入り機能(Ajax)
 * 投稿にお気に入りができる機能
 * お気に入りをした投稿のカウントが増減する
 
@@ -62,18 +61,18 @@
 * トップページの自動スライドアニメーション(Javascript で実装)
 * 温泉施設を閲覧した際のアニメーション(Javascriptで実装)
 
-## インフラ構築
+## インフラ構築図
+[![Image from Gyazo](https://i.gyazo.com/0b25dc3f23c76e49bfd48ef41c8284be.png)](https://gyazo.com/0b25dc3f23c76e49bfd48ef41c8284be)
 
 ## ER図
-
+[![Image from Gyazo](https://i.gyazo.com/00d87aca5282824c871d9a6e1219b0a6.png)](https://gyazo.com/00d87aca5282824c871d9a6e1219b0a6)
 ## こだわった点
-**シンプルながらにもおしゃれな UI/UX**
+**シンプルながらにもおしゃれな UI/UX**<br>
 誰でも手軽に利用できるように、各スーパー銭湯の紹介・感想欄・ユーザー一覧・ログイン関係のページへの遷移機能を ヘッダーとハンバーガーでできるようにしております。<br>
 トップページに JQueryを利用した自動スライドアニメーションを使い、各スーパー銭湯紹介にもJavascriptを使うことにより「魅せる」に力を入れ、感想欄でスーパー銭湯や温泉の話を「楽しむ」ことで皆さんと「繋がる」を意識することができます。
 ## 今後の改良計画
 * Google map APIで地図を見る
 * Vue.js によるアプリ全体 SPA 化
-* フォローした方とのチャット機能をつける。
 * ECSからcircle CI経由の自動デプロイ化
 
 最後まで読んで頂き、誠にありがとうございました！
