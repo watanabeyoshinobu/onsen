@@ -1,0 +1,49 @@
+version: 2.1 # バージョン指定
+
+orbs:
+  aws-ecr: circleci/aws-ecr@7.3.0
+  aws-ecs: circleci/aws-ecs@2.2.1
+
+workflows:
+  nginx-deploy: # Nginxのデプロイ
+    jobs:
+      - aws-ecr/build-and-push-image:
+          account-url: AWS_ECR_ACCOUNT_URL
+          region: AWS_REGION
+          aws-access-key-id: AWS_ACCESS_KEY_ID
+          aws-secret-access-key: AWS_SECRET_ACCESS_KEY
+          create-repo: true
+          dockerfile: ./docker/nginx/Dockerfile
+          repo: onsen-nginx
+          tag: "latest"
+          filters:
+            branches:
+              only: master
+      - aws-ecs/deploy-service-update:
+          requires:
+            - aws-ecr/build-and-push-image
+          family: "onsen-task" # ECSのタスク定義名
+          cluster-name: "arn:aws:ecs:ap-northeast-1:275335316117:cluster/onsen-cluster" #ECSのクラスターのARN
+          service-name: "onsen-service" #サービス名
+          container-image-name-updates: "container=onsen-nginx-container,tag=latest" #ECSのタスク定義内のコンテナ名
+  rails-deploy: # Railsのデプロイ
+    jobs:
+      - aws-ecr/build-and-push-image:
+          account-url: AWS_ECR_ACCOUNT_URL
+          region: AWS_REGION
+          aws-access-key-id: AWS_ACCESS_KEY_ID
+          aws-secret-access-key: AWS_SECRET_ACCESS_KEY
+          create-repo: true
+          dockerfile: ./docker/rails/Dockerfile
+          repo: onsen
+          tag: "latest"
+          filters:
+            branches:
+              only: master
+      - aws-ecs/deploy-service-update:
+          requires:
+            - aws-ecr/build-and-push-image
+          family: "onsen-task" # ECSのタスク定義名
+          cluster-name: "arn:aws:ecs:ap-northeast-1:275335316117:cluster/onsen-cluster" #ECSのクラスターのARN
+          service-name: "onsen-service" #サービス名
+          container-image-name-updates: "container=onsen-container,tag=latest" #ECSのタスク定義内のコンテナ名
