@@ -6,7 +6,8 @@ RUN apt-get update -qq && \
   libpq-dev \
   vim \
   default-mysql-client \
-  graphviz
+  graphviz \
+  libmagickcore-dev
 RUN set -ex && \
   apt-get update -qq && \
   apt-get install -y sudo && \

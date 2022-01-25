@@ -40,10 +40,10 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '~> 3.9'
-  gem 'capistrano'
-  gem 'capistrano-rails'
-  gem 'capistrano3-puma'
-  gem 'capistrano-rbenv'
+ gem 'capistrano'
+ gem 'capistrano-bundler'
+ gem 'capistrano-rails'
+ gem 'capistrano-rbenv'
 
 end
 
@@ -69,7 +69,7 @@ group :test do
 end
 
 group :production do
-  gem 'fog'
+  gem 'fog-aws'
 end
 
 
@@ -92,6 +92,7 @@ gem 'mini_magick'
 gem 'geocoder'
 gem 'sprockets', '~> 4.0.2'
 gem 'webpacker'
+gem 'rmagick'
 
 gem 'mysql2'
 
