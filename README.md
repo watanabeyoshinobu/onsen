@@ -65,7 +65,7 @@
 * 温泉施設を閲覧した際のアニメーション(Javascriptで実装)
 
 ## インフラ構築図
-[![Image from Gyazo](https://i.gyazo.com/5ba5fe8b397aa5f2e3f98780f8c52373.png)](https://gyazo.com/5ba5fe8b397aa5f2e3f98780f8c52373)(https://gyazo.com/0b25dc3f23c76e49bfd48ef41c8284be)
+[![Image from Gyazo](https://i.gyazo.com/7b6f1e178af7a1084ee0e8dc26192934.png)](https://gyazo.com/7b6f1e178af7a1084ee0e8dc26192934)
 
 ## ER図
 
