@@ -22,7 +22,7 @@
 
 
 ### インフラ
-* AWS(IAM/VPC/EC2/RDS/S3/Route53/ACM/ALB)
+* AWS(IAM/VPC/EC2/RDS/S3/Route53/ACM/ALB/ECS/ECR/CLI)
 * MySQL 5.7.32
 * Nginx
 * Unicorn
@@ -49,7 +49,8 @@
 * ゲストログイン機能
 
 ### サイトに関する機能
-* 投稿一覧、詳細表示、投稿、編集、削除機能
+* ユーザー同士の共有（投稿一覧、詳細表示、投稿、編集、削除機能）
+* コメント機能
 
 ### フォロー機能(Ajax)
 * フォロー、フォロー解除機能
@@ -64,7 +65,7 @@
 * 温泉施設を閲覧した際のアニメーション(Javascriptで実装)
 
 ## インフラ構築図
-[![Image from Gyazo](https://i.gyazo.com/0b25dc3f23c76e49bfd48ef41c8284be.png)](https://gyazo.com/0b25dc3f23c76e49bfd48ef41c8284be)
+[[![Image from Gyazo](https://i.gyazo.com/14d64edd3a0ba59b281189052a3c7a52.png)](https://gyazo.com/14d64edd3a0ba59b281189052a3c7a52)](https://gyazo.com/0b25dc3f23c76e49bfd48ef41c8284be)
 
 ## ER図
 
@@ -76,6 +77,5 @@
 * Google map APIで地図を見る
 * Vue.js によるアプリ全体 SPA 化
 * フォローした方とのチャット機能をつける。
-* ECSからcircle CI経由の自動デプロイ化
 
 最後まで読んで頂き、誠にありがとうございました！
