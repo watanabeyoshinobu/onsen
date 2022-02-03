@@ -221,12 +221,12 @@ a.btn--shadow {
 
 .withdraw-container {
  width: 100%;
- height: 300px;
+ height: 580px;
  background: linear-gradient(to right, #f2f2b0, #f8f4e6);
 }
 .withdraw-box {
  text-align: center;
- padding-top: 30px;
+ padding-top: 110px;
  padding-bottom: 20px;
 }
 .withdraw-text {
@@ -303,6 +303,8 @@ a.btn--withdraw.btn--border-solid {
   font-family:'メイリオ', 'Meiryo', sans-serif;
   text-align: center;
   width: 800px;
+  height: 300px;
+  margin-top: 100px;
   margin-left: 320px;
   border: 3px inset #FFC0CB;
   border-radius: 10px;
@@ -364,6 +366,7 @@ a.btn--withdraw.btn--border-solid {
   color: #FFF;
 }
 .edit-container {
+  height: 600px;
   background-image: image-url('img/sakura10.jpg');
 }
 

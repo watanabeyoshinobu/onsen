@@ -3829,10 +3829,17 @@ text-align: center;
 
 
 /*devise周辺*/
+.box3-container {
+ height: 700px;
+ background-color: #f2f2b0;
+}
+
 .box3 {
   width: 700px;
-  height: 600px auto 0;
-  margin: 60px auto 0;
+  height: 650px;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 30px;
   border-radius: 10px;
   border: 10px #F5F5F5 solid;
   text-align: center;
@@ -4463,5 +4470,3 @@ a.btn--shadow {
  margin-top: 30px;
  font-family:'メイリオ', 'Meiryo', sans-serif;
 }
-
-
