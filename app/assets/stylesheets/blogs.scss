@@ -274,9 +274,9 @@ header{
  height: 1450px;
  margin: 0 auto;
  position: center;
- background: linear-gradient(90deg, #FFC0CB, #FFE4E1, #FFF0F5, #FFE4C4, #FFDEAD);
+ background: linear-gradient(90deg, #FFC0CB, #FFE4E1, #FFF0F5, #fdeff2, #fef4f4);
  background-size: 500% 500%;
- animation: gradation 10s infinite;
+ animation: gradation 20s infinite;
 
 }
  @keyframes gradation {
@@ -4024,8 +4024,9 @@ text-align: center;
 }
 
 .sakura2-container {
+ height: 100%;
  background-image: image-url('img/sakura4.jpg');
- background-size: cover;
+ background-size: 100% 100%;
  margin-top: 15px;
 }
 

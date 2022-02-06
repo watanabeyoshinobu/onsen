@@ -16,27 +16,18 @@
 
   <body>
   <header>
+        <a>
           <div class="nav-bar">
-
             <% if user_signed_in? %>
-                  <%= link_to browse_path do %>
-                    <div class="home-image"></div>
-                  <% end %>
-
-                  <%= link_to info_blogs_path do %>
-                    <div class="info-image"></div>
-                  <% end %>
-
-                  <%= link_to user_path(current_user) do %>
-                    <div class="profile-image"></div>
-                  <% end %>
-
-                  <%= link_to destroy_user_session_path, method: :delete do %>
-                    <div class="logout-image"></div>
-                  <% end %>
-
+                  <i><%= link_to ' ホーム', browse_path, class: 'glyphicon glyphicon-home home' %></i>
+                  <i><%= link_to ' お知らせ', info_blogs_path, class: 'glyphicon glyphicon-bell bell' %></i>
+                  <i><%= link_to ' マイページ', user_path(current_user), class: 'glyphicon glyphicon-user user' %></i>
+                  <i><%= link_to ' ログアウト', destroy_user_session_path, method: :delete, class: 'glyphicon glyphicon-log-out logout' %></i>
+            <% else %>
+                  
             <% end %>
           </div>
+        </a>
 
     <%= link_to browse_path do %>
         <%= image_tag 'img/yunokokoti.png',class:"photo" %>

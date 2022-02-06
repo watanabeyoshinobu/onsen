@@ -45,6 +45,9 @@ class BlogsController < ApplicationController
     redirect_to blogs_path
   end
 
+  def browse
+  end
+
   def see
   end
 
@@ -70,9 +73,6 @@ class BlogsController < ApplicationController
   end
 
   def gaze
-  end
-
-  def browse
   end
 
   def info
