@@ -253,7 +253,8 @@ h2.heading::after{
 p.heading-text{
  font-family:'メイリオ', 'Meiryo', sans-serif;
  text-align: center;
- color: #000000;
+ color: #2b2b2b;
+ margin-bottom: 20px;
 }
 
 header{
@@ -263,15 +264,9 @@ header{
 }
 
 
-.portfolio-set {
- display:block;
-}
-
-
-
 .container1{
  width: 100%;
- height: 1450px;
+ height: 1400px;
  margin: 0 auto;
  position: center;
  background: linear-gradient(90deg, #FFC0CB, #FFE4E1, #FFF0F5, #fdeff2, #fef4f4);
@@ -286,25 +281,25 @@ header{
 }
 
 .spa-images1 {
- width: 1030px;
- height: 350px;
- margin: 0 auto;
- margin-top: 50px;
+  width: 1030px;
+  height: 350px;
+  margin-left: 220px;
+  margin-top: 10px;
 }
 
 .portfolio_image1{
- background-image: image-url('img/dsc_0102.jpg');
- height :250px;
- width: 300px;
- background-size: cover;
- background-position: center;
- margin:  0 40px 0 0;
- float: left;
- border-radius: 20px;
- animation: fadeIn 4s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
- overflow: hidden;
- position: relative;
- cursor: pointer;
+  background-image: image-url('img/dsc_0102.jpg');
+  height :250px;
+  width: 300px;
+  background-size: cover;
+  background-position: center;
+  margin:  0 40px 10px 0;
+  float: left;
+  border-radius: 20px;
+  animation: fadeIn 4s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
 }
 @keyframes fadeIn {
   0% {
@@ -351,22 +346,21 @@ header{
     opacity: 0;
   }
 }
-
 .portfolio_image2{
- background-image: image-url('img/dsc_0111.jpg');
- height :250px;
- width: 300px;
- background-size: cover;
- background-position: center;
- margin: 0 40px 0 0;
- float: left;
- border-radius: 20px;
- animation: fadeIn 4s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
- overflow: hidden;
- position: relative;
- cursor: pointer;
+  background-image: image-url('img/dsc_0111.jpg');
+  height :250px;
+  width: 300px;
+  background-size: cover;
+  background-position: center;
+  margin: 0 40px 10px 0;
+  float: left;
+  border-radius: 20px;
+  animation: fadeIn 4s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
 }
-@keyframes fadeIn {
+ @keyframes fadeIn {
   0% {
     opacity: 0;
   }
@@ -411,23 +405,22 @@ header{
     opacity: 0;
   }
 }
-
 .portfolio_image3{
- background-image: image-url('img/yokohamanoyu.jpg');
- height :250px;
- width: 300px;
- margin-top: 0;
- background-size: cover;
- background-position: center;
- margin: 0 40px 0 0;
- float: left;
- border-radius: 20px;
- animation: fadeIn 4s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
- overflow: hidden;
- position: relative;
- cursor: pointer;
+  background-image: image-url('img/yokohamanoyu.jpg');
+  height :250px;
+  width: 300px;
+  margin-top: 0;
+  background-size: cover;
+  background-position: center;
+  margin: 0 40px 10px 0;
+  float: left;
+  border-radius: 20px;
+  animation: fadeIn 4s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
 }
-@keyframes fadeIn {
+ @keyframes fadeIn {
   0% {
     opacity: 0;
   }
@@ -450,7 +443,7 @@ header{
 .portfolio_image3:hover::before {
   animation: kiran 0.7s linear 1;
 }
-@keyframes kiran {
+ @keyframes kiran {
   0% {
     transform: scale(2) rotate(45deg);
     opacity: 0;
@@ -472,13 +465,12 @@ header{
     opacity: 0;
   }
 }
-
 .spa-images2 {
- width: 1030px;
- height: 350px;
- margin: 0 auto;
+  width: 1030px;
+  height: 350px;
+  margin-left: 220px;
+  margin-top: 10px;
 }
-
 .portfolio_image4{
  background-image: image-url('img/manten.jpg');
  height :250px;
@@ -486,7 +478,7 @@ header{
  margin-top: 0;
  background-size: cover;
  background-position: center;
- margin: 10px 40px 0 0;
+ margin: 10px 40px 10px 0;
  float: left;
  border-radius: 20px;
  animation: fadeIn 4s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
@@ -547,7 +539,7 @@ header{
  margin-top: 0;
  background-size: cover;
  background-position: center;
- margin: 10px 40px 0 0;
+ margin: 10px 40px 10px 0;
  float: left;
  border-radius: 20px;
  animation: fadeIn 4s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
@@ -608,7 +600,7 @@ header{
  margin-top: 0;
  background-size: cover;
  background-position: center;
- margin: 10px 40px 0 0;
+ margin: 10px 40px 10px 0;
  float: left;
  border-radius: 20px;
  animation: fadeIn 4s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
@@ -663,10 +655,10 @@ header{
 }
 
 .spa-images3 {
- width: 1030px;
- height: 350px;
- margin: 0 auto;
- margin-top: 10px;
+  width: 1030px;
+  height: 350px;
+  margin-left: 220px;
+  margin-top: 10px;
 }
 .portfolio_image7{
  background-image: image-url('img/zama.jpg');
@@ -675,7 +667,7 @@ header{
  margin-top: 0;
  background-size: cover;
  background-position: center;
- margin: 10px 40px 0 0;
+ margin: 10px 40px 10px 0;
  float: left;
  border-radius: 20px;
  animation: fadeIn 4s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
@@ -736,7 +728,7 @@ header{
  margin-top: 0;
  background-size: cover;
  background-position: center;
- margin: 10px 40px 0 0;
+ margin: 10px 40px 10px 0;
  float: left;
  border-radius: 20px;
  animation: fadeIn 4s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
@@ -797,7 +789,7 @@ header{
  margin-top: 0;
  background-size: cover;
  background-position: center;
- margin: 10px 40px 0 0;
+ margin: 10px 40px 10px 0;
  float: left;
  border-radius: 20px;
  animation: fadeIn 4s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
@@ -850,8 +842,13 @@ header{
     opacity: 0;
   }
 }
-
-
+.pic_frame {
+  display: inline-block;
+  text-align: center;
+}
+.portfolio-text {
+ padding-right: 30px;
+}
 
 #profile{
  background-color: #FFFAFA;
@@ -3633,7 +3630,7 @@ text-align: center;
 .beginning9 {
  width: 100%;
  height: 600px;
- background: linear-gradient(to right, #ec6d51, #FDF5E6);
+ background: linear-gradient(to right, #f5b199, #FDF5E6);
  font-family:'メイリオ', 'Meiryo', sans-serif;
 }
 
@@ -3641,7 +3638,7 @@ text-align: center;
  width: 100%;
  height: 2200px;
  text-align: center;
- background: linear-gradient(to right, #f19072, #FFFAFA);
+ background: linear-gradient(to right, #f6b894, #FFFAFA);
  font-family:'メイリオ', 'Meiryo', sans-serif;
 }
 .introduce9 {
@@ -3753,7 +3750,7 @@ text-align: center;
 .container9-4 {
  width: 100%;
  height: 950px;
- background: linear-gradient(to right, #f6b894, #FDF5E6);
+ background: linear-gradient(to right, #f1bf99, #FDF5E6);
  font-family:'メイリオ', 'Meiryo', sans-serif;
 }
 .access9 {
@@ -3764,7 +3761,7 @@ text-align: center;
  padding-bottom: 30px;
  }
 .introduce-set9-2 {
- background: linear-gradient(to right, #ec6d51, #FDF5E6);
+ background: linear-gradient(to right,#f19072, #FDF5E6);
  border: inset;
  border-color: #df7163;
  border-radius: 40px;

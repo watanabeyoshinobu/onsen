@@ -33,61 +33,78 @@
 </div>
 
 
-  <section id="portfolio">
+  <div class="portfolio">
     <div class="container1">
-      <h2 class="heading1">
-        ♨️〜スーパー銭湯紹介!〜♨️
-      </h2>
+      <h2 class="heading1">♨️〜スーパー銭湯紹介!〜♨️</h2>
       <p class="heading-text">
-      <font size="5">日々お仕事を一生懸命働いている皆様へ・・・<br>
-      神奈川県で温泉という至福のひと時はいかがでしょうか・・・♨️</font><br>
+        <font size="5">日々お仕事を一生懸命働いている皆様へ・・・<br>
+        神奈川県で温泉という至福のひと時はいかがでしょうか・・・♨️</font><br>
       </p>
 
-       <div class="portfolio_images clearfix">
-          <div class="spa-images1">
-                  <%= link_to look_blogs_path do %>
-                    <div class="portfolio_image1"></div>
-                  <% end %>
-
-                <%= link_to see_blogs_path do %>
-                  <div class="portfolio_image2"></div>
-                <% end %>
-
-                <%= link_to saw_blogs_path do %>
-                  <div class="portfolio_image3"></div>
-                <% end %>
-          </div>
-
-            <div class="spa-images2">
-                  <%= link_to watch_blogs_path do %>
-                    <div class="portfolio_image4"></div>
-                  <% end %>
-
-                  <%= link_to seeing_blogs_path do %>
-                    <div class="portfolio_image5"></div>
-                  <% end %>
-
-                  <%= link_to looking_blogs_path do %>
-                    <div class="portfolio_image6"></div>
-                  <% end %>
-            </div>
-
-            <div class="spa-images3">
-
-                  <%= link_to check_blogs_path do %>
-                    <div class="portfolio_image7"></div>
-                  <% end %>
-
-                  <%= link_to try_blogs_path do %>
-                    <div class="portfolio_image8"></div>
-                  <% end %>
-
-                  <%= link_to gaze_blogs_path do %>
-                    <div class="portfolio_image9"></div>
-                  <% end %>
-            </div>
+      <div class="spa-images1">
+        <div class="pic_frame">
+          <%= link_to look_blogs_path do %>
+            <div class="portfolio_image1"></div>
+          <% end %>
+          <p class="portfolio-text">横浜市 竜泉寺の湯</p>
+        </div>
+        <div class="pic_frame">
+          <%= link_to see_blogs_path do %>
+            <div class="portfolio_image2"></div>
+          <% end %>
+          <p class="portfolio-text">海老名市 おふろの王様</p> 
+        </div>
+        <div class="pic_frame">
+          <%= link_to saw_blogs_path do %>
+            <div class="portfolio_image3"></div>
+          <% end %>
+          <p class="portfolio-text">みなとみらい 万葉倶楽部</p>
+        </div>
       </div>
-    </section>
+
+      <div class="spa-images2">
+        <div class="pic_frame">
+          <%= link_to watch_blogs_path do %>
+            <div class="portfolio_image4"></div>
+          <% end %>
+          <p class="portfolio-text">横浜市 竜泉寺の湯</p>
+        </div>
+        <div class="pic_frame">
+          <%= link_to seeing_blogs_path do %>
+            <div class="portfolio_image5"></div>
+          <% end %>
+          <p class="portfolio-text">海老名市 OYUGIWA</p> 
+        </div>
+        <div class="pic_frame">
+          <%= link_to looking_blogs_path do %>
+            <div class="portfolio_image6"></div>
+          <% end %>
+          <p class="portfolio-text">厚木市 湯花楽</p>
+        </div>
+      </div>
+
+      <div class="spa-images3">
+        <div class="pic_frame">
+          <%= link_to check_blogs_path do %>
+            <div class="portfolio_image7"></div>
+          <% end %>
+          <p class="portfolio-text">座間市 湯快爽快</p>
+        </div>
+        <div class="pic_frame">
+          <%= link_to try_blogs_path do %>
+            <div class="portfolio_image8"></div>
+          <% end %>
+          <p class="portfolio-text">川崎市 湯けむりの庄</p> 
+        </div>
+        <div class="pic_frame">
+          <%= link_to gaze_blogs_path do %>
+            <div class="portfolio_image9"></div>
+          <% end %>
+          <p class="portfolio-text">横浜市 極楽湯</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
         <section class="profile">
              <div class="container2">
@@ -120,7 +137,7 @@
                         </div>
                 </div>
              </div>
-         </section>
+        </section>
 
 
        <section id="sns">
