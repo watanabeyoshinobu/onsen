@@ -31,11 +31,11 @@
 .decorated-btn {
   width: 300px;
   margin-left: 220px;
-  background-color: gold;
+  background-color: #FFD700;
   font-size: 12px;
   border-radius: 5px;
-  border-bottom: solid 3px goldenrod;
-  box-shadow: 3px 3px 3px gray;
+  border-bottom: solid 3px #DAA520;
+  box-shadow: 3px 3px 3px #808080;
   transition: 0.3s;
 }
 
@@ -45,7 +45,7 @@
 }
 
 .decorated-btn:hover {
-  background-color: orange;
+  background-color: #FFA500;
 }
 
 
