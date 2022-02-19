@@ -27,6 +27,11 @@
                 投稿内容を入力してください♪
             </small>
         </div>
+				   <% if @user.image.present? %>
+				      <%= image_tag @user.image.url, :size =>'300x300' %>
+				   <% else %>
+				      <%= image_tag "/assets/default.jpg" %>
+				   <% end %>
 
         <div class="b-push_box">
             <%= f.submit '投稿！', class: 'decorated-btn click-down' %>

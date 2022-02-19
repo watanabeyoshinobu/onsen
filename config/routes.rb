@@ -41,8 +41,8 @@ Rails.application.routes.draw do
 
 
   resources :comments, only: [:create, :destroy]
-
   resources :relationships, only: [:create, :destroy]
+  resources :tweets, only: [:create]
 
   # resources :users, only: [:show, :edit, :update, :create, :destroy, :show_modal]
 
@@ -52,7 +52,7 @@ Rails.application.routes.draw do
   get 'comments/destroy'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root 'homes#top'
+  root 'blogs#browse'
   post '/homes/guest_sign_in', to: 'homes#guest_sign_in'
   get 'top' => 'homes#top'
   get 'browse' => 'blogs#browse'
