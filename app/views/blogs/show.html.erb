@@ -2,12 +2,12 @@
 
 <div class="b-show_box">
 	<div class="b-show__comment">
-		<h1>コメント</h1>
+		<h1>温泉詳細</h1>
 	</div>
 		<div class="row-showbox">
 			<div class="col-md-1"></div>
 			<div class="col-md-5"></div>
-			<div class="col-md-2"><%= link_to 'コメント一覧', blogs_path, class: 'btn-border-button' %></div>
+			<div class="col-md-2"><%= link_to '共有一覧', blogs_path, class: 'btn-border-button' %></div>
 			<% if @blog.user_id == current_user.id %>
 		    <div class="col-md-2"><%= link_to '編集', edit_blog_path(@blog), class: 'btn-border-button' %></div>
 		  <% end %>

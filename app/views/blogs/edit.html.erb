@@ -16,7 +16,7 @@
             <h1>編 集</h1>
         </div>
           <div class="b-edit_comment_box">
-                <%= link_to 'コメント', blog_path, class: 'btn-border-button' %>
+                <%= link_to '温泉詳細', blog_path, class: 'btn-border-button' %>
           </div>
     </div>
 
@@ -24,10 +24,10 @@
 
         <div class="b-blog__formbox">
              <div class="b-title_box">
-                <%= f.label :title, 'タイトル' %>
+                <%= f.label :title, '住所・温泉名' %>
                 <%= f.text_field :title, class: 'form-control' %>
                 <small id="title-tip" class="form-text text-muted">
-                    タイトルを入力してください
+                    住所・温泉名を入力してください
                 </small>
             </div>
             <div class="b-content_box">

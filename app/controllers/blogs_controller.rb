@@ -59,35 +59,49 @@ class BlogsController < ApplicationController
   def browse
   end
 
-  def see
-    @tweets = Tweet.where(:action_name => action_name)
-    @tweet = Tweet.new
-  end
-
   def look
     @tweets = Tweet.where(:action_name => action_name)
     @tweet = Tweet.new
   end
 
+  def see
+    @tweets = Tweet.where(:action_name => action_name)
+    @tweet = Tweet.new
+  end
+
   def saw
+    @tweets = Tweet.where(:action_name => action_name)
+    @tweet = Tweet.new
   end
 
   def watch
+    @tweets = Tweet.where(:action_name => action_name)
+    @tweet = Tweet.new
   end
 
   def seeing
+    @tweets = Tweet.where(:action_name => action_name)
+    @tweet = Tweet.new
   end
 
   def looking
+    @tweets = Tweet.where(:action_name => action_name)
+    @tweet = Tweet.new
   end
 
   def check
+    @tweets = Tweet.where(:action_name => action_name)
+    @tweet = Tweet.new
   end
 
   def try
+    @tweets = Tweet.where(:action_name => action_name)
+    @tweet = Tweet.new
   end
 
   def gaze
+    @tweets = Tweet.where(:action_name => action_name)
+    @tweet = Tweet.new
   end
 
   def info

@@ -5,7 +5,7 @@
 
     <div class="d-flex align-items-center">
         <div class="b-index__comment">
-          <h1>コメント一覧</h1>
+          <h1>共有一覧</h1>
         </div>
         <div class="col-sm-2 col-md-offset-10">
           <%= link_to '戻る', new_blog_path, class: 'btn-border-back' %>
@@ -15,11 +15,11 @@
       <table class="table table-bordered border-primary table-sm blogs_table">
         <thead class="thead-dark">
           <tr>
-            <th scope="col" style="width: 700px">感想タイトル</th>
+            <th scope="col" style="width: 700px">住所・温泉名</th>
             <th scope="col">名前</th>
             <th scope="col">投稿日</th>
             <th scope="col">更新日時</th>
-            <th scope="col">コメント</th>
+            <th scope="col">温泉詳細</th>
             <th scope="col">削除</th>
           </tr>
         </thead>
@@ -33,7 +33,7 @@
                 <% end %>
                   <td><%= blog.created_at.to_s(:datetime_base) %></td>
                   <td><%= blog.updated_at.to_s(:datetime_base) %></td>
-                  <td><%= link_to 'コメント', blog, id: "detail-" + blog.id.to_s, class: 'btn btn--momo btn--cubic btn--shadow', method: :get %></td>
+                  <td><%= link_to '温泉詳細', blog, id: "detail-" + blog.id.to_s, class: 'btn btn--momo btn--cubic btn--shadow', method: :get %></td>
                   <% if blog.user_id == current_user.id %>
                     <td><%= link_to "削除", blog, class: 'btn btn--danger btn--cubic btn--shadow', method: :delete, data: {confirm: "投稿記事を削除しますか？", cancel: "キャンセル", commit: "削除する", title: "削除の確認"} %></td>
                   <% end %>
