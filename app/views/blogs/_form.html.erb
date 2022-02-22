@@ -27,6 +27,9 @@
                 投稿内容を入力してください♪(1000文字以内)
             </small>
         </div>
+                
+        <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png' %>
+        <input type="hidden" name="blog_image_update_flg" value="blog_image_update_flg" >
 
         <div class="b-push_box">
             <%= f.submit '投稿！', class: 'decorated-btn click-down' %>

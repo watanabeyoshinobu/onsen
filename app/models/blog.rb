@@ -5,6 +5,8 @@ class Blog < ApplicationRecord
 	has_many :posts, dependent: :destroy
 	has_many :tweets
 
+	mount_uploader :image, ProfileImageUploader
+
 	validates :title, presence: true, length: { maximum: 30 }
 	validates :body, presence: true, length: { maximum: 1000 }
 

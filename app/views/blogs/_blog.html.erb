@@ -5,7 +5,10 @@
 	  </div>
 
 	  <div class="card-body">
-	     <p class="card-text"><%= simple_format(@blog.body) %></p>
+	    <p class="card-text"><%= simple_format(@blog.body) %></p>
+		<% if @blog.image.present? %>
+        	<%= image_tag @blog.image.url, :size =>'300x300' %>
+        <% end %>
 	  </div>
 
 	  <ul class="card-footer">
