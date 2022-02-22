@@ -90,18 +90,15 @@ class BlogsController < ApplicationController
   end
 
   def check
-    @tweets = Tweet.where(:action_name => action_name)
-    @tweet = Tweet.new
+
   end
 
   def try
-    @tweets = Tweet.where(:action_name => action_name)
-    @tweet = Tweet.new
+
   end
 
   def gaze
-    @tweets = Tweet.where(:action_name => action_name)
-    @tweet = Tweet.new
+
   end
 
   def info
@@ -112,7 +109,7 @@ class BlogsController < ApplicationController
 
   private
     def blog_params
-      params.require(:blog).permit(:title, :body, :name).merge(user_id: current_user.id)
+      params.require(:blog).permit(:title, :body, :name, :image).merge(user_id: current_user.id)
     end
 
     def set_target_blog
