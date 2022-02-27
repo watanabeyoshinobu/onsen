@@ -41,15 +41,7 @@ class BlogsController < ApplicationController
         render = 'new'
       end
       
-    # @tweet = Tweet.new
-    # @tweet.user_id = current_user.id
-    #   if @tweet.save
-    #     flash[:notice] = "コメントが投稿されました!"
-    #     redirect_back(fallback_location: root_path)
-    #   else
-    #     flash[:notice] = "コメント投稿失敗しました"
-    #     redirect_back(fallback_location: root_path)
-    #   end
+
   end
 
   def destroy
@@ -92,15 +84,18 @@ class BlogsController < ApplicationController
   end
 
   def check
-
+    @tweets = Tweet.where(:action_name => action_name)
+    @tweet = Tweet.new
   end
 
   def try
-
+    @tweets = Tweet.where(:action_name => action_name)
+    @tweet = Tweet.new
   end
 
   def gaze
-
+    @tweets = Tweet.where(:action_name => action_name)
+    @tweet = Tweet.new
   end
 
   def info
