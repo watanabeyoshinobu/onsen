@@ -7,7 +7,7 @@
 	  <div class="card-body">
 	    <p class="card-text"><%= simple_format(@blog.body) %></p>
 		<% if @blog.image.present? %>
-        	<%= image_tag @blog.image.url, :size =>'300x300' %>
+        	<%= image_tag @blog.image.url, :size =>'200x200' %>
         <% end %>
 	  </div>
 

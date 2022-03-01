@@ -56,46 +56,55 @@ class BlogsController < ApplicationController
   def look
     @tweets = Tweet.where(:action_name => action_name)
     @tweet = Tweet.new
+    @blogs = Blog.all.page(params[:page]).per(10)
   end
 
   def see
     @tweets = Tweet.where(:action_name => action_name)
     @tweet = Tweet.new
+    @blogs = Blog.all.page(params[:page]).per(10)
   end
 
   def saw
     @tweets = Tweet.where(:action_name => action_name)
     @tweet = Tweet.new
+    @blogs = Blog.all.page(params[:page]).per(10)
   end
 
   def watch
     @tweets = Tweet.where(:action_name => action_name)
     @tweet = Tweet.new
+    @blogs = Blog.all.page(params[:page]).per(10)
   end
 
   def seeing
     @tweets = Tweet.where(:action_name => action_name)
     @tweet = Tweet.new
+    @blogs = Blog.all.page(params[:page]).per(10)
   end
 
   def looking
     @tweets = Tweet.where(:action_name => action_name)
     @tweet = Tweet.new
+    @blogs = Blog.all.page(params[:page]).per(10)
   end
 
   def check
     @tweets = Tweet.where(:action_name => action_name)
     @tweet = Tweet.new
+    @blogs = Blog.all.page(params[:page]).per(10)
   end
 
   def try
     @tweets = Tweet.where(:action_name => action_name)
     @tweet = Tweet.new
+    @blogs = Blog.all.page(params[:page]).per(10)
   end
 
   def gaze
     @tweets = Tweet.where(:action_name => action_name)
     @tweet = Tweet.new
+    @blogs = Blog.all.page(params[:page]).per(10)
   end
 
   def info
