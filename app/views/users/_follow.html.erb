@@ -3,7 +3,7 @@
 	<div class="follow-box">
 		<div class="follow-image">
 			<% if follow_user.profile_image.present? %>
-				<%= image_tag follow_user.profile_image.url, :size =>'200x200' %>
+				<%= image_tag follow_user.profile_image.to_s, :size =>'200x200' %>
 			<% end %>
 		</div>
 		<h3 class="follow-name"><%= follow_user.name%></h3>

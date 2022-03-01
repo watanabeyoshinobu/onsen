@@ -6,7 +6,7 @@
 	  <div class="b-comment__bottomLine">
 
 	<% if comment.user.profile_image.present? %>
-		<%= link_to image_tag(comment.user.profile_image.url, :size =>'50x50'), show_modal_user_path(comment), remote: true, class: "btn btn-lg, btn-primary" %>
+		<%= link_to image_tag(comment.user.profile_image.to_s, :size =>'50x50'), show_modal_user_path(comment), remote: true, class: "btn btn-lg, btn-primary" %>
 		  <% if false %>
 			  <%= link_to users_show_path do %>
 			    <span><%= comment.user.name %></span>
@@ -38,4 +38,3 @@
 
 
 
-<%#= image_tag @user.profile_image.url, :size =>'300x300' %>
