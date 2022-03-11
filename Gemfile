@@ -68,9 +68,9 @@ group :test do
   gem 'chromedriver-helper'
 end
 
-group :production do
-  gem 'fog-aws'
-end
+
+gem 'fog-aws'
+
 
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
