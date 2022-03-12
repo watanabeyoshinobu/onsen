@@ -9,11 +9,11 @@ CarrierWave.configure do |config|
     config.fog_directory  = 'onsen-image'
     config.asset_host = 'https://s3.amazonaws.com/onsen-image'
     # NOTE: AWS側の設定を変えなくても、この１行の設定でアップロードできた
-    config.fog_public = false # ←コレ
+    # config.fog_public = false # ←コレ
     config.fog_credentials = {
         provider: 'AWS',
-        aws_access_key_id: 'AKIAUAG2DQKKRXKZ52JI',
-        aws_secret_access_key: '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',
+        aws_access_key_id: 'AKIAUAG2DQKKQ2U4ILVV',
+        aws_secret_access_key: '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',
         region: 'ap-northeast-1'
       }
     # config.cache_storage = :fog
