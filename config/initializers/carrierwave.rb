@@ -16,7 +16,7 @@ CarrierWave.configure do |config|
         aws_secret_access_key: 'pBiaIOekFLva7ijd8SJzWJn92nXgNl1NDWg9npK2',
         region: 'ap-northeast-1'
       }
-    # config.cache_storage = :fog
+    config.cache_storage = :fog
   else
     config.storage :file
     config.enable_processing = false if Rails.env.test?
