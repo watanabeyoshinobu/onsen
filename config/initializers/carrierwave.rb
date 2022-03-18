@@ -11,8 +11,8 @@
 #     config.fog_public = false
 #     config.fog_credentials = {
 #         provider: 'AWS',
-#         aws_access_key_id: 'AKIAUAG2DQKKV6PMPKI3',
-#         aws_secret_access_key: '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',
+#         aws_access_key_id: ENV['S3_ACCESS_KEY'],
+#         aws_secret_access_key: ENV['S3_SECRET_KEY'],
 #         region: 'ap-northeast-1'
 #       }
 #     #config.cache_storage = :fog
