@@ -5,10 +5,19 @@
 	  </div>
 
 	  <div class="card-body">
-	    <p class="card-text"><%= simple_format(@blog.body) %></p>
-		<% if @blog.image.present? %>
-        	<%= image_tag @blog.image.to_s, :size =>'200x200' %>
-        <% end %>
+			<div class="left_card">
+				<div class="card-image">
+					<% if @blog.image.present? %>
+						<%= image_tag @blog.image.to_s, :size =>'200x200' %>
+					<% end %>
+				</div>
+			</div>
+
+			<div class="right_card">
+				<div class="card_group">
+	    		<p class="card-text"><%= simple_format(@blog.body) %></p>
+				</div>
+			</div>
 	  </div>
 
 	  <ul class="card-footer">

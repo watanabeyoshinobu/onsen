@@ -5,7 +5,7 @@
 
 .sakura_container {
   position: relative;
-  height: 580px;
+  height: 590px;
   width: 100%;
   overflow: hidden;
   background-image: image-url('img/sakura11.jpg');
@@ -488,6 +488,7 @@ a.btn--shadow {
 }
 
 .follows-box{
+  height: 480px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
