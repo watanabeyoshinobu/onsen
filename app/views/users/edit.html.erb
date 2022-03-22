@@ -7,7 +7,7 @@
 
 
 	<div class="user_settings">
-		<h1><%= @user.name %>さんのユーザー設定</h1>
+		<h1><%= @user.name %> さんのプロフィール画像設定</h1>
 			<div class="user_settings_form">
 				<%= form_for(@user) do |f| %>
 				   <% if @user.profile_image.present? %>
