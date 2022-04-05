@@ -71,7 +71,7 @@
 [![Image from Gyazo](https://i.gyazo.com/7b6f1e178af7a1084ee0e8dc26192934.png)](https://gyazo.com/7b6f1e178af7a1084ee0e8dc26192934)
 
 ## ER図
-[![Image from Gyazo](https://i.gyazo.com/dcd3241391e834e18cfae42cafe29555.png)](https://gyazo.com/dcd3241391e834e18cfae42cafe29555)
+[![Image from Gyazo](https://i.gyazo.com/d119f2a065a29e55b2ba042abfac5350.png)](https://gyazo.com/d119f2a065a29e55b2ba042abfac5350)
 ## こだわった点
 **シンプルながらにもおしゃれな UI/UX**
 誰でも手軽に利用できるように、各スーパー銭湯の紹介・感想欄・ユーザー一覧・ログイン関係のページへの遷移機能を ヘッダーとハンバーガーでできるようにしております。<br>
