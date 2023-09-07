@@ -53,8 +53,7 @@ Rails.application.routes.draw do
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'blogs#browse'
-  # 2023/9/7 postからgetに一度変更
-  get '/homes/guest_sign_in', to: 'homes#guest_sign_in'
+  post '/homes/guest_sign_in', to: 'homes#guest_sign_in'
   get 'top' => 'homes#top'
   get 'browse' => 'blogs#browse'
 end
