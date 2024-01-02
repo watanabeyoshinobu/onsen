@@ -1,4 +1,4 @@
-version: 3 # バージョン指定
+version: 2.1 # バージョン指定
 
 orbs:
   aws-ecr: circleci/aws-ecr@7.3.0
