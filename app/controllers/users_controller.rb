@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
   def show_modal
     pp params
-    @comment = Comment.find(params[:id])
+    @comment = Comment.find_by_id(params[:id])
   end
 
   def show
