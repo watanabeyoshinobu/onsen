@@ -2,7 +2,6 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
 
   def show_modal
-    pp params
     @comment = Comment.find(params[:id])
   end
 
@@ -15,7 +14,6 @@ class UsersController < ApplicationController
 
   def edit
   	@user = User.find(params[:id])
-
   end
 
   def create
