@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   def show_modal
     @comment = Comment.find(params[:id])
+    respond_to :js
   end
 
   def show
