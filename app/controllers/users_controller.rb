@@ -2,8 +2,12 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
 
   def show_modal
-    @comment = Comment.find(params[:id])
-    respond_to :js
+    @comment = Comment.where(id: params[:comment_id]).first
+    if @comment.present?
+      respond_to :js
+    else
+      raise "id: #{params[:comment_id]}が見つかりませんでした。"
+    end
   end
 
   def show
