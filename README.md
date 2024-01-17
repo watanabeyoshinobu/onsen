@@ -17,7 +17,7 @@
 * Vue.js
 
 ### バックエンド
-* Ruby 2.7.3
+* Ruby 3.0.6
 * Ruby on Rails 6.1.3.2
 
 
