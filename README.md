@@ -20,7 +20,7 @@
 * Ruby 3.0.6
 * Ruby on Rails 6.1.3.2
 
-
+<!-- MySQLバージョン上げ -->
 ### インフラ
 * AWS(IAM/VPC/EC2/RDS/S3/Route53/ACM/ALB/ECS/ECR/CLI)
 * MySQL 8.0.27
