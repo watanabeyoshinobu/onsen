@@ -33,15 +33,12 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-
     if params[:user_profile_image_update_flg].present?
       @user.update_attribute(:profile_image, params[:user][:profile_image])
     else
       @user.update!(user_params)
     end
     redirect_to user_path(@user.id)
-
-
   end
 
   def withdraw

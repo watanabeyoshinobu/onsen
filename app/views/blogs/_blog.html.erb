@@ -1,23 +1,17 @@
 <div class="b-card_box">
-	<div class="card">
 	  <div class="card-header">
-	      <h4><%= @blog.title %></h4>
+	      <p class="card-title"><%= @blog.title %></p>
 	  </div>
 
 	  <div class="card-body">
-			<div class="left_card">
-				<div class="card-image">
+				<figure class="card-image">
 					<% if @blog.image.present? %>
 						<%= image_tag @blog.image.to_s, :size =>'200x200' %>
 					<% end %>
+				</figure>
+				<div class="card-text">
+					<p><%= simple_format(@blog.body) %></p>
 				</div>
-			</div>
-
-			<div class="right_card">
-				<div class="card_group">
-	    		<p class="card-text"><%= simple_format(@blog.body) %></p>
-				</div>
-			</div>
 	  </div>
 
 	  <ul class="card-footer">
@@ -40,9 +34,4 @@
 				  <% end %>
 			<% end %>
 		</ul>
-
-	</div>
 </div>
-
-
-

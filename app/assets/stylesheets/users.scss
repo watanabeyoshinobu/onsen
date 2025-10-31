@@ -3,18 +3,26 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-.sakura_container {
-  position: relative;
-  height: 590px;
-  width: 100%;
-  overflow: hidden;
-  background-image: image-url('img/sakura11.jpg');
-  background-size: cover;
-  background-size: 100% 600px;
+// .sakura_container {
+//   position: relative;
+//   height: 590px;
+//   width: 100%;
+//   overflow: hidden;
+//   background-size: cover;
+//   background-size: 100% 600px;
+// }
+
+.mypage-container {
+  height: 800px;
 }
 
 .title-name {
  font-family:'メイリオ', 'Meiryo', sans-serif;
+}
+
+.mypage-title {
+ font-size: 26px;
+ padding-top: 10px;
 }
 
 .form-button {
@@ -23,19 +31,12 @@
  float: left;
 }
 
-.row-box {
- width: 100%;
- height: 50px;
- padding-left: 250px;
- padding-top: 20px;
-}
-
 .mypage {
  text-align: center;
- font-family:'メイリオ', 'Meiryo', sans-serif;
- width: 300px;
- margin-top: 5px;
- margin-left: 270px;
+ font-family:'HiraMinProN-W3', 'serif';
+ width: 250px;
+ margin-top: 30px;
+ margin-left: 430px;
  background:
  linear-gradient(90deg, #999 3px, #fff 3px, #fff calc(100% - 3px), #999 calc(100% - 3px)),
  linear-gradient(180deg, #999 3px, #fff 3px, #fff calc(100% - 3px), #999 calc(100% - 3px)),
@@ -61,6 +62,70 @@
   transform: scale(1);
  }
 }
+
+.user_formbox {
+  font-family:'HiraMinProN-W3', 'serif';
+  width: 550px;
+  height: 630px;
+  margin: 0 auto;
+  margin-top: 40px;
+  border: 5px solid #e8e8e8;
+  background: linear-gradient(to right, #FFF0F5, #FFFAFA);
+  border-radius: 10px;
+  margin-bottom: 30px;
+  padding: 30px;
+  animation: fadeup 1s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
+}
+@keyframes fadeup {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.my-picture {
+  text-align: center;
+}
+
+.account {
+  text-align: center;
+  padding-top: 30px;
+}
+
+.profile_name {
+ font-size: 18px;
+ text-decoration: underline dotted gray;
+ text-underline-offset: 15px;
+ display: inline-block;
+}
+
+.profile_email {
+ font-size: 18px;
+ text-decoration: underline dotted gray;
+ text-underline-offset: 15px;
+ padding-top: 40px;
+}
+
+.profile_group3 {
+ text-align: center;
+ padding: 0.3em;
+ padding-top: 60px;
+}
+
+
+.others-box {
+ text-align: center;
+ padding-top: 40px;
+}
+
+
 a.btn--edit {
   width: 200px;
   margin-right: 10px;
@@ -97,122 +162,7 @@ a.btn--shadow {
   box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
 }
 
-.user_formbox {
-  font-family:'メイリオ', 'Meiryo', sans-serif;
-  width: 900px;
-  height: 400px;
-  margin: 25px auto;
-  border: 5px inset #FFC0CB;
-  border-radius: 10px;
-  padding: 30px;
-  background: linear-gradient(to right, #f6bfbc, #fef4f4);
-  animation: fadeup 1s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
-}
-@keyframes fadeup {
-  0% {
-    transform: translateY(30px);
-    opacity: 0;
-  }
-  80% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
-
-
-.left_profile {
- background-position: left;
-}
-.user-face {
- margin-top: 20px;
- margin-left: 30px;
-}
-
-.right_profile {
-  margin-top: -300px;
-}
-
-.profile_group1 {
- text-align: right;
- position: relative;
- padding: 0.3em;
- padding-top: 20px;
- padding-bottom: 10px;
-}
-.profile_group1:after {
-  content: '';
-  position: absolute;
-  left: 460px;
-  bottom: 0;
-  width: 400px;
-  height: 7px;
-  border-radius: 2px;
-  background: repeating-linear-gradient(-45deg, orange, orange 2px, white 2px, white 4px);
-}
-.profile_group2 {
- text-align: right;
- position: relative;
- padding: 0.3em;
- padding-top: 40px;
- padding-bottom: 10px;
-}
-.profile_group2:after {
-  position: fixed;
-  content: '';
-  position: absolute;
-  left: 460px;
-  bottom: 0;
-  width: 400px;
-  height: 7px;
-  border-radius: 2px;
-  background: repeating-linear-gradient(-45deg, orange, orange 2px, white 2px, white 4px);
-}
-.profile_group3 {
- text-align: right;
- position: relative;
- padding: 0.3em;
- padding-top: 40px;
- padding-bottom: 10px;
-}
-.profile_group3:after {
-  content: '';
-  position: absolute;
-  left: 460px;
-  bottom: 0;
-  width: 400px;
-  height: 7px;
-  background: repeating-linear-gradient(-45deg, orange, orange 2px, white 2px, white 4px);
-}
-
-.profile_name {
-　position: fixed;
- display: inline;
- color: #fff;
- background-color: #F08080;
- border-radius: 10px;
- margin-right: 150px;
-}
-.user_name {
- display: inline;
- color: #8B4513;
- margin-right: 30px;
-}
-
-.profile_email {
- display: inline;
- color: white;
- background-color: #F08080;
- border-radius: 14px;
- margin-right: 50px;
-}
-.user_email {
- display: inline;
- color: #8B4513;
-}
 
 
 .row {
@@ -220,19 +170,47 @@ a.btn--shadow {
 }
 
 .withdraw-container {
- width: 100%;
- height: 580px;
- background: linear-gradient(to right, #f2f2b0, #f8f4e6);
+  text-align: center;
+  font-family:'HiraMinProN-W3', 'serif';
+  width: 550px;
+  height: 520px;
+  margin: 0 auto;
+  margin-top: 40px;
+  border: 5px solid #e8e8e8;
+  background: linear-gradient(to right, #FFF0F5, #FFFAFA);
+  border-radius: 10px;
+  margin-bottom: 30px;
 }
-.withdraw-box {
- text-align: center;
+.withdraw-title {
  padding-top: 110px;
  padding-bottom: 20px;
+ font-size: 26px;
 }
+
 .withdraw-text {
- text-align: center;
  padding-bottom: 20px;
+ font-size: 18px;
 }
+
+.processing-box {
+ text-align: center;
+ padding-top: 50px;
+}
+
+a.btn--cancel.btn--border-solid {
+  width: 150px;
+  border: 2px solid #839b5c;
+  color: #fff;
+  background-color: #aacf53;
+}
+a.btn--withdraw.btn--border-solid {
+  width: 150px;
+  border: 2px solid #c9171e;
+  color: #fff;
+  background-color: #e2041b;
+}
+
+
 
 .change-button {
  width: 50%;
@@ -281,35 +259,15 @@ a.btn--shadow {
   color: #FFF;
 }
 
-.processing-box {
-
-}
-a.btn--cancel.btn--border-solid {
-  width: 300px;
-  border: 2px solid #839b5c;
-  color: #fff;
-  background-color: #aacf53;
-}
-a.btn--withdraw.btn--border-solid {
-  width: 300px;
-  border: 2px solid #c9171e;
-  color: #fff;
-  background-color: #e2041b;
-
-}
-
-
 .user_settings {
-  font-family:'メイリオ', 'Meiryo', sans-serif;
   text-align: center;
   width: 800px;
   height: 400px;
-  margin-top: 50px;
-  margin-left: 320px;
-  border: 3px inset #FFC0CB;
+  margin: 50px 0 0 320px;
   border-radius: 10px;
   padding: 30px;
-  background: linear-gradient(to right, #f6bfbc, #fef4f4);
+  border: 10px #F5F5F5 solid;
+  background: linear-gradient(to right, #FFF0F5, #FFFAFA);
   animation: fadeup 1s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
 }
 @keyframes fadeup {
@@ -367,15 +325,11 @@ a.btn--withdraw.btn--border-solid {
 }
 .edit-container {
   height: 600px;
-  background-image: image-url('img/sakura10.jpg');
 }
 
 .user_edit {
- text-align: center;
- font-family:'メイリオ', 'Meiryo', sans-serif;
- width: 360px;
- margin-top: 15px;
- margin-bottom: 15px;
+ width: 250px;
+ margin-top: 50px;
  margin-left: 320px;
  background:
  linear-gradient(90deg, #999 3px, #fff 3px, #fff calc(100% - 3px), #999 calc(100% - 3px)),
@@ -403,6 +357,24 @@ a.btn--withdraw.btn--border-solid {
  }
 }
 
+.edit-title {
+ text-align: center;
+ font-family:'HiraMinProN-W3', 'serif';
+ font-size: 24px;
+ padding-top: 10px;
+}
+
+.image-set {
+ text-align: center;
+ font-family:'HiraMinProN-W3', 'serif';
+ font-size: 24px;
+ margin-top: 30px;
+}
+
+.user_settings_form {
+ padding-top: 30px;
+}
+
 
 /*モーダル*/
 .modal-show {
@@ -420,11 +392,9 @@ a.btn--withdraw.btn--border-solid {
 
 /*フォロー機能*/
 .follows {
- text-align: center;
- font-family:'メイリオ', 'Meiryo', sans-serif;
- width: 300px;
- margin-top: 15px;
- margin-left: 5px;
+ width: 250px;
+ margin-top: 30px;
+ margin-left: 10px;
  margin-bottom: 20px;
  background:
  linear-gradient(90deg, #999 3px, #fff 3px, #fff calc(100% - 3px), #999 calc(100% - 3px)),
@@ -451,6 +421,17 @@ a.btn--withdraw.btn--border-solid {
   transform: scale(1);
  }
 }
+
+.follows-title {
+ text-align: center;
+ font-family:'HiraMinProN-W3', 'serif';
+ font-size: 26px;
+ padding-top: 10px;
+}
+
+
+
+
 a.btn--edit {
   width: 200px;
   margin-right: 10px;
@@ -496,8 +477,8 @@ a.btn--shadow {
 .follows-box > div{
  width: 220px;
  height: 320px;
-　font-size: 64px;
-　text-align: center;
+ font-size: 64px;
+ text-align: center;
 }
 
 
@@ -552,9 +533,9 @@ a.btn--shadow {
   display: inline-block;
   max-width: 180px;
   text-align: left;
-  border: 2px solid #e2041b;
+  border: 2px solid #2ca9e1;
   font-size: 16px;
-  color: #e2041b;
+  color: #2ca9e1;
   text-decoration: none;
   font-weight: bold;
   padding: 8px 16px;
@@ -563,7 +544,7 @@ a.btn--shadow {
 }
 
 .btn-border-reset:hover {
-  background-color: #e2041b;
-  border-color: #e2041b;
+  background-color: #2ca9e1;
+  border-color: #2ca9e1;
   color: #FFF;
 }

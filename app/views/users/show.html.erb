@@ -1,49 +1,29 @@
 <%= render 'blogs/menu' %>
-<div class="sakura_container">
 
+<div class="mypage-container">
 	<div class="mypage">
-		<h1>~ MY PAGE ~</h1>
+		<p class="mypage-title">ユーザー情報</p>
 	</div>
-
-
-		<div class="row-box">
-			<div class="col-md-5"></div>
-			<div class="col-md-2"><%= link_to 'アカウント編集', edit_user_registration_path, class: 'btn-border-edit' %></div>
-
-			<div class="col-md-2"><%= link_to 'プロフィール編集', edit_user_path, class: 'btn-border-edit' %></div>
-
-			<div class="col-md-2"><%= link_to '退会', withdraw_users_path, class: 'btn-border-withdraw' %></div>
-		</div>
-
-		<div class="user_formbox">
-			<div class="left_profile">
-				<div class="user-face">
-			   <% if @user.profile_image.present? %>
-			      <%= image_tag @user.profile_image.to_s, :size =>'300x300' %>
-			   <% else %>
-			   	  <%= image_tag "img/no_image.jpg", :size =>'300x300' %>
-			   <% end %>
-				</div>
-			</div>
-
-			<div class="right_profile">
-				<div class="profile_group1">
-		            <h5 class="profile_name">アカウント名</h5>
-		            <h3 class="user_name"><%= @user.name%></h3>
-				</div>
-
-				<div class="profile_group2">
-		            <h5 class="profile_email">アドレス</h5>
-		            <h3 class="user_email"><%= @user.email %></h3>
-				</div>
-
-				<div class="profile_group3">
-				  <%= link_to 'フォロー', follows_users_path, class: "btn-border-follow" %>
-				  <%= link_to 'フォロワー', followers_users_path, class: "btn-border-reset" %>
-				</div>
-
-			</div>
-
-		</div>
-
+		<main class="user_formbox">
+				<figure class="my-picture">
+					<% if @user.profile_image.present? %>
+							<%= image_tag @user.profile_image.to_s, :size =>'200x200' %>
+					<% else %>
+							<%= image_tag "img/no_image.jpg", :size =>'200x200' %>
+					<% end %>
+				</figure>
+						<div class="account">
+								<p class="profile_name">アカウント名：<%= @user.name%></p>
+								<p class="profile_email">アドレス：<%= @user.email %></p>
+								<article class="profile_group3">
+									<%= link_to 'フォロー', follows_users_path, class: "btn-border-follow" %>
+									<%= link_to 'フォロワー', followers_users_path, class: "btn-border-reset" %>
+								</article>
+						</div>
+							<article class="others-box">
+									<%= link_to 'アカウント編集', edit_user_registration_path, class: 'btn-border-edit' %>
+									<%= link_to 'アカウント画像編集', edit_user_path, class: 'btn-border-edit' %>
+									<%= link_to '退会', withdraw_users_path, class: 'btn-border-withdraw' %>
+							</article>
+		</main>
 </div>

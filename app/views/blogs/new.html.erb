@@ -1,15 +1,11 @@
 <%= render 'menu' %>
 
 <div class="b-new_container">
-
     <div class="d-flex align-items-center">
-    	<div class="b-new__comment">
-    		<h1>温泉の共有はこちら♪</h1>
-    	</div>
+    	<p class="b-new_title">温泉の共有</p>
       <div class="b-new_comment_box">
             <%= link_to '温泉共有一覧', blogs_path, class: 'btn-border-button' %>
       </div>
     </div>
-
-        <%= render partial: 'form', locals: { blog: @blog } %>
+    <%= render partial: 'form', locals: { blog: @blog } %>
 </div>

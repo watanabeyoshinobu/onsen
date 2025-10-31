@@ -2,27 +2,24 @@
 
 <div class="edit-container">
 	<div class="user_edit">
-		<h1>プロフィール編集</h1>
+		<p class="edit-title">プロフィール編集</p>
 	</div>
 
-
-	<div class="user_settings">
-		<h1><%= @user.name %> さんのプロフィール画像設定</h1>
+	<main class="user_settings">
+		<p class="image-set"><%= @user.name %> さんのプロフィール画像設定</p>
 			<div class="user_settings_form">
 				<%= form_for(@user) do |f| %>
 				   <% if @user.profile_image.present? %>
 				      <%= image_tag @user.profile_image.to_s, :size =>'200x200' %>
 				   <% else %>
-				      <%= image_tag "/assets/default.jpg" %>
+				      <%= image_tag "img/no_image.jpg" %>
 				   <% end %>
 				      <button type="button" class="btn btn-outline-secondary rounded-pill">
 				         <%= f.file_field :profile_image, accept: 'image/jpeg,image/gif,image/png' %>
 				      </button>
 				      <input type="hidden" name="user_profile_image_update_flg" value="user_profile_image_update_flg" >
-				　　<%= f.submit '更新する', class: 'btn btn-primary' %>
+						<%= f.submit '更新する', class: 'btn btn-primary' %>
 				<% end %>
 			</div>
-	</div>
+	</main>
 </div>
-
-

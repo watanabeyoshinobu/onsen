@@ -1,13 +1,13 @@
 <%= render 'menu' %>
 
 <div class="b-show_box">
-	<div class="b-show__comment">
-		<h1>温泉共有詳細</h1>
+	<div class="b-show__title">
+		<p class="b-show_text">温泉共有の詳細</p>
 	</div>
 		<div class="row-showbox">
 			<div class="col-md-1"></div>
-			<div class="col-md-5"></div>
-			<div class="col-md-2"><%= link_to '共有一覧', blogs_path, class: 'btn-border-button' %></div>
+			<div class="col-md-4"></div>
+			<div class="col-md-2"><%= link_to '戻る', blogs_path, class: 'btn-border-button' %></div>
 			<% if @blog.user_id == current_user.id %>
 		    <div class="col-md-2"><%= link_to '編集', edit_blog_path(@blog), class: 'btn-border-button' %></div>
 		  <% end %>
@@ -21,7 +21,7 @@
 		<%= render @blog %>
 
 		<div class="b-comment_list">
-		  <div class="b-comment_listTitle"><h3>コメント<h3></div>
+		  <p class="b-comment_listTitle">コメント</p>
 		  <%= render @blog.comments %>
 		</div>
 

@@ -1,188 +1,169 @@
 <body>
 
 <%= render 'menu' %>
-
 <%= render 'btn' %>
 
-
-<div class="main-visual">
-  <div id=container-js>
-     <div id="theTarget">
-        <div class="image1"></div>
-        <div class="image2"></div>
-        <div class="image3"></div>
-        <div class="image4"></div>
-        <div class="image5"></div>
+  <div class="slide-wrapper">
+    <div id="slide" class="slide">
+      <div class="image1"></div>
+      <div class="image2"></div>
+      <div class="image3"></div>
+      <div class="image4"></div>
+      <div class="image5"></div>
     </div>
+      <span id="prev" class="prev"></span>
+      <span id="after" class="after"></span>
+        <ul class="indicator" id="indicator">
+          <li class="list"></li>
+          <li class="list"></li>
+          <li class="list"></li>
+          <li class="list"></li>
+          <li class="list"></li>
+        </ul>
   </div>
-</div>
 
-<div class="container-yu">
-  <div class="yunokokoti">
-      <span class="yunokokoti-text">
-        <h1>♨️〜ようこそ湯のここちへ〜♨️</h1>
-      </span>
-      <span class="yunokokoti-text2"></p>
-            <h3>このサイトは神奈川県にあるスーパー銭湯を紹介するサイトです。<br>
-                                                               <br>
-            日々仕事等でお疲れの皆さま・・・<br>
-            いつもお疲れ様です♪<br>
-            スーパー銭湯で優雅で贅沢なひと時を過ごされてはいかがでしょうか？</h3>
-      </span>
-  </div>
-</div>
-
-
-  <div class="portfolio">
-    <div class="container1">
-      <h2 class="heading1">♨️〜スーパー銭湯紹介!〜♨️</h2>
-      <p class="heading-text">
-        <font size="5">日々お仕事を一生懸命働いている皆様へ・・・<br>
-        神奈川県で温泉という至福のひと時はいかがでしょうか・・・♨️</font><br>
-      </p>
-
-      <div class="spa-images1">
-        <div class="pic_frame">
-          <%= link_to look_blogs_path do %>
-            <div class="portfolio_image1"></div>
-          <% end %>
-          <p class="portfolio-text">横浜市 竜泉寺の湯</p>
-        </div>
-        <div class="pic_frame">
-          <%= link_to see_blogs_path do %>
-            <div class="portfolio_image2"></div>
-          <% end %>
-          <p class="portfolio-text">海老名市 おふろの王様</p> 
-        </div>
-        <div class="pic_frame">
-          <%= link_to saw_blogs_path do %>
-            <div class="portfolio_image3"></div>
-          <% end %>
-          <p class="portfolio-text">みなとみらい 万葉倶楽部</p>
-        </div>
-      </div>
-
-      <div class="spa-images2">
-        <div class="pic_frame">
-          <%= link_to watch_blogs_path do %>
-            <div class="portfolio_image4"></div>
-          <% end %>
-          <p class="portfolio-text">横浜市 満天の湯</p>
-        </div>
-        <div class="pic_frame">
-          <%= link_to seeing_blogs_path do %>
-            <div class="portfolio_image5"></div>
-          <% end %>
-          <p class="portfolio-text">海老名市 OYUGIWA</p> 
-        </div>
-        <div class="pic_frame">
-          <%= link_to looking_blogs_path do %>
-            <div class="portfolio_image6"></div>
-          <% end %>
-          <p class="portfolio-text">厚木市 湯花楽</p>
-        </div>
-      </div>
-
-      <div class="spa-images3">
-        <div class="pic_frame">
-          <%= link_to check_blogs_path do %>
-            <div class="portfolio_image7"></div>
-          <% end %>
-          <p class="portfolio-text">座間市 湯快爽快</p>
-        </div>
-        <div class="pic_frame">
-          <%= link_to try_blogs_path do %>
-            <div class="portfolio_image8"></div>
-          <% end %>
-          <p class="portfolio-text">川崎市 湯けむりの庄</p> 
-        </div>
-        <div class="pic_frame">
-          <%= link_to gaze_blogs_path do %>
-            <div class="portfolio_image9"></div>
-          <% end %>
-          <p class="portfolio-text">横浜市 極楽湯</p>
-        </div>
-      </div>
+  <div class="container_spa">
+    <div class="movement">
+      <article class="yunokokoti">
+          <p class="yunokokoti-text">湯のここちとは</p>
+          <p class="yunokokoti-text2">
+              このサイトは神奈川県にあるスーパー銭湯の紹介をコンセプトにしたサイトです。<br>
+              神奈川県に在住するお疲れの皆様をターゲットにスーパー銭湯へ赴き、温泉などの癒しを提供できれば幸いです。
+          </p>
+          <div class="grid-onsen">
+            <article class="movement">
+              <figure class="visual_image1"></figure>
+            </article>
+            <article class="movement">
+              <figure class="visual_image2"></figure>
+            </article>
+            <article class="movement">
+              <figure class="visual_image3"></figure>
+            </article>
+          </div>
     </div>
   </div>
 
-        <section class="profile">
-             <div class="container2">
-               <h2 class="heading2">
-                 ♨️〜自己紹介〜♨️
-               </h2>
+    <main class="main-container">
+        <div class="movement">
+          <h2 class="heading1">神奈川県のスーパー銭湯紹介</h2>
+            <p class="heading-text">
+              神奈川県にお住まいの皆様<br>
+              神奈川県にある温泉のひと時はいかがでしょうか
+            </p>
+        </div>
+            <div class="grid-gallery">
+              <article class="movement">
+                <%= link_to look_blogs_path do %>
+                  <figure class="portfolio_image1">
+                    <figcaption>横濱スパヒルズ　竜泉寺の湯</figcaption>
+                  </figure>
+                <% end %>
+              </article>
+              <article class="movement">
+                <%= link_to see_blogs_path do %>
+                  <figure class="portfolio_image2">
+                    <figcaption>お風呂の王様　海老名店</figcaption> 
+                  </figure>
+                <% end %>
+              </article>
+              <article class="movement">
+                <%= link_to saw_blogs_path do %>
+                  <figure class="portfolio_image3">
+                    <figcaption>横浜みなとみらい　万葉倶楽部</figcaption>
+                  </figure>
+                <% end %>
+              </article>
+              <article class="movement">
+                <%= link_to watch_blogs_path do %>
+                  <figure class="portfolio_image4">
+                    <figcaption>天然温泉　満天の湯</figcaption>
+                  </figure>
+                <% end %>
+              </article>
+              <article class="movement">
+                <%= link_to seeing_blogs_path do %>
+                  <figure class="portfolio_image5">
+                    <figcaption>OYUGIWA　海老名店</figcaption> 
+                  </figure>
+                <% end %>
+              </article>
+              <article class="movement">
+                <%= link_to looking_blogs_path do %>
+                  <figure class="portfolio_image6">
+                    <figcaption>天然温泉　湯花楽　厚木店</figcaption>
+                  </figure>
+                <% end %>
+              </article>
+              <article class="movement">
+                <%= link_to check_blogs_path do %>
+                  <figure class="portfolio_image7">
+                    <figcaption>湯快爽快　ざま</figcaption>
+                  </figure>
+                <% end %>
+              </article>
+              <article class="movement">
+                <%= link_to try_blogs_path do %>
+                  <figure class="portfolio_image8">
+                    <figcaption>宮前平　源泉　湯けむりの庄</figcaption> 
+                  </figure>
+                <% end %>
+              </article>
+              <article class="movement">
+                <%= link_to gaze_blogs_path do %>
+                  <figure class="portfolio_image9">
+                    <figcaption>極楽湯　横浜芹が谷店</figcaption>
+                  </figure>
+                <% end %>
+              </article>
+            </div>
+    </main>
+
+          <div class="container2">
+            <div class="movement">
+              <p class="profile">プロフィール</p>
                 <p class="heading-text">
-                 今回ブログ風紹介サイト『湯のここち』というサイトを制作しました! <br>
-                 温泉サイトを制作した理由は、私自身スーパー銭湯が好きで以前からよく通っていました。 <br>
-                 現代はストレス社会と言われており、日々ストレスと戦う皆様に少しでも癒しになればと思い制作しました。<br>
-                 少しでも皆さまにスーパー銭湯の魅力や素晴らしさを知ってもらえたら嬉しいです♪
-               </p>
-                 <div class="profile-group clearfix">
-                    <div class="left-content">
-                     <div class="my-face"></div>
+                『湯のここち』というサイトを制作しました <br>
+                  制作理由は、現代はストレス社会と言われており、日々ストレスと戦う皆様に少しでも癒しを紹介したいという思いがきっかけです。<br>
+                  少しでも皆さまにスーパー銭湯の魅力や素晴らしさを知ってもらえたら嬉しいです
+                </p>
+                  <article class="grid-profile">
+                        <div class="my-face"></div>
+                          <div>
+                            <p class="profile-title">名前</p>
+                            <p class="admin-name">渡邊 義信</p>
+                            <p class="profile-title">マイブーム</p>
+                            <p class="profile-text">
+                              最近は、サウナにはまっています<br>
+                              サウナは、新陳代謝を上げるだけではなく『美容』にも良いと言われています。<br>
+                              もちろん新陳代謝を上げるので、美容だけでなくダイエットにもいいと言われております。<br>
+                              皆さんもご興味があれば是非、サウナで整ってみて下さい。<br>
+                            </p>
+                          </div>
+                  </article>
+            </div>
+          </div>
+
+          <div class="container3">
+            <div class="movement">
+              <p class="other-title">others</p>
+              <p class="heading-text">
+                  趣味を乗せたりスーパー銭湯の魅力をお伝えしていきたいので、興味のある方は是非見に来て下さい<br>
+                  また、皆様に楽しくご利用していただける様に禁止事項を厳守の上ご利用をお願い致します。<br>
+              </p>
+
+                <section class="grid-other">
+                    <div class="other-btn">
+                      <%= link_to '注意事項', precautions_blogs_path, class: 'btn-border-precautions' %>
+                      <%= link_to '温泉の共有', new_blog_path, class: 'btn-border-comment' %>
+                      <%= link_to ("https://twitter.com/yosshi_ike1720") do %>
+                        <span class="fa fa-twitter fa-x"aria-hidden="true"></span>
+                      <% end %>
+                      <%= link_to ("http://facebook.com/yosshi.freedom1720") do %>
+                        <span class="fa fa-facebook fa-x"aria-hidden="true"></span>
+                      <% end %>
                     </div>
-                        <div class="">
-                        <h3 class="discription-title">名前</h3>
-                        <div class="admin-name">
-                          <h2>渡邊 義信</h2>
-                        </div>
-                        <h3 class="discription-title">マイブーム</h3>
-                        <p class="discription-text">
-                          最近『岩盤浴』にはまりました！<br>
-                          岩盤浴は、新陳代謝を上げるだけではなく『美容』にも良いと言われています。<br>
-                          さらには新陳代謝を上げるので、ダイエットにもいいと言われております。<br>
-                          皆さんもご興味があれば是非、岩盤浴に入ってみてください。<br>
-                          きっとクセになると思います♪<br>
-                        </p>
-                        </div>
-                </div>
-             </div>
-        </section>
-
-
-       <section id="sns">
-         <div class="container3">
-           <h2 class="heading3">
-             ♨️〜その他〜♨️
-           </h2>
-           <p class="heading-text">
-              登録したばかりですがSNSを始めました！<br>
-              趣味を乗せたりスーパー銭湯の魅力をお伝えしていきたいので<br>
-              興味のある方は是非見に来て下さい♪<br>
-              また、みなさまに楽しくご利用していただける様に禁止事項を厳守の上ご利用をお願い致します。<br>
-           </p>
-
-           <div class="contact-group clearfix">
-
-            <div class="left-content">
-               <div class="comment-button">
-                <%= link_to 'スーパー銭湯の共有をしましょう♪', new_blog_path, class: 'btn-border-comment' %>
-               </div>
-
-               <div class="precautions-button">
-                <%= link_to '注意事項', precautions_blogs_path, class: 'btn-border-precautions' %>
-               </div>
+                </section>
             </div>
-
-             <div class="right-content">
-              <div class="right-contact">
-                <div class="SNS">
-                <h3 class="discription-title">SNS</h3>
-
-                  <%= link_to ("https://twitter.com/yosshi_ike1720") do %>
-                    <span class="fa fa-twitter fa-x"aria-hidden="true"></span>
-                  <% end %>
-
-
-                  <%= link_to ("http://facebook.com/yosshi.freedom1720") do %>
-                    <span class="fa fa-facebook fa-x"aria-hidden="true"></span>
-                  <% end %>
-
-                </div>
-              </div>
-             </div>
-            </div>
-       </section>
-     </div>
-
+          </div>
 </body>

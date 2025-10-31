@@ -12,11 +12,11 @@
 
 <div class="b-edit_container">
     <div class="d-flex align-items-center">
-        <div class="b-edit__comment">
-            <h1>編 集</h1>
+        <div class="b-edit__title">
+          <p class="b-edit__text">編 集</p>
         </div>
           <div class="b-edit_comment_box">
-                <%= link_to '温泉詳細', blog_path, class: 'btn-border-button' %>
+                <%= link_to '戻る', blog_path, class: 'btn-border-button' %>
           </div>
     </div>
 
@@ -39,7 +39,7 @@
             </div>
 
             <div class="b-update_box">
-                <%= f.submit '更新!', class: 'decorated-btn click-down' %>
+                <%= f.submit '更新', class: 'decorated-btn click-down' %>
             </div>
         </div>
 </div>

@@ -39,9 +39,7 @@ header{
  background: linear-gradient(to right, #fcd575, #fffcdc);
  z-index: 1;
  position: fixed;
-
 }
-
 .title-name {
  margin: 0 auto;
  float: right;
@@ -52,70 +50,8 @@ header{
 .photo{
  width: 200px;
  height: 85px;
- margin: 0 auto;
- padding: 0;
- font-size: 100%;
-}
-
-.main-visual{
- width: 100%;
- height: 720px;
- color: #FAFAFA;
- background-size: cover;
- background-position: center;
- animation: fadeIn 4s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
-}
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-
-#container-js {
- width: 100%;
- height: 720px;
-}
-.image1 {
- background-image: image-url('img/seitensama.jpg');
- /*background-image: url(img/NGseitensama_TP_V.jpeg);*/
-}
-.image2 {
- background-image: image-url('img/SAYAPAKU4745_TP_V.jpeg');
-}
-.image3 {
- background-image: image-url('img/YAMA_DSC1813_TP_V.jpeg');
-}
-.image4 {
- background-image: image-url('img/YAMA_DSC0947_TP_V.jpg');
-}
-.image5 {
- background-image: image-url('img/YAMA_DSC3126_TP_V.jpg');
-}
-
-.main-contents {
- padding-top: 70px;
-}
-
-
-.mv-title{
- padding-top: 200px;
- color: #000000;
- font-family: "Century Gothic",sans-serif;
- font-size: 64px;
-}
-.mv.text{
- padding-top: 10px;
- color: #000000;
- font-size: 20px;
-}
-p.mv-text{
- color: #000000;
- font-size: 20px;
- padding: 10px 0px 0px;
+ top: 0;
+ left: 0;
 }
 
 .heading{
@@ -125,14 +61,6 @@ p.mv-text{
  font-size: 32px;
 }
 
-#portfolio{
- background-color: #FFF0F5;
-}
-
-main {
- height: 1000px;
-
-}
 h2.heading{
  font-size: 36px;
  padding: 60px 0 0 30px;
@@ -155,19 +83,26 @@ p.heading-text{
  font-size: 16px;
  color: #000000;
 }
+
 .nav-bar {
  height: 50px;
  float: right;
  padding-right: 100px;
  padding-top: 30px;
-
- font-family:'メイリオ', 'Meiryo', sans-serif;
+ font-family:'HiraMinProN-W3', 'serif';
+ font-size: 16px;
 }
 a {
  color: #f08300;
 }
 i {
  margin: 10px;
+}
+
+.nav-bar li {
+  display: inline;
+  list-style:none;
+  margin: 20px;
 }
 
 
@@ -179,11 +114,7 @@ footer{
  line-height: 60px;
 }
 
-.navbar-right {
- padding-top: 15px;
- padding-right: 200px;
-}
-
-
-
-
+// .navbar-right {
+//  padding-top: 15px;
+//  padding-right: 200px;
+// }

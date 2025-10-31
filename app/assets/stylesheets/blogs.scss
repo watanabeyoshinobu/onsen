@@ -2,17 +2,149 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.main-contents {
+ padding-top: 70px;
+}
+
+.slide-wrapper {
+  width: 100%;
+  height: 650px;
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 4s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.slide {
+  width: 500%;
+  height: 100%;
+  display: flex;
+}
+
+.slide div {
+  width: 20%;
+  height: 100%;
+  font-size: 16px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;  
+}
+
+.slide1 {
+  transform: translateX(0);
+}
+.slide2 {
+  transform: translateX(-20%);
+}
+.slide3 {
+  transform: translateX(-40%);
+}
+.slide4 {
+  transform: translateX(-60%);
+}
+.slide5 {
+  transform: translateX(-80%);
+}
+
+.image1 {
+ background-image: image-url('img/seitensama.jpg');
+ background-size: cover;
+ background-position: center center;
+}
+
+.image2 {
+ background-image: image-url('img/SAYAPAKU4745_TP_V.jpeg');
+ background-size: cover;
+}
+
+.image3 {
+ background-image: image-url('img/YAMA_DSC1813_TP_V.jpeg');
+ background-size: cover;
+ background-position: center center;
+}
+
+.image4 {
+ background-image: image-url('img/YAMA_DSC0947_TP_V.jpg');
+ background-size: cover;
+ background-position: center center;
+}
+
+.image5 {
+ background-image: image-url('img/YAMA_DSC3126_TP_V.jpg');
+ background-size: cover;
+ background-position: center center;
+}
+
+.after {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  right: 10px;
+  bottom: 50%;
+  z-index: 9;
+  cursor: pointer;
+  border-top: solid 3px #000;
+  border-right: solid 3px #000;
+  -webkit-transform: rotate(45deg) translateY(50%);
+  transform: rotate(45deg) translateY(50%);
+}
+
+.prev {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  left: 25px;
+  bottom: 50%;
+  z-index: 10;
+  cursor: pointer;
+  border-top: solid 3px #000;
+  border-right: solid 3px #000;
+  -webkit-transform: rotate(-135deg) translateY(-50%);
+  transform: rotate(-135deg) translateY(-50%);
+}
+
+.indicator {
+  width: 100%;
+  position: absolute;
+  bottom: 20px;
+  display: flex;
+  column-gap: 18px;
+  z-index: 10;
+  justify-content: center;
+  align-items: center;
+}
+
+.indicator li {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  list-style: none;
+  background-color: #fff;
+  cursor: pointer;
+}
+.indicator li:first-of-type {
+  background-color: #000;
+}
+
 #hm-icon {
  position: fixed;
  right: 20px;
  top: 20px;
- z-index: 10;
+ z-index: 11;
 }
 
 #menu-trigger,
 #menu-trigger span {
   display: inline-block;
-  transition: all .4s;
+  transition: all 0.4s;
   box-sizing: border-box;
 }
 
@@ -46,7 +178,7 @@
 #menu-trigger.active span:nth-of-type(1) {
   -webkit-transform: translateY(20px) rotate(-45deg);
   transform: translateY(20px) rotate(-45deg);
-  background-color: #fff;
+  background-color: #000;
 }
 
 #menu-trigger.active span:nth-of-type(2) {
@@ -56,31 +188,54 @@
 #menu-trigger.active span:nth-of-type(3) {
   -webkit-transform: translateY(-20px) rotate(45deg);
   transform: translateY(-20px) rotate(45deg);
-  background-color: #fff;
+  background-color: #000;
 }
 
-
-
 #sp-menu {
+  font-family:'HiraMinProN-W3', 'serif';
   position: fixed;
-  top: 0;
-  left: 0;
-  background: #000;
-  color: #fff;
-  width: 100%;
-  min-height: 100%;
   display: none;
-  z-index: 9;
-  font-family:'メイリオ', 'Meiryo', sans-serif;
+  float: none;
+  width: 20%;
+  min-height: 100%;
+  top: 0;
+  right: 0;
+  background-color: #fff;
+  color: #000;
+  z-index: 10;
+  box-shadow: 2px 0 4px 6px rgba(0,0,0,.1);
+}
+
+.menu-text {
+  margin: 60px 0 30px 0;
+  text-align: center;
+  font-size: 30px;
+  color: #000;
 }
 
 #sp-menu li{
-  text-align: center;
-  margin-bottom: 30px;
+ position: relative;
+ font-size: 16px;
+ margin: 20px 0 10px 50px;
+ list-style: none;
+ padding: 15px 0;
+ display: block;
+ color: #333;
+}
+
+#sp-menu li::after {
+  position: absolute;
+  content: "";
+  background-color: #dcdcdc; 
+  width: 250px;
+  height: 1px;
+  bottom: -10px;
+  left: 40%;
+  transform: translateX(-50%);
 }
 
 #sp-menu a{
-  color: #fff;
+  color: #000;
   text-decoration: none;
   font-weight: bold;
 }
@@ -89,157 +244,77 @@
   position: fixed;
   right: 20px;
   bottom: 20px;
-  animation: fuwafuwa 2s infinite ease-in-out .8s alternate;
-  display: inline-block;
-  transition: 1.5s ease-in-out;
   width: 50px;
   height: 50px;
   margin-top: 15px;
-}
-@keyframes fuwafuwa {
-  0% {
-    transform:translate(0, 0) rotate(-7deg);
-  }
-  50% {
-    transform:translate(0, -7px) rotate(0deg);
-  }
-  100% {
-    transform:translate(0, 0) rotate(7deg);
-  }
+  z-index: 1;
 }
 
 #back img {
   width: 50px;
 }
 
-.container-yu {
- width: 100%;
- height: 330px;
+.container_spa {
+ height: 750px;
  text-align: center;
- text-shadow: -3px 2px 0 #fff;
  margin: 0 auto;
- margin: auto;
- position: relative;
- background-size: 100%, cover;
- font-family:'メイリオ', 'Meiryo', sans-serif;
- background-image:  image-url('img/harukaze.jpg');
+ font-family:'HiraMinProN-W3', 'serif';
 }
 
 .yunokokoti {
- padding: 30px;
- text-shadow: -3px 2px 0 #fff;
- font-style: italic;
- letter-spacing: .1em;
- animation: fadeup 5s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
+ padding: 50px 0 50px 0;
+ text-align: center;
+ letter-spacing: 0.1em;
 }
-@keyframes fadeup {
-  0% {
-   transform: translateY(30px);
-   opacity: 0;
-  }
-  80% {
-   opacity: 1;
-  }
-  100% {
-   opacity: 1;
-   transform: translateY(0);
-  }
-}
+
 .yunokokoti-text {
- color: #eb6ea5;
+ display: inline-block;
+ margin: 20px 0 40px 0;
+ font-size: 20px;
+ border-bottom: 1px solid #eb6ea5;
 }
-.yunokokoti-text2 h3 {
- padding: 10px;
- color: #b7282e;
+
+.yunokokoti-text2  {
+ margin-bottom: 70px;
+  padding: 10px;
+}
+
+.visual_image1 {
+ width: 350px;
+ height: 250px;
+ background-image: image-url('img/22272484_m.jpg');
+ background-size: cover;
+ border-radius: 10px;
+}
+
+.visual_image2 {
+ width: 350px;
+ height: 250px;
+ background-image: image-url('img/22272340_m.jpg');
+ background-size: cover;
+ border-radius: 10px;
+}
+
+.visual_image3 {
+ width: 350px;
+ height: 250px;
+ background-image: image-url('img/28513574_m.jpg');
+ background-size: cover;
+ border-radius: 10px;
 }
 
 main {
  height: 1000px;
 }
 .heading1{
- font-family:'メイリオ', 'Meiryo', sans-serif;
- padding: 60px 0 0 30px;
- margin-right: 50px;
- padding-bottom: 10px;
+ font-family:'HiraMinProN-W3', 'serif';
+ padding: 150px 0 10px 30px;
+ margin: 0 50px 0 0;
  color: #eb6ea5;
  text-align: center;
- margin-top: 0;
  font-size: 3.4rem;
- font-style: italic;
  letter-spacing: .1em;
- color: #eb6ea5;
  text-shadow: -3px 2px 0 #fff;
- animation: fadeup 5s cubic-bezier(0.33, 2, 0.68, 1) 1 forwards;
-}
-@keyframes fadeup {
-  0% {
-    transform: translateY(30px);
-    opacity: 0;
-  }
-  80% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.heading2{
- font-family:'メイリオ', 'Meiryo', sans-serif;
- padding: 60px 0 0 30px;
- margin-right: 50px;
- padding-bottom: 10px;
- color: #eb6ea5;
- text-align: center;
- margin-top: 0;
- font-size: 3.4rem;
- font-style: italic;
- letter-spacing: .1em;
- color: #eb6ea5;
- text-shadow: -3px 2px 0 #fff;
- animation: fadeup 8s cubic-bezier(0.33, 3, 0.68, 1) 1 forwards;
-}
-@keyframes fadeup {
-  0% {
-    transform: translateY(30px);
-    opacity: 0;
-  }
-  80% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.heading3{
- font-family:'メイリオ', 'Meiryo', sans-serif;
- padding: 60px 0 0 30px;
- margin-right: 50px;
- padding-bottom: 10px;
- color: #eb6ea5;
- text-align: center;
- margin-top: 0;
- font-size: 3.4rem;
- font-style: italic;
- letter-spacing: .1em;
- color: #eb6ea5;
- text-shadow: -3px 2px 0 #fff;
- animation: fadeup 8s cubic-bezier(0.33, 5, 0.68, 1) 1 forwards;
-}
-@keyframes fadeup {
-  0% {
-    transform: translateY(30px);
-    opacity: 0;
-  }
-  80% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 h2.heading::after{
@@ -250,11 +325,11 @@ h2.heading::after{
  width: 250px;
  height: 2px;
 }
-p.heading-text{
- font-family:'メイリオ', 'Meiryo', sans-serif;
+.heading-text{
+ font-size: 20px;
  text-align: center;
  color: #2b2b2b;
- margin-bottom: 20px;
+ margin-bottom: 40px;
 }
 
 header{
@@ -263,28 +338,43 @@ header{
  background-color: #FFDEAD;
 }
 
+.main-container {
+ height: 1500px;
+ background: linear-gradient(to right, #FFE4E1, #FFFAFA);
+ clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
+ text-align: center;
+ font-family:'HiraMinProN-W3', 'serif';
+}
 
-.container1{
+.movement {
+ opacity: 0;
+ visibility: hidden;
+ transition: all 3s;
+ transform: translateY(150px);
+}
+
+.is-active {
+ opacity: 1;
+ visibility: visible;
+ transform: translateY(0);
+}
+
+figure {
+ padding: 5px;
+ margin: auto;
+}
+
+figcaption {
+ font-size: 14px;
+ background-color: #000;
+ color: #FFF;
+ text-align: center;
+ position: absolute;
  width: 100%;
- height: 1400px;
- margin: 0 auto;
- position: center;
- background: linear-gradient(90deg, #FFC0CB, #FFE4E1, #FFF0F5, #fdeff2, #fef4f4);
- background-size: 500% 500%;
- animation: gradation 20s infinite;
-
-}
- @keyframes gradation {
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
-}
-
-.spa-images1 {
-  width: 1030px;
-  height: 350px;
-  margin-left: 220px;
-  margin-top: 10px;
+ left: 0;
+ bottom: 0;
+ padding: 5px 10px;
+ letter-spacing: 1px;
 }
 
 .portfolio_image1{
@@ -293,22 +383,13 @@ header{
   width: 300px;
   background-size: cover;
   background-position: center;
-  margin:  0 40px 10px 0;
-  float: left;
   border-radius: 20px;
-  animation: fadeIn 4s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
   overflow: hidden;
   position: relative;
   cursor: pointer;
+  box-shadow: 6px 6px 10px 0px rgba(0, 0, 0, 0.3);
 }
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
+
 .portfolio_image1::before {
   background-color: #fff;
   content: "";
@@ -352,22 +433,13 @@ header{
   width: 300px;
   background-size: cover;
   background-position: center;
-  margin: 0 40px 10px 0;
-  float: left;
   border-radius: 20px;
-  animation: fadeIn 4s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
   overflow: hidden;
   position: relative;
   cursor: pointer;
+  box-shadow: 6px 6px 10px 0px rgba(0, 0, 0, 0.3);
 }
- @keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
+
 .portfolio_image2::before {
   background-color: #fff;
   content: "";
@@ -406,28 +478,19 @@ header{
   }
 }
 .portfolio_image3{
-  background-image: image-url('img/yokohamanoyu.jpg');
-  height :250px;
-  width: 300px;
-  margin-top: 0;
-  background-size: cover;
-  background-position: center;
-  margin: 0 40px 10px 0;
-  float: left;
-  border-radius: 20px;
-  animation: fadeIn 4s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
-  overflow: hidden;
-  position: relative;
-  cursor: pointer;
+ background-image: image-url('img/yokohamanoyu.jpg');
+ height :250px;
+ width: 300px;
+ margin-top: 0;
+ background-size: cover;
+ background-position: center;
+ border-radius: 20px;
+ overflow: hidden;
+ position: relative;
+ cursor: pointer;
+ box-shadow: 6px 6px 10px 0px rgba(0, 0, 0, 0.3);
 }
- @keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
+
 .portfolio_image3::before {
   background-color: #fff;
   content: "";
@@ -465,12 +528,7 @@ header{
     opacity: 0;
   }
 }
-.spa-images2 {
-  width: 1030px;
-  height: 350px;
-  margin-left: 220px;
-  margin-top: 10px;
-}
+
 .portfolio_image4{
  background-image: image-url('img/manten.jpg');
  height :250px;
@@ -478,22 +536,13 @@ header{
  margin-top: 0;
  background-size: cover;
  background-position: center;
- margin: 10px 40px 10px 0;
- float: left;
  border-radius: 20px;
- animation: fadeIn 4s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
  overflow: hidden;
  position: relative;
  cursor: pointer;
+ box-shadow: 6px 6px 10px 0px rgba(0, 0, 0, 0.3);
 }
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
+
 .portfolio_image4::before {
   background-color: #fff;
   content: "";
@@ -539,22 +588,13 @@ header{
  margin-top: 0;
  background-size: cover;
  background-position: center;
- margin: 10px 40px 10px 0;
- float: left;
  border-radius: 20px;
- animation: fadeIn 4s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
  overflow: hidden;
  position: relative;
  cursor: pointer;
+ box-shadow: 6px 6px 10px 0px rgba(0, 0, 0, 0.3);
 }
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
+
 .portfolio_image5::before {
   background-color: #fff;
   content: "";
@@ -600,22 +640,13 @@ header{
  margin-top: 0;
  background-size: cover;
  background-position: center;
- margin: 10px 40px 10px 0;
- float: left;
  border-radius: 20px;
- animation: fadeIn 4s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
  overflow: hidden;
  position: relative;
  cursor: pointer;
+ box-shadow: 6px 6px 10px 0px rgba(0, 0, 0, 0.3);
 }
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
+
 .portfolio_image6::before {
   background-color: #fff;
   content: "";
@@ -654,12 +685,6 @@ header{
   }
 }
 
-.spa-images3 {
-  width: 1030px;
-  height: 350px;
-  margin-left: 220px;
-  margin-top: 10px;
-}
 .portfolio_image7{
  background-image: image-url('img/zama.jpg');
  height :250px;
@@ -667,22 +692,13 @@ header{
  margin-top: 0;
  background-size: cover;
  background-position: center;
- margin: 10px 40px 10px 0;
- float: left;
  border-radius: 20px;
- animation: fadeIn 4s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
  overflow: hidden;
  position: relative;
  cursor: pointer;
+ box-shadow: 6px 6px 10px 0px rgba(0, 0, 0, 0.3);
 }
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
+
 .portfolio_image7::before {
   background-color: #fff;
   content: "";
@@ -728,22 +744,13 @@ header{
  margin-top: 0;
  background-size: cover;
  background-position: center;
- margin: 10px 40px 10px 0;
- float: left;
  border-radius: 20px;
- animation: fadeIn 4s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
  overflow: hidden;
  position: relative;
  cursor: pointer;
+ box-shadow: 6px 6px 10px 0px rgba(0, 0, 0, 0.3);
 }
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
+
 .portfolio_image8::before {
   background-color: #fff;
   content: "";
@@ -789,22 +796,13 @@ header{
  margin-top: 0;
  background-size: cover;
  background-position: center;
- margin: 10px 40px 10px 0;
- float: left;
  border-radius: 20px;
- animation: fadeIn 4s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
  overflow: hidden;
  position: relative;
  cursor: pointer;
+ box-shadow: 6px 6px 10px 0px rgba(0, 0, 0, 0.3);
 }
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
+
 .portfolio_image9::before {
   background-color: #fff;
   content: "";
@@ -842,140 +840,89 @@ header{
     opacity: 0;
   }
 }
-.pic_frame {
-  display: inline-block;
-  text-align: center;
-}
-.portfolio-text {
- padding-right: 30px;
-}
 
-#profile{
- background-color: #FFFAFA;
-}
 .container2{
- width: 100%;
  height: 700px;
  margin: 0 auto;
- background: linear-gradient(to right, #FFF0F5, #fdeff2);
+ font-family:'HiraMinProN-W3', 'serif';
 }
 
-.profile-group{
- padding: 30px 0 90px 0;
- font-size: 16px;
+.profile{
+ padding-top: 60px 0 10px 0;
+ margin: 50px 50px 0 0;
+ color: #eb6ea5;
+ text-align: center;
+ font-size: 3.4rem;
+ letter-spacing: 0.1em;
 }
-.left-content{
- width: 50%;
- float: left;
- padding-left: 50px;
-}
-.right-content{
- width: 50%;
- float: right;
+
+.grid-profile {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ justify-items: center;
+ place-items: center;
+ width: 800px;
+ margin: 0 auto; 
+ gap: 30px;
 }
 
 .my-face{
  width: 250px;
  height: 250px;
  background-size: cover;
- margin-left: 300px;
  border-radius: 50%;
  background-image: image-url('img/20220327_140150.JPG');
- overflow: hidden;
- position: relative;
- cursor: pointer;
-}
-.my-face::before {
-  background-color: #fff;
-  content: "";
-  display: block;
-  position: absolute;
-  top: -100px;
-  left: 0;
-  width: 30px;
-  height: 100%;
-  opacity: 0;
-  transition: cubic-bezier(0.32, 0, 0.67, 0);
-  }
-.my-face:hover::before {
-  animation: kiran 0.8s linear 1;
-}
-@keyframes kiran {
-  0% {
-    transform: scale(2) rotate(45deg);
-    opacity: 0;
-  }
-  20% {
-    transform: scale(20) rotate(45deg);
-    opacity: 0.6;
-  }
-  40% {
-    transform: scale(30) rotate(45deg);
-    opacity: 0.4;
-  }
-  80% {
-    transform: scale(45) rotate(45deg);
-    opacity: 0.2;
-  }
-  100% {
-    transform: scale(50) rotate(45deg);
-    opacity: 0;
-  }
+ box-shadow: 6px 6px 10px 0px rgba(0, 0, 0, 0.3);
 }
 
-.discription-title{
- margin: 20px 0 5px 0;
- font-size: 20px;
- color: #000000;
- margin-bottom: 20;
+.profile-title{
+ font-size: 16px;
+ padding-top: 5px;
 }
-.discription-title:first-child{
- margin-top: 0;
-}
-.discription-text{
- color: #000000;
- font-family:'メイリオ', 'Meiryo', sans-serif;
-}
-.admin-name{
- font-family:'メイリオ', 'Meiryo', sans-serif;
+.admin-name {
+  font-size: 30px;
+ }
+
+.profile-text{
+ padding-top: 5px;
 }
 
-#sns {
- color: #FFF0F5;
- font-family:'メイリオ', 'Meiryo', sans-serif;
-
-}
 .container3{
- width: 100%;
  height: 500px;
  margin: 0 auto;
+ padding-top: 100px;
+ clip-path: polygon(0 13%, 100% 0, 100% 100%, 0 100%);
  background: linear-gradient(to right, #FFE4E1, #FFFAFA);
+ font-family:'HiraMinProN-W3', 'serif';
 }
 
-.sns-group{
- width: 800px;
- padding: 30px 0 90px;
- margin: 0 auto;
-}
-.SNS {
- color: #FFF0F5;
- font-family:'メイリオ', 'Meiryo', sans-serif;
- font-style: italic;
- letter-spacing: .1em;
+.other-title {
+ margin-right: 50px;
+ text-align: center;
+ font-size: 36px;
+ letter-spacing: 0.1em;
+ color: #eb6ea5;
  text-shadow: -3px 2px 0 #fff;
 }
 
-.left-content{
- width: 50%;
- float: left;
+.grid-other {
+ width: 430px;
+ margin: 0 auto;
 }
 
-.comment-button {
- margin: 20px 0 5px 300px;
- overflow: hidden;
- position: relative;
- cursor: pointer;
+.other-btn {
+ display: flex;
+ flex-wrap:wrap;
+ gap: 20px 30px;
+ align-items: center;
+ justify-content: center;
 }
+
+.other-btn .fa {
+ font-size: 50px;
+ color: #00BFFF;
+}
+
 .btn-border-comment {
   display: inline-block;
   max-width: 180px;
@@ -996,12 +943,6 @@ header{
   color: #FFF;
 }
 
-.precautions-button {
- margin: 20px 0 5px 300px;
- overflow: hidden;
- position: relative;
- cursor: pointer;
-}
 .btn-border-precautions {
   display: inline-block;
   max-width: 180px;
@@ -1022,35 +963,8 @@ header{
   color: #FFF;
 }
 
-
-
-.right-content{
- width: 50%;
- float: right;
- padding-right: 100px;
-}
-.right-contact{
- margin: 0 auto;
- width: 200px;
-}
-.right-contact .fa {
- margin:0 auto;
- font-size: 50px;
- color: #00BFFF;
-}
-
-.copyright{
- font-size: 16px;
- color: #000000;
- text-align: center;
-}
-
-
-
 /*look画面*/
-/*文字アニメーション*/
 .onsen-visual{
- width: 100%;
  height: 720px;
  margin: auto;
  position: relative;
@@ -1089,7 +1003,7 @@ header{
 .onsen-visual .line {
  display: block;
  padding: 10px;
- font-family:'メイリオ', 'Meiryo', sans-serif;
+ font-family:'HiraMinProN-W3', 'serif';
  font-size: 80px;
  font-weight: bold;
 }
@@ -1123,7 +1037,7 @@ header{
  color: #FFFFFF;
  font-style: italic;
  text-shadow: -3px 2px 0 #A9A9A9;
- animation: slideIn .8s cubic-bezier(0,1.2,.13,1.5) forwards;
+ animation: slideIn 3s cubic-bezier(0,1.2,.13,1.5) forwards;
 }
 @keyframes slideIn {
   0% {
@@ -1136,443 +1050,386 @@ header{
   }
 }
 
+.bottom-to-top {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .beginning {
- width: 100%;
- height: 520px;
- background: linear-gradient(to right, #f4b3c2, #FFFAFA);
- font-family:'メイリオ', 'Meiryo', sans-serif;
+ height: 400px;
+ font-family:'HiraMinProN-W3', 'serif';
 }
 .introduce-set{
  padding: 30px 0 90px 0;
  font-size: 16px;
 }
 .bv-title {
+ font-size: 30px;
  color: #eb6ea5;
  text-align: center;
- padding-bottom: 20px;
+ padding-top: 70px;
+ text-decoration: underline #e597b2 1px;
+ text-underline-offset: 10px;
 }
 .bv-introduce {
- text-align: center;
-}
-.bv-manners{
- text-align: center;
- padding-top: 20px;
- color: #eb6ea5;
-}
-.bv-manners2 {
- text-align: center;
- padding-top: 20px;
-}
-
-
-.container6 {
- width: 100%;
- height: 5200px;
- background: linear-gradient(to right, #f5b1aa, #FFFAFA);
- font-family:'メイリオ', 'Meiryo', sans-serif;
-}
-
-.introduce-set1 {
- padding: 30px 0 90px 0;
  font-size: 16px;
-}
-.introduce {
- color: #eb6ea5;
  text-align: center;
- padding-bottom: 20px;
+ padding-top: 50px;
+ line-height: 1.6;
+ letter-spacing: 1px;
 }
-.forest-villa1 {
+
+.introduce-container {
+ height: 2100px;
+ background: linear-gradient(to right, #fdeff2, #FFFAFA);
+ font-family:'HiraMinProN-W3', 'serif';
+ clip-path: polygon(0 4%, 100% 0, 100% 96%, 0 100%);
+}
+
+.introduce-container:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -20%;
+  z-index: -1;
+}
+
+.introduce {
+ font-size: 36px; 
  color: #c85179;
- width: 50%;
- float: right;
- padding-left: 20px;
- padding-bottom: 40px;
+ text-align: center;
+ padding: 120px 0 40px 0;
+ text-decoration: underline #e597b2 1px;
+ text-underline-offset: 10px;
 }
-.introduce-image1 {
+
+.introduce-title{
+ font-size: 30px; 
+ text-align: center;
+ color: #eb6ea5;
+ padding-bottom: 50px;
+ text-decoration: underline #e597b2 1px;
+ text-underline-offset: 10px;
+}
+
+.introduce-text {
+ font-size: 16px;
+ text-align: center;
+ padding-bottom: 50px;
+ line-height: 1.6;
+ letter-spacing: 1px;
+}
+
+.grid-gallery {
+ display: grid;
+ grid-template-columns: repeat(3 ,1fr);
+ place-items: center;
+ width: 1000px;
+ margin-left: 220px;
+ gap: 50px 30px;
+}
+
+.villa-image1 {
  width:300px;
  height:250px;
- background-image: image-url('img/dsc_0122.jpg');
+ background-image: image-url('img/villa1.jpg');
  background-size: cover;
- margin-left: 250px;
- float: left;
-}
-.introduce-text1 {
- width: 50%;
- float: right;
- margin-right: 100px;
 }
 
-.introduce-set2{
- padding: 30px 0 90px 0;
- font-size: 16px;
- padding-top: 50px;
-}
-.forest-villa2 {
- color: #c85179;
- width: 50%;
- float: right;
- padding-bottom: 30px;
- padding-left: 20px;
-}
-.introduce-image2 {
+.villa-image2 {
  width: 300px;
  height: 250px;
- background-image: image-url('img/dsc_0123_720.jpg');
+ background-image: image-url('img/villa2.jpg');
  background-size: cover;
- margin-left: 250px;
- float: left;
+}
 
-}
-.introduce-text2 {
- width: 50%;
- float: right;
- margin-right: 100px;
-}
-.introduce-set3 {
- padding: 30px 0 120px 0;
- font-size: 16px;
-}
-.forest-villa3 {
- color: #c85179;
- width: 50%;
- float: right;
- padding-top: 30px;
- padding-bottom: 30px;
- padding-left: 20px;
-}
-.introduce-image3 {
+.villa-image3 {
  width: 300px;
  height: 250px;
- background-image: image-url('img/sauna.jpg');
+ background-image: image-url('img/villa3.jpg');
  background-size: cover;
- margin-left: 250px;
- margin-top: 30px;
- float: left;
-
-}
-.introduce-text3 {
- width: 50%;
- float: right;
- margin-right: 100px;
 }
 
-.introduce-set4 {
+.bedrock-box {
 text-align: center;
 }
-.forest-villa4 {
+
+.bedrock-title {
+ font-size: 30px;
+ color: #eb6ea5;
+ padding: 100px 0 30px 0;
+ text-decoration: underline #e597b2 1px;
+ text-underline-offset: 10px;
+}
+
+.bedrock-text {
+ padding-bottom: 80px;
+ font-size: 16px;
+ line-height: 1.6;
+ letter-spacing: 1px;
+}
+
+.bedrock-image1 {
+ width: 300px;
+ height: 250px;
+ background-size: cover;
+ background-image: image-url('img/bedrock1.jpg');
+}
+.bedrock-image2 {
+ width: 300px;
+ height: 250px;
+ background-size: cover;
+ background-image: image-url('img/bedrock2.jpg');
+}
+.bedrock-image3 {
+ width: 300px;
+ height: 250px;
+ background-size: cover;
+ background-image: image-url('img/bedrock3.jpg');
+}
+.bedrock-image4 {
+ width: 300px;
+ height: 250px;
+ background-size: cover;
+ background-image: image-url('img/bedrock4.jpg');
+}
+.bedrock-image5 {
+ width: 300px;
+ height: 250px;
+ background-size: cover;
+ background-image: image-url('img/bedrock5.jpg');
+}
+.bedrock-image6 {
+ width: 300px;
+ height: 250px;
+ background-size: cover;
+ background-image: image-url('img/bedrock6.jpg');
+}
+
+.dining-container {
+ height: 900px;
+ font-family:'HiraMinProN-W3', 'serif';
+}
+
+.dining-box {
+ height: 300px;
+}
+
+.dining-title {
+ font-size: 36px;
+ color: #c85179;
+ text-align: center;
+ padding: 70px 0 50px 0;
+ text-decoration: underline #e597b2 1px;
+ text-underline-offset: 10px;
+}
+
+.dining-text {
+ text-align: center;
+ font-size: 16px;
+ line-height: 1.6;
+ letter-spacing: 1px;
+}
+
+.food-title {
+ font-size: 30px;
+ text-align: center;
+ color: #eb6ea5;
+ padding: 30px 0 50px 0;
+ text-decoration: underline #e597b2 1px;
+ text-underline-offset: 10px;
+}
+
+.food_image1-1 {
+ width: 300px;
+ height: 250px;
+ background-image: image-url('img/ryusenji_food1.jpg');
+ background-size: cover;
+}
+
+.food_image1-2 {
+ width: 300px;
+ height: 250px;
+ background-image: image-url('img/ryusenji_food2.jpg');
+ background-size: cover;
+}
+
+.food_image1-3 {
+ width: 300px;
+ height: 250px;
+ background-image: image-url('img/ryusenji_food3.jpg');
+ background-size: cover;
+}
+
+.onsen-container {
+ height: 1150px;
+ background: linear-gradient(to right, #fdeff2, #FFFAFA);
+ font-family:'HiraMinProN-W3', 'serif';
+ clip-path: polygon(0 7%, 100% 0, 100% 93%, 0 100%);
+}
+
+.onsen-title {
+ font-size: 36px; 
+ text-align: center;
+ color: #c85179;
+ padding: 150px 0 50px 0;
+ text-decoration: underline #e597b2 1px;
+ text-underline-offset: 10px;
+}
+
+.onsen-text {
+ font-size: 16px;
+ text-align: center;
+ line-height: 1.8;
+ letter-spacing: 1px;
+}
+
+.main-onsen {
+ height: 300px;
+ margin-top: 90px;
+}
+
+ .onsen-title2 {
+ font-size: 30px;
  color: #eb6ea5;
  text-align: center;
- padding-top: 30px;
- padding-bottom: 30px;
+ padding: 30px 0 70px 0;
+ text-decoration: underline #e597b2 1px;
+ text-underline-offset: 10px;
 }
-.introduce-text4 {
- padding-bottom:30px;
- text-align: center;
+
+.grid-onsen {
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ place-items: center;
+ width: 1100px;
+ margin-left: 170px;
 }
-.hotspa-images {
- width: 950px;
- padding: 30px 0 90px 0;
+
+.onsen_image1-1 {
+ width: 350px;
+ height: 250px;
+ background-image: image-url('img/ryusenji_onsen1.jpg');
+ background-size: cover;
+}
+
+.onsen_image1-2 {
+ width: 350px;
+ height: 250px;
+ background-image: image-url('img/ryusenji_onsen2.jpg');
+ background-size: cover;
+}
+
+.onsen_image1-3 {
+ width: 350px;
+ height: 250px;
+ background-image: image-url('img/ryusenji_onsen3.jpg');
+ background-size: cover;
+}
+
+.summary-container {
+ height: 1100px;
+ width: 1200px;
+ font-family:'HiraMinProN-W3', 'serif';
  margin: 0 auto;
 }
-.introduce-image4 {
- width: 300px;
- height: 250px;
- margin-top: 0;
- background-size: cover;
- background-position: center;
- float: left;
- margin: 0 10px 0 0;
- background-image: image-url('img/dsc_0114.jpg');
-}
-.introduce-image5 {
- width: 300px;
- height: 250px;
- margin-top: 0;
- background-size: cover;
- background-position: center;
- float: left;
- margin: 0 10px 0px 0;
- background-image: image-url('img/dsc_0116.jpg');
-}
-.introduce-image6 {
- width: 300px;
- height: 250px;
- margin-top: 0;
- background-size: cover;
- background-position: center;
- float: left;
- margin: 0 10px 0 0;
- background-image: image-url('img/dsc_0117.jpg');
-}
-.introduce-image7 {
- width: 300px;
- height: 250px;
- margin-top: 0;
- background-size: cover;
- background-position: center;
- float: left;
- margin: 10px 10px 0 0;
- background-image: image-url('img/dsc_0118.jpg');
-}
-.introduce-image8 {
- width: 300px;
- height: 250px;
- margin-top: 0;
- background-size: cover;
- background-position: center;
- float: left;
- margin: 10px 10px 0 0;
- background-image: image-url('img/dsc_0119.jpg');
-}
-.introduce-image9 {
- width: 300px;
- height: 250px;
- margin-top: 0;
- background-size: cover;
- background-position: center;
- float: left;
- margin: 10px 0 0 0;
- background-image: image-url('img/dsc_0120.jpg');
-}
-.introduce-set5 {
- padding: 30px 0 120px 0;
- font-size: 16px;
- padding-top: 100px;
-}
-.food-erea {
+.access-title {
+ font-size: 36px;
  color: #c85179;
- width: 50%;
- float: right;
- padding-top: 30px;
- padding-bottom: 30px;
- margin-right: 20px;
-}
-.introduce-image10 {
- width: 300px;
- height: 250px;
- background-image: image-url('img/Yamasha181026061.jpg');
- background-size: cover;
- margin-left: 250px;
- margin-top: 30px;
- float: left;
-}
-.introduce-text5 {
- width: 50%;
- float: right;
- margin-right: 70px;
-
-}
-.introduce-set6 {
- padding: 30px 0 120px 0;
- font-size: 16px;
- padding-top: 50px;
-}
-.food-menu {
- color: #c85179;
- width: 50%;
- float: right;
- padding-top: 10px;
- padding-bottom: 30px;
- padding-left: 20px;
-}
-.introduce-image11 {
- width: 300px;
- height: 250px;
- background-image: image-url('img/dsc_0124.jpg');
- background-size: cover;
- margin-left: 250px;
- margin-top: 30px;
- margin-bottom: 50px;
- float: left;
-}
-.introduce-set7 {
- padding: 30px 0 80px 0;
- font-size: 16px;
- }
-.onsen-spa {
- color: #c85179;
- width: 50%;
- float: right;
-}
-.introduce-image12 {
- width: 300px;
- height: 250px;
- background-image: image-url('img/onsen.jpeg');
- background-size: cover;
- margin-left: 250px;
- margin-top: 30px;
- float: left;
- padding-top: 30px;
-}
-.introduce-text6 {
- width: 50%;
- float: right;
- margin-right: 80px;
- padding-top: 50px;
- }
-.introduce-set8 {
- padding: 10px 0 120px 0;
- font-size: 16px;
- margin-top: 5px;
- }
- .onsen-spa2 {
- color: #eb6ea5;
+ text-decoration: underline #e597b2 1px;
+ text-underline-offset: 10px;
  text-align: center;
- padding-top: 5px;
-}
-.introduce-image13 {
- width: 300px;
- height: 250px;
- background-image: image-url('img/dsc_0128.jpg');
- background-size: cover;
- margin-left: 250px;
- margin-top: 100px;
- float: left;
-}
-.introduce-title7 {
- text-align: center;
- padding-right: 150px;
- padding-top: 100px;
- color: #c85179;
-}
-.introduce-text7 {
- width: 50%;
- float: right;
- margin-right: 50px;
- padding-top: 40px;
- }
-.onsen-text {
- text-align: center;
-}
-.introduce-set9 {
- padding: 30px 0 80px 0;
- font-size: 16px;
- }
- .introduce-image14 {
- width: 300px;
- height: 250px;
- background-image: image-url('img/dsc_0131_720.jpg');
- background-size: cover;
- margin-left: 250px;
- margin-top: 100px;
- float: left;
-}
-.introduce-title8 {
- text-align: center;
- padding-right: 150px;
- padding-top: 80px;
- color: #c85179;
-}
-.introduce-text8 {
- width: 50%;
- float: right;
- margin-right: 50px;
- padding-top: 30px;
- }
-.introduce-set10 {
- padding: 30px 0 80px 0;
- font-size: 16px;
- }
-.introduce-image15 {
- width: 300px;
- height: 250px;
- background-image: image-url('img/dsc_0130.jpg');
- background-size: cover;
- margin-left: 250px;
- margin-top: 100px;
- float: left;
-}
-.introduce-title9 {
- text-align: center;
- padding-right: 50px;
- padding-top: 100px;
- color: #c85179;
-}
-.introduce-text9 {
- width: 50%;
- float: right;
- margin-right: 50px;
- padding-top: 40px;
- }
-
-
-.container7 {
- width: 100%;
- height: 870px;
- background: linear-gradient(to right, #f6bfbc, #FFFAFA);
- font-family:'メイリオ', 'Meiryo', sans-serif;
-}
-.access {
- color: #eb6ea5;
- text-align: center;
+ padding: 50px 0 70px 0;
 }
 
-.introduce-set12 {
- background: linear-gradient(to right, #FFB6C1, #FFFAFA);
- border: inset;
- border-color: #FFB6C1;
- border-radius: 40px;
+.grid-access {
+ display: grid;
+ grid-template-columns: repeat(2 , 1fr);
+ gap: 50px;
+}
+
+.access-box {
+ height: 280px;
  padding-bottom: 20px;
  margin-left: 50px;
- width: 500px;
+ border: 5px solid #e8e8e8;
+ border-radius: 40px; 
+ line-height: 1.6;
 }
+
 .address {
+ font-size: 24px;
  text-align: center;
- padding-bottom: 20px;
- color: #c85179;
+ padding-top: 20px;
+ color: #eb6ea5;
 }
 
 .address-text {
  text-align: center;
  font-size: 24px;
+ letter-spacing: 2px;
 }
 
-.introduce-set13 {
- margin-left: 80px;
-}
-.introduce-price {
- width: 100%;
+.map-box {
+ color: #eb6ea5;
+ margin-left: 100px;
 }
 
-.price {
- width: 30%;
- margin-bottom: 50px;
- margin-top: 40px;
- color: #c85179;
-}
-
-.introduce-set14 {
- margin-top: 50px;
- padding-bottom: 20px;
- width: 500px;
- color: #c85179;
- margin-left: 50px;
-}
-
-
-.introduce-set15 {
- color: #c85179;
-}
-
-.map {
- text-align: right;
- margin-right: 300px;
- margin-top: -750px;
+.map-title {
+ color: #eb6ea5;
+ font-size: 24px;
+ text-align: center;
+ width: 300px;
 }
 
 .map-image {
- margin-top: 30px;
- margin-left: 800px;
- width: 500px;
- height: 500px;
+ width: 300px;
+ height: 300px;
  background-image: image-url('img/map.jpg');
 }
 
+.price-box {
+ padding: 30px 0 30px 0;
+ margin-left: 50px;
+ width: 500px;
+ text-align: center;
+}
+
+.price-title {
+ font-size: 24px;
+ padding: 40px 0 50px 0;
+ color: #eb6ea5;
+}
+
+.traffic-box {
+ margin-top: 50px;
+ text-align: center;
+}
+
+.traffic-title {
+ font-size: 24px;
+ color: #eb6ea5;
+ margin: 10px 0 50px 0;
+}
+
+.traffic-text {
+ text-align: justify;
+ padding-left: 100px;
+}
+
+.share-box {
+ width: 500px;
+ height: 100px;
+ text-align: center;
+ padding: 20px 0 0 80px;
+}
 
 /*see画面*/
-
 .onsen-visual2 {
- width: 100%;
  height: 720px;
  text-align: cover;
  color: #FAFAFA;
@@ -1612,7 +1469,7 @@ text-align: center;
 .onsen-visual2 .line {
  display: block;
  padding: 10px;
- font-family:'メイリオ', 'Meiryo', sans-serif;
+ font-family:'HiraMinProN-W3', 'serif';
  font-size: 80px;
  font-weight: bold;
 }
@@ -1646,7 +1503,7 @@ text-align: center;
  color: #FFFFFF;
  font-style: italic;
  text-shadow: -3px 2px 0 #A9A9A9;
- animation: slideIn .8s cubic-bezier(0,1.2,.13,1.5) forwards;
+ animation: slideIn 3s cubic-bezier(0,1.2,.13,1.5) forwards;
 }
 @keyframes slideIn {
   0% {
@@ -1660,180 +1517,102 @@ text-align: center;
 }
 
 .beginning2 {
- width: 100%;
- height: 500px;
- font-family:'メイリオ', 'Meiryo', sans-serif;
- background: linear-gradient(to right, #EEE8AA, #FFFFF0);
+ height: 350px;
+ font-family:'HiraMinProN-W3', 'serif';
 }
 
-
-.container9 {
- width: 100%;
- height: 3500px;
- background-color: #FFF8DC;
- font-family:'メイリオ', 'Meiryo', sans-serif;
- background: linear-gradient(to right, #f2f2b0, #FFFFE0);
+.introduce-container2 {
+ height: 1000px;
+ font-family:'HiraMinProN-W3', 'serif';
+ background: linear-gradient(to right, #ffffc6, #FFFFF0);
+ clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
 }
 
-.introduce-set21 {
- padding: 30px 0 90px 0;
- font-size: 16px;
- padding-top: 50px;
-}
-.all {
- color: #c85179;
- width: 50%;
- float: right;
- padding-right: 20px;
- padding-bottom: 20px;
-}
-.introduce-image21 {
- width:300px;
- height:250px;
- background-image: image-url('img/kokochi_ebina1.jpg');
- background-size: cover;
- margin-left: 250px;
- float: left;
-}
-.introduce-set22{
- padding: 30px 0 90px 0;
- font-size: 16px;
- padding-top: 50px;
-}
-.food-erea2 {
- color: #c85179;
- width: 50%;
- float: right;
- padding-top: 40px;
- padding-bottom: 30px;
-}
-.introduce-image22 {
+.gallery2-1 {
  width: 300px;
  height: 250px;
- background-image: image-url('img/Yamasha181026061.jpg');
+ background-image: image-url('img/kokochi_ebina1.jpg');
  background-size: cover;
- margin-top: 30px;
- margin-left: 250px;
- float: left;
 }
-.introduce-text22 {
- width: 50%;
- float: right;
- margin-right: 80px;
-}
-.introduce-set23 {
- padding: 30px 0 120px 0;
- font-size: 16px;
-}
-.food-set23 {
- color: #c85179;
- width: 50%;
- float: right;
- padding-top: 30px;
- padding-bottom: 30px;
- padding-left: 20px;
-}
-.introduce-image23 {
+
+.gallery2-2 {
  width: 300px;
  height: 250px;
  background-image: image-url('img/restaurant-menu.jpg');
  background-size: cover;
- margin-left: 250px;
- margin-top: 50px;
- float: left;
+}
 
-}
-.introduce-text23 {
- width: 50%;
- float: right;
- margin-right: 80px;
-}
-.introduce-set24 {
- padding: 30px 0 80px 0;
- font-size: 16px;
- }
-.onsen-spa24 {
- color: #c85179;
- width: 50%;
- float: right;
- padding-top: 100px;
- padding-left: 20px;
-}
-.onsen-text2 {
- text-align: center;
-}
-.introduce-image24 {
+.gallery2-3 {
  width: 300px;
  height: 250px;
- background-image: image-url('img/onsen.jpeg');
+ background-image: image-url('img/utatane.jpg');
  background-size: cover;
- margin-left: 250px;
- margin-top: 30px;
- float: left;
- padding-top: 30px;
 }
-.introduce-text24 {
- width: 50%;
- float: right;
- margin-right: 100px;
- padding-top: 100px;
- }
- .introduce-set25 {
- padding: 30px 0 120px 0;
- font-size: 16px;
- }
- .introduce-image25 {
+
+.dining-container2 {
+ height: 900px;
+ font-family:'HiraMinProN-W3', 'serif';
+}
+
+.food_image2-1 {
  width: 300px;
  height: 250px;
- background-image: image-url('img/ADHH08010201.jpg');
+ background-image: image-url('img/king_food1.jpg');
  background-size: cover;
- margin-left: 250px;
- margin-top: 100px;
- float: left;
 }
-.introduce-title25 {
- text-align: center;
- padding-right: 180px;
- padding-top: 100px;
- color: #c85179;
-}
-.introduce-text25 {
- width: 50%;
- float: right;
- margin-right: 100px;
- padding-top: 30px;
- }
 
- .introduce-set26 {
- color: #c85179;
+.food_image2-2 {
+ width: 300px;
+ height: 250px;
+ background-image: image-url('img/king_food2.jpg');
+ background-size: cover;
 }
-.container10 {
- width: 100%;
- height: 850px;
- background-color: #FFFFE0;
- font-family:'メイリオ', 'Meiryo', sans-serif;
- background: linear-gradient(to right, #EEE8AA, #FFFFF0);
+
+.food_image2-3 {
+ width: 300px;
+ height: 250px;
+ background-image: image-url('img/king_food3.jpg');
+ background-size: cover;
 }
-.introduce-set12-2 {
- background: linear-gradient(to right, #EEE8AA, #FFFFF0);
- border: inset;
- border-color: #d7cf3a;
- border-radius: 40px;
- padding-bottom: 20px;
- margin-left: 50px;
- width: 500px;
+
+.onsen-container2 {
+ height: 1150px;
+ background: linear-gradient(to right, #ffffc6, #FFFFF0);
+ font-family:'HiraMinProN-W3', 'serif';
+ clip-path: polygon(0 7%, 100% 0, 100% 93%, 0 100%);
 }
-.map2 {
- text-align: right;
- margin-right: 360px;
- margin-top: -650px;
+
+.onsen_image2-1 {
+ width: 350px;
+ height: 250px;
+ background-image: image-url('img/innerbath1.jpg');
+ background-size: cover;
+}
+
+ .onsen_image2-2 {
+ width: 350px;
+ height: 250px;
+ background-image: image-url('img/nukumori.jpg');
+ background-size: cover;
+}
+
+ .onsen_image2-3 {
+ width: 350px;
+ height: 250px;
+ background-image: image-url('img/madoka.jpg');
+ background-size: cover;
+}
+
+.summary-container2 {
+ height: 1150px;
+ width: 1200px;
+ font-family:'HiraMinProN-W3', 'serif';
+ margin: 0 auto;
 }
 
 .map-image2 {
- margin-top: 30px;
- margin-left: 800px;
- width: 400px;
- height: 400px;
+ width: 300px;
+ height: 300px;
  background-size: cover;
  background-image: image-url('img/maps2.jpg');
  }
@@ -1841,7 +1620,6 @@ text-align: center;
 
 /*saw画面*/
 .onsen-visual3 {
- width: 100%;
  height: 720px;
  text-align: cover;
  background-image: image-url('img/yokohamanoyu.jpg');
@@ -1880,7 +1658,7 @@ text-align: center;
 .onsen-visual3 .line {
  display: block;
  padding: 10px;
- font-family:'メイリオ', 'Meiryo', sans-serif;
+ font-family:'HiraMinProN-W3', 'serif';
  font-size: 80px;
  font-weight: bold;
 }
@@ -1914,7 +1692,7 @@ text-align: center;
  color: #FFFFFF;
  font-style: italic;
  text-shadow: -3px 2px 0 #A9A9A9;
- animation: slideIn .8s cubic-bezier(0,1.2,.13,1.5) forwards;
+ animation: slideIn 3s cubic-bezier(0,1.2,.13,1.5) forwards;
 }
 @keyframes slideIn {
   0% {
@@ -1927,204 +1705,132 @@ text-align: center;
   }
 }
 .beginning3 {
- width: 100%;
- height: 600px;
- background: linear-gradient(to right, #f9c89b, #FDF5E6);
- font-family:'メイリオ', 'Meiryo', sans-serif;
+ height: 400px;
+ font-family:'HiraMinProN-W3', 'serif';
 }
-.container3-2 {
- width: 100%;
- height: 2200px;
- text-align: center;
- background: linear-gradient(to right, #fddea5, #FFFAFA);
- font-family:'メイリオ', 'Meiryo', sans-serif;
-}
-.introduce3 {
- margin: 0 auto;
- color: #eb6ea5;
- padding-top: 50px;
- padding-bottom: 10px;
- width: 700px;
-}
-.introduce-image3-1 {
- width: 300px;
- height: 300px;
- background-image: image-url('img/manten-yu2.jpeg');
- background-size: cover;
- margin-top: 30px;
- margin-left: 150px;
- margin-right: 30px;
- float: left;
-}
-.introduce-text3-1 {
- padding-top: 60px;
- padding-left: 30px;
- text-align: justify;
- text-justify: inter-ideograph;
-}
-.onsen-introduce3 {
- color: #eb6ea5;
- text-align: center;
- padding-bottom: 20px;
- padding-top: 120px;
+.introduce-container3 {
+ height: 1050px;
+ font-family:'HiraMinProN-W3', 'serif';
+ background: linear-gradient(to right, #bbe2f1, #FFFFFF);
+ clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
 }
 
-.introduce-image3-2 {
- width:350px;
- height:250px;
+.gallery3-1 {
+ width: 300px;
+ height: 250px;
+ background-image: image-url('img/manyou.jpg');
+ background-size: cover;
+}
+
+.gallery3-2 {
+ width: 300px;
+ height: 250px;
  background-image: image-url('img/manyou_kannai.jpg');
  background-size: cover;
- margin-left: 220px;
- margin-top: 20px;
- float: left;
-}
-.introduce-text3-2 {
- width: 50%;
- float: right;
- margin-right: 100px;
- padding-top: 20px;
- text-align: justify;
- text-justify: inter-ideograph;
-}
-.eat-introduce3 {
- color: #eb6ea5;
- text-align: center;
- padding-bottom: 20px;
- padding-top: 400px;
-}
-.introduce-image3-3 {
- width:350px;
- height:250px;
- background-image: image-url('img/manyou_eat.jpg');
- background-size: cover;
- margin-left: 220px;
- margin-top: 20px;
- float: left;
-}
-.introduce-text3-3 {
- width: 50%;
- float: right;
- margin-right: 100px;
- padding-top: 20px;
- text-align: justify;
- text-justify: inter-ideograph;
-}
-.spa-introduce3 {
- color: #eb6ea5;
- text-align: center;
- padding-bottom: 20px;
- padding-top: 400px;
-}
-.introduce-image3-4 {
- width:350px;
- height:250px;
- background-image: image-url('img/manyou_onsen.jpg');
- background-size: cover;
- margin-left: 220px;
- margin-top: 20px;
- float: left;
-}
-.introduce-text3-4 {
- width: 50%;
- float: right;
- margin-right: 100px;
- padding-top: 15px;
- text-align: justify;
- text-justify: inter-ideograph;
-}
-.saw-finish {
- padding-top: 200px;
- color: #eb6ea5;
-}
-.manyou-introduce {
- padding-top: 200px;
- text-align: center;
-}
-.manyou-text {
- padding-top: 20px;
- text-align: center;
 }
 
-.container3-4 {
- width: 100%;
- height: 850px;
- background: linear-gradient(to right, #FFDEAD, #FDF5E6);
- font-family:'メイリオ', 'Meiryo', sans-serif;
-}
-.access3 {
- text-align: center;
-}
-.access3-1 {
-  color: #eb6ea5;
-  text-align: center;
-  padding-bottom: 30px;
- }
-.introduce-set3-8 {
- background: linear-gradient(to right, #f9c89b, #FDF5E6);
- border: inset;
- border-color: #f8b862;
- border-radius: 40px;
- padding-bottom: 20px;
- margin-left: 70px;
- width: 530px;
-}
-.introduce-set3-9 {
- margin-left: 110px;
+.gallery3-3 {
+ width: 300px;
+ height: 250px;
+ background-image: image-url('img/tenbouashiyu.jpg');
+ background-size: cover;
 }
 
-.address3 {
- text-align: center;
- padding-bottom: 20px;
- color: #c85179;
+.dining-container3 {
+ height: 1450px;
+ font-family:'HiraMinProN-W3', 'serif';
 }
-.address-text3 {
- text-align: center;
- font-size: 24px;
+
+.dining-box3 {
+ height: 300px;
+ margin-top: 130px;
 }
-.introduce-price3 {
- width: 100%;
+
+.dining_image3-1 {
+ width: 300px;
+ height: 250px;
+ background-image: image-url('img/cafeteria.png');
+ background-size: cover;
 }
-.price3 {
- width: 30%;
- margin-bottom: 30px;
- margin-top: 40px;
- color: #c85179;
+
+.dining_image3-2 {
+ width:300px;
+ height:250px;
+ background-image: image-url('img/ikoidokoro.jpg');
+ background-size: cover;
 }
-.price-text3 {
- padding-bottom: 10px;
+
+.dining_image3-3 {
+ width:300px;
+ height:250px;
+ background-image: image-url('img/manyouan.jpg');
+ background-size: cover;
 }
-.introduce-set3-10 {
- margin-top: 20px;
- padding-bottom: 20px;
- width: 500px;
- margin-left: 70px;
- color: #c85179;
+
+.food-box3 {
+ height: 200px;
+ margin-top: 70px;
 }
-.introduce-set3-11 {
- text-align: left;
- margin-left: 20px;
- color: #c85179;
+
+.food_image3-1 {
+ width: 300px;
+ height: 250px;
+ background-image: image-url('img/manyou_gozen.jpg');
+ background-size: cover;
 }
-.map3 {
- text-align: right;
- margin-right: 300px;
- margin-top: -700px;
- color: #c85179;
+
+.food_image3-2 {
+ width:300px;
+ height:250px;
+ background-image: image-url('img/manyou_donmono.jpg');
+ background-size: cover;
 }
+
+.food_image3-3 {
+ width:300px;
+ height:250px;
+ background-image: image-url('img/manyou_sweets.png');
+ background-size: cover;
+}
+
+.onsen-container3 {
+ height: 1200px;
+ background: linear-gradient(to right, #bbe2f1, #FFFFFF);
+ font-family:'HiraMinProN-W3', 'serif';
+ clip-path: polygon(0 7%, 100% 0, 100% 93%, 0 100%);
+}
+
+.onsen_image3-1 {
+ width:350px;
+ height:250px;
+ background-image: image-url('img/tenbouashiyu.jpg');
+ background-size: cover;
+}
+
+.onsen_image3-2 {
+ width:350px;
+ height:250px;
+ background-image: image-url('img/outdoor_bath.jpg');
+ background-size: cover;
+}
+
+.onsen_image3-3 {
+ width:350px;
+ height:250px;
+ background-image: image-url('img/bed_bath.jpg');
+ background-size: cover;
+}
+
 .map-image3 {
- margin-top: 30px;
- margin-left: 800px;
  background-size: cover;
- width: 500px;
- height: 500px;
+ width: 300px;
+ height: 300px;
  background-image: image-url('img/map_manyou.jpg');
 }
 
 
-
 /*watch画面*/
 .onsen-visual4 {
- width: 100%;
  height: 720px;
  color: #FAFAFA;
  background-image: image-url('img/manten.jpg');
@@ -2163,7 +1869,7 @@ text-align: center;
 .onsen-visual4 .line {
  display: block;
  padding: 10px;
- font-family:'メイリオ', 'Meiryo', sans-serif;
+ font-family:'HiraMinProN-W3', 'serif';
  font-size: 80px;
  font-weight: bold;
 }
@@ -2197,7 +1903,7 @@ text-align: center;
  color: #FFFFFF;
  font-style: italic;
  text-shadow: -3px 2px 0 #A9A9A9;
- animation: slideIn .8s cubic-bezier(0,1.2,.13,1.5) forwards;
+ animation: slideIn 3s cubic-bezier(0,1.2,.13,1.5) forwards;
 }
 @keyframes slideIn {
   0% {
@@ -2211,204 +1917,118 @@ text-align: center;
 }
 
 .beginning4 {
- width: 100%;
- height: 600px;
- background: linear-gradient(to right, #eebbcb, #FFFAFA);
- font-family:'メイリオ', 'Meiryo', sans-serif;
+ height: 350px;
+ font-family:'HiraMinProN-W3', 'serif';
 }
 
-.container4-2 {
- width: 100%;
- height: 2200px;
- text-align: center;
- background: linear-gradient(to right, #f4b3c2, #FFFAFA);
- font-family:'メイリオ', 'Meiryo', sans-serif;
+.introduce-container4 {
+ height: 1000px;
+ font-family:'HiraMinProN-W3', 'serif';
+ background: linear-gradient(to right, #ffe5e5, #FFFFFF);
+ clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
 }
-.introduce4 {
- margin: 0 auto;
- color: #eb6ea5;
- padding-top: 50px;
- padding-bottom: 10px;
- width: 400px;
-}
-.introduce-image4-1 {
+
+.gallery4-1 {
  width: 300px;
- height: 300px;
- background-image: image-url('img/manten-yu2.jpeg');
+ height: 250px;
+ background-image: image-url('img/manten-yu2.jpg');
  background-size: cover;
- margin-top: 30px;
- margin-left: 150px;
- margin-right: 30px;
- float: left;
-}
-.introduce-text4-1 {
- padding-top: 60px;
- padding-left: 30px;
- text-align: justify;
- text-justify: inter-ideograph;
-}
-.onsen-introduce4 {
- color: #eb6ea5;
- text-align: center;
- padding-bottom: 20px;
- padding-top: 120px;
 }
 
-.introduce-image4-2 {
- width:350px;
- height:250px;
+.gallery4-2 {
+ width: 300px;
+ height: 250px;
  background-image: image-url('img/manten-kannnai.jpg');
  background-size: cover;
- margin-left: 220px;
- margin-top: 20px;
- float: left;
 }
-.introduce-text4-2 {
- width: 50%;
- float: right;
- margin-right: 100px;
- padding-top: 70px;
- text-align: justify;
- text-justify: inter-ideograph;
-}
-.eat-introduce4 {
- color: #eb6ea5;
- text-align: center;
- padding-bottom: 20px;
- padding-top: 400px;
-}
-.introduce-image4-3 {
- width:350px;
- height:250px;
+
+.gallery4-3 {
+ width: 300px;
+ height: 250px;
  background-image: image-url('img/manten_eat.jpg');
  background-size: cover;
- margin-left: 220px;
- margin-top: 20px;
- float: left;
 }
-.introduce-text4-3 {
- width: 50%;
- float: right;
- margin-right: 100px;
- padding-top: 70px;
- text-align: justify;
- text-justify: inter-ideograph;
+
+.dining-container4 {
+ height: 1000px;
+ font-family:'HiraMinProN-W3', 'serif';
 }
-.spa-introduce4 {
- color: #eb6ea5;
+
+.food-title4 {
+ font-size: 30px;
  text-align: center;
- padding-bottom: 20px;
- padding-top: 400px;
+ color: #eb6ea5;
+ padding: 100px 0 70px 0;
 }
-.introduce-image4-4 {
+
+.food_image4-1 {
+ width:300px;
+ height:250px;
+ background-image: image-url('img/manten_food1.jpg');
+ background-size: cover;
+}
+
+.food_image4-2 {
+ width:300px;
+ height:250px;
+ background-image: image-url('img/manten_food2.jpg');
+ background-size: cover;
+}
+
+.food_image4-3 {
+ width:300px;
+ height:250px;
+ background-image: image-url('img/manten_food3.jpg');
+ background-size: cover;
+ background-position: center center;
+}
+
+.onsen-container4 {
+ height: 1200px;
+ background: linear-gradient(to right, #ffe5e5, #FFFFFF);
+ font-family:'HiraMinProN-W3', 'serif';
+ clip-path: polygon(0 7%, 100% 0, 100% 93%, 0 100%);
+}
+
+.onsen_image4-1 {
  width:350px;
  height:250px;
- background-image: image-url('img/manten_onsen.jpg');
+ background-image: image-url('img/manten_spa1.jpg');
  background-size: cover;
- margin-left: 220px;
- margin-top: 20px;
- float: left;
-}
-.introduce-text4-4 {
- width: 50%;
- float: right;
- margin-right: 100px;
- padding-top: 15px;
- text-align: justify;
- text-justify: inter-ideograph;
-}
-.watch-finish {
- padding-top: 200px;
- color: #eb6ea5;
-}
-.manten-introduce {
- padding-top: 200px;
- text-align: center;
-}
-.manten-text {
- padding-top: 20px;
- text-align: center;
 }
 
-.container4-4 {
- width: 100%;
- height: 900px;
- background: linear-gradient(to right, #fcbec1, #FFFAFA);
- font-family:'メイリオ', 'Meiryo', sans-serif;
+.onsen_image4-2 {
+ width:350px;
+ height:250px;
+ background-image: image-url('img/manten_spa2.jpg');
+ background-size: cover;
 }
-.access4 {
+
+.onsen_image4-3 {
+ width:350px;
+ height:250px;
+ background-image: image-url('img/manten_spa3.jpg');
+ background-size: cover;
+}
+
+.map-title4 {
  text-align: center;
-}
-.access4-1 {
-  color: #eb6ea5;
-  padding-bottom: 30px;
- }
-.introduce-set4-8 {
- background: linear-gradient(to right, #FFB6C1, #FFFAFA);
- border: inset;
- border-color: #eebbcb;
- border-radius: 40px;
- padding-bottom: 20px;
- margin-left: 30px;
- width: 520px;
-}
-.address4 {
- text-align: center;
- padding-bottom: 20px;
  color: #c85179;
-}
-.address-text4 {
- text-align: center;
  font-size: 24px;
 }
-.introduce-set4-9 {
- margin-left: 70px;
-}
-.introduce-price4 {
- width: 100%;
-}
-.price4 {
- width: 30%;
- margin-bottom: 30px;
- margin-top: 40px;
- color: #c85179;
-}
-.introduce-set4-10 {
- margin-top: 20px;
- margin-left: 40px;
- padding-bottom: 30px;
- width: 500px;
- color: #c85179;
-}
-.price-text4 {
- padding-bottom: 20px;
-}
-.introduce-set4-11 {
- text-align: left;
- margin-left: 20px;
- color: #c85179;
-}
 
-.map4 {
- text-align: right;
- margin-right: 250px;
- margin-top: -680px;
- color: #c85179;
-}
 
 .map-image4 {
- margin-top: 10px;
- margin-left: 700px;
  background-size: cover;
- width: 700px;
- height: 500px;
+ width: 450px;
+ height: 300px;
+ padding-left: 60px;
  background-image: image-url('img/map_manten.jpg');
 }
 
 
 /*seeing画面*/
 .onsen-visual5 {
- width: 100%;
  height: 720px;
  color: #FAFAFA;
  background-image: image-url('img/oyugiwa.jpg');
@@ -2447,7 +2067,7 @@ text-align: center;
 .onsen-visual5 .line {
  display: block;
  padding: 10px;
- font-family:'メイリオ', 'Meiryo', sans-serif;
+ font-family:'HiraMinProN-W3', 'serif';
  font-size: 80px;
  font-weight: bold;
 }
@@ -2481,7 +2101,7 @@ text-align: center;
  color: #FFFFFF;
  font-style: italic;
  text-shadow: -3px 2px 0 #A9A9A9;
- animation: slideIn .8s cubic-bezier(0,1.2,.13,1.5) forwards;
+ animation: slideIn 3s cubic-bezier(0,1.2,.13,1.5) forwards;
 }
 @keyframes slideIn {
   0% {
@@ -2494,202 +2114,102 @@ text-align: center;
   }
 }
 .beginning5 {
- width: 100%;
- height: 600px;
- background: linear-gradient(to right, #d8e698, #FFFFF0);
- font-family:'メイリオ', 'Meiryo', sans-serif;
+ height: 400px;
+ font-family:'HiraMinProN-W3', 'serif';
 }
 
-.container5-2 {
- width: 100%;
- height: 2200px;
- text-align: center;
- background: linear-gradient(to right, #cee4ae, #FFFAFA);
- font-family:'メイリオ', 'Meiryo', sans-serif;
+.introduce-container5 {
+ height: 1000px;
+ font-family:'HiraMinProN-W3', 'serif';
+ background: linear-gradient(to right, #efffe0, #FFFFF0);
+ clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
 }
-.introduce5 {
- margin: 0 auto;
- color: #eb6ea5;
- padding-top: 50px;
- padding-bottom: 10px;
- width: 600px;
+
+.gallery5-1 {
+ width: 300px;
+ height: 250px;
+ background-image: image-url('img/oyugiwa_exterior.jpg');
+ background-size: cover;
 }
-.introduce-image5-1 {
+
+.gallery5-2 {
+ width: 300px;
+ height: 250px;
+ background-image: image-url('img/oyugiwa_terrace.jpg');
+ background-size: cover;
+}
+
+.gallery5-3 {
+ width: 300px;
+ height: 250px;
+ background-image: image-url('img/oyugiwa_kutsurogi.jpg');
+ background-size: cover;
+}
+
+.dining-container5 {
+ height: 900px;
+ font-family:'HiraMinProN-W3', 'serif';
+}
+
+.food_image5-1 {
+ width: 300px;
+ height: 250px;
+ background-image: image-url('img/oyugiwa_food1.jpg');
+ background-size: cover;
+}
+
+.food_image5-2 {
+ width: 300px;
+ height: 250px;
+ background-image: image-url('img/oyugiwa_food2.jpg');
+ background-size: cover;
+}
+
+.food_image5-3 {
+ width: 300px;
+ height: 250px;
+ background-image: image-url('img/oyugiwa_food3.jpg');
+ background-size: cover;
+}
+
+.onsen-container5 {
+ height: 1200px;
+ background: linear-gradient(to right, #efffe0, #FFFFFF);
+ font-family:'HiraMinProN-W3', 'serif';
+ clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+}
+
+.onsen_image5-1 {
+ width:350px;
+ height:250px;
+ background-image: image-url('img/oyugiwa_onsen1.jpg');
+ background-size: cover;
+}
+
+.onsen_image5-2 {
+ width:350px;
+ height:250px;
+ background-image: image-url('img/oyugiwa_onsen2.jpg');
+ background-size: cover;
+}
+
+.onsen_image5-3 {
+ width:350px;
+ height:250px;
+ background-image: image-url('img/oyugiwa_onsen3.jpg');
+ background-size: cover;
+}
+
+.map-image5 {
+ background-size: cover;
  width: 300px;
  height: 300px;
- background-image: image-url('img/oyugiwa_soto.jpeg');
- background-size: cover;
- margin-top: 30px;
- margin-left: 150px;
- margin-right: 30px;
- float: left;
-}
-.introduce-text5-1 {
- padding-top: 60px;
- padding-left: 30px;
- text-align: justify;
- text-justify: inter-ideograph;
-}
-.onsen-introduce5 {
- color: #eb6ea5;
- text-align: center;
- padding-bottom: 20px;
- padding-top: 120px;
-}
-
-.introduce-image5-2 {
- width:350px;
- height:250px;
- background-image: image-url('img/oyugiwa_kannai.jpg');
- background-size: cover;
- margin-left: 220px;
- margin-top: 20px;
- float: left;
-}
-.introduce-text5-2 {
- width: 50%;
- float: right;
- margin-right: 100px;
- padding-top: 40px;
- text-align: justify;
- text-justify: inter-ideograph;
-}
-.eat-introduce5 {
- color: #eb6ea5;
- text-align: center;
- padding-bottom: 20px;
- padding-top: 400px;
-}
-.introduce-image5-3 {
- width:350px;
- height:250px;
- background-image: image-url('img/oyugiwa_eat.jpg');
- background-size: cover;
- margin-left: 220px;
- margin-top: 20px;
- float: left;
-}
-.introduce-text5-3 {
- width: 50%;
- float: right;
- margin-right: 100px;
- padding-top: 40px;
- text-align: justify;
- text-justify: inter-ideograph;
-}
-.spa-introduce5 {
- color: #eb6ea5;
- text-align: center;
- padding-bottom: 20px;
- padding-top: 400px;
-}
-.introduce-image5-4 {
- width:350px;
- height:250px;
- background-image: image-url('img/manten_onsen.jpg');
- background-size: cover;
- margin-left: 220px;
- margin-top: 20px;
- float: left;
-}
-.introduce-text5-4 {
- width: 50%;
- float: right;
- margin-right: 100px;
- padding-top: 60px;
- text-align: justify;
- text-justify: inter-ideograph;
-}
-.seeing-finish {
- padding-top: 200px;
- color: #eb6ea5;
-}
-.oyugiwa-introduce {
- padding-top: 200px;
- text-align: center;
-}
-.oyugiwa-text {
- padding-top: 20px;
- text-align: center;
-}
-
-.container5-4 {
- width: 100%;
- height: 900px;
- background: linear-gradient(to right, #e0ebaf, #FFFFF0);
- font-family:'メイリオ', 'Meiryo', sans-serif;
-}
-.access5 {
- text-align: center;
-}
-.access5-1 {
-  color: #eb6ea5; 
-  padding-bottom: 30px;
- }
-.introduce-set5-8 {
- background: linear-gradient(to right, #d8e698, #FFFFF0);
- border: inset;
- margin-left: 55px;
- border-color: #aacf53;
- border-radius: 40px;
- padding-bottom: 20px;
- width: 500px;
-}
-.address5 {
- text-align: center;
- padding-bottom: 20px;
- color: #c85179;
-}
-.address-text5 {
- text-align: center;
- font-size: 24px;
-}
-.introduce-set5-9 {
- margin-left: 90px;
-}
-.introduce-price5 {
- width: 100%;
-}
-.price5 {
- width: 30%;
- margin-bottom: 30px;
- margin-top: 40px;
- color: #c85179;
-}
-.introduce-set5-10 {
- margin-top: 20px;
- margin-left: 60px;
- padding-bottom: 20px;
- width: 500px;
- color: #c85179;
-}
-.price-text5 {
- padding-bottom: 20px;
-}
-.introduce-set5-11 {
- text-align: left;
- margin-left: 20px;
- color: #c85179;
-}
-.map5 {
- text-align: right;
- margin-right: 250px;
- margin-top: -700px;
- color: #c85179;
-}
-.map-image5 {
- margin-top: 30px;
- margin-left: 700px;
- background-size: cover;
- width: 700px;
- height: 500px;
  background-image: image-url('img/map_oyugiwa.jpg');
 }
 
 
 /*looking画面*/
 .onsen-visual6 {
- width: 100%;
  height: 720px;
  color: #FAFAFA;
  background-image: image-url('img/atsugi.jpg');
@@ -2728,7 +2248,7 @@ text-align: center;
 .onsen-visual6 .line {
  display: block;
  padding: 10px;
- font-family:'メイリオ', 'Meiryo', sans-serif;
+ font-family:'HiraMinProN-W3', 'serif';
  font-size: 80px;
  font-weight: bold;
 }
@@ -2762,7 +2282,7 @@ text-align: center;
  color: #FFFFFF;
  font-style: italic;
  text-shadow: -3px 2px 0 #A9A9A9;
- animation: slideIn .8s cubic-bezier(0,1.2,.13,1.5) forwards;
+ animation: slideIn 3s cubic-bezier(0,1.2,.13,1.5) forwards;
 }
 @keyframes slideIn {
   0% {
@@ -2776,207 +2296,114 @@ text-align: center;
 }
 
 .beginning6 {
- width: 100%;
- height: 600px;
- background: linear-gradient(to right, #fcd575, #FDF5E6);
- font-family:'メイリオ', 'Meiryo', sans-serif;
+ height: 450px;
+ font-family:'HiraMinProN-W3', 'serif';
 }
 
-.container6-2 {
- width: 100%;
- height: 2200px;
- text-align: center;
- background: linear-gradient(to right, #fddea5, #FFFAFA);
- font-family:'メイリオ', 'Meiryo', sans-serif;
+.introduce-container6 {
+ height: 1000px;
+ font-family:'HiraMinProN-W3', 'serif';
+ background: linear-gradient(to right, #ffdd99, #FFFFF0);
+ clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
 }
-.introduce6 {
- margin: 0 auto;
- color: #eb6ea5;
- padding-top: 50px;
- padding-bottom: 10px;
- width: 600px;
-}
-.introduce-image6-1 {
- width: 350px;
+
+.gallery6-1 {
+ width: 300px;
  height: 250px;
  background-image: image-url('img/yukaraku_outside.jpeg');
  background-size: cover;
- margin-top: 30px;
- margin-left: 130px;
- margin-right: 30px;
- float: left;
-}
-.introduce-text6-1 {
- padding-top: 60px;
- padding-left: 30px;
- text-align: justify;
- text-justify: inter-ideograph;
-}
-.onsen-introduce6 {
- color: #eb6ea5;
- text-align: center;
- padding-bottom: 20px;
- padding-top: 120px;
 }
 
-.introduce-image6-2 {
- width:350px;
+.gallery6-2 {
+ width:300px;
  height:250px;
  background-image: image-url('img/yukaraku_kannai.jpg');
  background-size: cover;
- margin-left: 220px;
- margin-top: 20px;
- float: left;
 }
-.introduce-text6-2 {
- width: 50%;
- float: right;
- margin-right: 100px;
- padding-top: 40px;
- text-align: justify;
- text-justify: inter-ideograph;
-}
-.eat-introduce6 {
- color: #eb6ea5;
- text-align: center;
- padding-bottom: 20px;
- padding-top: 400px;
-}
-.introduce-image6-3 {
- width:350px;
+
+.gallery6-3 {
+ width:300px;
  height:250px;
  background-image: image-url('img/yukaraku_eat.jpg');
  background-size: cover;
- margin-left: 220px;
- margin-top: 20px;
- float: left;
+ background-position: center center;
 }
-.introduce-text6-3 {
- width: 50%;
- float: right;
- margin-right: 100px;
- padding-top: 40px;
- text-align: justify;
- text-justify: inter-ideograph;
+
+.dining-container6 {
+ height: 1000px;
+ font-family:'HiraMinProN-W3', 'serif';
 }
-.spa-introduce6 {
- color: #eb6ea5;
- text-align: center;
- padding-bottom: 20px;
- padding-top: 400px;
+
+.food_image6-1 {
+ width: 300px;
+ height: 250px;
+ background-image: image-url('img/yukaraku_food1.jpeg');
+ background-size: cover;
 }
-.introduce-image6-4 {
+
+.food_image6-2 {
+ width:300px;
+ height:250px;
+ background-image: image-url('img/yukaraku_food2.jpg');
+ background-size: cover;
+}
+
+.food_image6-3 {
+ width:300px;
+ height:250px;
+ background-image: image-url('img/yukaraku_food3.jpg');
+ background-size: cover;
+}
+
+
+.onsen-container6 {
+ height: 1200px;
+ background: linear-gradient(to right, #ffdd99, #FFFFF0);
+ font-family:'HiraMinProN-W3', 'serif';
+ clip-path: polygon(0 7%, 100% 0, 100% 93%, 0 100%);
+}
+
+.onsen-image6-1 {
  width:350px;
  height:250px;
- background-image: image-url('img/manten_onsen.jpg');
+ background-image: image-url('img/yukaraku_onsen1.jpg');
  background-size: cover;
- margin-left: 220px;
- margin-top: 20px;
- float: left;
-}
-.introduce-text6-4 {
- width: 50%;
- float: right;
- margin-right: 100px;
- padding-top: 30px;
- text-align: justify;
- text-justify: inter-ideograph;
-}
-.looking-finish {
- padding-top: 200px;
- color: #eb6ea5;
-}
-.yukaraku-introduce {
- padding-top: 200px;
- text-align: center;
-}
-.yukaraku-text {
- padding-top: 20px;
- text-align: center;
 }
 
-.container6-4 {
- width: 100%;
- height: 950px;
- background: linear-gradient(to right, #ffe5cc, #FDF5E6);
- font-family:'メイリオ', 'Meiryo', sans-serif;
-}
-.access6 {
- text-align: center;
-}
-.access6-1 {
-  color: #eb6ea5;
-  padding-bottom: 30px;
- }
-.introduce-set6-8 {
- background: linear-gradient(to right, #fcd575, #FDF5E6);
- border: inset;
- border-color: #eec362;
- border-radius: 40px;
- margin-left: 50px;
- padding-bottom: 20px;
- width: 500px;
-}
-.address6 {
- text-align: center;
- padding-bottom: 20px;
- color: #c85179;
-}
-.address-text6 {
- text-align: center;
- font-size: 24px;
-}
-.introduce-price6 {
- width: 100%;
-}
-.introduce-set6-9 {
- margin-left: 80px;
-}
-.price6 {
- width: 30%;
- margin-bottom: 30px;
- margin-top: 40px;
- color: #c85179;
-}
-.introduce-set6-10 {
- margin-top: 20px;
- margin-left: 50px;
- padding-bottom: 20px;
- width: 500px;
- color: #c85179;
-}
-.price-text6 {
- padding-bottom: 20px;
+.onsen-image6-2 {
+ width:350px;
+ height:250px;
+ background-image: image-url('img/yukaraku_onsen2.jpg');
+ background-size: cover;
 }
 
-.introduce-set6-11 {
- text-align: left;
- margin-left: 20px;
- color: #c85179;
+.onsen-image6-3 {
+ width:350px;
+ height:250px;
+ background-image: image-url('img/yukaraku_onsen3.jpg');
+ background-size: cover;
 }
 
-.map6 {
- text-align: right;
- margin-right: 250px;
- margin-top: -800px;
- color: #c85179;
+.summary-container6 {
+ height: 1250px;
+ width: 1200px;
+ font-family:'HiraMinProN-W3', 'serif';
+ margin: 0 auto;
 }
-.map-text6 {
- text-align: right;
- margin-right: 170px;
-}
+
 .map-image6 {
- margin-top: 30px;
- margin-left: 700px;
  background-size: cover;
- width: 700px;
- height: 700px;
+ width: 300px;
+ height: 300px;
  background-image: image-url('img/map_yukaraku.jpg');
+}
+
+.map-text {
+ padding-top: 5px;
 }
 
 /*check画面*/
 .onsen-visual7 {
- width: 100%;
  height: 720px;
  background-image: image-url('img/zama.jpg');
  background-size: cover;
@@ -3014,7 +2441,7 @@ text-align: center;
 .onsen-visual7 .line {
  display: block;
  padding: 10px;
- font-family:'メイリオ', 'Meiryo', sans-serif;
+ font-family:'HiraMinProN-W3', 'serif';
  font-size: 80px;
  font-weight: bold;
 }
@@ -3048,7 +2475,7 @@ text-align: center;
  color: #FFFFFF;
  font-style: italic;
  text-shadow: -3px 2px 0 #A9A9A9;
- animation: slideIn .8s cubic-bezier(0,1.2,.13,1.5) forwards;
+ animation: slideIn 3s cubic-bezier(0,1.2,.13,1.5) forwards;
 }
 @keyframes slideIn {
   0% {
@@ -3062,207 +2489,109 @@ text-align: center;
 }
 
 .beginning7 {
- width: 100%;
- height: 600px;
- background: linear-gradient(to right, #f4dda5, #FDF5E6);
- font-family:'メイリオ', 'Meiryo', sans-serif;
+ height: 400px;
+ font-family:'HiraMinProN-W3', 'serif';
 }
 
-.container7-2 {
- width: 100%;
- height: 2200px;
- text-align: center;
- background: linear-gradient(to right, #fddea5, #FFFAFA);
- font-family:'メイリオ', 'Meiryo', sans-serif;
+
+.introduce-container7 {
+ height: 1050px;
+ font-family:'HiraMinProN-W3', 'serif';
+ background: linear-gradient(to right, #e5c1cd, #FFFFFF);
+ clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
 }
-.introduce7 {
- margin: 0 auto;
- color: #eb6ea5;
- padding-top: 50px;
- padding-bottom: 10px;
- width: 1000px;
+
+.gallery7-1 {
+ width: 300px;
+ height: 250px;
+ background-image: image-url('img/soukai_rest1.jpg');
+ background-size: cover;
+ background-position: center center;
 }
-.introduce-image7-1 {
+
+.gallery7-2 {
+ width:300px;
+ height:250px;
+ background-image: image-url('img/soukai_room1.jpg');
+ background-size: cover;
+}
+
+.gallery7-3 {
+ width:300px;
+ height:250px;
+ background-image: image-url('img/soukai_relax1.jpg');
+ background-size: cover;
+}
+
+.dining-container7 {
+ height: 950px;
+ font-family:'HiraMinProN-W3', 'serif';
+}
+
+.food_image7-1 {
+ width: 300px;
+ height: 250px;
+ background-image: image-url('img/soukai_food1.jpg');
+ background-size: cover;
+}
+
+.food_image7-2 {
+ width: 300px;
+ height: 250px;
+ background-image: image-url('img/soukai_food2.jpg');
+ background-size: cover;
+}
+
+.food_image7-3 {
+ width: 300px;
+ height: 250px;
+ background-image: image-url('img/soukai_food3.jpg');
+ background-size: cover;
+}
+
+.onsen-container7 {
+ height: 1200px;
+ background: linear-gradient(to right, #e5c1cd, #FFFFFF);
+ font-family:'HiraMinProN-W3', 'serif';
+ clip-path: polygon(0 7%, 100% 0, 100% 93%, 0 100%);
+}
+
+.onsen_image7-1 {
  width: 350px;
  height: 250px;
- background-image: image-url('img/yukaraku_outside.jpeg');
+ background-image: image-url('img/soukai_onsen1.jpg');
  background-size: cover;
- margin-top: 30px;
- margin-left: 130px;
- margin-right: 30px;
- float: left;
-}
-.introduce-text7-1 {
- padding-top: 60px;
- padding-left: 30px;
- text-align: justify;
- text-justify: inter-ideograph;
-}
-.onsen-introduce7 {
- color: #eb6ea5;
- text-align: center;
- padding-bottom: 20px;
- padding-top: 120px;
 }
 
-.introduce-image7-2 {
- width:350px;
- height:250px;
- background-image: image-url('img/yukaraku_kannai.jpg');
+.onsen_image7-2 {
+ width: 350px;
+ height: 250px;
+ background-image: image-url('img/soukai_onsen2.jpg');
  background-size: cover;
- margin-left: 220px;
- margin-top: 20px;
- float: left;
-}
-.introduce-text7-2 {
- width: 50%;
- float: right;
- margin-right: 100px;
- padding-top: 40px;
- text-align: justify;
- text-justify: inter-ideograph;
-}
-.eat-introduce7 {
- color: #eb6ea5;
- text-align: center;
- padding-bottom: 20px;
- padding-top: 400px;
-}
-.introduce-image7-3 {
- width:350px;
- height:250px;
- background-image: image-url('img/soukai_eat.jpg');
- background-size: cover;
- margin-left: 220px;
- margin-top: 20px;
- float: left;
-}
-.introduce-text7-3 {
- width: 50%;
- float: right;
- margin-right: 100px;
- padding-top: 50px;
- text-align: justify;
- text-justify: inter-ideograph;
-}
-.spa-introduce7 {
- color: #eb6ea5;
- text-align: center;
- padding-bottom: 20px;
- padding-top: 400px;
-}
-.introduce-image7-4 {
- width:350px;
- height:250px;
- background-image: image-url('img/manten_onsen.jpg');
- background-size: cover;
- margin-left: 220px;
- margin-top: 20px;
- float: left;
-}
-.introduce-text7-4 {
- width: 50%;
- float: right;
- margin-right: 100px;
- padding-top: 15px;
- text-align: justify;
- text-justify: inter-ideograph;
-}
-.check-finish {
- padding-top: 200px;
- color: #eb6ea5;
-}
-.soukai-introduce {
- padding-top: 200px;
- text-align: center;
-}
-.soukai-text {
- padding-top: 20px;
- text-align: center;
-}
-.container7-4 {
- width: 100%;
- height: 950px;
- background: linear-gradient(to right, #ffe0c1, #FDF5E6);
- font-family:'メイリオ', 'Meiryo', sans-serif;
-}
-.access7 {
- text-align: center;
-}
-.access7-1 {
-  color: #eb6ea5;
-  padding-bottom: 30px;
- }
-.introduce-set7-2 {
- background: linear-gradient(to right, #f4dda5, #FDF5E6);
- border: inset;
- border-color: #e0c38c;
- border-radius: 40px;
- margin-left: 50px;
- padding-bottom: 20px;
- width: 520px;
-}
-.address7 {
- text-align: center;
- padding-bottom: 20px;
- color: #c85179;
-}
-.address-text7 {
- text-align: center;
- font-size: 24px;
-}
-.introduce-price7 {
- width: 100%;
-}
-.introduce-set7-3 {
- margin-left: 100px;
-}
-.price7 {
- width: 30%;
- margin-bottom: 50px;
- margin-top: 40px;
- color: #c85179;
-}
-.introduce-set7-4 {
- margin-top: 20px;
- margin-left:70px;
- padding-bottom: 20px;
- width: 500px;
- color: #c85179;
-}
-.price-text7 {
- padding-bottom: 20px;
 }
 
-.introduce-set7-5 {
- text-align: left;
- margin-left: 20px;
- color: #c85179;
-}
-.kansou7 {
- padding-top: 30px;
-}
-
-.map7 {
- text-align: right;
- margin-right: 250px;
- margin-top: -650px;
- color: #c85179;
+.onsen_image7-3 {
+ width: 350px;
+ height: 250px;
+ background-image: image-url('img/soukai_onsen3.jpg');
+ background-size: cover;
 }
 
 .map-image7 {
- margin-top: 60px;
- margin-left: 850px;
+ background-image: image-url('img/soukai_map.jpg');
  background-size: cover;
- width: 480px;
- height: 500px;
- color: #e60033;
+ width: 300px;
+ height: 300px;
 }
 
+.traffic-text7 {
+ text-align: justify;
+ width: 500px;
+ padding-left: 100px;
+}
 
 /*try画面*/
 .onsen-visual8 {
- width: 100%;
  height: 720px;
  background-image: image-url('img/kawasaki.jpg');
  background-size: cover;
@@ -3300,7 +2629,7 @@ text-align: center;
 .onsen-visual8 .line {
  display: block;
  padding: 10px;
- font-family:'メイリオ', 'Meiryo', sans-serif;
+ font-family:'HiraMinProN-W3', 'serif';
  font-size: 80px;
  font-weight: bold;
 }
@@ -3334,7 +2663,7 @@ text-align: center;
  color: #FFFFFF;
  font-style: italic;
  text-shadow: -3px 2px 0 #A9A9A9;
- animation: slideIn .8s cubic-bezier(0,1.2,.13,1.5) forwards;
+ animation: slideIn 3s cubic-bezier(0,1.2,.13,1.5) forwards;
 }
 @keyframes slideIn {
   0% {
@@ -3348,201 +2677,102 @@ text-align: center;
 }
 
 .beginning8 {
- width: 100%;
- height: 600px;
- background: linear-gradient(to right, #d6e9ca, #FDF5E6);
- font-family:'メイリオ', 'Meiryo', sans-serif;
+ height: 400px;
+ font-family:'HiraMinProN-W3', 'serif';
 }
 
-.container8-2 {
- width: 100%;
- height: 2200px;
- text-align: center;
- background: linear-gradient(to right, #cee4ae, #FFFAFA);
- font-family:'メイリオ', 'Meiryo', sans-serif;
+.introduce-container8 {
+ height: 1050px;
+ font-family:'HiraMinProN-W3', 'serif';
+ background: linear-gradient(to right, #dbd0e6, #FFFFFF);
+ clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
 }
-.introduce8 {
- margin: 0 auto;
- color: #eb6ea5;
- padding-top: 50px;
- padding-bottom: 10px;
- width: 600px;
-}
-.introduce-image8-1 {
- width: 350px;
+
+.gallery8-1 {
+ width: 300px;
  height: 250px;
- background-image: image-url('img/kawasaki.jpg');
- background-size: cover;
- margin-top: 30px;
- margin-left: 130px;
- margin-right: 30px;
- float: left;
-}
-.introduce-text8-1 {
- padding-top: 30px;
- padding-left: 30px;
- text-align: justify;
- text-justify: inter-ideograph;
-}
-.onsen-introduce8 {
- color: #eb6ea5;
- text-align: center;
- padding-bottom: 20px;
- padding-top: 120px;
-}
-
-.introduce-image8-2 {
- width:350px;
- height:250px;
  background-image: image-url('img/yukemuri_kannai.jpg');
  background-size: cover;
- margin-left: 220px;
- margin-top: 20px;
- float: left;
-}
-.introduce-text8-2 {
- width: 50%;
- float: right;
- margin-right: 100px;
- padding-top: 40px;
- text-align: justify;
- text-justify: inter-ideograph;
-}
-.eat-introduce8 {
- color: #eb6ea5;
- text-align: center;
- padding-bottom: 20px;
- padding-top: 400px;
-}
-.introduce-image8-3 {
- width:350px;
- height:250px;
- background-image: image-url('img/yukemuri_eat.jpg');
- background-size: cover;
- margin-left: 220px;
- margin-top: 20px;
- float: left;
-}
-.introduce-text8-3 {
- width: 50%;
- float: right;
- margin-right: 100px;
- padding-top: 40px;
- text-align: justify;
- text-justify: inter-ideograph;
-}
-.spa-introduce8 {
- color: #eb6ea5;
- text-align: center;
- padding-bottom: 20px;
- padding-top: 400px;
-}
-.introduce-image8-4 {
- width:350px;
- height:250px;
- background-image: image-url('img/manten_onsen.jpg');
- background-size: cover;
- margin-left: 220px;
- margin-top: 20px;
- float: left;
-}
-.introduce-text8-4 {
- width: 50%;
- float: right;
- margin-right: 100px;
- padding-top: 15px;
- text-align: justify;
- text-justify: inter-ideograph;
-}
-.try-finish {
- padding-top: 200px;
- color: #eb6ea5;
-}
-.yukemuri-introduce {
- padding-top: 200px;
- text-align: center;
-}
-.yukemuri-text {
- padding-top: 20px;
- text-align: center;
 }
 
-.container8-4 {
- width: 100%;
- height: 1000px;
- background: linear-gradient(to right, #cee4ae, #FDF5E6);
- font-family:'メイリオ', 'Meiryo', sans-serif;
-}
-.access8 {
- text-align: center;
-}
-.access8-1 {
-  color: #eb6ea5;
- padding-bottom: 30px;
- }
-.introduce-set8-2 {
- background: linear-gradient(to right, #d6e9ca, #FDF5E6);
- border: inset;
- border-color: #88cb7f;
- border-radius: 40px;
- margin-left: 50px;
- padding-bottom: 20px;
- width: 520px;
-}
-.address8 {
- text-align: center;
- padding-bottom: 20px;
- color: #c85179;
-}
-.address-text8 {
- text-align: center;
- font-size: 24px;
-}
-.introduce-set8-3 {
- margin-left: 110px;
-}
-.price8 {
- width: 30%;
- margin-bottom: 30px;
- margin-top: 40px;
- color: #c85179;
-}
-.introduce-set8-4 {
- margin-top: 20px;
- margin-left: 80px;
- padding-bottom: 20px;
- width: 500px;
- color: #c85179;
-}
-.price-text8 {
- padding-bottom: 20px;
+.gallery8-2 {
+ width:300px;
+ height:250px;
+ background-image: image-url('img/yukemuri_main1.jpg');
+ background-size: cover;
 }
 
-.introduce-set8-5 {
- text-align: left;
- margin-left: 20px;
- color: #c85179;
+.gallery8-3 {
+ width:300px;
+ height:250px;
+ background-image: image-url('img/yukemuri_main2.jpg');
+ background-size: cover;
 }
-.map8 {
- text-align: right;
- margin-right: 250px;
- margin-top: -750px;
- color: #c85179;
+
+.dining-container8 {
+ height: 950px;
+ font-family:'HiraMinProN-W3', 'serif';
+}
+
+.food_image8-1 {
+ width: 300px;
+ height: 250px;
+ background-image: image-url('img/yukemuri_food1.jpg');
+ background-size: cover;
+}
+
+.food_image8-2 {
+ width: 300px;
+ height: 250px;
+ background-image: image-url('img/yukemuri_food2.jpg');
+ background-size: cover;
+}
+
+.food_image8-3 {
+ width: 300px;
+ height: 250px;
+ background-image: image-url('img/yukemuri_food3.jpg');
+ background-size: cover;
+}
+
+.onsen-container8 {
+ height: 1200px;
+ background: linear-gradient(to right, #dbd0e6, #FFFFFF);
+ font-family:'HiraMinProN-W3', 'serif';
+ clip-path: polygon(0 7%, 100% 0, 100% 93%, 0 100%);
+}
+
+.onsen_image8-1 {
+ width: 350px;
+ height: 250px;
+ background-image: image-url('img/yukemuri_onsen1.jpg');
+ background-size: cover;
+}
+
+.onsen_image8-2 {
+ width: 350px;
+ height: 250px;
+ background-image: image-url('img/yukemuri_onsen2.jpg');
+ background-size: cover;
+}
+
+.onsen_image8-3 {
+ width: 350px;
+ height: 250px;
+ background-image: image-url('img/yukemuri_onsen3.jpg');
+ background-size: cover;
 }
 
 .map-image8 {
- margin-top: 30px;
- margin-left: 830px;
  background-size: 100% 100%;
- width: 500px;
- height: 500px;
+ width: 300px;
+ height: 300px;
  background-image: image-url('img/map_yukemuri.jpg');
 }
 
 
 /*gaze画面*/
 .onsen-visual9 {
- width: 100%;
  height: 720px;
  background-image: image-url('img/serigaya2.jpg');
  background-size: cover;
@@ -3580,7 +2810,7 @@ text-align: center;
 .onsen-visual9 .line {
  display: block;
  padding: 10px;
- font-family:'メイリオ', 'Meiryo', sans-serif;
+ font-family:'HiraMinProN-W3', 'serif';
  font-size: 80px;
  font-weight: bold;
 }
@@ -3614,7 +2844,7 @@ text-align: center;
  color: #FFFFFF;
  font-style: italic;
  text-shadow: -3px 2px 0 #A9A9A9;
- animation: slideIn .8s cubic-bezier(0,1.2,.13,1.5) forwards;
+ animation: slideIn 3s cubic-bezier(0,1.2,.13,1.5) forwards;
 }
 @keyframes slideIn {
   0% {
@@ -3628,224 +2858,129 @@ text-align: center;
 }
 
 .beginning9 {
- width: 100%;
- height: 600px;
- background: linear-gradient(to right, #f5b199, #FDF5E6);
- font-family:'メイリオ', 'Meiryo', sans-serif;
+ height: 400px;
+ font-family:'HiraMinProN-W3', 'serif';
 }
 
-.container9-2 {
- width: 100%;
- height: 2200px;
- text-align: center;
- background: linear-gradient(to right, #f6b894, #FFFAFA);
- font-family:'メイリオ', 'Meiryo', sans-serif;
+.introduce-container9 {
+ height: 1000px;
+ font-family:'HiraMinProN-W3', 'serif';
+ background: linear-gradient(to right, #ffb7b7, #FFFFFF);
+ clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
 }
-.introduce9 {
- margin: 0 auto;
- color: #eb6ea5;
- padding-top: 50px;
- padding-bottom: 10px;
- width: 600px;
-}
-.introduce-image9-1 {
- width: 350px;
+
+.gallery9-1 {
+ width: 300px;
  height: 250px;
  background-image: image-url('img/serigaya.jpg');
  background-size: cover;
- margin-top: 30px;
- margin-left: 130px;
- margin-right: 30px;
- float: left;
-}
-.introduce-text9-1 {
- padding-top: 50px;
- padding-left: 30px;
- text-align: justify;
- text-justify: inter-ideograph;
-}
-.onsen-introduce9 {
- color: #eb6ea5;
- text-align: center;
- padding-bottom: 20px;
- padding-top: 120px;
 }
 
-.introduce-image9-2 {
- width:350px;
+.gallery9-2 {
+ width:300px;
  height:250px;
  background-image: image-url('img/gokuraku_kannai.jpg');
  background-size: cover;
- margin-left: 220px;
- margin-top: 20px;
- float: left;
-}
-.introduce-text9-2 {
- width: 50%;
- float: right;
- margin-right: 100px;
- padding-top: 40px;
- text-align: justify;
- text-justify: inter-ideograph;
-}
-.eat-introduce9 {
- color: #eb6ea5;
- text-align: center;
- padding-bottom: 20px;
- padding-top: 400px;
-}
-.introduce-image9-3 {
- width:350px;
- height:250px;
- background-image: image-url('img/steak.jpg');
- background-size: cover;
- margin-left: 220px;
- margin-top: 20px;
- float: left;
-}
-.introduce-text9-3 {
- width: 50%;
- float: right;
- margin-right: 100px;
- padding-top: 40px;
- text-align: justify;
- text-justify: inter-ideograph;
-}
-.spa-introduce9 {
- color: #eb6ea5;
- text-align: center;
- padding-bottom: 20px;
- padding-top: 400px;
-}
-.introduce-image9-4 {
- width:350px;
- height:250px;
- background-image: image-url('img/manten_onsen.jpg');
- background-size: cover;
- margin-left: 220px;
- margin-top: 20px;
- float: left;
-}
-.introduce-text9-4 {
- width: 50%;
- float: right;
- margin-right: 100px;
- padding-top: 30px;
- text-align: justify;
- text-justify: inter-ideograph;
-}
-.gaze-finish {
- padding-top: 200px;
- color: #eb6ea5;
-}
-.gokuraku-introduce {
- padding-top: 200px;
- text-align: center;
-}
-.gokuraku-text {
- padding-top: 20px;
- text-align: center;
 }
 
-.container9-4 {
- width: 100%;
+.gallery9-3 {
+ width:300px;
+ height:250px;
+ background-image: image-url('img/gokuraku_dining1.jpg');
+ background-size: cover;
+}
+
+.dining-container9 {
  height: 950px;
- background: linear-gradient(to right, #f1bf99, #FDF5E6);
- font-family:'メイリオ', 'Meiryo', sans-serif;
-}
-.access9 {
- text-align: center;
-}
-.access9-1 {
-  color: #eb6ea5;
- padding-bottom: 30px;
- }
-.introduce-set9-2 {
- background: linear-gradient(to right,#f19072, #FDF5E6);
- border: inset;
- border-color: #df7163;
- border-radius: 40px;
- margin-left: 50px;
- padding-bottom: 20px;
- width: 520px;
-}
-.address9 {
- text-align: center;
- padding-bottom: 20px;
- color: #c85179;
-}
-.address-text9 {
- text-align: center;
- font-size: 24px;
-}
-.introduce-set9-3 {
- margin-left: 100px;
-}
-.price9 {
- width: 30%;
- margin-bottom: 30px;
- margin-top: 40px;
- color: #c85179;
-}
-.introduce-set9-4 {
- margin-top: 20px;
- margin-left: 70px;
- padding-bottom: 20px;
- width: 500px;
- color: #c85179;
-}
-.price-text9 {
- padding-bottom: 20px;
-}
-.introduce-set9-5 {
- text-align: left;
- margin-left: 20px;
- color: #c85179;
+ font-family:'HiraMinProN-W3', 'serif';
 }
 
-.map9 {
- text-align: right;
- margin-right: 250px;
- margin-top: -710px;
- color: #c85179;
-}
-.map-image9 {
- margin-top: 30px;
- margin-left: 750px;
+.food_image9-1 {
+ width: 300px;
+ height: 250px;
+ background-image: image-url('img/gokuraku_food1.jpg');
  background-size: cover;
- width: 630px;
- height: 500px;
- background-image: image-url('img/gokuraku_map.jpg');
 }
-.map_text9 {
- text-align: right;
- padding-top: 20px;
- padding-right: 250px;
- opacity: 0.5;
+
+.food_image9-2 {
+ width: 300px;
+ height: 250px;
+ background-image: image-url('img/gokuraku_food2.jpg');
+ background-size: cover;
+ background-position: center center;
+}
+
+.food_image9-3 {
+ width: 300px;
+ height: 250px;
+ background-image: image-url('img/gokuraku_food3.jpg');
+ background-size: cover;
+ background-position: center center;
+}
+
+.onsen-container9 {
+ height: 1200px;
+ background: linear-gradient(to right, #ffb7b7, #FFFFFF);
+ font-family:'HiraMinProN-W3', 'serif';
+ clip-path: polygon(0 7%, 100% 0, 100% 93%, 0 100%);
+}
+
+.onsen_image9-1 {
+ width: 350px;
+ height: 250px;
+ background-image: image-url('img/gokuraku_onsen1.jpg');
+ background-size: cover;
+}
+
+.onsen_image9-2 {
+ width: 350px;
+ height: 250px;
+ background-image: image-url('img/gokuraku_onsen2.jpg');
+ background-size: cover;
+}
+
+.onsen_image9-3 {
+ width: 350px;
+ height: 250px;
+ background-image: image-url('img/gokuraku_onsen3.jpg');
+ background-size: cover;
+}
+
+.summary-container9 {
+ height: 1200px;
+ width: 1200px;
+ font-family:'HiraMinProN-W3', 'serif';
+ margin: 0 auto;
+}
+
+.map-image9 {
+ background-size: cover;
+ width: 300px;
+ height: 300px;
+ background-image: image-url('img/gokuraku_map.jpg');
 }
 
 
 /*devise周辺*/
-.box3-container {
- height: 700px;
- background-color: #f2f2b0;
+.account-editing {
+  width: 700px;
+  height: 680px;
+  margin: 0 auto;
 }
 
 .box3 {
-  width: 700px;
-  height: 650px;
-  margin: 0 auto;
-  margin-top: 10px;
-  margin-bottom: 30px;
+  height: 620px;
+  margin-top: 60px;
   border-radius: 10px;
   border: 10px #F5F5F5 solid;
   text-align: center;
   background: linear-gradient(to right, #FFEFD5, #FFFFE0);
-  font-family:'メイリオ', 'Meiryo', sans-serif;
+  font-family:'HiraMinProN-W3', 'serif';
 }
 
 .box-inner3 {
-  padding: 20px 26px;
+  font-size: 30px;
+  padding-top: 30px;
 }
 
 .name-box3 {
@@ -3856,6 +2991,9 @@ text-align: center;
   margin-bottom: 22px;
 }
 
+.button-box {
+ padding-top: 20px;
+}
 
 .name-box3 label, .impress-box3 label {
   font-weight: 700;
@@ -3867,7 +3005,6 @@ text-align: center;
 .name-box3 input[type="title"], .impress-box3 input[type="body"] {
   border-style: none;
   box-sizing: border-box;
-  width: 100%;
   height: 31px;
   border: 1px solid #a6a6a6;
   box-shadow: 0 1px 0 rgba(0,0,0,.07) inset;
@@ -3877,7 +3014,6 @@ text-align: center;
 
 .push-box3 input[type="submit"] {
   border-style: none;
-  width: 100%;
   height: 31px;
   background: linear-gradient(to bottom,#f7dfa5,#f0c14b);
   border-radius: 3px;
@@ -3888,7 +3024,6 @@ text-align: center;
   cursor: pointer;
   background: #f0c14b;
 }
-
 
 /*投稿一覧画面*/
 .blogs_button {
@@ -3904,16 +3039,16 @@ text-align: center;
 }
 
 .b-new_container {
- background-image: image-url('img/sakura2.jpg');
- background-size: cover;
+ height: 650px;
+ font-family:'HiraMinProN-W3', 'serif';
 }
 
-.b-new__comment {
- width: 380px;
- margin-top: 15px;
+.b-new_title {
+ width: 300px;
+ font-size: 26px;
+ margin-top: 30px;
  margin-left: 220px;
  text-align: center;
- font-family:'メイリオ', 'Meiryo', sans-serif;
  background:
  linear-gradient(90deg, #999 3px, #fff 3px, #fff calc(100% - 3px), #999 calc(100% - 3px)),
  linear-gradient(180deg, #999 3px, #fff 3px, #fff calc(100% - 3px), #999 calc(100% - 3px)),
@@ -3941,9 +3076,9 @@ text-align: center;
   }
 }
 .b-new_comment_box{
-  margin-top: 5px;
-  margin-bottom: 5px;
-  margin-left: 1070px;
+ text-align: right;
+ margin-bottom: 20px;
+ margin-right: 230px;
 }
 
 .btn-border-button {
@@ -3975,7 +3110,7 @@ text-align: center;
   border-radius: 10px;
   background: linear-gradient(to right, #FFF0F5, #FFFAFA);
   animation: zoomIn 1s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
-  font-family:'メイリオ', 'Meiryo', sans-serif;
+  font-family:'HiraMinProN-W3', 'serif';
 }
 @keyframes zoomIn {
   0% {
@@ -4021,16 +3156,15 @@ text-align: center;
 }
 
 .sakura2-container {
- height: 100%;
- background-image: image-url('img/sakura4.jpg');
- background-size: 100% 100%;
- margin-top: 15px;
+ height: 800px;
+ font-family:'HiraMinProN-W3', 'serif';
 }
 
 .b-index__comment {
- font-family:'メイリオ', 'Meiryo', sans-serif;
+ font-size: 26px; 
  width: 280px;
- padding-top: 100px;
+ margin-top: 30px;
+ margin-left: 30px;
  text-align: center;
  background:
  linear-gradient(90deg, #999 3px, #fff 3px, #fff calc(100% - 3px), #999 calc(100% - 3px)),
@@ -4060,10 +3194,11 @@ text-align: center;
 }
 
 table {
- width: 100%;
+ width: 1000px;
  border-collapse: separate;
  border-spacing: 0;
- font-family:'メイリオ', 'Meiryo', sans-serif;
+ font-family:'HiraMinProN-W3', 'serif';
+ border-top: 1px solid #a8b7c5;
 }
 
 table th:first-child {
@@ -4072,16 +3207,15 @@ table th:first-child {
 
 table th:last-child {
  border-radius: 0 5px 0 0;
- border-right: 1px solid #3c6690;
+ border-right: 1px solid #a8b7c5;
 }
 
 table th {
  text-align: center;
- color: #FFFFFF;
- background: linear-gradient(#0052d4, #4364f7, #6fb1fc);
- border-left: 1px solid #3c6690;
- border-top: 1px solid #3c6690;
- border-bottom: 1px solid #3c6690;
+ background: linear-gradient( #fff, #f7fcfe,#eaf4fc);
+ border-left: 1px solid #a8b7c5;
+ border-top: 1px solid #a8b7c5;
+ border-bottom: 1px solid #a8b7c5;
  box-shadow: 0px 1px 1px rgba(255,255,255,0.3) inset;
  width: 25%;
  padding: 10px 0;
@@ -4108,6 +3242,7 @@ table tr:last-child td:first-child {
 table tr:last-child td:last-child {
   border-radius: 0 0 5px 0;
 }
+
 a.btn--back {
   width: 200px;
   margin-right: 10px;
@@ -4160,19 +3295,21 @@ a.btn--shadow {
   box-shadow: 0 3px 5px rgba(1, 0, 0, .3);
 }
 
-
 .row-showbox {
  height: 50px;
  padding-left: 450px;
+ padding-bottom: 70px;
 }
 
+.b-show_box {
+ font-family:'HiraMinProN-W3', 'serif';
+}
 
-.b-show__comment {
- font-family:'メイリオ', 'Meiryo', sans-serif;
- margin-top: 20px;
- margin-left: 220px;
+.b-show__title {
+ margin-top: 30px;
+ margin-left: 290px;
  margin-bottom: 30px;
- width: 270px;
+ width: 240px;
  text-align: center;
  background:
  radial-gradient(circle at top left, transparent 50%, #999 50%, #999 calc(50% + 3px), transparent calc(50% + 3px)),
@@ -4199,24 +3336,31 @@ a.btn--shadow {
     transform: scale(1);
   }
 }
-.b-comment_listTitle {
- padding-left: 300px;
- margin-top: 10px;
+
+.b-show_text {
+ font-size: 26px;
+ padding-top: 10px;
 }
 
 .b-comment_list {
- font-family:'メイリオ', 'Meiryo', sans-serif;
+ font-family:'HiraMinProN-W3', 'serif';
+}
+
+.b-comment_listTitle {
+ text-align: center;
+ width: 750px;
+ font-size: 20px;
+ margin-top: 40px;
+ padding-left: 10px;
 }
 
 .b-edit_container {
- background-image: image-url('img/sakura3.jpg');
- background-size: cover;
+ font-family:'HiraMinProN-W3', 'serif';
  height: 600px;
 }
-.b-edit__comment {
- font-family:'メイリオ', 'Meiryo', sans-serif;
- width: 180px;
- margin-top: 13px;
+.b-edit__title {
+ width: 150px;
+ margin-top: 30px;
  margin-left: 220px;
  letter-spacing: 5px;
  text-align: center;
@@ -4246,6 +3390,11 @@ a.btn--shadow {
   }
 }
 
+.b-edit__text {
+ font-size: 26px;
+ padding-top: 10px;
+}
+
 .b-edit__formbox {
   width: 1200px;
   margin: 20px auto;
@@ -4254,7 +3403,7 @@ a.btn--shadow {
   border-radius: 10px;
   background: linear-gradient(to right, #FFF0F5, #FFFAFA);
   animation: zoomIn 1s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
-  font-family:'メイリオ', 'Meiryo', sans-serif;
+  font-family:'HiraMinProN-W3', 'serif';
 }
 @keyframes zoomIn {
   0% {
@@ -4269,7 +3418,7 @@ a.btn--shadow {
 .b-update_box {
   margin-top: 20px;
   width: 500px;
-  padding-left: 80px;
+  padding-left: 100px;
 }
 
 .b-edit_comment_box{
@@ -4279,15 +3428,16 @@ a.btn--shadow {
 }
 
 
+
 /*投稿詳細画面*/
 .b-card_box {
-  width: 850px;
+  width: 750px;
   margin-top: 100px;
   margin: auto;
   border-radius: 14px;
   border: 5px solid #e8e8e8;
   animation: zoomIn 1s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
-  font-family:'メイリオ', 'Meiryo', sans-serif;
+  font-family:'HiraMinProN-W3', 'serif';
 }
 @keyframes zoomIn {
   0% {
@@ -4300,49 +3450,63 @@ a.btn--shadow {
   }
 }
 
-.card {
- height: auto;
- line-height: 50px;
+
+.b-card_box {
+  width: 750px;
+  margin-top: 100px;
+  margin: auto;
+  border-radius: 14px;
+  border: 5px solid #e8e8e8;
+  animation: zoomIn 1s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
+  font-family:'HiraMinProN-W3', 'serif';
 }
+@keyframes zoomIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
 .card-header {
-  padding: 7px;
-  background: #fcdce0;
+  padding: 5px 0 0 20px;
+  background: #fdeff2;
   border-radius: 3px;
-  padding-left: 20px;
+  line-height: 40px;
 }
+
+.card-title {
+ font-size: 18px;
+}
+
 .card-body {
  height: 220px;
+ display: flex;
+ margin: 20px auto;
 }
-.left_card {
-  background-position: left;
- }
+
  .card-image {
-  margin-top: 20px;
-  margin-left: 30px;
+  padding: 20px 0  20px 20px;
  }
- .right_card {
-   margin-top: -300px;
- }
- .card_group {
-  text-align: right;
-  position: relative;
-  padding: 0.3em;
-  padding-top: 20px;
-  padding-bottom: 10px;
-  padding-right: 150px;
- }
+
 .card-text {
- margin-bottom: 70px;
- margin-left: 200px;
+ padding: 20px 0 0 50px;
 }
+
 .card-footer {
-  text-align: right;
   margin: 0 auto;
   background: #fdeff2;
   border-radius: 3px;
+  line-height: 40px;
+  padding-left:  600px;
 }
+
 .card-footer ul {
-     overflow: hidden;
+  overflow: hidden;
 }
 .card-footer li {
   background: linear-gradient(to right, #e6cde3, #fdeff2);
@@ -4357,14 +3521,12 @@ a.btn--shadow {
 
 .precaution-container {
   height: 600px;
-  background-image: image-url('img/sakura2.jpg');
-  background-size: cover;
 }
  .precaution-title{
-   font-family:'メイリオ', 'Meiryo', sans-serif;
-   margin-top: 15px;
+   font-family:'HiraMinProN-W3', 'serif';
+   margin-top: 30px;
    margin-left: 220px;
-   margin-bottom: 30px;
+   margin-bottom: 50px;
    width: 240px;
    text-align: center;
    background:
@@ -4400,21 +3562,27 @@ a.btn--shadow {
   border-radius: 10px;
   background: linear-gradient(to right, #FFF0F5, #FFFAFA);
   animation: zoomIn 1s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
-  font-family:'メイリオ', 'Meiryo', sans-serif;
+  font-family:'HiraMinProN-W3', 'serif';
+  font-size: 20px;
+}
+
+.precaution-text {
+  font-size: 26px;
+  text-align: center;
+}
+
+.precaution-list {
+  padding-left: 100px;
 }
 
 .info-container {
-  background-image: image-url('img/sakura2.jpg');
-  background-size: cover;
-  height: 600px;
+  height: 550px;
 }
  .info-title{
-   font-family:'メイリオ', 'Meiryo', sans-serif;
-   margin-top: 15px;
-   margin-left: 220px;
-   margin-bottom: 30px;
-   width: 360px;
-   text-align: center;
+   margin-top: 40px;
+   margin-left: 350px;
+   margin-bottom: 20px;
+   width: 270px;
    background:
    radial-gradient(circle at top left, transparent 50%, #999 50%, #999 calc(50% + 3px), transparent calc(50% + 3px)),
    radial-gradient(circle at top right, transparent 50%, #999 50%, #999 calc(50% + 2px), transparent calc(50% + 3px)),
@@ -4440,25 +3608,38 @@ a.btn--shadow {
       transform: scale(1);
     }
  }
+
+.info-container {
+ height: 580px;
+}
+
+ .info-name {
+  text-align: center;
+  font-family:'HiraMinProN-W3', 'serif';
+  font-size: 30px;
+  margin: 0 auto;
+ }
+
 .info-box {
-  width: 1000px;
+  width: 700px;
   height: 300px;
-  margin-top: 80px;
-  margin-left: 210px;
+  margin: 0 auto;
+  position: relative;
+  margin-top: 60px;
+  padding: 40px 0 0 40px;
   border: 5px solid #e8e8e8;
-  padding-top: 20px;
-  padding-left: 25px;
   border-radius: 10px;
   background: linear-gradient(to right, #FFF0F5, #FFFAFA);
   animation: zoomIn 1s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
-  font-family:'メイリオ', 'Meiryo', sans-serif;
+  font-family:'HiraMinProN-W3', 'serif';
+  font-size: 20px;
+  line-height: 50px;
 }
 
-.new-letter {
- color: red;
- display: inline-block;
+.highlight {
+  color: #ff0000;
+//   display: inline-block; 
 }
-
 
 /*ボタン系*/
 
@@ -4488,7 +3669,6 @@ a.btn--shadow {
   color: #FFF;
 }
 
-
 .col-md-6 {
  margin-left: 120px;
  margin-top: 30px;
@@ -4497,24 +3677,26 @@ a.btn--shadow {
 
 // tweet機能
 .tweet-container {
- width: 100%;
  padding-top: 50px;
  text-align: center;
  background: linear-gradient(to right, #fdeff2, #FFFAFA);
- font-family:'メイリオ', 'Meiryo', sans-serif;
+ font-family:'HiraMinProN-W3', 'serif';
 }
 .tweet-comment {
- background-color: #eb6ea5;
+ padding-bottom: 30px;
+ font-size: 24px;
+ text-align: center;
 }
+
 .b-tweet__formbox {
-  width: 1000px;
-  margin-left: 210px;
-  border: 2px solid #e8e8e8;
+  width: 700px;
+  margin-left: 370px;
   padding: 25px;
+  border: 2px solid #e8e8e8;
   border-radius: 10px;
   background: linear-gradient(to right, #FFFAFA, #ffffff);
   animation: zoomIn 1s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
-  font-family:'メイリオ', 'Meiryo', sans-serif;
+  font-family:'HiraMinProN-W3', 'serif';
 }
 .b-push_box2 {
  margin: 20px;
@@ -4522,7 +3704,7 @@ a.btn--shadow {
 }
 .decorated-btn2 {
   width: 300px;
-  margin-left: 220px;
+  margin-left: 150px;
   background-color: gold;
   font-size: 12px;
   border-radius: 5px;
@@ -4530,59 +3712,51 @@ a.btn--shadow {
   box-shadow: 3px 3px 3px gray;
   transition: 0.3s;
 }
-.tweet-container2-1 {
-  width: 100%;
+.tweet-container2 {
   padding-top: 50px;
   text-align: center;
-  background: linear-gradient(to right, #f2f2b0, #FFFAFA);
-  font-family:'メイリオ', 'Meiryo', sans-serif;
+  background: linear-gradient(to right, #ffffc6, #FFFFF0);
+  font-family:'HiraMinProN-W3', 'serif';
  }
- .tweet-container3-1 {
-  width: 100%;
+ .tweet-container3 {
   padding-top: 50px;
   text-align: center;
-  background: linear-gradient(to right, #fce2c4, #FFFAFA);
-  font-family:'メイリオ', 'Meiryo', sans-serif;
+   background: linear-gradient(to right, #bbe2f1, #FFFFFF);
+  font-family:'HiraMinProN-W3', 'serif';
  }
- .tweet-container4-1 {
-  width: 100%;
+ .tweet-container4 {
   padding-top: 50px;
   text-align: center;
-  background: linear-gradient(to right, #ffc0cb, #FFFAFA);
-  font-family:'メイリオ', 'Meiryo', sans-serif;
+  background: linear-gradient(to right, #ffe5e5, #FFFFFF);
+  font-family:'HiraMinProN-W3', 'serif';
  }
- .tweet-container5-1 {
-  width: 100%;
+ .tweet-container5 {
   padding-top: 50px;
   text-align: center;
-  background: linear-gradient(to right, #d8e698, #FFFAFA);
-  font-family:'メイリオ', 'Meiryo', sans-serif;
+  background: linear-gradient(to right, #efffe0, #FFFFF0);
+  font-family:'HiraMinProN-W3', 'serif';
  }
- .tweet-container6-1 {
-  width: 100%;
+ .tweet-container6 {
   padding-top: 50px;
   text-align: center;
-  background: linear-gradient(to right, #ffeddb, #FFFAFA);
-  font-family:'メイリオ', 'Meiryo', sans-serif;
+  background: linear-gradient(to right, #ffdd99, #FFFFF0);
+  font-family:'HiraMinProN-W3', 'serif';
  }
- .tweet-container7-1 {
-  width: 100%;
+ .tweet-container7 {
   padding-top: 50px;
   text-align: center;
-  background: linear-gradient(to right, #ffe8d1, #FFFAFA);
-  font-family:'メイリオ', 'Meiryo', sans-serif;
+   background: linear-gradient(to right, #e5c1cd, #FFFFFF);
+  font-family:'HiraMinProN-W3', 'serif';
  }
- .tweet-container8-1 {
-  width: 100%;
+ .tweet-container8 {
   padding-top: 50px;
   text-align: center;
-  background: linear-gradient(to right, #e0ebaf, #FFFAFA);
-  font-family:'メイリオ', 'Meiryo', sans-serif;
+   background: linear-gradient(to right, #dbd0e6, #FFFFFF);
+  font-family:'HiraMinProN-W3', 'serif';
  }
- .tweet-container9-1 {
-  width: 100%;
+ .tweet-container9 {
   padding-top: 50px;
   text-align: center;
-  background: linear-gradient(to right, #f9c89b, #FFFAFA);
-  font-family:'メイリオ', 'Meiryo', sans-serif;
+  background: linear-gradient(to right, #ffb7b7, #FFFFFF);
+  font-family:'HiraMinProN-W3', 'serif';
  }

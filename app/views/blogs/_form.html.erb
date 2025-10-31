@@ -17,14 +17,14 @@
             <%= f.label :title, '住所・温泉名' %>
             <%= f.text_field :title, class: 'form-control' %>
             <small id="title-tip" class="form-text text-muted">
-                住所・温泉名を入力してください♪
+                住所・温泉名を入力してください
             </small>
         </div>
         <div class="b-content_box">
             <%= f.label :body, '投稿内容' %>
             <%= f.text_area :body, class: 'form-control', rows: 8 %>
             <small id="content-tip" class="form-text text-muted">
-                投稿内容を入力してください♪(1000文字以内)
+                投稿内容を入力してください(1000文字以内)
             </small>
         </div>
                 
@@ -32,7 +32,7 @@
         <input type="hidden" name="blog_image_update_flg" value="blog_image_update_flg" >
 
         <div class="b-push_box">
-            <%= f.submit '投稿！', class: 'decorated-btn click-down' %>
+            <%= f.submit '投稿', class: 'decorated-btn click-down' %>
         </div>
     </div>
 
