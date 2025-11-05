@@ -7,7 +7,7 @@ orbs:
 workflows:
   nginx-deploy: # Nginxのデプロイ
     jobs:
-      - aws-ecr/build-and-push-image:
+      - aws-ecr/build_and_push_image:
           region: AWS_REGION
           aws-access-key-id: AWS_ACCESS_KEY_ID
           aws-secret-access-key: AWS_SECRET_ACCESS_KEY
@@ -20,14 +20,14 @@ workflows:
               only: master
       - aws-ecs/deploy-service-update:
           requires:
-            - aws-ecr/build-and-push-image
+            - aws-ecr/build_and_push_image
           family: "onsen-task" # ECSのタスク定義名
           cluster-name: "arn:aws:ecs:ap-northeast-1:275335316117:cluster/onsen-cluster" #ECSのクラスターのARN
           service-name: "onsen-service" #サービス名
           container-image-name-updates: "container=onsen-nginx-container,tag=latest" #ECSのタスク定義内のコンテナ名
   rails-deploy: # Railsのデプロイ
     jobs:
-      - aws-ecr/build-and-push-image:
+      - aws-ecr/build_and_push_image:
           region: AWS_REGION
           aws-access-key-id: AWS_ACCESS_KEY_ID
           aws-secret-access-key: AWS_SECRET_ACCESS_KEY
@@ -40,7 +40,7 @@ workflows:
               only: master
       - aws-ecs/deploy-service-update:
           requires:
-            - aws-ecr/build-and-push-image
+            - aws-ecr/build_and_push_image
           family: "onsen-task" # ECSのタスク定義名
           cluster-name: "arn:aws:ecs:ap-northeast-1:275335316117:cluster/onsen-cluster" #ECSのクラスターのARN
           service-name: "onsen-service" #サービス名
