@@ -1,13 +1,15 @@
 version: 2.1 # バージョン指定
 
 orbs:
-  aws-ecr: circleci/aws-ecr@9.3.7
+  aws-ecr: circleci/aws-ecr@9.7.0
   aws-ecs: circleci/aws-ecs@2.2.1
 
 workflows:
-  nginx-deploy: # Nginxのデプロイ
+  build_and_push_image: # Nginxのデプロイ
     jobs:
       - aws-ecr/build_and_push_image:
+          auth:
+            - aws-cli/setup:
           region: AWS_REGION
           aws-access-key-id: AWS_ACCESS_KEY_ID
           aws-secret-access-key: AWS_SECRET_ACCESS_KEY
@@ -25,9 +27,12 @@ workflows:
           cluster-name: "arn:aws:ecs:ap-northeast-1:275335316117:cluster/onsen-cluster" #ECSのクラスターのARN
           service-name: "onsen-service" #サービス名
           container-image-name-updates: "container=onsen-nginx-container,tag=latest" #ECSのタスク定義内のコンテナ名
+ 
   rails-deploy: # Railsのデプロイ
     jobs:
       - aws-ecr/build_and_push_image:
+          auth:
+          - aws-cli/setup:
           region: AWS_REGION
           aws-access-key-id: AWS_ACCESS_KEY_ID
           aws-secret-access-key: AWS_SECRET_ACCESS_KEY
