@@ -11,9 +11,10 @@ workflows:
       - aws-ecr/build_and_push_image:
           auth:
             - aws-cli/setup:
-          aws-region: AWS_DEFAULT_REGION
-          aws-access-key-id: AWS_ACCESS_KEY_ID
-          aws-secret-access-key: AWS_SECRET_ACCESS_KEY
+                # role_arn: arn:aws:iam::123456789012:role/VALID_OIDC_ECR_ROLE ロールが必要
+          # aws-region: AWS_DEFAULT_REGION
+          # aws-access-key-id: AWS_ACCESS_KEY_ID
+          # aws-secret-access-key: AWS_SECRET_ACCESS_KEY
           create-repo: true
           dockerfile: ./docker/nginx/Dockerfile
           repo: onsen-nginx
@@ -31,12 +32,13 @@ workflows:
  
   rails-deploy: # Railsのデプロイ
     jobs:
-      - aws-ecr/build-and-push-image:
+      - aws-ecr/build_and_push_image:
           auth:
-          - aws-cli/setup:
-          region: AWS_REGION
-          aws-access-key-id: AWS_ACCESS_KEY_ID
-          aws-secret-access-key: AWS_SECRET_ACCESS_KEY
+            - aws-cli/setup:
+                # role_arn: arn:aws:iam::123456789012:role/VALID_OIDC_ECR_ROLE ロールが必要
+          # region: AWS_REGION
+          # aws-access-key-id: AWS_ACCESS_KEY_ID
+          # aws-secret-access-key: AWS_SECRET_ACCESS_KEY
           create-repo: true
           dockerfile: ./docker/rails/Dockerfile
           repo: onsen
