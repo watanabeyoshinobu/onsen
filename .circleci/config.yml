@@ -21,11 +21,10 @@ jobs:
             --overrides '{"containerOverrides": [{"name": "onsen-container", "command": ["rails", "db:migrate"]}]}'
 
 workflows:
-  build_and_deploy_all: # すべてを統合した単一のワークフロー
+  build_and_deploy_all:
     jobs:
       # 1. Nginxイメージのビルドとプッシュ
       - aws-ecr/build_and_push_image:
-          auth: true # --- 修正 B: auth: true を追加 ---
           create-repo: true
           dockerfile: ./docker/nginx/Dockerfile
           repo: onsen-nginx
@@ -33,10 +32,12 @@ workflows:
           filters:
             branches:
               only: master
+          pre-steps:
+            - aws-cli/setup
 
       # 2. Railsイメージのビルドとプッシュ
       - aws-ecr/build_and_push_image:
-          auth: true # --- 修正 B: auth: true を追加 ---
+
           create-repo: true
           dockerfile: ./docker/rails/Dockerfile
           repo: onsen
@@ -44,6 +45,9 @@ workflows:
           filters:
             branches:
               only: master
+          pre-steps:
+            - aws-cli/setup
+
       
       # 3. データベースマイグレーションの実行
       - db_migrate:
