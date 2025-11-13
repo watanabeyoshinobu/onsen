@@ -1,55 +1,61 @@
-version: 2.1 # バージョン指定
+version: 2.1
 
 orbs:
-  aws-ecr: circleci/aws-ecr@9.0
+  aws-ecr: circleci/aws-ecr@9.7.0
   aws-ecs: circleci/aws-ecs@2.2.1
   aws-cli: circleci/aws-cli@5.1
 
+jobs:
+  # データベースマイグレーションを実行するカスタムジョブを定義
+  db_migrate:
+    docker:
+      - image: cimg/aws/client:latest # AWS CLIが使えるDockerイメージ
+    steps:
+      - checkout
+      - aws-cli/setup
+      - run:
+          name: Run DB Migrations
+          command: |
+            aws ecs run-task --cluster onsen-cluster --task-definition onsen-task \
+            --launch-type EC2 \
+            --overrides '{"containerOverrides": [{"name": "onsen-container", "command": ["rails", "db:migrate"]}]}'
+
 workflows:
-  build-and-deploy: # Nginxのデプロイ
+  build_and_deploy_all: # すべてを統合した単一のワークフロー
     jobs:
+      # 1. Nginxイメージのビルドとプッシュ
       - aws-ecr/build_and_push_image:
-          auth:
-            - aws-cli/setup:
-                # role_arn: arn:aws:iam::123456789012:role/VALID_OIDC_ECR_ROLE ロールが必要
-          # aws-region: AWS_DEFAULT_REGION
-          # aws-access-key-id: AWS_ACCESS_KEY_ID
-          # aws-secret-access-key: AWS_SECRET_ACCESS_KEY
           create-repo: true
           dockerfile: ./docker/nginx/Dockerfile
           repo: onsen-nginx
-          tag: "latest"
+          tag: "${CIRCLE_SHA1}"
           filters:
             branches:
               only: master
-      - aws-ecs/deploy-service-update:
-          requires:
-            - aws-ecr/build_and_push_image
-          family: "onsen-task" # ECSのタスク定義名
-          cluster: "arn:aws:ecs:ap-northeast-1:275335316117:cluster/onsen-cluster" #ECSのクラスターのARN
-          service-name: "onsen-service" #サービス名
-          container-image-name-updates: "container=onsen-nginx-container,tag=latest" #ECSのタスク定義内のコンテナ名
- 
-  rails-deploy: # Railsのデプロイ
-    jobs:
+
+      # 2. Railsイメージのビルドとプッシュ（追加）
       - aws-ecr/build_and_push_image:
-          auth:
-            - aws-cli/setup:
-                # role_arn: arn:aws:iam::123456789012:role/VALID_OIDC_ECR_ROLE ロールが必要
-          # region: AWS_REGION
-          # aws-access-key-id: AWS_ACCESS_KEY_ID
-          # aws-secret-access-key: AWS_SECRET_ACCESS_KEY
           create-repo: true
           dockerfile: ./docker/rails/Dockerfile
           repo: onsen
-          tag: "latest"
+          tag: "${CIRCLE_SHA1}"
           filters:
             branches:
               only: master
+      
+      # 3. データベースマイグレーションの実行（追加）
+      - db_migrate:
+          requires:
+            - aws-ecr/build_and_push_image # 両方のビルド完了を待つ
+
+      # 4. ECSサービスへのデプロイ（更新）
       - aws-ecs/deploy-service-update:
           requires:
-            - aws-ecr/build_and_push_image
-          family: "onsen-task" # ECSのタスク定義名
-          cluster-name: "arn:aws:ecs:ap-northeast-1:275335316117:cluster/onsen-cluster" #ECSのクラスターのARN
-          service-name: "onsen-service" #サービス名
-          container-image-name-updates: "container=onsen-container,tag=latest" #ECSのタスク定義内のコンテナ名
+            - db_migrate # マイグレーション完了を待つ
+          family: "onsen-task" 
+          cluster: "onsen-cluster" 
+          service-name: "onsen-service"
+          # NginxとRails、両方のコンテナタグを一度に更新
+          container-image-name-updates: |
+            container=onsen-nginx-container,tag=${CIRCLE_SHA1}
+            container=onsen-container,tag=${CIRCLE_SHA1}
