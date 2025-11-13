@@ -1,15 +1,14 @@
 version: 2.1
 
 orbs:
-  aws-ecr: circleci/aws-ecr@9.7.0
+  aws-ecr: circleci/aws-ecr@10.1.0 
   aws-ecs: circleci/aws-ecs@7.2.0
   aws-cli: circleci/aws-cli@5.4.1
 
 jobs:
-  # データベースマイグレーションを実行するカスタムジョブを定義
   db_migrate:
     docker:
-      - image: cimg/aws/client:latest # AWS CLIが使えるDockerイメージ
+      - image: cimg/aws/client:latest
     steps:
       - checkout
       - aws-cli/setup
@@ -25,6 +24,7 @@ workflows:
     jobs:
       # 1. Nginxイメージのビルドとプッシュ
       - aws-ecr/build_and_push_image:
+          auth: true 
           create-repo: true
           dockerfile: ./docker/nginx/Dockerfile
           repo: onsen-nginx
@@ -32,12 +32,10 @@ workflows:
           filters:
             branches:
               only: master
-          pre-steps:
-            - aws-cli/setup
 
       # 2. Railsイメージのビルドとプッシュ
       - aws-ecr/build_and_push_image:
-
+          auth: true
           create-repo: true
           dockerfile: ./docker/rails/Dockerfile
           repo: onsen
@@ -45,9 +43,6 @@ workflows:
           filters:
             branches:
               only: master
-          pre-steps:
-            - aws-cli/setup
-
       
       # 3. データベースマイグレーションの実行
       - db_migrate:
@@ -57,11 +52,10 @@ workflows:
       # 4. ECSサービスへのデプロイ（更新）
       - aws-ecs/deploy-service-update:
           requires:
-            - db_migrate # マイグレーション完了を待つ
+            - db_migrate
           family: "onsen-task" 
           cluster: "onsen-cluster" 
           service-name: "onsen-service"
-          # --- 修正 A: container-image-updates を新しい形式に変更 ---
           container-image-configs: |
             - ecr-repo: onsen-nginx
               container-name: onsen-nginx-container
