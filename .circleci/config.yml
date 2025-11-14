@@ -1,9 +1,9 @@
 version: 2.1
 
 orbs:
-  aws-ecr: circleci/aws-ecr@8.2.1 
-  aws-ecs: circleci/aws-ecs@7.2.0
-  aws-cli: circleci/aws-cli@5.4.1
+  aws-ecr: circleci/aws-ecr@9.6.0 
+  aws-ecs: circleci/aws-ecs@7.1.0
+  aws-cli: circleci/aws-cli@5.3.1
 
 jobs:
   db_migrate:
@@ -23,7 +23,7 @@ workflows:
   build_and_deploy_all:
     jobs:
       # 1. Nginxイメージのビルドとプッシュ
-      - aws-ecr/build_and_push_image:
+      - aws-ecr/build-and-push-image:
           auth: true 
           create-repo: true
           dockerfile: ./docker/nginx/Dockerfile
@@ -34,7 +34,7 @@ workflows:
               only: master
 
       # 2. Railsイメージのビルドとプッシュ
-      - aws-ecr/build_and_push_image:
+      - aws-ecr/build-and-push-image:
           auth: true
           create-repo: true
           dockerfile: ./docker/rails/Dockerfile
@@ -47,7 +47,7 @@ workflows:
       # 3. データベースマイグレーションの実行
       - db_migrate:
           requires:
-            - aws-ecr/build_and_push_image 
+            - aws-ecr/build-and-push-image 
 
       # 4. ECSサービスへのデプロイ（更新）
       - aws-ecs/deploy-service-update:
