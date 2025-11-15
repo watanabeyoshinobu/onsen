@@ -24,7 +24,6 @@ workflows:
     jobs:
       # 1. Nginxイメージのビルドとプッシュ
       - aws-ecr/build_and_push_image:
-          create-repo: true
           dockerfile: ./docker/nginx/Dockerfile
           repo: onsen-nginx
           tag: "${CIRCLE_SHA1}"
@@ -36,7 +35,6 @@ workflows:
 
       # 2. Railsイメージのビルドとプッシュ
       - aws-ecr/build_and_push_image:
-          create-repo: true
           dockerfile: ./docker/rails/Dockerfile
           repo: onsen
           tag: "${CIRCLE_SHA1}"
