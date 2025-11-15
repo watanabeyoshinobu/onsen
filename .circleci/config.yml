@@ -24,6 +24,7 @@ workflows:
     jobs:
       # 1. Nginxイメージのビルドとプッシュ
       - aws-ecr/build_and_push_image:
+          name: build_nginx_image
           dockerfile: ./docker/nginx/Dockerfile
           repo: onsen-nginx
           tag: "${CIRCLE_SHA1}"
@@ -35,6 +36,7 @@ workflows:
 
       # 2. Railsイメージのビルドとプッシュ
       - aws-ecr/build_and_push_image:
+          name: build_rails_image
           dockerfile: ./docker/rails/Dockerfile
           repo: onsen
           tag: "${CIRCLE_SHA1}"
@@ -47,7 +49,8 @@ workflows:
       # 3. データベースマイグレーションの実行
       - db_migrate:
           requires:
-            - aws-ecr/build_and_push_image 
+            - build_nginx_image
+            - build_rails_image
 
       # 4. ECSサービスへのデプロイ（更新）
       - aws-ecs/deploy-service-update:
