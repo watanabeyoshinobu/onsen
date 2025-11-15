@@ -23,8 +23,7 @@ workflows:
   build_and_deploy_all:
     jobs:
       # 1. Nginxイメージのビルドとプッシュ
-      - aws-ecr/build-and-push-image:
-          auth: true 
+      - aws-ecr/build_and_push_image:
           create-repo: true
           dockerfile: ./docker/nginx/Dockerfile
           repo: onsen-nginx
@@ -32,10 +31,11 @@ workflows:
           filters:
             branches:
               only: master
+          auth:
+            - aws-cli/setup
 
       # 2. Railsイメージのビルドとプッシュ
-      - aws-ecr/build-and-push-image:
-          auth: true
+      - aws-ecr/build_and_push_image:
           create-repo: true
           dockerfile: ./docker/rails/Dockerfile
           repo: onsen
@@ -43,11 +43,13 @@ workflows:
           filters:
             branches:
               only: master
+          auth:
+            - aws-cli/setup
       
       # 3. データベースマイグレーションの実行
       - db_migrate:
           requires:
-            - aws-ecr/build-and-push-image 
+            - aws-ecr/build_and_push_image 
 
       # 4. ECSサービスへのデプロイ（更新）
       - aws-ecs/deploy-service-update:
