@@ -2,7 +2,7 @@ version: 2.1
 
 orbs:
   aws-ecr: circleci/aws-ecr@9.7.0 
-  aws-ecs: circleci/aws-ecs@7.1.0
+  aws-ecs: circleci/aws-ecs@2.2.1
   aws-cli: circleci/aws-cli@5.3.1
 
 jobs:
@@ -50,16 +50,12 @@ workflows:
             - aws-ecr/build_and_push_image 
 
       # 4. ECSサービスへのデプロイ（更新）
-      - aws-ecs/deploy-service:
+      - aws-ecs/deploy-service-update:
           requires:
             - db_migrate
           family: "onsen-task" 
-          cluster: "onsen-cluster" 
+          cluster: "onsen-cluster"
           service-name: "onsen-service"
-          container-image-configs: |
-            - ecr-repo: onsen-nginx
-              container-name: onsen-nginx-container
-              tag: ${CIRCLE_SHA1}
-            - ecr-repo: onsen
-              container-name: onsen-container
-              tag: ${CIRCLE_SHA1}
+          container-image-name-updates: |
+            container=onsen-nginx-container,tag=${CIRCLE_SHA1}
+            container=onsen-container,tag=${CIRCLE_SHA1}
