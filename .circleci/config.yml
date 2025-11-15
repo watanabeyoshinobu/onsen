@@ -54,7 +54,7 @@ workflows:
           requires:
             - db_migrate
           family: "onsen-task" 
-          cluster: "onsen-cluster"
+          cluster-name: "onsen-cluster"
           service-name: "onsen-service"
           container-image-name-updates: |
             container=onsen-nginx-container,tag=${CIRCLE_SHA1}
