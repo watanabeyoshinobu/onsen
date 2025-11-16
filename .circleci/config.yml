@@ -52,7 +52,7 @@ workflows:
             - build_nginx_image
             - build_rails_image
 
-      # 4. ECSサービスへのデプロイ 追加:trigger circleci
+      # 4. ECSサービスへのデプロイ
       - aws-ecs/deploy-service-update:
           requires:
             - db_migrate
