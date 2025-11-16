@@ -1,4 +1,4 @@
-FROM nginx:1.20.1
+FROM nginx:1.24.0
 
 RUN apt-get update && apt-get install -y apt-transport-https && \
     apt-get clean && apt-get update && \
