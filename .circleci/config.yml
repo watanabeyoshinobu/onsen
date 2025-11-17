@@ -9,6 +9,9 @@ jobs:
   db_migrate:
     docker:
       - image: cimg/aws/client:latest
+        auth:
+          username: ${DOCKERHUB_USER}
+          password: ${DOCKERHUB_PASS}
     steps:
       - checkout
       - aws-cli/setup
