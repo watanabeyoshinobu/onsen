@@ -7,7 +7,8 @@ orbs:
 
 
 jobs:
-  db_migrate:
+  # 問題箇所
+  db_migrate:  
     docker:
       - image: cimg/aws/client:latest
         auth:
