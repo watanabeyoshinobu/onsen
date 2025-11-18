@@ -9,7 +9,7 @@ orbs:
 jobs:
   db_migrate:
     docker:
-      - image: cimg/aws:latest
+      - image: cimg/aws:2024.03
     steps:
       - checkout
       - aws-cli/setup
