@@ -9,10 +9,13 @@ orbs:
 jobs:
   db_migrate:
     docker:
-      - image: public.ecr.aws/cimg/awscli:latest
+      - image: cimg/aws:latest
     steps:
       - checkout
       - aws-cli/setup
+      - run:
+          name: Check AWS CLI version
+          command: aws --version
       - run:
           name: Run DB Migrations
           command: |
