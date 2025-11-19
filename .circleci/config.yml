@@ -29,7 +29,7 @@ workflows:
       # 1. Nginxイメージのビルドとプッシュ
       - aws-ecr/build_and_push_image:
           name: build_nginx_image
-          dockerfile: ./docker/nginx/Dockerfile
+          dockerfile: ./docker/nginx/Dockerfile 
           repo: onsen-nginx
           tag: "${CIRCLE_SHA1}"
           filters:
@@ -37,8 +37,9 @@ workflows:
               only: master
           auth:
             - aws-cli/setup
+          build-path: ./docker/nginx/ 
 
-      # 2. Railsイメージのビルドとプッシュ
+      # 2. Railsイメージのビルドとプッシュ (こちらも同様に修正が必要かもしれません)
       - aws-ecr/build_and_push_image:
           name: build_rails_image
           dockerfile: ./docker/rails/Dockerfile
@@ -49,6 +50,7 @@ workflows:
               only: master
           auth:
             - aws-cli/setup
+          build-path: ./docker/rails/
       
       # 3. データベースマイグレーションの実行
       - db_migrate:
