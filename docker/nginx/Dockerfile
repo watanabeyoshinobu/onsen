@@ -8,4 +8,4 @@ RUN apt-get update && apt-get install -y apt-transport-https && \
 
 ENV LC_ALL=ja_JP.UTF-8
 
-COPY default.conf /etc/nginx/conf.d/default.conf
+COPY docker/nginx/nginx.conf /etc/nginx/nginx.conf
