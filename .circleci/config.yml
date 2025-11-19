@@ -37,9 +37,8 @@ workflows:
               only: master
           auth:
             - aws-cli/setup
-          build-path: ./docker/nginx/ 
 
-      # 2. Railsイメージのビルドとプッシュ (こちらも同様に修正が必要かもしれません)
+      # 2. Railsイメージのビルドとプッシュ
       - aws-ecr/build_and_push_image:
           name: build_rails_image
           dockerfile: ./docker/rails/Dockerfile
@@ -50,7 +49,6 @@ workflows:
               only: master
           auth:
             - aws-cli/setup
-          build-path: ./docker/rails/
       
       # 3. データベースマイグレーションの実行
       - db_migrate:
