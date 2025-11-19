@@ -80,5 +80,3 @@
 * Vue.js によるアプリ部分SPA化
 
 最後まで読んで頂き、誠にありがとうございました！！
-
-<!-- 追加：.circleci/config.yml db:migrate　の修正 -->
