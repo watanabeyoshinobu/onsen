@@ -25,22 +25,25 @@ workflows:
       - aws-ecr/build_and_push_image:
           name: build_nginx_image
           dockerfile: ./docker/nginx/Dockerfile
-          repo: onsen-nginx-tf   # ←★変更！ (Terraformで決めた名前に)
+          repo: onsen-nginx-tf
           tag: "${CIRCLE_SHA1}"
           filters:
             branches:
               only: master
-          # auth: ... (Orbのバージョンによっては不要ですが、エラーが出たら足します)
+          auth: 
+            - aws-cli/setup
 
       # 2. Railsイメージのビルドとプッシュ
       - aws-ecr/build_and_push_image:
           name: build_rails_image
           dockerfile: ./docker/rails/Dockerfile
-          repo: onsen-rails-tf   # ←★変更！ (Terraformで決めた名前に)
+          repo: onsen-rails-tf
           tag: "${CIRCLE_SHA1}"
           filters:
             branches:
               only: master
+          auth:    
+            - aws-cli/setup
 
       # 3. DBマイグレーション（一旦コメントアウトしてスキップ）
       # - db_migrate:
