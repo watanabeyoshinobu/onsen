@@ -56,55 +56,55 @@ class BlogsController < ApplicationController
   def look
     @tweets = Tweet.where(:action_name => action_name)
     @tweet = Tweet.new
-    @blogs = Blog.all.page(params[:page]).per(10)
+    @tweets = Tweet.where(action_name: "look").page(params[:page]).per(5)
   end
 
   def see
     @tweets = Tweet.where(:action_name => action_name)
     @tweet = Tweet.new
-    @blogs = Blog.all.page(params[:page]).per(10)
+    @tweets = Tweet.where(action_name: "see").page(params[:page]).per(5)
   end
 
   def saw
     @tweets = Tweet.where(:action_name => action_name)
     @tweet = Tweet.new
-    @blogs = Blog.all.page(params[:page]).per(10)
+    @tweets = Tweet.where(action_name: "saw").page(params[:page]).per(5)
   end
 
   def watch
     @tweets = Tweet.where(:action_name => action_name)
     @tweet = Tweet.new
-    @blogs = Blog.all.page(params[:page]).per(10)
+    @tweets = Tweet.where(action_name: "watch").page(params[:page]).per(5)
   end
 
   def seeing
     @tweets = Tweet.where(:action_name => action_name)
     @tweet = Tweet.new
-    @blogs = Blog.all.page(params[:page]).per(10)
+    @tweets = Tweet.where(action_name: "seeing").page(params[:page]).per(5)
   end
 
   def looking
     @tweets = Tweet.where(:action_name => action_name)
     @tweet = Tweet.new
-    @blogs = Blog.all.page(params[:page]).per(10)
+    @tweets = Tweet.where(action_name: "looking").page(params[:page]).per(5)
   end
 
   def check
     @tweets = Tweet.where(:action_name => action_name)
     @tweet = Tweet.new
-    @blogs = Blog.all.page(params[:page]).per(10)
+    @tweets = Tweet.where(action_name: "check").page(params[:page]).per(5)
   end
 
   def try
     @tweets = Tweet.where(:action_name => action_name)
     @tweet = Tweet.new
-    @blogs = Blog.all.page(params[:page]).per(10)
+    @tweets = Tweet.where(action_name: "try").page(params[:page]).per(5)
   end
 
   def gaze
     @tweets = Tweet.where(:action_name => action_name)
     @tweet = Tweet.new
-    @blogs = Blog.all.page(params[:page]).per(10)
+    @tweets = Tweet.where(action_name: "gaze").page(params[:page]).per(5)
   end
 
   def info

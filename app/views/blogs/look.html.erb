@@ -1,8 +1,5 @@
 
-
 <body>
-	<%= render 'menu' %>
-
 		<div class="onsen-visual">
 			  <div class="mask normal">
 			    <p class="text">
@@ -11,13 +8,13 @@
 			      <span class="line">ようこそ♨️</span>
 			    </p>
 			  </div>
-			  <div class="mask burn">
-			    <p class="text">
-			      <span class="line">横濱&nbsp;スパ&ヒルズ</span>
-			      <span class="line">竜泉寺の湯&nbsp;へ</span>
-			      <span class="line"><span class="large">ようこそ♨️</span></span>
-			    </p>
-			  </div>
+				<div class="mask burn">
+					<p class="text">
+						<span class="line">横濱&nbsp;スパヒルズ</span>
+						<span class="line">竜泉寺の湯&nbsp;へ</span>
+						<span class="line"><span class="large">ようこそ♨️</span></span>
+					</p>
+				</div>
 		</div>
 
 			<section class="beginning">
@@ -173,59 +170,75 @@
 			</main>
 
 				<div class="summary-container">
-					<p class="access-title">アクセス・料金一覧</p>
-						<div class="grid-access">
-								<article class="access-box">
-									<p class="address">情報</p>
+					<p class="section-title">アクセス・料金一覧</p>
+						<div class="movement">
+							<div class="summary-grid">
+								<article class="summary-card access-card">
+									<h3 class="card-title">店舗情報</h3>
+									<div class="card-body">
 										<p class="address-text">
 											〒241-0005<br>
 											神奈川県横浜市旭区白根8-8<br>
-											TEL:045-459-5268<br>
-											営業時間：朝6時〜深夜1時
+											<span class="tel">TEL: 045-459-5268</span><br>
+											<span class="hours">営業時間：朝6時〜深夜1時</span>
 										</p>
+									</div>
 								</article>
-									<article class="map-box">
-										<p class="map-title">地図</p>
-										<figure class="map-image"></figure>
-									</article>
-										<article class="price-box">
-											<p class="price-title">料金一覧</p>
-												<table class="table">
-													<thead>
-														<tr>
-															<th></th>
-															<th>平日</th>
-															<th>休日</th>
-														</tr>
-													</thead>
-													<tbody>
-														<tr>
-															<th>大人</th>
-															<th>880円</th>
-															<th>980円</th>
-														</tr>
-														<tr>
-															<th>子供</th>
-															<th>350円</th>
-															<th>350円</th>
-														</tr>
-													</tbody>
-												</table>
-											<p>※ forest villaは「料金」＋ 平日「750円」、休日は「950円」で利用可能</p>
-										</article>
 
-										<article class="traffic-box">
-											<p class="traffic-title">シャトルバスについて</p>
-												<p class="traffic-text">
-												『鶴ヶ峰駅』と『中山駅』にて無料送迎しております<br>
-													電車で竜泉寺の湯に行く際にはぜひご利用してください<br>
-													また、お車でのご来店も無料の駐車場がありますので安心していけます。
-												</p>
-										</article>
+								<article class="summary-card map-card">
+									<h3 class="card-title">地図</h3>
+									<div class="card-body map-body">
+										<div class="map-image1"></div>
+									</div>
+								</article>
+
+								<article class="summary-card price-card">
+									<h3 class="card-title">料金一覧</h3>
+									<div class="card-body">
+										<table class="price-table">
+											<thead>
+												<tr>
+													<th></th>
+													<th>平日</th>
+													<th>休日</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>大人</td>
+													<td>880円</td>
+													<td>980円</td>
+												</tr>
+												<tr>
+													<td>子供</td>
+													<td>350円</td>
+													<td>350円</td>
+												</tr>
+											</tbody>
+										</table>
+											<p class="note-text">※ forest villaは「料金」＋ 平日「750円」、休日は「950円」で利用可</p>
+									</div>
+								</article>
+
+								<article class="summary-card bus-card">
+									<h3 class="card-title">シャトルバスについて</h3>
+									<div class="card-body text-left">
+										<p>
+											『鶴ヶ峰駅』と『中山駅』にて無料送迎しております。<br>
+											電車で竜泉寺の湯に行く際にはぜひご利用ください。
+										</p>
+										<p class="mt-10">
+											また、お車でのご来店も無料の駐車場がありますので安心してご来店いただけます。
+										</p>
+									</div>
+								</article>
+
+							</div>
 						</div>
-										<div class="share-box">
-												<%= render 'impressions' %>
-										</div>
+
+							<div class="share-box">
+								<%= render 'impressions' %>
+							</div>
 				</div>
 
 			<%= render 'btn' %>
@@ -234,6 +247,7 @@
 			<p class="tweet-comment">コメント</p>
 			<%= render "tweet" %>
 		</article>
+			<div id="user-modal" class="modal center-modal" tabindex="-1" role="dialog" aria-hidden="true"></div>
 </body>
 
 

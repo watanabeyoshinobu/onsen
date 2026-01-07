@@ -1,91 +1,162 @@
+.b-comment_list {
+  width: 800px;
+  max-width: 95%;
+  margin: 0 auto;
+  font-family: 'HiraMinProN-W3', 'Yu Mincho', serif;
+}
+
+.b-comment_listTitle {
+  text-align: center;
+  font-size: 20px;
+  margin: 50px 0 30px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  letter-spacing: 2px;
+}
+
+/* 個別のコメントアイテム */
+.b-comment__item {
+  display: flex; /* 横並びにする */
+  gap: 20px;
+  padding: 25px 0;
+  border-bottom: 1px dashed #ccc; /* 点線で上品に */
+}
+
+/* 左：アバターアイコン */
+.b-comment__avatar {
+  flex-shrink: 0; /* 縮まないようにする */
+  width: 50px;
+  text-align: center;
+}
+.avatar-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #eee;
+}
+.no-image-avatar {
+  width: 50px;
+  height: 50px;
+  background-color: #eee;
+  border-radius: 50%;
+  line-height: 50px;
+  font-size: 20px;
+  color: #888;
+}
+
+/* 右：コンテンツ */
+.b-comment__content {
+  flex-grow: 1; /* 残りの幅を全部使う */
+}
+
+/* メタ情報（名前・日付・削除） */
+.b-comment__meta {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+.comment-user-name {
+  font-weight: bold;
+  font-size: 16px;
+  color: #5d4037; /* 落ち着いた茶色 */
+}
+.comment-date {
+  color: #999;
+  font-size: 12px;
+}
+.comment-delete-btn {
+  margin-left: auto; /* 右端に寄せる */
+  color: #bf0000;
+  text-decoration: none;
+  font-size: 12px;
+  border: 1px solid #bf0000;
+  padding: 2px 8px;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+.comment-delete-btn:hover {
+  background-color: #bf0000;
+  color: #fff;
+}
+
+/* コメント本文 */
+.b-comment__text {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #333;
+}
+
+
+/* 2. コメント入力フォーム */
 .b-comment__formBox {
-  width: 750px;
-  margin: 30px auto;
-  padding: 25px;
-  font-family:'HiraMinProN-W3', 'serif';
+  width: 800px;
+  max-width: 95%;
+  margin: 60px auto 30px;
+  padding: 40px;
+  background-color: #f9f9f9; /* 薄いグレーの背景 */
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-family: 'HiraMinProN-W3', 'Yu Mincho', serif;
 }
 
+.b-comment__formHeader {
+  text-align: center;
+  margin-bottom: 20px;
+}
 .b-comment__formTitle {
-  border-bottom: 2px solid #dfdfdf;
-  padding-bottom: 5px;
+  font-size: 18px;
+  margin: 0;
+  color: #333;
 }
+small { color: #888; }
 
-.b-comment__listTitle {
-  border-bottom: 2px solid #dfdfdf;
-  padding-bottom: 5px;
+.custom-textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 15px;
+  font-size: 16px;
+  background-color: #fff;
+  transition: 0.3s;
 }
-
-.b-comment__list {
-  margin: 38px 0;
-  padding: 20px;
-}
-
-.b-comment_box {
-  padding-top: 20px;
+.custom-textarea:focus {
+  border-color: #DAA520; /* フォーカス時に金色 */
+  outline: none;
+  box-shadow: 0 0 5px rgba(218, 165, 32, 0.3);
 }
 
 .b-send_box {
-  margin: 20px 100px 20px 0;
+  text-align: center;
+  margin-top: 20px;
 }
+
+/* 送信ボタン（メインCSSと統一） */
 .decorated-btn {
+  display: inline-block;
   width: 300px;
-
-  margin: 10px 0 0 190px;
-  background-color: #FFD700;
-  font-size: 12px;
+  max-width: 100%;
+  padding: 12px 0;
+  background-color: gold;
+  font-size: 16px;
+  font-weight: bold;
   border-radius: 5px;
-  border-bottom: solid 3px #DAA520;
-  box-shadow: 3px 3px 3px #808080;
+  border: none;
+  border-bottom: solid 3px goldenrod;
+  box-shadow: 0 3px 5px rgba(0,0,0,0.2);
   transition: 0.3s;
+  cursor: pointer;
 }
-
-.click-down:active {
-  transform: translateY(2px);
+.decorated-btn:hover {
+  background-color: orange;
+  margin-top: 3px;
   border-bottom: none;
 }
 
-.decorated-btn:hover {
-  background-color: #FFA500;
+// レスポンシブ
+@media screen and (max-width: 768px) {
+  .b-comment__formBox { padding: 20px; }
+  .decorated-btn { width: 100%; }
 }
-
-
-.b-comment__item {
-  width: 700px;
-  height: 120px;
-  margin: 0 auto;
-  padding-top: 40px;
-  border-bottom: 2px dotted #dfdfdf;
-}
-
-.b-comment__item p {
-  float: left;
-  padding-right: 20px;
-
-}
-
-.b-comment__bottomLine {
-  font-size: 15px;
-  float: right;
-
-  > span {
-    font-size: 14px;
-    margin: 0 12px;
-  }
-}
-
-
-.btn--red,
-a.btn--red {
-  color: #fff;
-  background-color: #c9171e;
-}
-.btn--red:hover,
-a.btn--red:hover {
-  color: #fff;
-  background: #c9171e;
-}
-
-a.btn--radius {
-   border-radius: 100vh;
-}
-

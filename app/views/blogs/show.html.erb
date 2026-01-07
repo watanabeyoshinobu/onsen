@@ -1,33 +1,34 @@
-<%= render 'menu' %>
+<div class="b-show_container">
+  
+  <div class="b-show-header">
+    <div class="b-show__title">
+      <p class="b-show_text">湯巡りの栞</p>
+    </div>
 
-<div class="b-show_box">
-	<div class="b-show__title">
-		<p class="b-show_text">温泉共有の詳細</p>
-	</div>
-		<div class="row-showbox">
-			<div class="col-md-1"></div>
-			<div class="col-md-4"></div>
-			<div class="col-md-2"><%= link_to '戻る', blogs_path, class: 'btn-border-button' %></div>
-			<% if @blog.user_id == current_user.id %>
-		    <div class="col-md-2"><%= link_to '編集', edit_blog_path(@blog), class: 'btn-border-button' %></div>
-		  <% end %>
-		</div>
-	</div>
+    <div class="b-show__actions">
+      <%= link_to '戻る', blogs_path, class: 'btn-border-button' %>
+      
+      <% if @blog.user_id == current_user.id %>
+        <%= link_to '編集', edit_blog_path(@blog), class: 'btn-border-button' %>
+      <% end %>
+    </div>
+  </div>
+	
+  <% if flash[:notice] %>
+    <div class="alert alert-primary"><%= flash[:notice] %></div>
+  <% end %>
 
-		<% if flash[:notice] %>
-			<div class="alert alert-primary"><%= flash[:notice] %></div>
-		<% end %>
+  <%= render @blog %>
 
-		<%= render @blog %>
+  <div class="b-comment_list">
+    <p class="b-comment_listTitle">コメント</p>
+    <%= render @blog.comments %>
+  </div>
 
-		<div class="b-comment_list">
-		  <p class="b-comment_listTitle">コメント</p>
-		  <%= render @blog.comments %>
-		</div>
+  <div id="user-modal" class="modal center-modal" tabindex="-1" role="dialog" aria-hidden="true"></div>
 
-		<div id="user-modal" class="modal center-modal" tabindex="-1" role="dialog" aria-hidden="true"></div>
-
-		<% if user_signed_in? %>
-			<%= render partial: 'comments/form', locals: { comment: @comment, blog: @blog } %>
-		<% end %>
+  <% if user_signed_in? %>
+    <%= render partial: 'comments/form', locals: { comment: @comment, blog: @blog } %>
+  <% end %>
+  <%= javascript_pack_tag 'hello_vue' %>
 </div>

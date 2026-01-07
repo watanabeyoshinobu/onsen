@@ -1,44 +1,44 @@
-
-<%= render 'menu' %>
-
-<div class="sakura2-container">
-
-    <div class="d-flex align-items-center">
-        <p class="b-index__comment">温泉共有の広場</p>
-        <div class="col-sm-2 col-md-offset-10">
-          <%= link_to '戻る', new_blog_path, class: 'btn-border-back' %>
-        </div>
+<div class="b-index_container">
+  
+  <div class="b-index-header">
+    <div class="b-index__title">
+      <p class="b-index__title-text">湯巡り録</p>
     </div>
+    
+    <div class="b-index__action">
+      <%= link_to '湯巡りの綴りへ', new_blog_path, class: 'btn-border-button' %>
+    </div>
+  </div>
 
-      <table class="table table-bordered border-primary table-sm blogs_table">
-        <thead class="thead-dark">
-          <tr>
-            <th scope="address">住所・温泉名</th>
-            <th scope="name">名前</th>
-            <th scope="post">投稿日</th>
-            <th scope="pout-time">更新日時</th>
-            <th scope="spa-show">温泉詳細</th>
-          </tr>
-        </thead>
-
-        <tbody>
-            <% @blogs.each do |blog| %>
-              <tr>
-                  <td><%= blog.title %></td>
-                <%= link_to users_path do %>
-                  <td><%= blog.user.name %></td>
-                <% end %>
-                  <td><%= blog.created_at.to_s(:datetime_base) %></td>
-                  <td><%= blog.updated_at.to_s(:datetime_base) %></td>
-                  <td><%= link_to '温泉詳細', blog, id: "detail-" + blog.id.to_s, class: 'btn btn--momo btn--cubic btn--shadow', method: :get %></td>
-                  <%# if blog.user_id == current_user.id %>
-                    <td><%#= link_to "削除", blog, class: 'btn btn--danger btn--cubic btn--shadow', method: :delete, data: {confirm: "投稿記事を削除しますか？", cancel: "キャンセル", commit: "削除する", title: "削除の確認"} %></td>
-                  <%# end %>
-              </tr>
+  <div class="b-index-grid">
+    <% @blogs.each do |blog| %>
+      <div class="b-card">
+        <%= link_to blog_path(blog), class: "b-card__link" do %>
+          
+          <div class="b-card__image-box">
+            <% if blog.image.present? %>
+              <%= image_tag blog.image.to_s, class: "b-card__image" %>
+            <% else %>
+              <div class="b-card__no-image">♨️</div>
             <% end %>
-        </tbody>
-    </table>
+          </div>
 
-  <%= paginate @blogs  %>
+          <div class="b-card__body">
+            <p class="b-card__date"><%= blog.created_at.strftime('%Y.%m.%d') %></p>
+            <h3 class="b-card__title"><%= blog.title.truncate(15) %></h3>
+            <p class="b-card__user">
+              <i class="fa fa-user-circle"></i> <%= blog.user.name %>
+            </p>
+            <span class="b-card__more">詳細を見る &gt;</span>
+          </div>
+          
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="b-pagination">
+    <%= paginate @blogs %>
+  </div>
+
 </div>
-

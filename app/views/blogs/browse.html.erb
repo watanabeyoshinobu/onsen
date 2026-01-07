@@ -1,6 +1,5 @@
 <body>
 
-<%= render 'menu' %>
 <%= render 'btn' %>
 
   <div class="slide-wrapper">
@@ -11,7 +10,7 @@
       <div class="image4"></div>
       <div class="image5"></div>
     </div>
-      <span id="prev" class="prev"></span>
+      <span id="front" class="front"></span>
       <span id="after" class="after"></span>
         <ul class="indicator" id="indicator">
           <li class="list"></li>
@@ -25,8 +24,8 @@
   <div class="container_spa">
     <div class="movement">
       <article class="yunokokoti">
-          <p class="yunokokoti-text">湯のここちとは</p>
-          <p class="yunokokoti-text2">
+          <p class="yunokokoti-title">湯のここちとは</p>
+          <p class="yunokokoti-text">
               このサイトは神奈川県にあるスーパー銭湯の紹介をコンセプトにしたサイトです。<br>
               神奈川県に在住するお疲れの皆様をターゲットにスーパー銭湯へ赴き、温泉などの癒しを提供できれば幸いです。
           </p>
@@ -46,7 +45,7 @@
 
     <main class="main-container">
         <div class="movement">
-          <h2 class="heading1">神奈川県のスーパー銭湯紹介</h2>
+          <p class="heading1">神奈川県のスーパー銭湯紹介</p>
             <p class="heading-text">
               神奈川県にお住まいの皆様<br>
               神奈川県にある温泉のひと時はいかがでしょうか
@@ -122,8 +121,8 @@
           <div class="container2">
             <div class="movement">
               <p class="profile">プロフィール</p>
-                <p class="heading-text">
-                『湯のここち』というサイトを制作しました <br>
+                <p class="heading-text2">
+                『湯のここち』というサイトを制作しました。 <br>
                   制作理由は、現代はストレス社会と言われており、日々ストレスと戦う皆様に少しでも癒しを紹介したいという思いがきっかけです。<br>
                   少しでも皆さまにスーパー銭湯の魅力や素晴らしさを知ってもらえたら嬉しいです
                 </p>
@@ -134,9 +133,9 @@
                             <p class="admin-name">渡邊 義信</p>
                             <p class="profile-title">マイブーム</p>
                             <p class="profile-text">
-                              最近は、サウナにはまっています<br>
-                              サウナは、新陳代謝を上げるだけではなく『美容』にも良いと言われています。<br>
-                              もちろん新陳代謝を上げるので、美容だけでなくダイエットにもいいと言われております。<br>
+                              最近のマイブームとしてサウナにはまっています。<br>
+                              サウナは体の新陳代謝を上げてくれ流だけでなく、体の中の老廃物を出してくれるので美容に良いとされています。<br>
+                              また、ダイエットにも効果的だと言われています。<br>
                               皆さんもご興味があれば是非、サウナで整ってみて下さい。<br>
                             </p>
                           </div>
@@ -147,21 +146,25 @@
           <div class="container3">
             <div class="movement">
               <p class="other-title">others</p>
-              <p class="heading-text">
-                  趣味を乗せたりスーパー銭湯の魅力をお伝えしていきたいので、興味のある方は是非見に来て下さい<br>
+              <p class="heading-text2">
+                  スーパー銭湯の魅力を共有したいので、皆さんも共有してください。<br>
                   また、皆様に楽しくご利用していただける様に禁止事項を厳守の上ご利用をお願い致します。<br>
               </p>
 
                 <section class="grid-other">
                     <div class="other-btn">
-                      <%= link_to '注意事項', precautions_blogs_path, class: 'btn-border-precautions' %>
-                      <%= link_to '温泉の共有', new_blog_path, class: 'btn-border-comment' %>
-                      <%= link_to ("https://twitter.com/yosshi_ike1720") do %>
-                        <span class="fa fa-twitter fa-x"aria-hidden="true"></span>
-                      <% end %>
-                      <%= link_to ("http://facebook.com/yosshi.freedom1720") do %>
-                        <span class="fa fa-facebook fa-x"aria-hidden="true"></span>
-                      <% end %>
+                      <div class="other-btn">
+                        <%= link_to '注意事項', precautions_blogs_path, class: 'btn-border-precautions' %>
+                        <%= link_to '湯巡りの綴り', new_blog_path, class: 'btn-border-comment' %>
+                        <div class="sns-box">
+                          <%= link_to("https://twitter.com/yosshi_ike1720") do %>
+                            <span class="fa fa-twitter fa-x" aria-hidden="true"></span>
+                          <% end %>
+                          <%= link_to("http://facebook.com/yosshi.freedom1720") do %>
+                            <span class="fa fa-facebook fa-x" aria-hidden="true"></span>
+                          <% end %>
+                        </div>
+                      </div>
                     </div>
                 </section>
             </div>

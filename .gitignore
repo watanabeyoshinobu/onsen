@@ -38,3 +38,12 @@
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+
+
+
+# Terraformの無視設定
+terraform_onsen/.terraform/
+terraform_onsen/*.tfstate
+terraform_onsen/*.tfstate.backup
+terraform_onsen/.terraform.lock.hcl
+terraform_onsen/terraform-provider*

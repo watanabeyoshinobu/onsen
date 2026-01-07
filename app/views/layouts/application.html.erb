@@ -15,34 +15,58 @@
   </head>
 
   <body>
-    <header>
-      <a>
-        <nav class="nav-bar">
-          <% if user_signed_in? %>
-            <li><%= link_to 'ホーム', browse_path %></li>
-            <li><%= link_to 'お知らせ', info_blogs_path %></li>
-            <li><%= link_to 'マイページ', user_path(current_user) %><li>
-            <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
-          <% else %>
-            <li><%= link_to '新規登録  ', new_user_registration_path %></li>
-            </li><%= link_to 'ログイン  ', new_user_session_path %><li>
-                <%= link_to 'ゲストログイン  ', homes_guest_sign_in_path,  method: :post %>
-          <% end %>
-        </nav>
-      </a>
+<header>
       <%= link_to browse_path do %>
-          <%= image_tag 'img/yunokokoti.png',class:"photo" %>
+        <%= image_tag 'img/yunokokoti.png', class: "photo" %>
       <% end %>
+
+      <% unless user_signed_in? %>
+          <div class="mobile-auth-links">
+            <%= link_to 'ゲスト', homes_guest_sign_in_path, method: :post, class: 'header-btn header-btn-guest' %>
+            <%= link_to '新規登録', new_user_registration_path, class: 'header-btn header-btn-outline' %>
+            <%= link_to 'ログイン', new_user_session_path, class: 'header-btn header-btn-outline' %>
+          </div>
+      <% end %>
+
+      <div id="hm-icon">
+        <a id="menu-trigger" href="#">
+          <span></span>
+          <span></span>
+          <span></span>
+        </a>
+      </div>
+      
+      <nav id="sp-menu">
+        <p class="menu-text">メニュー</p>
+        <ul>
+          <li><%= link_to 'ホーム', browse_path %></li>
+          <li><%= link_to 'お知らせ', info_blogs_path %></li>
+          <li><%= link_to '注意事項', precautions_blogs_path %></li>
+          <li><%= link_to '温泉の共有', new_blog_path %></li>
+          <% if user_signed_in? %>
+            <li><%= link_to 'マイページ', user_path(current_user) %></li>
+            <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+          <% else %>
+            <li><%= link_to '新規登録', new_user_registration_path %></li>
+            <li><%= link_to 'ログイン', new_user_session_path %></li>
+            <li><%= link_to 'ゲスト', homes_guest_sign_in_path, method: :post %></li>
+          <% end %>
+        </ul>
+      </nav>
     </header>
+    
     <div class="main-contents">
-        <div id="slidemenu">
-          <ul class="nav navbar-nav navbar-right" data-hover="dropdown" data-animations="zoomIn fadeIn fadeInUp fadeIn">
-          </ul>
-        </div>
-        <%= yield %>
+      <%= yield %>
     </div>
+
     <footer>
       <p class="">© Yunokokochi All Rights Reserved.</p>
     </footer>
+
+    <span id="back">
+      <a href="#">
+        <%= image_tag 'img/arrow.png' %>
+      </a>
+    </span>
   </body>
 </html>

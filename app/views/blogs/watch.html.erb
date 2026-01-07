@@ -1,7 +1,4 @@
 <body>
-
-	<%= render 'menu' %>
-
 	<div class="onsen-visual4">
 		<div class="mask normal">
 			<p class="text">
@@ -84,8 +81,9 @@
 								</figure>
 							</article>
 							<article class="movement">
-								<figure class="food_image4-3"></figure>
-								<figcaption>手まりパフェ</figcaption>
+								<figure class="food_image4-3">
+									<figcaption>手まりパフェ</figcaption>
+								</figure>
 							</article>
 						</div>
 				</section>
@@ -122,66 +120,81 @@
 					</main>
 		</div>
 
-			<div class="summary-container2">
-				<p class="access-title">アクセス・料金一覧</p>
-					<div class="grid-access">
-							<article class="access-box">
-								<p class="address">情報</p>
+			<div class="summary-container">
+				<p class="section-title">アクセス・料金一覧</p>
+					<div class="movement">
+						<div class="summary-grid">
+							<article class="summary-card access-card">
+								<h3 class="card-title">店舗情報</h3>
+								<div class="card-body">
 									<p class="address-text">
 										〒240-0042<br>
 										神奈川県横浜市保土ケ谷区上星川3-1-1<br>
-										TEL:045-370-4126<br>
-										営業時間：朝6時〜深夜1時
+										<span class="tel">TEL: 045-370-4126</span><br>
+										<span class="hours">営業時間: 朝6時〜深夜1時</span>
 									</p>
+								</div>
 							</article>
-								<article class="map-box">
-									<p class="map-title4">地図</p>
-									<figure class="map-image4"></figure>
-								</article>
-									<article class="price-box">
-										<p class="price-title">料金一覧</p>
-											<table class="table">
-												<thead>
-													<tr>
-														<th></th>
-														<th>平日（会員）</th>
-														<th>土日祝 （会員）</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<th>大人</th>
-														<th>1,050円　(900円)</th>
-														<th>1,150円　(1,000円)</th>
-													</tr>
-													<tr>
-														<th>子供(小学生)</th>
-														<th>350円</th>
-														<th>350円</th>
-													</tr>
-													<tr>
-														<th>幼児(3才～未就学児)</th>
-														<th>250円</th>
-														<th>250円</th>
-													</tr>
-												</tbody>
-											</table>
-												<p class="another-price">
-													アメニティが豊富なので、手ぶらで大丈夫です。<br>
-													会員になるとお安くなりますので、こちらもおすすめです。
-												</p>
-									</article>
 
-									<article class="traffic-box">
-										<p class="traffic-title">シャトルバスについて</p>
-											<p class="traffic-text">
+							<article class="summary-card map-card">
+								<h3 class="card-title">地図</h3>
+								<div class="card-body map-body">
+									<div class="map-image4"></div>
+								</div>
+							</article>
+
+							<article class="summary-card price-card">
+								<h3 class="card-title">料金一覧</h3>
+								<div class="card-body">
+									<table class="price-table">
+										<thead>
+											<tr>
+												<th></th>
+												<th>平日（会員）</th>
+												<th>土日祝 （会員）</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<th>大人</th>
+												<th>1,050円　(900円)</th>
+												<th>1,150円　(1,000円)</th>
+											</tr>
+											<tr>
+												<th>子供(小学生)</th>
+												<th>350円</th>
+												<th>350円</th>
+											</tr>
+											<tr>
+												<th>幼児(3才～未就学児)</th>
+												<th>250円</th>
+												<th>250円</th>
+											</tr>
+										</tbody>
+									</table>
+										<p class="note-text">
+											アメニティが豊富なので、手ぶらで大丈夫です。<br>
+											会員になるとお安くなりますので、こちらもおすすめです。
+										</p>
+								</div>
+							</article>
+
+								<article class="summary-card bus-card">
+									<h3 class="card-title">シャトルバスについて</h3>
+									<div class="card-body text-left">
+										<p>
 											相鉄線「上星川駅」南口を出てすぐ左手のためシャトルバスはありません。<br>
-											海老名、湘南台方面からお越しのお客様は『二俣川駅』で各駅停車にお乗り換えください。
-									</article>
-					</div>
-									<div class="share-box">
-											<%= render 'impressions' %>
+											<p class="mt-10">
+												海老名、湘南台方面からお越しのお客様は『二俣川駅』で各駅停車にお乗り換えください。
+											</p>
+										</p>
 									</div>
+								</article>
+						</div>
+							<div class="share-box">
+								<%= render 'impressions' %>
+							</div>
+					</div>
 			</div>
 
 		<%= render 'btn' %>
@@ -190,4 +203,5 @@
 			<p class="tweet-comment">コメント</p>
 			<%= render "tweet" %>
 		</article>
+			<div id="user-modal" class="modal center-modal" tabindex="-1" role="dialog" aria-hidden="true"></div>
 </body>

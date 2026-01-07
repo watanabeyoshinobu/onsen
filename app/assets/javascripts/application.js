@@ -18,29 +18,33 @@
 //= require_tree .
 
 
-// ハンバーガー
+//ハンバーガーメニュー
 $(function() {
-  $('#menu-trigger').on('click', function() {
-    $(this).toggleClass('active')
+  $(document).on('click', '#menu-trigger', function() {
+    $(this).toggleClass('active');
     $('#sp-menu').fadeToggle();
     return false;
   });
 
-  $('#sp-menu ul li').on('click', function(){
-    $('#menu-trigger').toggleClass('active')
-    $('#sp-menu').fadeToggle();
+  $(document).on('click', '#sp-menu ul li', function() {
+    $('#menu-trigger').removeClass('active');
+    $('#sp-menu').fadeOut();
+  });
+
+  $(document).on('turbolinks:before-cache', function() {
+    $('#menu-trigger').removeClass('active');
+    $('#sp-menu').hide();
+  });
+
+  // --- 戻るボタン ---
+  $(document).on('click', '#back a', function() {
+    $('body, html').animate({
+      scrollTop: 0
+    }, 800);
+    return false;
   });
 });
 
-// 戻るボタン
-$(function() {
-  $('#back a').on('click',function(){
-    $('body, html').animate({
-      scrollTop:0
-    }, 800);
-      return false;
-  });
-});
 
 // look画面
 $(function(){
@@ -253,120 +257,106 @@ window.addEventListener('scroll', function(){
 
 
 // スライドショー
-window.addEventListener('load', function(){
-  const slideContainer = document.querySelector('.slide');
-  const prev = document.getElementById('prev');
-  const after = document.getElementById('after');
-  const indicator = document.getElementById('indicator');
+window.addEventListener('load', function() {
+  const slideWrapper = document.querySelector('.slide-wrapper');
+  
+  // スライドショーが無いページでは終了
+  if (!slideWrapper) return; 
+
   const slides = document.querySelectorAll('.slide > div');
-  const totalSlides = slides.length;
-
-  // 元スライドを保持（CSSでつけた色も取得）
-  const slideColors = Array.from(slides).map(slide =>
-  window.getComputedStyle(slide).backgroundColor
-  );
-
-  // クローン作成
-  const firstClone = slides[0].cloneNode(true);
-  const lastClone = slides[totalSlides - 1].cloneNode(true);
-
-  // クローンに背景色をコピー
-  firstClone.style.backgroundColor = slideColors[0];
-  lastClone.style.backgroundColor = slideColors[totalSlides - 1];
-
-  // スライドにクローンを追加
-  slideContainer.appendChild(firstClone);
-  slideContainer.insertBefore(lastClone, slides[0]);
-
-  // クローンを含めた全スライドを取得
-  const allSlides = slideContainer.querySelectorAll('div');
-  const totalWithClone = allSlides.length;
-
-  // 幅計算
-  slideContainer.style.width = `${totalWithClone * 100}%`;
-  allSlides.forEach(slide => slide.style.width = `${100 / totalWithClone}%`);
-
-  // 元スライドとクローンの背景色を再設定
-  allSlides.forEach((slide, i) => {
-  if (i === 0) slide.style.backgroundColor = slideColors[totalSlides - 1];
-  else if (i === allSlides.length - 1) slide.style.backgroundColor = slideColors[0];
-  else slide.style.backgroundColor = slideColors[i - 1];
-  });
-
-  let count = 1;
-  let isAnimating = false;
+  const indicators = document.querySelectorAll('.indicator .list');
+  const prevBtn = document.getElementById('front');
+  const nextBtn = document.getElementById('after');
+  
+  let currentIndex = 0; // 現在表示しているスライド番号
   let autoPlayInterval;
+  const fadeSpeed = 5000; // 自動切替の秒数
 
-  // 初期位置
-  slideContainer.style.transform = `translateX(-${count * 100 / totalWithClone}%)`;
-
-  function updateSlidePosition(withTransition = true) {
-  slideContainer.style.transition = withTransition ? 'transform 0.5s' : 'none';
-  slideContainer.style.transform = `translateX(-${count * 100 / totalWithClone}%)`;
-  if (withTransition) isAnimating = true;
+  // --- 初期化処理 ---
+  function initSlide() {
+    // 最初のスライドとインジケーターを表示状態にする
+    slides[0].classList.add('active');
+    indicators[0].classList.add('active');
+    startAutoPlay();
   }
 
-  // インジケーター更新
-  function updateIndicator() {
-  const activeIndex = (count - 1 + totalSlides) % totalSlides;
-  document.querySelectorAll('.list').forEach((li, i) => {
-  li.style.backgroundColor = i === activeIndex ? '#000' : '#fff';
-  });
+  // --- スライド切り替え関数 ---
+  function showSlide(index) {
+    // すべてのスライドとインジケーターから active を外す
+    slides.forEach(slide => slide.classList.remove('active'));
+    indicators.forEach(indicator => indicator.classList.remove('active'));
+
+    // 指定された番号に active をつける（CSSのtransitionでふわっと変わる）
+    slides[index].classList.add('active');
+    indicators[index].classList.add('active');
+    
+    currentIndex = index; // 現在地を更新
   }
 
-  // スライド操作
+  // --- 次へ ---
   function nextSlide() {
-  if (isAnimating) return;
-  count++;
-  updateSlidePosition();
-  updateIndicator();
+    let newIndex = currentIndex + 1;
+    if (newIndex >= slides.length) {
+      newIndex = 0; // 最後まで行ったら最初に戻る
+    }
+    showSlide(newIndex);
   }
 
+  // --- 前へ ---
   function prevSlide() {
-  if (isAnimating) return;
-  count--;
-  updateSlidePosition();
-  updateIndicator();
+    let newIndex = currentIndex - 1;
+    if (newIndex < 0) {
+      newIndex = slides.length - 1; // 最初より前なら最後に戻る
+    }
+    showSlide(newIndex);
   }
 
-  // transition後のループ補正
-  slideContainer.addEventListener('transitionend', () => {
-  if (count === totalWithClone - 1) count = 1;
-  if (count === 0) count = totalSlides;
-  updateSlidePosition(false);
-  isAnimating = false;
-  });
-
-  // 自動スライド
+  // --- 自動再生 ---
   function startAutoPlay() {
-  autoPlayInterval = setInterval(nextSlide, 5000);
+    autoPlayInterval = setInterval(nextSlide, fadeSpeed);
   }
-  function stopAutoPlay() { clearInterval(autoPlayInterval); }
-  startAutoPlay();
 
-  // ボタン操作
-  after.addEventListener('click', () => { nextSlide(); resetAutoPlay(); });
-  prev.addEventListener('click', () => { prevSlide(); resetAutoPlay(); });
+  function stopAutoPlay() {
+    clearInterval(autoPlayInterval);
+  }
 
   function resetAutoPlay() {
-  stopAutoPlay();
-  startAutoPlay();
+    stopAutoPlay();
+    startAutoPlay();
   }
 
-  // インジケーター操作
-  indicator.addEventListener('click', (e) => {
-  if (!e.target.classList.contains('list')) return;
-  if (isAnimating) return;
-  const index = Array.from(indicator.children).indexOf(e.target);
-  count = index + 1;
-  updateSlidePosition();
-  updateIndicator();
-  resetAutoPlay();
+  // --- イベントリスナー設定 ---
+  
+  // 次へボタン
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      nextSlide();
+      resetAutoPlay();
+    });
+  }
+
+  // 前へボタン
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      prevSlide();
+      resetAutoPlay();
+    });
+  }
+
+  // インジケーター（丸ポチ）クリック
+  indicators.forEach((indicator, index) => {
+    indicator.addEventListener('click', () => {
+      showSlide(index);
+      resetAutoPlay();
+    });
   });
 
-  // タブ切替時に自動スライドを停止/再開
+  // タブが非表示になったら停止（省エネ）
   document.addEventListener('visibilitychange', () => {
-  if (document.hidden) stopAutoPlay();
-  else startAutoPlay();
+    if (document.hidden) stopAutoPlay();
+    else startAutoPlay();
   });
+
+  // 実行開始
+  initSlide();
 });

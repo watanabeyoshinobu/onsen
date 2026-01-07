@@ -1,25 +1,29 @@
-<%= render 'blogs/menu' %>
-
-<div class="edit-container">
-	<div class="user_edit">
-		<p class="edit-title">プロフィール編集</p>
-	</div>
-
-	<main class="user_settings">
-		<p class="image-set"><%= @user.name %> さんのプロフィール画像設定</p>
+<div class="mypage-container"> 
+	<div class="mypage">
+    <h2 class="mypage-title">画像編集</h2>
+  </div>
+		<main class="user_formbox">
+			<p class="image-set"><%= @user.name %> さんの<br>プロフィール画像設定</p>
+			
 			<div class="user_settings_form">
 				<%= form_for(@user) do |f| %>
-				   <% if @user.profile_image.present? %>
-				      <%= image_tag @user.profile_image.to_s, :size =>'200x200' %>
-				   <% else %>
-				      <%= image_tag "img/no_image.jpg" %>
-				   <% end %>
-				      <button type="button" class="btn btn-outline-secondary rounded-pill">
-				         <%= f.file_field :profile_image, accept: 'image/jpeg,image/gif,image/png' %>
-				      </button>
-				      <input type="hidden" name="user_profile_image_update_flg" value="user_profile_image_update_flg" >
-						<%= f.submit '更新する', class: 'btn btn-primary' %>
+					<figure class="current-image">
+						<% if @user.profile_image.present? %>
+							<%= image_tag @user.profile_image.to_s, :size =>'200x200' %>
+						<% else %>
+							<%= image_tag "img/no_image.jpg", :size =>'200x200' %>
+						<% end %>
+					</figure>
+
+						<div class="file-input-box">
+							<%= f.file_field :profile_image, accept: 'image/jpeg,image/gif,image/png' %>
+						</div>
+							<input type="hidden" name="user_profile_image_update_flg" value="user_profile_image_update_flg" >
+						<div class="submit-box">
+							<%= f.submit '更新する', class: 'update-btn' %>
+						</div>
+
 				<% end %>
 			</div>
-	</main>
+		</main>
 </div>

@@ -1,24 +1,45 @@
-<div class="modal-dialog" role="document">
-  <div class="modal-content">
-  <div class="modal-show">
-    <div class="modal-name">
-      <h3>アカウント名: <%= @comment.user.name%> さんに</h3>
+<div class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal-content custom-modal-content">
+    
+    <div class="modal-header-custom">
+      <h3 class="modal-title">ユーザー情報</h3>
     </div>
-    <h3>フォローしますか？</h3>
-      <div class="follow-button">
+    <div class="modal-body-custom">
+        <div class="modal-user-icon">
+          <% if @comment.user.profile_image? %>
+            <%= image_tag @comment.user.profile_image.url, class: "profile-img" %>
+          <% else %>
+            <%= image_tag "default.png", class: "profile-img" %>
+          <% end %>
+        </div>
+        <div class="modal-user-name">
+          <%= @comment.user.name %> さん
+        </div>
+      
+      <p class="modal-message">フォローしてつながりますか？</p>
+
+      <div class="follow-button-area">
         <% unless current_user == @comment.user %>
           <% if current_user.following?(@comment.user) %>
             <%= form_for(current_user.relationships.find_by(follow_id: @comment.user.id), html: { method: :delete }) do |f| %>
               <%= hidden_field_tag :follow_id, @comment.user.id %>
-              <%= f.submit 'フォロー解除', class: 'btn-border-reset' %>
+              <%= f.submit 'フォロー中', class: 'modal-btn btn-unfollow' %>
             <% end %>
           <% else %>
             <%= form_for(current_user.relationships.build) do |f| %>
               <%= hidden_field_tag :follow_id, @comment.user.id %>
-              <%= f.submit 'フォロー', class: 'btn-border-follow' %>
+              <%= f.submit 'フォローする', class: 'modal-btn btn-follow' %>
             <% end %>
           <% end %>
+        <% else %>
+          <p class="is-me">※あなた自身のアカウントです</p>
         <% end %>
+      </div>
     </div>
+    
+    <div class="modal-footer-custom">
+      <button type="button" class="modal-close-btn" data-dismiss="modal">閉じる</button>
+    </div>
+
   </div>
 </div>

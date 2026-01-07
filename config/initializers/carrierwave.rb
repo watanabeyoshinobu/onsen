@@ -27,8 +27,12 @@ require 'carrierwave/storage/file'
 require 'carrierwave/storage/fog'
 
 CarrierWave.configure do |config|
-  if Rails.env.production? || Rails.env.development?
-    config.storage :fog
+  if Rails.env.production?
+    if Rails.env.production?
+      storage :fog
+    else
+      storage :file
+    end
     config.cache_storage = :fog
     config.fog_provider = 'fog/aws'
     config.fog_directory  = 'onsen-image2'

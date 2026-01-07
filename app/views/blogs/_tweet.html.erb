@@ -1,38 +1,55 @@
-<% if flash[:error_massages] %>
-    <div class="alert alert-danger">
-        <ul>
-            <% flash[:error_massages].each do |massage| %>
-                <li><<%= massage %></li>
-            <% end %>
-        </ul>
-    </div>
+<% if flash[:error_messages] %>
+  <div class="alert alert-danger">
+    <ul>
+      <% flash[:error_messages].each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
 <% end %>
 
-    <%= render 'shared/error_messages' %>
+<%= render 'shared/error_messages' %>
 
-    <%= form_for @tweet do |f| %>
-
-        <div class="b-tweet__formbox">
-            <div class="b-content_box">
-                <%= f.text_area :tweet, class: 'form-control', rows: 5 %>
-                <small id="content-tip" class="form-text text-muted">
-                    コメントを入力してください(500文字以内)
-                </small>
-                <%= f.hidden_field :action_name, :value => controller.action_name %>
-            </div>
-
-            <div class="b-push_box2">
-                <%= f.submit '投稿', class: 'decorated-btn2 click-down' %>
-            </div>
-        </div>
-
-    <% end %>
-<% @tweets.each do |tweet| %>
-	<div class="b-comment__item">
-      <p><%= simple_format(tweet.tweet) %></p>
-        <div class="b-comment__bottomLine">
-            <span><%= tweet.user.name %></span>
-        </div>
+<div class="b-tweet__formbox">
+  <%= form_for @tweet do |f| %>
+    <div class="b-content_box">
+      <%= f.text_area :tweet, class: 'form-control custom-textarea', rows: 4, placeholder: "今の気持ちをつぶやいてみましょう（500文字以内）" %>
+      <%= f.hidden_field :action_name, :value => controller.action_name %>
     </div>
-<% end %>
-<%= paginate @blogs %>
+
+    <div class="b-push_box2">
+      <%= f.submit '投稿する', class: 'decorated-btn2 click-down' %>
+    </div>
+  <% end %>
+</div>
+
+<div class="b-tweet__list">
+  <% @tweets.each do |tweet| %>
+    <div class="b-comment__item">
+      
+      <div class="b-comment__avatar">
+        <% if tweet.user.profile_image.present? %>
+          <%= link_to image_tag(tweet.user.profile_image.to_s, class: "avatar-image"), show_modal_user_path(tweet.user, tweet_id: tweet.id), remote: true %>
+        <% else %>
+          <%= link_to show_modal_user_path(tweet.user, tweet_id: tweet.id), remote: true, class: "avatar-text" do %>
+            <div class="no-image-avatar"><%= tweet.user.name.first %></div>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="b-comment__content">
+        <div class="b-comment__meta">
+          <span class="comment-user-name"><%= tweet.user.name %></span>
+          <span class="comment-date"><%= tweet.created_at.strftime('%Y/%m/%d %H:%M') %></span>
+        </div>
+        
+        <div class="b-comment__text">
+          <%= simple_format(tweet.tweet) %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<div class="b-pagination">
+  <%= paginate @tweets %>
+</div>

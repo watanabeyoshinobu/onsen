@@ -3,85 +3,30 @@
   padding: 0px;
   text-decoration: none;
 }
-.box {
+
+/* sessions.html.erb */
+
+.auth-box {
   width: 400px;
-  height: 550px;
-  margin: 60px auto 0;
-  margin-bottom: 30px;
+  height: 550px auto 0;
+  margin: 50px auto 0;
+  margin-bottom: 40px;
   border-radius: 4px;
   border: 1px #ddd solid;
-  font-family:'メイリオ', 'Meiryo', sans-serif;
+  font-family:'HiraMinProN-W3', 'serif';
 }
 
-.box-inner {
-  padding: 20px 26px;
-}
-
-h1 {
-  font-weight: 400;
-  font-size: 28px;
-  line-height: 1.2;
-  margin-bottom: 10px;
-  padding-bottom: 4px;
-  color: #111111;
-}
-
-.box-name {
- margin-bottom: 13px;
-}
-
-.box-email {
-  margin-bottom: 13px;
-}
-
-.box-password {
-  margin-bottom: 22px;
-}
-
-.box-email label, .box-password label {
-  font-weight: 700;
-  font-size: 13px;
-  padding-left: 2px;
-  padding-bottom: 2px;
-}
-
-.box-email input[type="email"], .box-password input[type="password"] {
-  border-style: none;
-  box-sizing: border-box;
-  width: 100%;
-  height: 31px;
-  border: 1px solid #a6a6a6;
-  box-shadow: 0 1px 0 rgba(0,0,0,.07) inset;
-  border-radius: 3px;
-  padding: 0 7px;
-}
-
-.column-left {
-  float: left;
-}
-
-.column-right {
-  float: right;
-}
-
-.box-password a {
-  font-size: 13px;
-}
-
-.box-login {
-  margin-bottom: 26px;
-}
-
-.box-login input[type="submit"] {
+.auth-login input[type="submit"] {
   border-style: none;
   width: 100%;
   height: 31px;
   background: linear-gradient(to bottom,#f7dfa5,#f0c14b);
   border-radius: 3px;
   border: 1px #a88734 solid;
+  margin-top: 30px;
 }
 
-.box-login input[type="submit"]:hover {
+.auth-login input[type="submit"]:hover {
   cursor: pointer;
   background: #f0c14b;
 }
@@ -97,19 +42,19 @@ h1 {
   padding-left: 3px;
 }
 
-.box-newusr p {
+.auth-newusr p {
   text-align: center;
   font-size: 12px;
   color: #767676;
   margin-bottom: 14px;
 }
 
-.box-newusr p span {
+.auth-newusr p span {
   text-decoration: line-through;
   text-decoration-color: #e7e7e7;
 }
 
-.box-newusr a {
+.auth-newusr a {
   display: block;
   width: 100%;
   height: 31px;
@@ -122,54 +67,77 @@ h1 {
   border: 1px #a2a6ac solid;
 }
 
-.box-newusr a:hover {
+.auth-newusr a:hover {
   background: #e7e9ec;
 }
 
+/* registrations.html.erb */
 
-
-
-
-
-.box2 {
+.auth-box2 {
   width: 450px;
   height: 500px auto 0;
-  margin: 60px auto 0;
-  margin-bottom: 30px;
+  margin: 50px auto 0;
+  margin-bottom: 40px;
   padding-bottom: 30px;
   border-radius: 4px;
   border: 1px #ddd solid;
-  font-family:'メイリオ', 'Meiryo', sans-serif;
+  font-family:'HiraMinProN-W3', 'serif';
 }
 
-.box-inner2 {
-  padding: 20px 26px;
-}
-
-.name-box2 {
-  margin-bottom: 13px;
-}
-
-.email-box2 {
-  margin-bottom: 13px;
-}
-
-.password-box2 {
-  margin-bottom: 22px;
-}
-
-.repassword-box2 {
+.auth-repassword {
   margin-bottom: 52px;
 }
 
-.name-box2 label, .email-box2 label, .password-box2 label, .repassword-box2 label {
+.auth-signup input[type="submit"] {
+  border-style: none;
+  width: 100%;
+  height: 31px;
+  background: linear-gradient(to bottom,#f7dfa5,#f0c14b);
+  border-radius: 3px;
+  border: 1px #a88734 solid;
+  margin-top: 40px;
+}
+
+.auth-signup input[type="submit"]:hover {
+  cursor: pointer;
+  background: #f0c14b;
+}
+
+/* 共通 */
+
+.authentication {
+  text-align: center;
+}
+
+.auth-inner {
+  padding: 20px 26px;
+}
+
+.auth-name, .auth-email {
+  margin-bottom: 13px;
+}
+
+.auth-password {
+  margin-bottom: 22px;
+}
+
+.auth-email label, .auth-password label,
+.auth-name label, .auth-repassword label {
   font-weight: 700;
   font-size: 13px;
   padding-left: 2px;
   padding-bottom: 2px;
 }
 
- .name-box2 input[type="name"], .email-box2 input[type="email"], .password-box2 input[type="password"], .repassword-box2 input[type="password"] {
+.auth-email label, .auth-password label, .auth-repassword label {
+  font-weight: 700;
+  font-size: 13px;
+  padding-left: 2px;
+  padding-bottom: 2px;
+}
+
+.auth-email input[type="email"], .auth-password input[type="password"],
+.auth-name input[type="name"], .auth-repassword input[type="password"] {
   border-style: none;
   box-sizing: border-box;
   width: 100%;
@@ -179,18 +147,50 @@ h1 {
   border-radius: 3px;
   padding: 0 7px;
 }
+ 
+/* レスポンシブ */
+@media screen and (max-width: 768px) {
 
-.box-signup input[type="submit"] {
-  border-style: none;
-  width: 100%;
-  height: 31px;
-  background: linear-gradient(to bottom,#f7dfa5,#f0c14b);
-  border-radius: 3px;
-  border: 1px #a88734 solid;
+  .auth-box, .auth-box2 {
+    width: 90% !important;
+    height: auto !important;
+    margin: 40px auto !important;
+    padding: 10px 0 30px 0;
+  }
+
+  .auth-inner {
+    padding: 15px !important;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="name"] {
+    height: 40px !important;
+    font-size: 16px !important;
+  }
+
+  .auth-login input[type="submit"],
+  .auth-signup input[type="submit"] {
+    height: 44px !important;
+    font-size: 16px !important;
+    margin-top: 20px !important;
+  }
+
+  .auth_newusr a {
+    height: 44px !important;
+    line-height: 44px !important;
+    font-size: 14px !important;
+  }
+
+  .column-right {
+    float: none !important;
+    display: block;
+    margin-top: 5px;
+    text-align: right;
+  }
+  
+  .column-left {
+    float: none !important;
+  }
 }
-
-.box-signup input[type="submit"]:hover {
-  cursor: pointer;
-  background: #f0c14b;
-}
-

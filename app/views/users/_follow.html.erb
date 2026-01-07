@@ -1,24 +1,33 @@
-
 <% current_user.followings.each do |follow_user| %>
-	<div class="follow-box">
-		<div class="follow-image">
-			<% if follow_user.profile_image.present? %>
-				<%= image_tag follow_user.profile_image.to_s, :size =>'200x200' %>
-			<% end %>
-		</div>
-		<h3 class="follow-name"><%= follow_user.name%></h3>
-		<div class="follow-reset">
-          <% if current_user.following?(follow_user) %>
-            <%= form_for(current_user.relationships.find_by(follow_id: follow_user.id), html: { method: :delete }) do |f| %>
-              <%= hidden_field_tag :follow_id, follow_user.id %>
-              <%= f.submit 'フォロー解除', class: 'btn-border-reset' %>
-            <% end %>
-          <% else %>
-            <%= form_for(current_user.relationships.build) do |f| %>
-              <%= hidden_field_tag :follow_id, follow_user.id %>
-              <%= f.submit 'フォロー', class: 'btn-border-follow' %>
-            <% end %>
-          <% end %>
-		</div>
-	</div>
+  <div class="user-card">
+    
+    <div class="user-card__image-box">
+      <%= link_to user_path(follow_user) do %>
+        <% if follow_user.profile_image.present? %>
+          <%= image_tag follow_user.profile_image.to_s, class: "user-card__image" %>
+        <% else %>
+          <%= image_tag "img/no_image.jpg", class: "user-card__image" %>
+        <% end %>
+      <% end %>
+    </div>
+
+    <h3 class="user-card__name">
+      <%= link_to follow_user.name, user_path(follow_user) %>
+    </h3>
+
+    <div class="user-card__action">
+      <% if current_user.following?(follow_user) %>
+        <%= form_for(current_user.relationships.find_by(follow_id: follow_user.id), html: { method: :delete }) do |f| %>
+          <%= hidden_field_tag :follow_id, follow_user.id %>
+          <%= f.submit 'フォロー中', class: 'user-btn btn-unfollow' %>
+        <% end %>
+      <% else %>
+        <%= form_for(current_user.relationships.build) do |f| %>
+          <%= hidden_field_tag :follow_id, follow_user.id %>
+          <%= f.submit 'フォローする', class: 'user-btn btn-follow' %>
+        <% end %>
+      <% end %>
+    </div>
+
+  </div>
 <% end %>

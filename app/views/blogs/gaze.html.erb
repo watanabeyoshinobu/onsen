@@ -1,6 +1,4 @@
 <body>
-
-<%= render 'menu' %>
 	<div class="onsen-visual9">
 		<div class="mask normal">
 			<p class="text">
@@ -124,26 +122,34 @@
 					</main>
 		</div>
 
-			<div class="summary-container9">
-				<p class="access-title">アクセス・料金一覧</p>
-					<div class="grid-access">
-							<article class="access-box">
-								<p class="address">情報</p>
-									<p class="address-text">
-										〒233-0006<br>
-										神奈川県横浜市港南区芹が谷5-54-8<br>
-										TEL:045-820-4126<br>
-										営業時間：朝9時〜深夜2時（平日）
-									</p>
-							</article>
-								<article class="map-box">
-									<p class="map-title">地図</p>
-									<figure class="map-image9"></figure>
-									<p class="map-text">※地図は無料シャトルバスの停車位置の地図です</p>
+			<div class="summary-container">
+				<p class="section-title">アクセス・料金一覧</p>
+					<div class="movement">
+						<div class="summary-grid">
+								<article class="summary-card access-card">
+									<h3 class="card-title">店舗情報</h3>
+									<div class="card-body">
+										<p class="address-text">
+												〒233-0006<br>
+												神奈川県川崎市宮前区宮前平2-13-3<br>
+											<span class="tel">TEL: 044-860-2641</span><br>
+											<span class="hours">営業時間: 朝9時〜深夜2時(平日)</span><br>
+											<span class="hours">営業時間: 朝7時〜深夜2時(土日祝)</span>
+										</p>
+									</div>
 								</article>
-									<article class="price-box">
-										<p class="price-title">料金一覧</p>
-											<table class="table">
+
+								<article class="summary-card map-card">
+									<h3 class="card-title">地図</h3>
+									<div class="card-body map-body">
+										<div class="map-image9"></div>
+									</div>
+								</article>
+
+								<article class="summary-card price-card">
+									<h3 class="card-title">料金一覧</h3>
+										<div class="card-body">
+											<table class="price-table">
 												<thead>
 													<tr>
 														<th></th>
@@ -164,25 +170,28 @@
 													</tr>
 												</tbody>
 											</table>
-												<p class="another-price">
+												<p class="note-text">
 													タオルやバスタオルは入館料金には含まれていません。<br>
 													ご自身でお持ちいただくか、フロントにてお求めください。<br>
 													バスタオルはレンタルとなります。料金はご利用店にお問い合わせください。<br>
 													その他詳細は、公式サイトをご確認ください。
 												</p>
-									</article>
+										</div>
+								</article>
 
-									<article class="traffic-box">
-										<p class="traffic-title">シャトルバスについて</p>
-											<p class="traffic-text">
-												無料送迎バスは『JR東戸塚駅東口』にて無料送迎しています<br>
-												また『上大岡駅』からも無料送迎バスが発車しているので、是非ご活用ください<br>
-												お車での来店も無料で駐車場数200台もありますので安心です
+									<article class="summary-card bus-card">
+										<h3 class="card-title">シャトルバスについて</h3>
+											<div class="card-body text-left">
+													無料送迎バスは『JR東戸塚駅東口』にて無料送迎しています<br>
+													また『上大岡駅』からも無料送迎バスが発車しているので、是非ご活用ください<br>
+													お車での来店も無料で駐車場数200台もありますので安心です
+											</div>
 									</article>
+							</div>
+								<div class="share-box">
+									<%= render 'impressions' %>
+								</div>
 					</div>
-									<div class="share-box">
-											<%= render 'impressions' %>
-									</div>
 			</div>
 
 		<%= render 'btn' %>
@@ -191,4 +200,5 @@
 			<p class="tweet-comment">コメント</p>
 			<%= render "tweet" %>
 		</article>
+			<div id="user-modal" class="modal center-modal" tabindex="-1" role="dialog" aria-hidden="true"></div>
 </body>

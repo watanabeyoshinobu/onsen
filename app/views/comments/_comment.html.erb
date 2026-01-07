@@ -1,41 +1,31 @@
+<div class="b-comment__item">
+  <div class="b-comment__avatar">
+    <% if comment.user.profile_image.present? %>
+      <%= link_to image_tag(comment.user.profile_image.to_s, class: "avatar-image"), show_modal_user_path(comment_id: comment.id), remote: true %>
+    <% else %>
+      <%= link_to show_modal_user_path(comment_id: comment.id), remote: true, class: "avatar-text" do %>
+        <div class="no-image-avatar"><%= comment.user.name.first %></div>
+      <% end %>
+    <% end %>
+  </div>
 
-<div class="b-show_container">
-	<div class="b-comment__item">
-	  <p><%= simple_format(comment.comment) %></p>
-	  <div class="b-comment__bottomLine">
+  <div class="b-comment__content">
+    <div class="b-comment__meta">
+      <span class="comment-user-name"><%= comment.user.name %></span>
+      <span class="comment-date"><%= comment.created_at.strftime('%Y/%m/%d') %></span>
+      
+      <% if user_signed_in? && comment.user == current_user %>
+        <%= link_to comment, method: :delete, data: { confirm: "コメントを削除しますか？" }, class: "comment-delete-btn" do %>
+          <i class="fa fa-trash"></i> 削除
+        <% end %>
+      <% end %>
+    </div>
 
-	<% if comment.user.profile_image.present? %>
-		<%= link_to image_tag(comment.user.profile_image.to_s, :size =>'50x50'), show_modal_user_path(comment_id: comment.id), remote: true, class: "btn btn-lg, btn-primary" %>
-
-		  <% if false %>
-			  <%= link_to users_show_path do %>
-			    <span><%= comment.user.name %></span>
-			  <% end %>
-		  <% end %>
-
-		    <span><%= comment.created_at.to_s(:datetime_base) %></span>
-		    <% if user_signed_in? && comment.user == current_user %>
-		    <span><%= link_to "削除", comment, class: 'btn btn--red btn--radius', method: :delete, data: {confirm: "コメントを削除しますか？", cancel: "キャンセル", commit: "削除する", title: "削除の確認"} %></span>
-		    <% end %>
-		  </div>
-		</div>
-	<% else %>
-		<%= link_to comment.user.name, show_modal_user_path(comment_id: comment.id), remote: true, class: "btn btn-lg, btn-primary" %>
-
-		  <% if false %>
-			  <%= link_to users_show_path do %>
-			    <span><%= comment.user.name %></span>
-			  <% end %>
-		  <% end %>
-
-		    <span><%= comment.created_at.to_s(:datetime_base) %></span>
-		    <% if user_signed_in? && comment.user == current_user %>
-		    <span><%= link_to "削除", comment, class: 'btn btn--red btn--radius', method: :delete, data: {confirm: "コメントを削除しますか？", cancel: "キャンセル", commit: "削除する", title: "削除の確認"} %></span>
-		    <% end %>
-		</div>
-	</div>
-<% end %>
-
+    <div class="b-comment__text">
+      <%= simple_format(comment.comment) %>
+    </div>
+  </div>
+</div>
 
 
 

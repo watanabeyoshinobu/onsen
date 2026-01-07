@@ -1,26 +1,30 @@
-
-<% if flash[:error_massages] %>
-    <div class="alert alert-danger">
-        <ul>
-            <% flash[:error_massages].each do |massage| %>
-                <li><<%= massage %></li>
-            <% end %>
-        </ul>
-    </div>
+<% if flash[:error_messages] %>
+  <div class="alert alert-danger">
+    <ul>
+      <% flash[:error_messages].each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
 <% end %>
 
 <%= render 'shared/error_messages' %>
 
 <div class="b-comment__formBox">
-	<p class="b-comment__formTitle">コメント記入</p>
-	<%= form_for comment do |f| %>
-	    <%= f.hidden_field :blog_id, :value => @blog.id %>
-    	<div class="b-comment_box">
-			<%= f.label :comment, 'コメント' %>
-			<%= f.text_area :comment, class: 'form-control', rows: 4 %>
-		</div>
-        <div class="b-send_box">
-            <%= f.submit '送信', class: 'decorated-btn click-down' %>
-        </div>
-	<% end %>
+  <div class="b-comment__formHeader">
+    <p class="b-comment__formTitle">湯巡りの記録</p>
+    <small>コメント記入</small>
+  </div>
+
+  <%= form_for comment do |f| %>
+    <%= f.hidden_field :blog_id, :value => @blog.id %>
+    
+    <div class="b-comment_input_area">
+      <%= f.text_area :comment, class: 'form-control custom-textarea', rows: 4, placeholder: "素敵な感想をお待ちしています" %>
+    </div>
+    
+    <div class="b-send_box">
+      <%= f.submit '送信する', class: 'decorated-btn click-down' %>
+    </div>
+  <% end %>
 </div>

@@ -1,12 +1,18 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
 
-  def show_modal
-    @comment = Comment.where(id: params[:comment_id]).first
+def show_modal
+    if params[:tweet_id].present?
+      @comment = Tweet.find_by(id: params[:tweet_id])
+    else
+      @comment = Comment.find_by(id: params[:comment_id])
+    end
+
     if @comment.present?
       respond_to :js
     else
-      raise "id: #{params[:comment_id]}が見つかりませんでした。"
+      logger.error "Modal object not found. params: #{params.inspect}"
+      render status: 404
     end
   end
 
@@ -34,11 +40,16 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if params[:user_profile_image_update_flg].present?
-      @user.update_attribute(:profile_image, params[:user][:profile_image])
-    else
-      @user.update!(user_params)
-    end
-    redirect_to user_path(@user.id)
+        if params[:user].present?
+          @user.update_attribute(:profile_image, params[:user][:profile_image])
+          redirect_to user_path(@user)
+        else
+          redirect_to edit_user_path(@user), alert: "画像が選択されていません"
+        end
+        else
+          @user.update!(user_params)
+          redirect_to user_path(@user)
+        end
   end
 
   def withdraw
