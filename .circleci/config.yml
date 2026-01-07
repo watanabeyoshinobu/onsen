@@ -1,30 +1,22 @@
 version: 2.1
 
 orbs:
-  aws-ecr: circleci/aws-ecr@9.7.0 
-  aws-ecs: circleci/aws-ecs@2.2.1
-  aws-cli: circleci/aws-cli@5.4.1
+  aws-ecr: circleci/aws-ecr@9.0.0 # バージョンはそのままでOK
+  aws-ecs: circleci/aws-ecs@4.0.0 # バージョンはそのままでOK
+  aws-cli: circleci/aws-cli@4.0.0 # バージョンはそのままでOK
 
-
-jobs:
-  db_migrate:
-    docker:
-      - image: cimg/aws:2024.03
-    steps:
-      - checkout
-      - aws-cli/setup
-      - run:
-          name: Check AWS CLI version
-          command: aws --version
-      - run:
-          name: Run DB Migrations
-          command: |
-            AWS_ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)
-            IMAGE_URI="${AWS_ACCOUNT_ID}.dkr.ecr.ap-northeast-1.amazonaws.com/onsen:${CIRCLE_SHA1}"
-
-            aws ecs run-task --cluster onsen-cluster --task-definition onsen-task \
-            --launch-type EC2 \
-            --overrides "{\"containerOverrides\": [{\"name\": \"onsen-container\", \"command\": [\"rails\", \"db:migrate\"], \"image\": \"${IMAGE_URI}\"}]}"
+# jobs:
+  # ↓↓↓ 今回はまだ動かないのでコメントアウトのままでOK（後で使います） ↓↓↓
+  # db_migrate:
+  #   docker:
+  #     - image: cimg/aws:2024.03
+  #   steps:
+  #     - checkout
+  #     - aws-cli/setup
+  #     - run:
+  #         name: Run DB Migrations
+  #         command: |
+  #           # (省略)
 
 workflows:
   build_and_deploy_all:
@@ -33,39 +25,38 @@ workflows:
       - aws-ecr/build_and_push_image:
           name: build_nginx_image
           dockerfile: ./docker/nginx/Dockerfile
-          repo: onsen-nginx
+          repo: onsen-nginx-tf   # ←★変更！ (Terraformで決めた名前に)
           tag: "${CIRCLE_SHA1}"
           filters:
             branches:
               only: master
-          auth:
-            - aws-cli/setup
+          # auth: ... (Orbのバージョンによっては不要ですが、エラーが出たら足します)
 
       # 2. Railsイメージのビルドとプッシュ
       - aws-ecr/build_and_push_image:
           name: build_rails_image
           dockerfile: ./docker/rails/Dockerfile
-          repo: onsen
+          repo: onsen-rails-tf   # ←★変更！ (Terraformで決めた名前に)
           tag: "${CIRCLE_SHA1}"
           filters:
             branches:
               only: master
-          auth:
-            - aws-cli/setup
-      
-      # 3. データベースマイグレーションの実行
-      - db_migrate:
-          requires:
-            - build_nginx_image
-            - build_rails_image
+
+      # 3. DBマイグレーション（一旦コメントアウトしてスキップ）
+      # - db_migrate:
+      #     requires:
+      #       - build_nginx_image
+      #       - build_rails_image
 
       # 4. ECSサービスへのデプロイ
       - aws-ecs/deploy-service-update:
           requires:
-            - db_migrate
-          family: "onsen-task" 
-          cluster-name: "onsen-cluster"
-          service-name: "onsen-service"
+            - build_nginx_image
+            - build_rails_image
+            # - db_migrate      # コメントアウト
+          family: "onsen-task-tf"       # ←★変更！ (タスク定義名)
+          cluster-name: "onsen-cluster-tf" # ←★変更！ (クラスター名)
+          service-name: "onsen-service"    # (これはそのまま)
           container-image-name-updates: |
             container=onsen-nginx-container,tag=${CIRCLE_SHA1}
             container=onsen-container,tag=${CIRCLE_SHA1}

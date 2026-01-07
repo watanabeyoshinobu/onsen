@@ -190,18 +190,21 @@ resource "aws_lb_listener" "http" {
 }
 
 
-# 13. ECRリポジトリ（Dockerイメージの倉庫）
-resource "aws_ecr_repository" "main" {
-  name                 = "onsen-repo"
-  image_tag_mutability = "MUTABLE" # 上書きOKにする
-
-  # イメージをプッシュした時に、脆弱性スキャンを自動でやる設定
+# 13. ECRリポジトリ（Rails用：Terraform専用）
+resource "aws_ecr_repository" "rails" {
+  name                 = "onsen-rails-tf" # ←★名前を変更！既存の "onsen" と被らない
+  image_tag_mutability = "MUTABLE"
   image_scanning_configuration {
     scan_on_push = true
   }
+}
 
-  tags = {
-    Name = "onsen-repo"
+# 13-2. ECRリポジトリ（Nginx用：Terraform専用）
+resource "aws_ecr_repository" "nginx" {
+  name                 = "onsen-nginx-tf" # ←★名前を変更！
+  image_tag_mutability = "MUTABLE"
+  image_scanning_configuration {
+    scan_on_push = true
   }
 }
 
@@ -241,19 +244,32 @@ resource "aws_ecs_cluster" "main" {
 }
 
 
-# 17. タスク定義（コンテナの設計図）
+# 17. タスク定義（本番仕様：Rails + Nginx）
 resource "aws_ecs_task_definition" "main" {
-  family                   = "onsen-task"
+  family                   = "onsen-task-tf" # ←★タスク名も "-tf" にして区別！
   requires_compatibilities = ["FARGATE"]
   network_mode             = "awsvpc"
-  cpu                      = "256"
-  memory                   = "512"
+  cpu                      = "512"
+  memory                   = "1024"
   execution_role_arn       = aws_iam_role.ecs_task_execution_role.arn
 
   container_definitions = jsonencode([
+    # 1つ目：Railsコンテナ
     {
-      name  = "onsen-container"
-      image = "nginx:latest"  # ★まずはテストで公式Nginxを使う！
+      name      = "onsen-container"
+      image     = "${aws_ecr_repository.rails.repository_url}:latest" # 新しい倉庫を参照
+      essential = true
+      portMappings = [
+        {
+          containerPort = 3000
+          hostPort      = 3000
+        }
+      ]
+    },
+    # 2つ目：Nginxコンテナ
+    {
+      name      = "onsen-nginx-container"
+      image     = "${aws_ecr_repository.nginx.repository_url}:latest" # 新しい倉庫を参照
       essential = true
       portMappings = [
         {
@@ -261,9 +277,16 @@ resource "aws_ecs_task_definition" "main" {
           hostPort      = 80
         }
       ]
+      dependsOn = [
+        {
+          containerName = "onsen-container"
+          condition     = "START"
+        }
+      ]
     }
   ])
 }
+
 
 # 18. ECSサービス（タスクを起動・維持する部隊）
 resource "aws_ecs_service" "main" {
@@ -281,7 +304,7 @@ resource "aws_ecs_service" "main" {
 
   load_balancer {
     target_group_arn = aws_lb_target_group.main.arn
-    container_name   = "onsen-container"
+    container_name   = "onsen-nginx-container" # Nginxに向ける
     container_port   = 80
   }
 }
