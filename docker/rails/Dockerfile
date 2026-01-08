@@ -37,3 +37,5 @@ RUN SECRET_KEY_BASE=placeholder bundle exec rails assets:precompile \
   && rm -rf node_modules tmp/cache
 
 EXPOSE 3000
+
+CMD ["bash", "-c", "rm -f tmp/pids/server.pid && bundle exec rails s -b '0.0.0.0'"]
