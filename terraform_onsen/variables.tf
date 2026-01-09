@@ -9,3 +9,9 @@ variable "aws_secret_key" {
   type        = string
   sensitive   = true
 }
+
+variable "secret_key_base" {
+  description = "Rails secret key base"
+  type        = string
+  sensitive   = true
+}

@@ -260,8 +260,7 @@ resource "aws_ecs_task_definition" "main" {
         { name = "DB_NAME",     value = "onsen_production" },
         { name = "RAILS_LOG_TO_STDOUT", value = "true" },
         { name = "RAILS_ENV",   value = "production" },
-
-        # ▼▼▼ 値を var.変数名 に書き換えます ▼▼▼
+        { name = "SECRET_KEY_BASE", value = var.secret_key_base },
         { name = "AWS_ACCESS_KEY_ID",     value = var.aws_access_key },
         { name = "AWS_SECRET_ACCESS_KEY", value = var.aws_secret_key },
         { name = "AWS_REGION",            value = "ap-northeast-1" }

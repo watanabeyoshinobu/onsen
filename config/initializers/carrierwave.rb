@@ -39,6 +39,7 @@ CarrierWave.configure do |config|
         aws_access_key_id:     ENV['AWS_ACCESS_KEY_ID'],
         aws_secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
         # ▲▲▲ 修正ここまで ▲▲▲
+        # secret_key_base　は不要
         region: 'ap-northeast-1'
     }
   else
