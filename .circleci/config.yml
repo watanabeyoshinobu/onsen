@@ -26,13 +26,10 @@ workflows:
       # 2. Railsイメージのビルドとプッシュ
       - aws-ecr/build_and_push_image:
           name: build_rails_image
-          build-args: RAILS_MASTER_KEY=${RAILS_MASTER_KEY}
           dockerfile: ./docker/rails/Dockerfile
           path: .
           repo: onsen-rails-tf
-          # ▼▼▼ ここを修正 ▼▼▼
-          tag: "latest,${CIRCLE_SHA1}"
-          # ▲▲▲ 修正ここまで ▲▲▲
+          tag: "latest,${CIRCLE_SHA1}"  # ← ここはそのまま（重要！）
           filters:
             branches:
               only: master
