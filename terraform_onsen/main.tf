@@ -259,8 +259,12 @@ resource "aws_ecs_task_definition" "main" {
         { name = "DB_PASSWORD", value = "password1234" },
         { name = "DB_NAME",     value = "onsen_production" },
         { name = "RAILS_LOG_TO_STDOUT", value = "true" },
-        # 追加：本番環境（production）として動かす設定
-        { name = "RAILS_ENV",   value = "production" }
+        { name = "RAILS_ENV",   value = "production" },
+
+        # ▼▼▼ 値を var.変数名 に書き換えます ▼▼▼
+        { name = "AWS_ACCESS_KEY_ID",     value = var.aws_access_key },
+        { name = "AWS_SECRET_ACCESS_KEY", value = var.aws_secret_key },
+        { name = "AWS_REGION",            value = "ap-northeast-1" }
       ],
       # ★★★ ここまで ★★★
 

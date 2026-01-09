@@ -47,3 +47,5 @@ terraform_onsen/*.tfstate
 terraform_onsen/*.tfstate.backup
 terraform_onsen/.terraform.lock.hcl
 terraform_onsen/terraform-provider*
+
+terraform.tfvars
