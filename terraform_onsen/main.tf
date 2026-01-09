@@ -244,7 +244,7 @@ resource "aws_ecs_task_definition" "main" {
       name      = "onsen-container"
       image     = "${aws_ecr_repository.rails.repository_url}:latest"
       essential = true
-      command   = ["bundle", "exec", "puma", "-b", "unix:///app/tmp/sockets/puma.sock"]
+      command = ["bundle", "exec", "puma", "-p", "3000"]
       portMappings = [
         {
           containerPort = 3000
