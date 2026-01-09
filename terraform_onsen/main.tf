@@ -2,7 +2,7 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 5.0" # AWSプロバイダのバージョン（最新系を指定）
+      version = "~> 5.0" # AWSプロバイダのバージョン
     }
   }
 }
@@ -14,40 +14,39 @@ provider "aws" {
 
 # 1. VPC（自分専用のネットワーク空間）
 resource "aws_vpc" "main" {
-  cidr_block           = "10.0.0.0/16" # ネットワークの広さ
-  enable_dns_hostnames = true          # DNS名を使えるようにする
+  cidr_block           = "10.0.0.0/16"
+  enable_dns_hostnames = true
   enable_dns_support   = true
 
   tags = {
-    Name = "onsen-vpc" # AWSコンソールで見た時の名前
+    Name = "onsen-vpc"
   }
 }
 
-# 2. インターネットゲートウェイ（外の世界との出入り口）
+# 2. インターネットゲートウェイ
 resource "aws_internet_gateway" "main" {
-  vpc_id = aws_vpc.main.id  # さっき作ったVPCに取り付ける
+  vpc_id = aws_vpc.main.id
 
   tags = {
     Name = "onsen-igw"
   }
 }
 
-# 3. パブリックサブネット（サーバーを置くための「部屋」）
+# 3. パブリックサブネット（1a）
 resource "aws_subnet" "public_1a" {
   vpc_id            = aws_vpc.main.id
-  cidr_block        = "10.0.1.0/24"       # 部屋の広さ
-  availability_zone = "ap-northeast-1a"   # 東京の「A地区」に作る
+  cidr_block        = "10.0.1.0/24"
+  availability_zone = "ap-northeast-1a"
 
   tags = {
     Name = "onsen-public-1a"
   }
 }
 
-# 4. ルートテーブル（道案内用の地図）
+# 4. ルートテーブル
 resource "aws_route_table" "public" {
   vpc_id = aws_vpc.main.id
 
-  # 「どこへ行きたい場合(0.0.0.0/0)でも、ゲートウェイを通ってね」というルール
   route {
     cidr_block = "0.0.0.0/0"
     gateway_id = aws_internet_gateway.main.id
@@ -58,49 +57,46 @@ resource "aws_route_table" "public" {
   }
 }
 
-# 5. ルートテーブルの紐付け（部屋に地図を貼る）
+# 5. ルートテーブル紐付け（1a）
 resource "aws_route_table_association" "public_1a" {
   subnet_id      = aws_subnet.public_1a.id
   route_table_id = aws_route_table.public.id
 }
 
-# 6. パブリックサブネット（もう一つの部屋：C地区）
+# 6. パブリックサブネット（1c）
 resource "aws_subnet" "public_1c" {
   vpc_id            = aws_vpc.main.id
-  cidr_block        = "10.0.2.0/24"       # 1a(10.0.1.0)とは違う住所にする
-  availability_zone = "ap-northeast-1c"   # 東京の「C地区」に作る
+  cidr_block        = "10.0.2.0/24"
+  availability_zone = "ap-northeast-1c"
 
   tags = {
     Name = "onsen-public-1c"
   }
 }
 
-# 7. ルートテーブルの紐付け（C地区の部屋にも同じ地図を貼る）
+# 7. ルートテーブル紐付け（1c）
 resource "aws_route_table_association" "public_1c" {
   subnet_id      = aws_subnet.public_1c.id
-  route_table_id = aws_route_table.public.id # さっき作った地図(rt)を使い回す
+  route_table_id = aws_route_table.public.id
 }
 
-
-# 8. セキュリティグループ（ALB用：受付係）
+# 8. セキュリティグループ（ALB用）
 resource "aws_security_group" "alb" {
   name        = "onsen-alb-sg"
   description = "Allow HTTP traffic from the world"
   vpc_id      = aws_vpc.main.id
 
-  # インバウンドルール（入ってくる通信）
   ingress {
     from_port   = 80
     to_port     = 80
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"] # 世界中どこからでもOK
+    cidr_blocks = ["0.0.0.0/0"]
   }
 
-  # アウトバウンドルール（出ていく通信）
   egress {
     from_port   = 0
     to_port     = 0
-    protocol    = "-1" # 全許可
+    protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
 
@@ -109,21 +105,19 @@ resource "aws_security_group" "alb" {
   }
 }
 
-# 9. セキュリティグループ（アプリ用：SP）
+# 9. セキュリティグループ（アプリ用）
 resource "aws_security_group" "app" {
   name        = "onsen-app-sg"
   description = "Allow traffic only from ALB"
   vpc_id      = aws_vpc.main.id
 
-  # インバウンドルール（ALBからの通信だけ許可）
   ingress {
     from_port       = 80
     to_port         = 80
     protocol        = "tcp"
-    security_groups = [aws_security_group.alb.id] # ←ここ重要！ALBのSGを指定
+    security_groups = [aws_security_group.alb.id]
   }
 
-  # アウトバウンドルール（全許可）
   egress {
     from_port   = 0
     to_port     = 0
@@ -136,36 +130,27 @@ resource "aws_security_group" "app" {
   }
 }
 
-
-# 10. ロードバランサー本体（司令塔）
+# 10. ロードバランサー（ALB）
 resource "aws_lb" "main" {
   name               = "onsen-alb"
   internal           = false
   load_balancer_type = "application"
-
-  # 関連付けるセキュリティグループ（受付係）
-  security_groups = [aws_security_group.alb.id]
-
-  # 配置するサブネット（A地区とC地区）
-  subnets = [
-    aws_subnet.public_1a.id,
-    aws_subnet.public_1c.id
-  ]
+  security_groups    = [aws_security_group.alb.id]
+  subnets            = [aws_subnet.public_1a.id, aws_subnet.public_1c.id]
 
   tags = {
     Name = "onsen-alb"
   }
 }
 
-# 11. ターゲットグループ（転送先のリスト）
+# 11. ターゲットグループ
 resource "aws_lb_target_group" "main" {
   name        = "onsen-tg"
   port        = 80
   protocol    = "HTTP"
   vpc_id      = aws_vpc.main.id
-  target_type = "ip" # ECS Fargateを使う場合は必須の設定！
+  target_type = "ip"
 
-  # ヘルスチェック（サーバーが元気か定期的に確認する設定）
   health_check {
     path                = "/"
     healthy_threshold   = 2
@@ -176,40 +161,37 @@ resource "aws_lb_target_group" "main" {
   }
 }
 
-# 12. リスナー（耳を澄ませて待ち受ける設定）
+# 12. リスナー
 resource "aws_lb_listener" "http" {
   load_balancer_arn = aws_lb.main.arn
   port              = "80"
   protocol          = "HTTP"
 
-  # デフォルトの動き：ターゲットグループへ転送
   default_action {
     type             = "forward"
     target_group_arn = aws_lb_target_group.main.arn
   }
 }
 
-
-# 13. ECRリポジトリ（Rails用：Terraform専用）
+# 13. ECRリポジトリ（Rails）
 resource "aws_ecr_repository" "rails" {
-  name                 = "onsen-rails-tf" # ←★名前を変更！既存の "onsen" と被らない
+  name                 = "onsen-rails-tf"
   image_tag_mutability = "MUTABLE"
   image_scanning_configuration {
     scan_on_push = true
   }
 }
 
-# 13-2. ECRリポジトリ（Nginx用：Terraform専用）
+# 13-2. ECRリポジトリ（Nginx）
 resource "aws_ecr_repository" "nginx" {
-  name                 = "onsen-nginx-tf" # ←★名前を変更！
+  name                 = "onsen-nginx-tf"
   image_tag_mutability = "MUTABLE"
   image_scanning_configuration {
     scan_on_push = true
   }
 }
 
-
-# 14. IAMロール（ECSがECRを使うための許可証）
+# 14. IAMロール（タスク実行）
 resource "aws_iam_role" "ecs_task_execution_role" {
   name = "onsen-ecs-task-execution-role"
 
@@ -227,16 +209,15 @@ resource "aws_iam_role" "ecs_task_execution_role" {
   })
 }
 
-# 15. IAMロールにポリシーを付与（公式の便利セットを貼り付ける）
+# 15. IAMポリシー付与
 resource "aws_iam_role_policy_attachment" "ecs_task_execution_role_policy" {
   role       = aws_iam_role.ecs_task_execution_role.name
   policy_arn = "arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy"
 }
 
-
-# 16. ECSクラスター（名前を変更して新規作成！）
+# 16. ECSクラスター
 resource "aws_ecs_cluster" "main" {
-  name = "onsen-cluster-tf"  # ← 名前を「-tf」付きに変更！これで衝突しません。
+  name = "onsen-cluster-tf"
 
   tags = {
     Name = "onsen-cluster-tf"
@@ -244,51 +225,97 @@ resource "aws_ecs_cluster" "main" {
 }
 
 
-# 17. タスク定義（本番仕様：Rails + Nginx）
+# 17. タスク定義（DB接続情報込み）
 resource "aws_ecs_task_definition" "main" {
-  family                   = "onsen-task-tf" # ←★タスク名も "-tf" にして区別！
+  family                   = "onsen-task-tf"
   requires_compatibilities = ["FARGATE"]
   network_mode             = "awsvpc"
   cpu                      = "512"
   memory                   = "1024"
   execution_role_arn       = aws_iam_role.ecs_task_execution_role.arn
 
+  # ★重要：ここで「共有フォルダ」を作ります
+  volume {
+    name = "tmp-socket"
+  }
+
   container_definitions = jsonencode([
-    # 1つ目：Railsコンテナ
     {
       name      = "onsen-container"
-      image     = "${aws_ecr_repository.rails.repository_url}:latest" # 新しい倉庫を参照
+      image     = "${aws_ecr_repository.rails.repository_url}:latest"
       essential = true
+      command   = ["bundle", "exec", "puma", "-b", "unix:///app/tmp/sockets/puma.sock"]
       portMappings = [
         {
           containerPort = 3000
           hostPort      = 3000
         }
-      ]
+      ],
+      # ★★★ ここを修正・追記しました ★★★
+      environment = [
+        # 修正：DB_HOST → DB_HOSTNAME に変更（database.ymlに合わせるため）
+        { name = "DB_HOSTNAME", value = aws_db_instance.main.address },
+        { name = "DB_USERNAME", value = "admin" },
+        { name = "DB_PASSWORD", value = "password1234" },
+        { name = "DB_NAME",     value = "onsen_production" },
+        { name = "RAILS_LOG_TO_STDOUT", value = "true" },
+        # 追加：本番環境（production）として動かす設定
+        { name = "RAILS_ENV",   value = "production" }
+      ],
+      # ★★★ ここまで ★★★
+
+      # ★重要：Rails側でこのフォルダを使うよ！という設定
+      mountPoints = [
+        {
+          sourceVolume  = "tmp-socket"
+          containerPath = "/app/tmp/sockets"
+        }
+      ],
+      logConfiguration = {
+        logDriver = "awslogs"
+        options = {
+          "awslogs-group"         = "/ecs/onsen-service"
+          "awslogs-region"        = "ap-northeast-1"
+          "awslogs-stream-prefix" = "rails"
+        }
+      }
     },
-    # 2つ目：Nginxコンテナ
     {
       name      = "onsen-nginx-container"
-      image     = "${aws_ecr_repository.nginx.repository_url}:latest" # 新しい倉庫を参照
+      image     = "${aws_ecr_repository.nginx.repository_url}:latest"
       essential = true
       portMappings = [
         {
           containerPort = 80
           hostPort      = 80
         }
-      ]
+      ],
       dependsOn = [
         {
           containerName = "onsen-container"
           condition     = "START"
         }
-      ]
+      ],
+      # ★重要：Nginx側でも同じフォルダを見るよ！という設定
+      mountPoints = [
+        {
+          sourceVolume  = "tmp-socket"
+          containerPath = "/app/tmp/sockets"
+        }
+      ],
+      logConfiguration = {
+        logDriver = "awslogs"
+        options = {
+          "awslogs-group"         = "/ecs/onsen-service"
+          "awslogs-region"        = "ap-northeast-1"
+          "awslogs-stream-prefix" = "nginx"
+        }
+      }
     }
   ])
 }
 
-
-# 18. ECSサービス（タスクを起動・維持する部隊）
+# 18. ECSサービス
 resource "aws_ecs_service" "main" {
   name            = "onsen-service"
   cluster         = aws_ecs_cluster.main.id
@@ -297,19 +324,66 @@ resource "aws_ecs_service" "main" {
   launch_type     = "FARGATE"
 
   network_configuration {
-    subnets         = [aws_subnet.public_1a.id, aws_subnet.public_1c.id]
-    security_groups = [aws_security_group.app.id]
+    subnets          = [aws_subnet.public_1a.id, aws_subnet.public_1c.id]
+    security_groups  = [aws_security_group.app.id]
     assign_public_ip = true
   }
 
   load_balancer {
     target_group_arn = aws_lb_target_group.main.arn
-    container_name   = "onsen-nginx-container" # Nginxに向ける
+    container_name   = "onsen-nginx-container"
     container_port   = 80
   }
 }
 
-# 19. おまけ：ALBのURLを表示する設定
+# 19. おまけ：ALBのURL出力
 output "alb_dns_name" {
   value = aws_lb.main.dns_name
+}
+
+
+# 20. DB用セキュリティグループ（アプリ用より前に定義が必要なため移動）
+resource "aws_security_group" "db" {
+  name        = "onsen-db-sg"
+  description = "Allow access from ECS App"
+  vpc_id      = aws_vpc.main.id
+
+  ingress {
+    from_port       = 3306
+    to_port         = 3306
+    protocol        = "tcp"
+    security_groups = [aws_security_group.app.id]
+  }
+
+  tags = {
+    Name = "onsen-db-sg"
+  }
+}
+
+# 21. DBサブネットグループ
+resource "aws_db_subnet_group" "main" {
+  name       = "onsen-db-subnet-group"
+  subnet_ids = [aws_subnet.public_1a.id, aws_subnet.public_1c.id]
+
+  tags = {
+    Name = "onsen-db-subnet-group"
+  }
+}
+
+# 22. データベース本体 (MySQL)
+resource "aws_db_instance" "main" {
+  allocated_storage      = 20
+  storage_type           = "gp2"
+  engine                 = "mysql"
+  engine_version         = "8.0"
+  instance_class         = "db.t3.micro"
+  identifier             = "onsen-db"
+  username               = "admin"
+  password               = "password1234"
+  parameter_group_name   = "default.mysql8.0"
+  skip_final_snapshot    = true
+  publicly_accessible    = true
+  vpc_security_group_ids = [aws_security_group.db.id]
+  db_subnet_group_name   = aws_db_subnet_group.main.name
+  db_name                = "onsen_production"
 }

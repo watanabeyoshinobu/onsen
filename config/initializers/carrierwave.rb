@@ -29,7 +29,7 @@ require 'carrierwave/storage/fog'
 CarrierWave.configure do |config|
   if Rails.env.production?
     if Rails.env.production?
-      storage :fog
+      config.storage = :fog
     else
       storage :file
     end
