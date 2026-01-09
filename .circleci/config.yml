@@ -42,7 +42,9 @@ workflows:
           family: "onsen-task-tf"
           cluster: "onsen-cluster-tf"
           service_name: "onsen-service"
-          container_image_name_updates: "container=onsen-nginx-container,tag=${CIRCLE_SHA1},container=onsen-container,tag=${CIRCLE_SHA1}" # ★修正：ハイフン→アンダーバー
+          container_image_name_updates: "container=onsen-nginx-container,tag=${CIRCLE_SHA1},container=onsen-container,tag=${CIRCLE_SHA1}"
           filters:
             branches:
               only: master
+          auth:
+            - aws-cli/setup
