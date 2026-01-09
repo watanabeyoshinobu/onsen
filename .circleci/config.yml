@@ -1,50 +1,44 @@
 version: 2.1
 
 orbs:
-  aws-ecr: circleci/aws-ecr@9.0.0 # 少しバージョンアップ
-  aws-ecs: circleci/aws-ecs@4.0.0 # 最新版に変更
+  aws-ecr: circleci/aws-ecr@9.0.0
+  aws-ecs: circleci/aws-ecs@4.0.0
   aws-cli: circleci/aws-cli@4.0.0
 
 workflows:
   build_and_deploy_all:
     jobs:
       # 1. Nginxイメージのビルドとプッシュ
-      - aws-ecr/build_and_push_image:
+      - aws-ecr/build-and-push-image:
           name: build_nginx_image
           dockerfile: Dockerfile
-          path: ./docker/nginx        # ビルドの場所を指定（重要）
-          repo: onsen-nginx-tf        # ★要確認：ECRの名前が onsen-nginx なら -tf を消す
-          tag: "${CIRCLE_SHA1}"
-          filters:
-            branches:
-              only: master            # masterブランチへのプッシュ時のみ実行
-          auth:
-            - aws-cli/setup
-
-      # 2. Railsイメージのビルドとプッシュ
-      - aws-ecr/build_and_push_image:
-          name: build_rails_image
-          dockerfile: ./docker/rails/Dockerfile
-          path: .                     # Railsはプロジェクト全体が必要なのでルートを指定
-          repo: onsen-rails-tf        # ★要確認：ECRの名前が onsen-rails なら -tf を消す
+          path: ./docker/nginx
+          repo: onsen-nginx-tf
           tag: "${CIRCLE_SHA1}"
           filters:
             branches:
               only: master
-          auth:
-            - aws-cli/setup
 
-      # 4. ECSサービスへのデプロイ（イメージ入れ替え）
+      # 2. Railsイメージのビルドとプッシュ
+      - aws-ecr/build-and-push-image:
+          name: build_rails_image
+          dockerfile: ./docker/rails/Dockerfile
+          path: .
+          repo: onsen-rails-tf
+          tag: "${CIRCLE_SHA1}"
+          filters:
+            branches:
+              only: master
+
+      # 3. ECSサービスへのデプロイ（イメージ入れ替え）
       - aws-ecs/deploy-service-update:
           requires:
             - build_nginx_image
             - build_rails_image
-          family: "onsen-task-tf"          # タスク定義名（Terraformと合わせる）
-          cluster: "onsen-cluster-tf"      # クラスター名
-          service-name: "onsen-service"    # サービス名
-          container-image-name-updates: |
-            container=onsen-nginx-container,tag=${CIRCLE_SHA1}
-            container=onsen-container,tag=${CIRCLE_SHA1}
+          family: "onsen-task-tf"
+          cluster: "onsen-cluster-tf"
+          service-name: "onsen-service"
+          container-image-name-updates: "container=onsen-nginx-container,tag=${CIRCLE_SHA1},container=onsen-container,tag=${CIRCLE_SHA1}"
           filters:
             branches:
               only: master
