@@ -4,7 +4,8 @@ FROM nginx:1.15.8
 RUN rm -f /etc/nginx/conf.d/*
 
 # Nginxの設定ファイルをコンテナ内にコピー
-COPY default.conf /etc/nginx/conf.d/default.conf
+# ★ここを元に戻しました（フォルダ名付き）
+COPY docker/nginx/default.conf /etc/nginx/conf.d/default.conf
 
 # ビルド完了後にNginxを起動するためのコマンド
 CMD /usr/sbin/nginx -g 'daemon off;' -c /etc/nginx/nginx.conf
