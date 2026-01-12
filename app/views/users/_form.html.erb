@@ -9,7 +9,7 @@
           <% if @comment.user.profile_image? %>
             <%= image_tag @comment.user.profile_image.url, class: "profile-img" %>
           <% else %>
-            <%= image_tag "default.png", class: "profile-img" %>
+            <%= image_tag "no_image.jpg", class: "profile-img" %>
           <% end %>
         </div>
         <div class="modal-user-name">

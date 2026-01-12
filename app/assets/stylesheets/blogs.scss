@@ -309,7 +309,7 @@ figcaption {
   -webkit-clip-path: polygon(0 8vw, 100% 0, 100% 100%, 0 100%);
   clip-path: polygon(0 8vw, 100% 0, 100% 100%, 0 100%);
   background: linear-gradient(to right, #FFE4E1, #FFFAFA);
-  font-family: 'HiraMinProN-W3', 'serif';
+  font-family: 'Shippori Mincho', 'HiraMinProN-W3', serif;
   text-align: center;
 }
 
@@ -2211,7 +2211,7 @@ figcaption {
   height: auto !important;
   min-height: calc(100vh - 170px);
   padding-bottom: 50px;
-  font-family: 'HiraMinProN-W3', 'serif';
+  font-family: 'Shippori Mincho', 'HiraMinProN-W3', serif;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -2634,7 +2634,7 @@ figcaption {
 // edit.html.erb
 
 .b-edit_container {
-  font-family: 'HiraMinProN-W3', 'serif';
+  font-family: 'Shippori Mincho', 'HiraMinProN-W3', serif;
   width: 100%;
   height: auto !important;
   min-height: calc(100vh - 170px);
