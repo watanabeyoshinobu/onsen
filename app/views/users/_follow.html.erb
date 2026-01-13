@@ -6,7 +6,7 @@
         <% if follow_user.profile_image.present? %>
           <%= image_tag follow_user.profile_image.to_s, class: "user-card__image" %>
         <% else %>
-          <%= image_tag "img/img/no_image.jpg", class: "user-card__image" %>
+          <%= image_tag "img/no_image.jpg", class: "user-card__image" %>
         <% end %>
       <% end %>
     </div>
