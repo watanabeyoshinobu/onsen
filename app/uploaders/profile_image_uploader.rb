@@ -1,46 +1,22 @@
 class ProfileImageUploader < CarrierWave::Uploader::Base
-  # Include RMagick or MiniMagick support:
-  # include CarrierWave::RMagick
-  # include CarrierWave::MiniMagick
+  # Railsの画像パスヘルパーを使えるようにする
+  include ActionView::Helpers::AssetUrlHelper
 
-  # Choose what kind of storage to use for this uploader:
+  # 本番環境と開発環境で保存先を変える
   if Rails.env.production?
     storage :fog
   else
     storage :file
   end
 
-  # Override the directory where uploaded files will be stored.
-  # This is a sensible default for uploaders that are meant to be mounted:
+  # アップロード画像の保存先ディレクトリ
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
+  # ★重要：デフォルト画像のパス設定
+  # Railsに「本番用の正しいファイル名を探してきて」と命令する書き方
   def default_url(*args)
-    "img/no_image.jpg"
+    ActionController::Base.helpers.asset_path("img/no_image.jpg")
   end
-
-  # Process files as they are uploaded:
-  # process scale: [200, 300]
-  #
-  # def scale(width, height)
-  #   # do something
-  # end
-
-  # Create different versions of your uploaded files:
-  # version :thumb do
-  #   process resize_to_fit: [50, 50]
-  # end
-
-  # Add an allowlist of extensions which are allowed to be uploaded.
-  # For images you might use something like this:
-  # def extension_allowlist
-  #   %w(jpg jpeg gif png)
-  # end
-
-  # Override the filename of the uploaded files:
-  # Avoid using model.id or version_name here, see uploader/store.rb for details.
-  # def filename
-  #   "something.jpg" if original_filename
-  # end
 end
