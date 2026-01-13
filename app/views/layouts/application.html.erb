@@ -45,7 +45,7 @@
           <li><%= link_to 'ホーム', browse_path %></li>
           <li><%= link_to 'お知らせ', info_blogs_path %></li>
           <li><%= link_to '注意事項', precautions_blogs_path %></li>
-          <li><%= link_to '温泉の共有', new_blog_path %></li>
+          <li><%= link_to '湯巡りの綴り', new_blog_path %></li>
           <% if user_signed_in? %>
             <li><%= link_to 'マイページ', user_path(current_user) %></li>
             <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>

@@ -164,6 +164,7 @@ header {
 
 @media screen and (min-width: 769px) {
   .mobile-auth-links {
+    font-family: 'Shippori Mincho', 'HiraMinProN-W3', serif;
     display: flex !important;
     align-items: center;
     gap: 10px;
@@ -178,7 +179,7 @@ header {
 .header-btn {
   display: inline-block;
   padding: 8px 20px;
-  font-family: 'HiraMinProN-W3', 'Yu Mincho', serif;
+  font-family: 'Shippori Mincho', 'HiraMinProN-W3', serif;
   font-size: 13px;
   font-weight: bold;
   text-decoration: none;

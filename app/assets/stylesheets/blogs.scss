@@ -728,7 +728,7 @@ figcaption {
   width: 1000px;
   max-width: 95%;
   margin: 50px auto;
-  font-family: 'HiraMinProN-W3', 'Yu Mincho', serif;
+  font-family: 'Shippori Mincho', 'HiraMinProN-W3', serif;
 }
 
 .section-title {
@@ -2308,7 +2308,7 @@ figcaption {
   width: 100%;
   min-height: 100vh;
   padding-bottom: 50px;
-  font-family: 'HiraMinProN-W3', 'Yu Mincho', serif;
+  font-family: 'Shippori Mincho', 'HiraMinProN-W3', serif;
   background-color: #fcfcfc;
 }
 
@@ -2450,7 +2450,7 @@ figcaption {
   width: 100%;
   min-height: 100vh;
   padding-bottom: 50px;
-  font-family: 'HiraMinProN-W3', 'Yu Mincho', serif;
+  font-family: 'Shippori Mincho', 'HiraMinProN-W3', serif;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -2460,7 +2460,6 @@ figcaption {
   width: 800px;
   max-width: 95%;
   margin: 30px auto;
-  
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -2939,7 +2938,7 @@ figcaption {
 [class^="tweet-container"] {
   padding-top: 50px;
   padding-bottom: 50px;
-  font-family: 'HiraMinProN-W3', 'Yu Mincho', serif;
+  font-family: 'Shippori Mincho', 'HiraMinProN-W3', serif;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -3387,7 +3386,7 @@ figcaption {
 }
 
 [class^="food_image"] {
-  width: 100%;
+  max-width: 300px;
   margin: 0 auto 20px auto;
 }
 
