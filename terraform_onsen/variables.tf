@@ -15,3 +15,15 @@ variable "secret_key_base" {
   type        = string
   sensitive   = true
 }
+
+variable "db_password" {
+  description = "The password for the database"
+  type        = string
+  sensitive   = true # これをつけるとログにパスワードが表示されなくなる
+}
+
+variable "db_username" {
+  description = "The username for the database"
+  type        = string
+  default     = "admin" # デフォルト値を入れておけば tfvars に書かなくても動く
+}

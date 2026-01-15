@@ -26,7 +26,7 @@
 * Nginx
 * Unicorn
 * CircleCI
-* Terraform
+* Terraform(こちらはFargate使用)
 
 
 ### 開発環境

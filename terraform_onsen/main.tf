@@ -234,7 +234,7 @@ resource "aws_ecs_task_definition" "main" {
   memory                   = "1024"
   execution_role_arn       = aws_iam_role.ecs_task_execution_role.arn
 
-  # ★重要：ここで「共有フォルダ」を作ります
+  # ★重要：ここで「共有フォルダ」を作成
   volume {
     name = "tmp-socket"
   }
@@ -251,12 +251,11 @@ resource "aws_ecs_task_definition" "main" {
           hostPort      = 3000
         }
       ],
-      # ★★★ ここを修正・追記しました ★★★
+      
       environment = [
-        # 修正：DB_HOST → DB_HOSTNAME に変更（database.ymlに合わせるため）
         { name = "DB_HOSTNAME", value = aws_db_instance.main.address },
-        { name = "DB_USERNAME", value = "admin" },
-        { name = "DB_PASSWORD", value = "password1234" },
+        { name = "DB_USERNAME", value = var.db_username },
+        { name = "DB_PASSWORD", value = var.db_password },
         { name = "DB_NAME",     value = "onsen_production" },
         { name = "RAILS_LOG_TO_STDOUT", value = "true" },
         { name = "RAILS_ENV",   value = "production" },
@@ -265,9 +264,8 @@ resource "aws_ecs_task_definition" "main" {
         { name = "AWS_SECRET_ACCESS_KEY", value = var.aws_secret_key },
         { name = "AWS_REGION",            value = "ap-northeast-1" }
       ],
-      # ★★★ ここまで ★★★
 
-      # ★重要：Rails側でこのフォルダを使うよ！という設定
+      # 重要：「Rails側でこのフォルダを使う」という設定
       mountPoints = [
         {
           sourceVolume  = "tmp-socket"
@@ -299,7 +297,7 @@ resource "aws_ecs_task_definition" "main" {
           condition     = "START"
         }
       ],
-      # ★重要：Nginx側でも同じフォルダを見るよ！という設定
+      # 重要：「Nginx側でも同じフォルダを見る」という設定
       mountPoints = [
         {
           sourceVolume  = "tmp-socket"
@@ -381,8 +379,8 @@ resource "aws_db_instance" "main" {
   engine_version         = "8.0"
   instance_class         = "db.t3.micro"
   identifier             = "onsen-db"
-  username               = "admin"
-  password               = "password1234"
+  username               = var.db_username
+  password               = var.db_password
   parameter_group_name   = "default.mysql8.0"
   skip_final_snapshot    = true
   publicly_accessible    = true
