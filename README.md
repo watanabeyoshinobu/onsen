@@ -76,7 +76,7 @@
 * Google Maps APIを利用した動的な地図表示
 
 ## インフラ構築図
-[![Image from Gyazo]https://i.gyazo.com/6a42dff1685a59d8ca61b3e606526725.png)](https://i.gyazo.com/6a42dff1685a59d8ca61b3e606526725)
+[![Image from Gyazo](https://i.gyazo.com/6a42dff1685a59d8ca61b3e606526725.png)](https://i.gyazo.com/6a42dff1685a59d8ca61b3e606526725)
 
 ## ER図
 [![Image from Gyazo](https://i.gyazo.com/d119f2a065a29e55b2ba042abfac5350.png)](https://gyazo.com/d119f2a065a29e55b2ba042abfac5350)
