@@ -796,15 +796,11 @@ figcaption {
   color: #5d4037;
 }
 
-.map-image1 {
-  background-image: image-url('img/map.jpg');
+
+#map {
   width: 100%;
   height: 250px;
   border-radius: 5px;
-  background-color: #fff;
-  background-size: contain; 
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 .price-table {
@@ -1006,18 +1002,6 @@ figcaption {
 .onsen_image2-3 {
   background-image: image-url('img/madoka.jpg');
 }
-
-
-.map-image2 {
-  width: 100%;
-  height: 250px;
-  border-radius: 5px;
-  background-color: #fff;
-  background-image: image-url('img/maps2.jpg');
-  background-size: contain; 
-  background-repeat: no-repeat;
-  background-position: center;
- }
 
 
 /*saw画面*/
@@ -1223,17 +1207,6 @@ figcaption {
   background-image: image-url('img/bed_bath.jpg');
 }
 
-.map-image3 {
-  width: 100%;
-  height: 250px;
-  border-radius: 5px;
-  background-color: #fff;
-  background-image: image-url('img/map_manyou.jpg');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
 
 /*watch画面*/
 .onsen-visual4 {
@@ -1385,17 +1358,6 @@ figcaption {
   background-image: image-url('img/manten_spa3.jpg');
 }
 
-.map-image4 {
-  width: 100%;
-  height: 250px;
-  border-radius: 5px;
-  background-color: #fff;
-  background-image: image-url('img/map_manten.jpg');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
 
 /*seeing画面*/
 .onsen-visual5 {
@@ -1537,17 +1499,6 @@ figcaption {
 }
 .onsen_image5-3 {
   background-image: image-url('img/oyugiwa_onsen3.jpg');
-}
-
-.map-image5 {
-  width: 100%;
-  height: 250px;
-  border-radius: 5px;
-  background-color: #fff;
-  background-image: image-url('img/map_oyugiwa.jpg');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 /*looking画面*/
@@ -1706,18 +1657,6 @@ figcaption {
   margin: 0 auto;
 }
 
-.map-image6 {
-  width: 100%;
-  height: 250px;
-  border-radius: 5px;
-  background-color: #fff;
-  background-image: image-url('img/map_yukaraku.jpg');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-
 /*check画面*/
 .onsen-visual7 {
   height: 720px;
@@ -1862,17 +1801,6 @@ figcaption {
 
 .onsen_image7-3 {
   background-image: image-url('img/soukai_onsen3.jpg');
-}
-
-.map-image7 {
-  width: 100%;
-  height: 250px;
-  border-radius: 5px;
-  background-color: #fff;
-  background-image: image-url('img/soukai_map.jpg');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 .traffic-text7 {
@@ -2026,18 +1954,6 @@ figcaption {
 .onsen_image8-3 {
   background-image: image-url('img/yukemuri_onsen3.jpg');
 }
-
-.map-image8 {
-  width: 100%;
-  height: 250px;
-  border-radius: 5px;
-  background-color: #fff;
-  background-image: image-url('img/map_yukemuri.jpg');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
 
 /*gaze画面*/
 .onsen-visual9 {

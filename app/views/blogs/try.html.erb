@@ -136,12 +136,28 @@
 								</div>
 							</article>
 
-							<article class="summary-card map-card">
-								<h3 class="card-title">地図</h3>
-								<div class="card-body map-body">
-									<div class="map-image8"></div>
-								</div>
-							</article>
+								<article class="summary-card map-card">
+									<h3 class="card-title">地図</h3>
+									<div class="card-body map-body">
+										<div id="map"></div>
+									</div>
+								</article>
+
+								<script>
+									function initMap() {
+										let targetLocation = { lat: 35.58675, lng: 139.58111 };
+										let map = new google.maps.Map(document.getElementById('map'), {
+											center: targetLocation,
+											zoom: 16
+										});
+										let marker = new google.maps.Marker({
+											position: targetLocation,
+											map: map,
+											title: "宮前平源泉 湯けむりの庄"
+										});
+									}
+								</script>
+								<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAPS_API_KEY'] %>&callback=initMap" async defer></script>
 
 							<article class="summary-card price-card">
 								<h3 class="card-title">料金一覧</h3>

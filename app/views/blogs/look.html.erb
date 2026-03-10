@@ -188,9 +188,25 @@
 								<article class="summary-card map-card">
 									<h3 class="card-title">地図</h3>
 									<div class="card-body map-body">
-										<div class="map-image1"></div>
+										<div id="map"></div>
 									</div>
 								</article>
+
+								<script>
+									function initMap() {
+										let targetLocation = { lat: 35.490393, lng: 139.550369 };
+										let map = new google.maps.Map(document.getElementById('map'), {
+											center: targetLocation,
+											zoom: 15
+										});
+										let marker = new google.maps.Marker({
+											position: targetLocation,
+											map: map,
+											title: "横濱スパヒルズ 竜泉寺の湯"
+										});
+									}
+								</script>
+								<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAPS_API_KEY'] %>&callback=initMap" async defer></script>
 
 								<article class="summary-card price-card">
 									<h3 class="card-title">料金一覧</h3>
