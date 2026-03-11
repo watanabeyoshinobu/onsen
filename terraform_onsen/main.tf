@@ -82,8 +82,8 @@ resource "aws_route_table_association" "public_1c" {
 
 # 8. セキュリティグループ（ALB用）
 resource "aws_security_group" "alb" {
-  name        = "onsen-alb-sg"
-  description = "Allow HTTP traffic from the world"
+  name_prefix = "onsen-alb-sg-"
+  description = "Allow HTTP and HTTPS traffic from the world"
   vpc_id      = aws_vpc.main.id
 
   ingress {
@@ -92,6 +92,14 @@ resource "aws_security_group" "alb" {
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
+  
+   #追加
+  ingress {
+      from_port   = 443
+      to_port     = 443
+      protocol    = "tcp"
+      cidr_blocks = ["0.0.0.0/0"]
+    }
 
   egress {
     from_port   = 0
@@ -102,6 +110,11 @@ resource "aws_security_group" "alb" {
 
   tags = {
     Name = "onsen-alb-sg"
+  }
+
+  #追加
+  lifecycle {
+    create_before_destroy = true
   }
 }
 
@@ -167,9 +180,15 @@ resource "aws_lb_listener" "http" {
   port              = "80"
   protocol          = "HTTP"
 
+  # 追加と変更
   default_action {
-    type             = "forward"
-    target_group_arn = aws_lb_target_group.main.arn
+    type = "redirect"
+
+    redirect {
+      port        = "443"
+      protocol    = "HTTPS"
+      status_code = "HTTP_301"
+    }
   }
 }
 
@@ -215,6 +234,46 @@ resource "aws_iam_role_policy_attachment" "ecs_task_execution_role_policy" {
   policy_arn = "arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy"
 }
 
+# 15-2. タスクロール（ECS Exec / 潜り込み用の権限）
+resource "aws_iam_role" "ecs_task_role" {
+  name = "onsen-ecs-task-role"
+
+  assume_role_policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Action = "sts:AssumeRole"
+        Effect = "Allow"
+        Principal = {
+          Service = "ecs-tasks.amazonaws.com"
+        }
+      }
+    ]
+  })
+}
+
+# 15-3. タスクロールに具体的な「潜り込み許可（SSM）」の権限を付与
+resource "aws_iam_role_policy" "ecs_task_role_ssm_policy" {
+  name   = "onsen-ecs-task-role-ssm-policy"
+  role   = aws_iam_role.ecs_task_role.id
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Effect = "Allow"
+        Action = [
+          "ssmmessages:CreateControlChannel",
+          "ssmmessages:CreateDataChannel",
+          "ssmmessages:OpenControlChannel",
+          "ssmmessages:OpenDataChannel"
+        ]
+        Resource = "*"
+      }
+    ]
+  })
+}
+
+
 # 16. ECSクラスター
 resource "aws_ecs_cluster" "main" {
   name = "onsen-cluster-tf"
@@ -233,7 +292,7 @@ resource "aws_ecs_task_definition" "main" {
   cpu                      = "512"
   memory                   = "1024"
   execution_role_arn       = aws_iam_role.ecs_task_execution_role.arn
-
+  task_role_arn            = aws_iam_role.ecs_task_role.arn #追加
   # ★重要：ここで「共有フォルダ」を作成
   volume {
     name = "tmp-socket"
@@ -262,7 +321,8 @@ resource "aws_ecs_task_definition" "main" {
         { name = "SECRET_KEY_BASE", value = var.secret_key_base },
         { name = "AWS_ACCESS_KEY_ID",     value = var.aws_access_key },
         { name = "AWS_SECRET_ACCESS_KEY", value = var.aws_secret_key },
-        { name = "AWS_REGION",            value = "ap-northeast-1" }
+        { name = "AWS_REGION",            value = "ap-northeast-1" },
+        { name = "GOOGLE_MAPS_API_KEY",   value = var.google_maps_api_key }
       ],
 
       # 重要：「Rails側でこのフォルダを使う」という設定
@@ -323,7 +383,7 @@ resource "aws_ecs_service" "main" {
   task_definition = aws_ecs_task_definition.main.arn
   desired_count   = 1
   launch_type     = "FARGATE"
-
+  enable_execute_command = true #追加
   network_configuration {
     subnets          = [aws_subnet.public_1a.id, aws_subnet.public_1c.id]
     security_groups  = [aws_security_group.app.id]
@@ -387,4 +447,56 @@ resource "aws_db_instance" "main" {
   vpc_security_group_ids = [aws_security_group.db.id]
   db_subnet_group_name   = aws_db_subnet_group.main.name
   db_name                = "onsen_production"
+}
+
+# 23. 既存のRoute 53とACMの呼び出し
+data "aws_route53_zone" "main" {
+  name         = "yunokokochi.com"
+  private_zone = false
+}
+
+data "aws_acm_certificate" "main" {
+  domain   = "yunokokochi.com"
+  statuses = ["ISSUED"]
+}
+
+# 24. HTTPSリスナーの追加
+resource "aws_lb_listener" "https" {
+  load_balancer_arn = aws_lb.main.arn
+  port              = "443"
+  protocol          = "HTTPS"
+  ssl_policy        = "ELBSecurityPolicy-2016-08"
+  certificate_arn   = data.aws_acm_certificate.main.arn
+
+  default_action {
+    type             = "forward"
+    target_group_arn = aws_lb_target_group.main.arn
+  }
+}
+
+# 25. Route 53 レコードの追加 (ドメインとALBを繋ぐ)
+resource "aws_route53_record" "root" {
+  zone_id = data.aws_route53_zone.main.zone_id
+  name    = data.aws_route53_zone.main.name
+  type    = "A"
+  allow_overwrite = true
+  
+  alias {
+    name                   = aws_lb.main.dns_name
+    zone_id                = aws_lb.main.zone_id
+    evaluate_target_health = true
+  }
+}
+
+resource "aws_route53_record" "www" {
+  zone_id = data.aws_route53_zone.main.zone_id
+  name    = "www.${data.aws_route53_zone.main.name}"
+  type    = "A"
+  allow_overwrite = true
+  
+  alias {
+    name                   = aws_lb.main.dns_name
+    zone_id                = aws_lb.main.zone_id
+    evaluate_target_health = true
+  }
 }

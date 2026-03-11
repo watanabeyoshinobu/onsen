@@ -27,3 +27,8 @@ variable "db_username" {
   type        = string
   default     = "admin" # デフォルト値を入れておけば tfvars に書かなくても動く
 }
+
+variable "google_maps_api_key" {
+  description = "Google Maps API Key"
+  type        = string
+}
