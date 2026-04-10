@@ -49,3 +49,7 @@ terraform_onsen/.terraform.lock.hcl
 terraform_onsen/terraform-provider*
 
 terraform.tfvars
+
+
+docker/mysql/password.yml
+.DS_Store

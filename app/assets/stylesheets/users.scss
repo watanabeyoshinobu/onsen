@@ -27,7 +27,7 @@
   background-position: left 15px, 15px top, bottom left, top left, top right, bottom right;
   background-size: 100% calc(100% - 30px), calc(100% - 30px) 100%, 20px 20px, 20px 20px, 20px 20px, 20px 20px;
   background-repeat: no-repeat;
-  animation: zoomIn 1s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
+  animation: fadeUp 0.8s ease forwards;
 }
 @keyframes zoomIn {
  0% {
@@ -334,12 +334,17 @@ a.btn--shadow {
   padding-bottom: 30px; 
 }
 
-.withdraw-warning {
+.withdraw-content {
   text-align: center;
   font-size: 18px;
   line-height: 1.8;
-  padding: 30px 0;
+  padding: 20px 0;
   color: #333;
+  font-family: 'Shippori Mincho', 'HiraMinProN-W3', serif;
+}
+
+.withdraw-warning {
+  padding: 20px 0;
 }
 
 .processing-box {
@@ -376,6 +381,58 @@ a.btn--shadow {
   background-color: #e2041b;
   border: 2px solid #c9171e;
 }
+
+/* 退会モーダルの背景（暗い部分） */
+.withdraw-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* 背景を半透明の黒に */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  
+  /* 最初は隠しておく */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* JavaScriptで .is-active がついた時にフワッと表示 */
+.withdraw-modal-overlay.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* モーダルの白い箱 */
+.withdraw-modal-window {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  text-align: center;
+  width: 500px;
+  max-width: 90%;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+
+  transform: translateY(30px);
+  transition: transform 0.3s ease;
+}
+
+.withdraw-modal-overlay.is-active .withdraw-modal-window {
+  transform: translateY(0);
+}
+
+/* 戻るボタンの調整（<a>タグから<button>タグに変えたための微調整） */
+.withdraw-modal-window .btn-cancel {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+}
+
+
 
 
 /*モーダル*/
@@ -518,7 +575,7 @@ a.btn--shadow {
   background-size: 100% calc(100% - 30px), calc(100% - 30px) 100%, 20px 20px, 20px 20px, 20px 20px, 20px 20px;
   background-repeat: no-repeat;
   
-  animation: zoomIn 1s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
+  animation: fadeUp 0.8s ease forwards;
 }
 .user-index__title-text {
   font-size: 24px;

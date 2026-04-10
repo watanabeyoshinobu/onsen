@@ -26,10 +26,10 @@
 									ですが、豊富な温泉と清潔感ある館内、くつろぎスペースといった一人で行っても満足感のあるおすすめしたい施設になっています。<br>
 									※画像は公式サイト様から一部引用
 							</p>
-				</section>
+			</section>
 
 			<div class="introduce-container5">
-					<artile class="guidance">
+					<article class="guidance">
 						<p class="introduce">館内紹介</p>
 							<p class="introduce-title">OYUGIWA　海老名店の紹介</p>
 								<p class="introduce-text">
@@ -40,23 +40,7 @@
 									そんな魅力的な『OYUGIWA 海老名』にご来館してみてください。
 								</p>
 					</article>
-							<div class="grid-gallery">
-								<article class="movement">
-									<figure class="gallery5-1">
-										<figcaption>外観</figcaption>
-									</figure>
-								</article>
-								<article class="movement">
-									<figure class="gallery5-2">
-										<figcaption>テラス</figcaption>
-									</figure>
-								</article>
-								<article class="movement">
-									<figure class="gallery5-3">
-										<figcaption>くつろぎスペース（ごろ寝穴）</figcaption>
-									</figure>
-								</article>
-							</div>
+					<div class="vue-gallery-app" data-category="seeing"></div>
 			</div>
 
 			<div class="dining-container5">
@@ -72,23 +56,7 @@
 
 					<section class="food-box3">
 						<p class="food-title">おゆぎわ　Restaurantおすすめメニュー</p>
-							<div class="grid-gallery">
-								<article class="movement">
-									<figure class="food_image5-1">
-										<figcaption>十五穀米</figcaption>
-									</figure>
-								</article>
-								<article class="movement">
-									<figure class="food_image5-2">
-										<figcaption>おゆぎわ名物　スンドゥブ</figcaption>
-									</figure>
-								</article>
-								<article class="movement">
-									<figure class="food_image5-3">
-										<figcaption>生姜焼き定食</figcaption>
-									</figure>
-								</article>
-							</div>
+							<div class="vue-gallery-app" data-category="seeing_food"></div>
 					</section>
 			</div>
 
@@ -103,23 +71,7 @@
 					</p>
 						<main class="main-onsen">
 							<p class="onsen-title2">温泉の種類</p>
-								<div class="grid-onsen">
-									<article class="movement">
-										<figure class="onsen_image5-1">
-											<figcaption>炭酸泉</figcaption>
-										</figure>
-									</article>
-									<article class="movement">
-										<figure class="onsen_image5-2">
-											<figcaption>美泡壺湯</figcaption>
-										</figure>
-									</article>
-									<article class="movement">
-										<figure class="onsen_image5-3">
-											<figcaption>イベント湯</figcaption>
-										</figure>
-									</article>
-								</div>
+								<div class="vue-gallery-app" data-category="seeing_onsen"></div>
 						</main>
 			</div>
 
@@ -220,4 +172,5 @@
 				<%= render "tweet" %>
 			</article>
 				<div id="user-modal" class="modal center-modal" tabindex="-1" role="dialog" aria-hidden="true"></div>
+					<%= javascript_pack_tag 'hello_vue' %>
 </body>

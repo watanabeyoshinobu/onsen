@@ -8,21 +8,10 @@
 
       <% if user_signed_in? && @blog.user != current_user %>
         <span class="blog-follow-area">
-          <% if current_user.following?(@blog.user) %>
-            <%= form_for(current_user.relationships.find_by(follow_id: @blog.user.id), html: { method: :delete, class: "inline-form" }) do |f| %>
-              <%= hidden_field_tag :follow_id, @blog.user.id %>
-              <%= f.button type: "submit", class: "blog-btn-unfollow" do %>
-                <i class="fa fa-check"></i> フォロー中
-              <% end %>
-            <% end %>
-          <% else %>
-            <%= form_for(current_user.relationships.build, html: { class: "inline-form" }) do |f| %>
-              <%= hidden_field_tag :follow_id, @blog.user.id %>
-              <%= f.button type: "submit", class: "blog-btn-follow" do %>
-                <i class="fa fa-user-plus"></i> フォロー
-              <% end %>
-            <% end %>
-          <% end %>
+          <div class="follow-button-component"
+              data-user-id="<%= @blog.user.id %>"
+              data-following="<%= current_user.following?(@blog.user) %>">
+          </div>
         </span>
       <% end %>
       <span class="blog-date">

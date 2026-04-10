@@ -37,23 +37,9 @@
 										休憩スペースやマッサージなども充実しているので、１日いても飽きることなく過ごせると思います。
 								</p>
 					</article>
-						<div class="grid-gallery">
-							<article class="movement">
-								<figure class="gallery3-1">
-									<figcaption>外観（夜）</figcaption>
-								</figure>
-							</article>
-							<article class="movement">
-								<figure class="gallery3-2">
-									<figcaption>館内（浴衣）</figcaption>
-								</figure>
-							</article>
-							<article class="movement">
-								<figure class="gallery3-3">
-									<figcaption>みなとみらいの景色（展望足湯庭園）</figcaption>
-								</figure>
-							</article>
-						</div>
+
+					<div class="vue-gallery-app" data-category="saw"></div>
+
 			</div>
 
 			<section class="dining-container3">
@@ -70,23 +56,7 @@
 
 				<section class="food-box3">
 					<p class="food-title3">お食事処の紹介</p>
-						<div class="grid-gallery">
-							<article class="movement">
-								<figure class="dining_image3-1">
-									<figcaption>カフェテリア</figcaption>
-								</figure>
-							</article>
-							<article class="movement">
-								<figure class="dining_image3-2">
-									<figcaption>憩い処</figcaption>
-								</figure>
-							</article>
-							<article class="movement">
-								<figure class="dining_image3-3">
-									<figcaption>万葉庵(半個室)</figcaption>
-								</figure>
-							</article>
-						</div>
+						<div class="vue-gallery-app" data-category="dining"></div>
 				</section>
 
 			<article class="dining-box3">
@@ -98,23 +68,7 @@
 							</p>
 
 							<p class="menu-title">おすすめメニュー3選</p>
-								<div class="grid-gallery">
-									<article class="movement">
-										<figure class="food_image3-1">
-											<figcaption>万葉御膳</figcaption>
-										</figure>
-									</article>
-									<article class="movement">
-										<figure class="food_image3-2">
-											<figcaption>親子丼</figcaption>
-										</figure>
-									</article>
-									<article class="movement">
-										<figure class="food_image3-3">
-											<figcaption>チョコレートパフェ</figcaption>
-										</figure>
-									</article>
-								</div>
+								<div class="vue-gallery-app" data-category="saw_food"></div>
 				</article>
 		</section>
 
@@ -130,23 +84,8 @@
 				</p>
 					<main class="main-onsen">
 						<p class="onsen-title2">おすすめの温泉</p>
-							<div class="grid-onsen">
-								<article class="movement">
-									<figure class="onsen_image3-1">
-										<figcaption>展望足湯庭園</figcaption>
-									</figure>
-								</article>
-								<article class="movement">
-									<figure class="onsen_image3-2">
-										<figcaption>露天風呂</figcaption>
-									</figure>
-								</article>
-								<article class="movement">
-									<figure class="onsen_image3-3">
-										<figcaption>寝湯</figcaption>
-									</figure>
-								</article>
-						</div>
+							<div class="vue-gallery-app" data-category="saw_onsen"></div>
+							
 					</main>
 		</div>
 
@@ -251,4 +190,5 @@
 			<%= render "tweet" %>
 		</article>
 			<div id="user-modal" class="modal center-modal" tabindex="-1" role="dialog" aria-hidden="true"></div>
+			<%= javascript_pack_tag 'hello_vue' %>
 </body>

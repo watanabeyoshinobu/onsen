@@ -196,6 +196,7 @@ resource "aws_lb_listener" "http" {
 resource "aws_ecr_repository" "rails" {
   name                 = "onsen-rails-tf"
   image_tag_mutability = "MUTABLE"
+  force_delete         = true  #追加
   image_scanning_configuration {
     scan_on_push = true
   }
@@ -205,6 +206,7 @@ resource "aws_ecr_repository" "rails" {
 resource "aws_ecr_repository" "nginx" {
   name                 = "onsen-nginx-tf"
   image_tag_mutability = "MUTABLE"
+  force_delete         = true  #追加
   image_scanning_configuration {
     scan_on_push = true
   }

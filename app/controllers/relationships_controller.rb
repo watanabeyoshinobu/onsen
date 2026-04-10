@@ -1,32 +1,27 @@
 class RelationshipsController < ApplicationController
-	before_action :set_user
+  before_action :set_user
 
-def create
+  def create
     following = current_user.follow(@user)
     if following.save
-      flash[:success] = 'ユーザーをフォローしました'
-      redirect_back(fallback_location: root_path)
+      render json: { status: 'success' }
     else
-      flash.now[:alert] = 'ユーザーのフォローに失敗しました'
-      redirect_back(fallback_location: root_path)
+      render json: { status: 'error' }, status: :unprocessable_entity
     end
   end
 
   def destroy
     following = current_user.unfollow(@user)
     if following.destroy
-      flash[:success] = 'ユーザーのフォローを解除しました'
-      redirect_back(fallback_location: root_path)
+      render json: { status: 'success' }
     else
-      flash.now[:alert] = 'ユーザーのフォロー解除に失敗しました'
-      redirect_back(fallback_location: root_path)
+      render json: { status: 'error' }, status: :unprocessable_entity
     end
   end
 
-
   private
-  def set_user
-    @user = User.find(params[:follow_id])
-  end
 
+  def set_user
+    @user = User.find(params[:user_id])
+  end
 end

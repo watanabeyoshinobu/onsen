@@ -38,23 +38,9 @@
 								お子様のいるご家族は、イベントが豊富なのとゲームコーナーやドリンクコーナーがあるので、お子様が飽きることなく過ごせると思います。<br>
 							</p>
 				</article>
-					<div class="grid-gallery">
-						<article class="movement">
-							<figure class="gallery9-1">
-								<figcaption>外観</figcaption>
-							</figure>
-						</article>
-						<article class="movement">
-							<figure class="gallery9-2">
-								<figcaption>売店</figcaption>
-							</figure>
-						</article>
-						<article class="movement">
-							<figure class="gallery9-3">
-								<figcaption>お食事処</figcaption>
-							</figure>
-						</article>
-					</div>
+
+					<div class="vue-gallery-app" data-category="gaze"></div>
+
 		</div>
 
 		<div class="dining-container9">
@@ -70,23 +56,9 @@
 				</article>
 				<section class="food-box3">
 					<p class="food-title">極楽湯のおすすめメニュー</p>
-						<div class="grid-gallery">
-							<article class="movement">
-								<figure class="food_image9-1">
-									<figcaption>肉厚熟成プレミアムかつ定食</figcaption>
-								</figure>
-							</article>
-							<article class="movement">
-								<figure class="food_image9-2">
-									<figcaption>四川麻婆豆腐定食</figcaption>
-								</figure>
-							</article>
-							<article class="movement">
-								<figure class="food_image9-3">
-									<figcaption>パフェ</figcaption>
-								</figure>
-							</article>
-						</div>
+
+						<div class="vue-gallery-app" data-category="gaze_food"></div>
+
 				</section>
 		</div>
 
@@ -102,23 +74,9 @@
 				</p>
 					<main class="main-onsen">
 						<p class="onsen-title2">おすすめの温泉</p>
-							<div class="grid-onsen">
-								<article class="movement">
-									<figure class="onsen_image9-1">
-										<figcaption>黒湯 天然温泉「自然の湯」</figcaption>
-									</figure>
-								</article>
-								<article class="movement">
-									<figure class="onsen_image9-2">
-										<figcaption>水素風呂</figcaption>
-									</figure>
-								</article>
-								<article class="movement">
-									<figure class="onsen_image9-3">
-										<figcaption>黒湯 天然温泉「岩風呂」</figcaption>
-									</figure>
-								</article>
-							</div>
+
+							<div class="vue-gallery-app" data-category="gaze_onsen"></div>
+
 					</main>
 		</div>
 
@@ -217,4 +175,5 @@
 			<%= render "tweet" %>
 		</article>
 			<div id="user-modal" class="modal center-modal" tabindex="-1" role="dialog" aria-hidden="true"></div>
+			<%= javascript_pack_tag 'hello_vue' %>
 </body>

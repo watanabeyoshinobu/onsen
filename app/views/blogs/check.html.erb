@@ -39,23 +39,9 @@
 									お休み処は、誰でも休むことができますが、女性だけのお休み処も無料であるので、安心して休むことができるのは素晴らしいですね。			
 								</p>
 					</article>
-					<div class="grid-gallery">
-						<article class="movement">
-							<figure class="gallery7-1">
-								<figcaption>お休み処</figcaption>
-							</figure>
-						</article>
-						<article class="movement">
-							<figure class="gallery7-2">
-								<figcaption>貸し部屋</figcaption>
-							</figure>
-						</article>
-						<article class="movement">
-							<figure class="gallery7-3">
-								<figcaption>リラクゼーションルーム</figcaption>
-							</figure>
-						</article>
-					</div>
+
+					<div class="vue-gallery-app" data-category="check"></div>
+
 			</div>
 
 			<div class="dining-container7">
@@ -70,23 +56,9 @@
 					</article>
 					<section class="food-box3">
 						<p class="food-title">湯快爽快 ざまのおすすめメニュー</p>
-							<div class="grid-gallery">
-								<article class="movement">
-									<figure class="food_image7-1">
-										<figcaption>十勝天せいろ蕎麦</figcaption>
-									</figure>
-								</article>
-								<article class="movement">
-									<figure class="food_image7-2">
-										<figcaption>ロースかつ</figcaption>
-									</figure>
-								</article>
-								<article class="movement">
-									<figure class="food_image7-3">
-										<figcaption>クリームあんみつ</figcaption>
-									</figure>
-								</article>
-							</div>
+
+							<div class="vue-gallery-app" data-category="check_food"></div>
+
 					</section>
 			</div>
 
@@ -101,23 +73,9 @@
 					</p>
 						<main class="main-onsen">
 							<p class="onsen-title2">温泉の種類</p>
-								<div class="grid-onsen">
-									<article class="movement">
-										<figure class="onsen_image7-1">
-											<figcaption>源泉の湯</figcaption>
-										</figure>
-									</article>
-									<article class="movement">
-										<figure class="onsen_image7-2">
-											<figcaption>掛け流しの湯</figcaption>
-										</figure>
-									</article>
-									<article class="movement">
-										<figure class="onsen_image7-3">
-											<figcaption>特別風呂</figcaption>
-										</figure>
-									</article>
-								</div>
+
+								<div class="vue-gallery-app" data-category="check_onsen"></div>
+
 						</main>
 			</div>
 
@@ -220,4 +178,5 @@
 				<%= render "tweet" %>
 			</article>
 				<div id="user-modal" class="modal center-modal" tabindex="-1" role="dialog" aria-hidden="true"></div>
+				<%= javascript_pack_tag 'hello_vue' %>
 </body>

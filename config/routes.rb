@@ -29,6 +29,8 @@ Rails.application.routes.draw do
   end
 
   resources :users do
+    resource :relationships, only: [:create, :destroy]
+
     collection do
       get 'withdraw' => 'users#withdraw'
       get 'follows' => 'users#follows'
@@ -40,8 +42,13 @@ Rails.application.routes.draw do
   end
 
 
+# Vue.jsがデータを取りに来るための設定
+  namespace :api do
+    resources :gallery_items, only: [:index]
+  end
+
+
   resources :comments, only: [:create, :destroy]
-  resources :relationships, only: [:create, :destroy]
   resources :tweets, only: [:create]
 
   # resources :users, only: [:show, :edit, :update, :create, :destroy, :show_modal]

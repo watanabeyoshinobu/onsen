@@ -36,6 +36,14 @@ RUN SECRET_KEY_BASE=placeholder bundle exec rails assets:precompile \
   && yarn cache clean \
   && rm -rf node_modules tmp/cache
 
+COPY entrypoint.sh /usr/bin/
+RUN chmod +x /usr/bin/entrypoint.sh
+
+# コンテナが立ち上がる時に、一番最初にこのスクリプトを実行するよう命令
+ENTRYPOINT ["entrypoint.sh"]
+
 EXPOSE 3000
 
 CMD ["bash", "-c", "rm -f tmp/pids/server.pid && bundle exec rails s -b '0.0.0.0'"]
+
+

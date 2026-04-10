@@ -6,35 +6,28 @@
     </div>
     <div class="modal-body-custom">
         <div class="modal-user-icon">
-          <% if @comment.user.profile_image? %>
-            <%= image_tag @comment.user.profile_image.url, class: "profile-img" %>
+          <% if @user.profile_image.present? %>
+            <%= image_tag @user.profile_image.to_s, class: "profile-img" %>
           <% else %>
             <%= image_tag "img/no_image.jpg", class: "profile-img" %>
           <% end %>
         </div>
         <div class="modal-user-name">
-          <%= @comment.user.name %> さん
+          <%= @user.name %> さん
         </div>
       
       <p class="modal-message">フォローしてつながりますか？</p>
 
-      <div class="follow-button-area">
-        <% unless current_user == @comment.user %>
-          <% if current_user.following?(@comment.user) %>
-            <%= form_for(current_user.relationships.find_by(follow_id: @comment.user.id), html: { method: :delete }) do |f| %>
-              <%= hidden_field_tag :follow_id, @comment.user.id %>
-              <%= f.submit 'フォロー中', class: 'modal-btn btn-unfollow' %>
-            <% end %>
+        <div class="follow-button-area">
+          <% unless current_user == @user %>
+            <div class="follow-button-component"
+                data-user-id="<%= @user.id %>"
+                data-following="<%= current_user.following?(@user) %>">
+            </div>
           <% else %>
-            <%= form_for(current_user.relationships.build) do |f| %>
-              <%= hidden_field_tag :follow_id, @comment.user.id %>
-              <%= f.submit 'フォローする', class: 'modal-btn btn-follow' %>
-            <% end %>
+            <p class="is-me">※あなた自身のアカウントです</p>
           <% end %>
-        <% else %>
-          <p class="is-me">※あなた自身のアカウントです</p>
-        <% end %>
-      </div>
+        </div>
     </div>
     
     <div class="modal-footer-custom">

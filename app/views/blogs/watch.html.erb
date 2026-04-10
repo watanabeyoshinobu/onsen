@@ -37,23 +37,9 @@
 								営業時間は、朝6時〜夜25時までと,仕事が遅くなった日、とにかくゆっくりしたい日など時間を気にすることなく利用できるのも嬉しいですね。
 							</p>
 				</article>
-					<div class="grid-gallery">
-						<article class="movement">
-							<figure class="gallery4-1">
-								<figcaption>入り口（装飾品）</figcaption>
-							</figure>
-						</article>
-						<article class="movement">
-							<figure class="gallery4-2">
-								<figcaption>館内図</figcaption>
-							</figure>
-						</article>
-						<article class="movement">
-							<figure class="gallery4-3">
-								<figcaption>お食事処『山水草木』</figcaption>
-							</figure>
-						</article>
-					</div>
+
+					<div class="vue-gallery-app" data-category="watch"></div>
+
 		</div>
 
 		<div class="dining-container4">
@@ -69,23 +55,9 @@
 
 				<section class="food-box3">
 					<p class="food-title">山水草木のおすすめメニュー</p>
-						<div class="grid-gallery">
-							<article class="movement">
-								<figure class="food_image4-1">
-									<figcaption>天丼</figcaption>
-								</figure>
-							</article>
-							<article class="movement">
-								<figure class="food_image4-2">
-									<figcaption>山水草木名物　おばんざい御膳</figcaption>
-								</figure>
-							</article>
-							<article class="movement">
-								<figure class="food_image4-3">
-									<figcaption>手まりパフェ</figcaption>
-								</figure>
-							</article>
-						</div>
+
+						<div class="vue-gallery-app" data-category="watch_food"></div>
+
 				</section>
 		</div>
 
@@ -100,23 +72,9 @@
 				</p>
 					<main class="main-onsen">
 						<p class="onsen-title2">おすすめの温泉</p>
-							<div class="grid-onsen">
-								<article class="movement">
-									<figure class="onsen_image4-1">
-										<figcaption>天然温泉岩風呂</figcaption>
-									</figure>
-								</article>
-								<article class="movement">
-									<figure class="onsen_image4-2">
-										<figcaption>シルクの湯</figcaption>
-									</figure>
-								</article>
-								<article class="movement">
-									<figure class="onsen_image4-3">
-										<figcaption>日替風呂</figcaption>
-									</figure>
-								</article>
-							</div>
+
+							<div class="vue-gallery-app" data-category="watch_onsen"></div>
+
 					</main>
 		</div>
 
@@ -220,4 +178,5 @@
 			<%= render "tweet" %>
 		</article>
 			<div id="user-modal" class="modal center-modal" tabindex="-1" role="dialog" aria-hidden="true"></div>
+			<%= javascript_pack_tag 'hello_vue' %>
 </body>

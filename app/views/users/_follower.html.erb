@@ -16,17 +16,10 @@
     </h3>
 
     <div class="user-card__action">
-      <% if current_user.following?(follow_user) %>
-        <%= form_for(current_user.relationships.find_by(follow_id: follow_user.id), html: { method: :delete }) do |f| %>
-          <%= hidden_field_tag :follow_id, follow_user.id %>
-          <%= f.submit 'フォロー中', class: 'user-btn btn-unfollow' %>
-        <% end %>
-      <% else %>
-        <%= form_for(current_user.relationships.build) do |f| %>
-          <%= hidden_field_tag :follow_id, follow_user.id %>
-          <%= f.submit 'フォローする', class: 'user-btn btn-follow' %>
-        <% end %>
-      <% end %>
+      <div class="follow-button-component"
+           data-user-id="<%= follow_user.id %>"
+           data-following="<%= current_user.following?(follow_user) %>">
+      </div>
     </div>
 
   </div>

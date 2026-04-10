@@ -10,7 +10,7 @@ services:
     volumes:
       - .:/app
       - ./public:/app/public
-      - sockets:/app/tmp/sockets
+      - sockets:/tmp/sockets
     stdin_open: true
     tty: true
     depends_on:
@@ -42,7 +42,7 @@ services:
       - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf
       - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
       - ./public:/app/public
-      - sockets:/app/tmp/sockets
+      - sockets:/tmp/sockets
     depends_on:
       - app
 

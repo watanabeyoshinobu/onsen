@@ -1,27 +1,39 @@
 <div class="mypage-container">
-	<div class="mypage">
-		<h2 class="mypage-title">ユーザー情報</h2>
-	</div>
-		<main class="user_formbox">
-				<figure class="my-picture">
-					<% if @user.profile_image.present? %>
-							<%= image_tag @user.profile_image.to_s, :size =>'200x200' %>
-					<% else %>
-							<%= image_tag "img/no_image.jpg", :size =>'200x200' %>
-					<% end %>
-				</figure>
-						<div class="account">
-								<p class="profile_name">アカウント名：<%= @user.name%></p>
-								<p class="profile_email">アドレス：<%= @user.email %></p>
-								<article class="profile_group3">
-									<%= link_to 'フォロー', follows_users_path, class: "btn-border-follow" %>
-									<%= link_to 'フォロワー', followers_users_path, class: "btn-border-reset" %>
-								</article>
-						</div>
-							<article class="others-box">
-									<%= link_to 'アカウント編集', edit_user_registration_path, class: 'btn-border-edit' %>
-									<%= link_to 'アカウント画像編集', edit_user_path, class: 'btn-border-edit' %>
-									<%= link_to '退会', withdraw_users_path, class: 'btn-border-withdraw' %>
-							</article>
-		</main>
+  <div class="mypage">
+    <h2 class="mypage-title">ユーザー情報</h2>
+  </div>
+  <main class="user_formbox">
+    <figure class="my-picture">
+      <% if @user.profile_image.present? %>
+        <%= image_tag @user.profile_image.to_s, :size =>'200x200' %>
+      <% else %>
+        <%= image_tag "img/no_image.jpg", :size =>'200x200' %>
+      <% end %>
+    </figure>
+    <div class="account">
+      <p class="profile_name">アカウント名：<%= @user.name%></p>
+      <p class="profile_email">アドレス：<%= @user.email %></p>
+      <article class="profile_group3">
+        <%= link_to 'フォロー', follows_users_path, class: "btn-border-follow" %>
+        <%= link_to 'フォロワー', followers_users_path, class: "btn-border-reset" %>
+      </article>
+    </div>
+    <article class="others-box">
+      <%= link_to 'アカウント編集', edit_user_registration_path, class: 'btn-border-edit' %>
+      <%= link_to 'アカウント画像編集', edit_user_path, class: 'btn-border-edit' %>
+      <button type="button" class="btn-border-withdraw" onclick="openWithdrawModal()">退会</button>
+    </article>
+  </main>
 </div>
+
+<%= render 'withdraw' %>
+
+<script>
+  window.openWithdrawModal = function() {
+    document.getElementById('withdrawModal').classList.add('is-active');
+  }
+  
+  window.closeWithdrawModal = function() {
+    document.getElementById('withdrawModal').classList.remove('is-active');
+  }
+</script>

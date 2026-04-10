@@ -128,20 +128,17 @@
   margin-bottom: 70px;
 }
 
-.grid-onsen {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  place-items: center;
-  width: 1100px;
-  margin-left: 170px;
-  gap: 20px;
-}
 
-.grid-gallery, .grid-profile { 
-  display: flex; 
-  justify-content: center; 
-  gap: 20px; 
-}
+
+// .grid-onsen {
+//   display: grid;
+//   grid-template-columns: repeat(3, 1fr);
+//   place-items: center;
+//   width: 1100px;
+//   margin-left: 170px;
+//   gap: 20px;
+// }
+
 
 .visual_image1, .visual_image2, .visual_image3 { 
   width: 350px; 
@@ -162,9 +159,9 @@
 }
 
 .main-container {
-  height: 1500px;
+  height: 1400px;
   background: linear-gradient(to right, #FFE4E1, #FFFAFA);
-  clip-path: polygon(0 7%, 100% 0, 100% 93%, 0 100%);
+  clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
   text-align: center;
   font-family: 'Shippori Mincho', 'HiraMinProN-W3', serif;
   padding-top: 150px; 
@@ -185,6 +182,15 @@
   margin-bottom: 50px;
 }
 
+.browse-grid {
+  display: grid;
+  grid-template-columns: repeat(3 ,1fr);
+  place-items: center;
+  width: 1000px;
+  margin: 0 auto;
+  gap: 50px 30px;
+}
+
 [class^="portfolio_image"] { 
   width: 300px;
   height: 250px;
@@ -192,7 +198,13 @@
   background-size: cover;
   position: relative;
   box-shadow: 6px 6px 10px 0px rgba(0, 0, 0, 0.3);
+  transition: transform 0.4s ease;
 }
+
+[class^="portfolio_image"]:hover {
+  transform: scale(1.05);
+}
+
 .portfolio_image1 {
   background-image: image-url('img/dsc_0102.jpg');
 }
@@ -244,6 +256,7 @@ figcaption {
   letter-spacing: 1px;
   border-radius: 0 0 10px 10px;
 }
+
 
 .grid-profile { 
   display: grid; 
@@ -306,8 +319,8 @@ figcaption {
   min-height: 500px; 
   margin: 0 auto;
   padding-top: 100px;
-  -webkit-clip-path: polygon(0 8vw, 100% 0, 100% 100%, 0 100%);
-  clip-path: polygon(0 8vw, 100% 0, 100% 100%, 0 100%);
+  -webkit-clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
+  clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
   background: linear-gradient(to right, #FFE4E1, #FFFAFA);
   font-family: 'Shippori Mincho', 'HiraMinProN-W3', serif;
   text-align: center;
@@ -382,6 +395,7 @@ figcaption {
   border-color: #cbe585;
   color: #FFF;
 }
+
 
 /*look画面*/
 .onsen-visual{
@@ -505,11 +519,23 @@ figcaption {
 
 .introduce-container {
   height: 1950px;
-  background: linear-gradient(to right, #fdeff2, #FFFAFA);
   font-family: 'Shippori Mincho', 'HiraMinProN-W3', serif;
-  -webkit-clip-path: polygon(0 4%, 100% 0, 100% 96%, 0 100%);
-  clip-path: polygon(0 4%, 100% 0, 100% 96%, 0 100%);
+  position: relative;
+  z-index: 1;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #fdeff2, #FFFAFA);
+    -webkit-clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
+    clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
+    z-index: -1;
+  }
 }
+
 
 .introduce-container:after {
   content: "";
@@ -554,21 +580,6 @@ figcaption {
   gap: 50px 30px;
 }
 
-[class^="villa-image"] {
-  width:300px;
-  height:250px;
-  background-size: cover;
-}
-.villa-image1 {
-  background-image: image-url('img/villa1.jpg');
-}
-.villa-image2 {
-  background-image: image-url('img/villa2.jpg');
-}
-.villa-image3 {
-  background-image: image-url('img/villa3.jpg');
-}
-
 .bedrock-box {
   text-align: center;
 }
@@ -588,30 +599,6 @@ figcaption {
   letter-spacing: 1px;
 }
 
-[class^="bedrock-image"] { 
-  width: 300px;
-  height: 250px;
-  background-size: cover;
-}
-
-.bedrock-image1 {
-  background-image: image-url('img/bedrock1.jpg');
-}
-.bedrock-image2 {
-  background-image: image-url('img/bedrock2.jpg');
-}
-.bedrock-image3 {
-  background-image: image-url('img/bedrock3.jpg');
-}
-.bedrock-image4 {
-  background-image: image-url('img/bedrock4.jpg');
-}
-.bedrock-image5 {
-  background-image: image-url('img/bedrock5.jpg');
-}
-.bedrock-image6 {
-  background-image: image-url('img/bedrock6.jpg');
-}
 
 .dining-container {
   height: 900px;
@@ -648,28 +635,25 @@ figcaption {
 }
 
 
-[class^="food_image"] {
-  width:300px;
-  height:250px;
-  background-size: cover;
-}
-.food_image1-1 {
-  background-image: image-url('img/ryusenji_food1.jpg');
-}
-.food_image1-2 {
-  background-image: image-url('img/ryusenji_food2.jpg');
-}
-.food_image1-3 {
-  background-image: image-url('img/ryusenji_food3.jpg');
+.onsen-container {
+  height: 1100px;
+  font-family: 'Shippori Mincho', 'HiraMinProN-W3', serif;
+  position: relative;
+  z-index: 1;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #fdeff2, #FFFAFA);
+    -webkit-clip-path: polygon(0 7%, 100% 0, 100% 93%, 0 100%);
+    clip-path: polygon(0 7%, 100% 0, 100% 93%, 0 100%);
+    z-index: -1;
+  }
 }
 
-.onsen-container {
-  height: 1150px;
-  background: linear-gradient(to right, #fdeff2, #FFFAFA);
-  font-family: 'Shippori Mincho', 'HiraMinProN-W3', serif;
-  -webkit-clip-path: polygon(0 7%, 100% 0, 100% 93%, 0 100%);
-  clip-path: polygon(0 7%, 100% 0, 100% 93%, 0 100%);
-}
 
 .onsen-title {
   font-size: 36px; 
@@ -707,21 +691,6 @@ figcaption {
   place-items: center;
   width: 1100px;
   margin-left: 170px;
-}
-
-[class^="onsen_image"] {
-  width: 350px;
-  height: 250px;
-  background-size: cover;
-}
-.onsen_image1-1 { 
-  background-image: image-url('img/ryusenji_onsen1.jpg');
-}
-.onsen_image1-2 { 
-  background-image: image-url('img/ryusenji_onsen2.jpg');
-}
-.onsen_image1-3 { 
-  background-image: image-url('img/ryusenji_onsen3.jpg'); 
 }
 
 .summary-container {
@@ -946,28 +915,24 @@ figcaption {
   font-family: 'Shippori Mincho', 'HiraMinProN-W3', serif;
 }
 
+
 .introduce-container2 {
   height: 950px;
   font-family: 'Shippori Mincho', 'HiraMinProN-W3', serif;
-  background: linear-gradient(to right, #ffffc6, #FFFFF0);
-  -webkit-clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
-  clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
-}
-
-[class^="gallery"] {
-  width: 300px;
-  height: 250px;
-  background-size: cover;
-}
-
-.gallery2-1 {
-  background-image: image-url('img/kokochi_ebina1.jpg');
-}
-.gallery2-2 {
-  background-image: image-url('img/restaurant-menu.jpg');
-}
-.gallery2-3 {
-  background-image: image-url('img/utatane.jpg');
+  position: relative;
+  z-index: 1;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #ffffc6, #FFFFF0);
+    -webkit-clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+    clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+    z-index: -1;
+  }
 }
 
 .dining-container2 {
@@ -975,32 +940,23 @@ figcaption {
   font-family: 'Shippori Mincho', 'HiraMinProN-W3', serif;
 }
 
-.food_image2-1 {
-  background-image: image-url('img/king_food1.jpg');
-}
-.food_image2-2 {
-  background-image: image-url('img/king_food2.jpg');
-}
-.food_image2-3 {
-  background-image: image-url('img/king_food3.jpg');
-}
-
 .onsen-container2 {
- height: 1050px;
- background: linear-gradient(to right, #ffffc6, #FFFFF0);
- font-family: 'Shippori Mincho', 'HiraMinProN-W3', serif;
- -webkit-clip-path: polygon(0 7%, 100% 0, 100% 93%, 0 100%);
- clip-path: polygon(0 7%, 100% 0, 100% 93%, 0 100%);
-}
-
-.onsen_image2-1 {
-  background-image: image-url('img/innerbath1.jpg');
-}
-.onsen_image2-2 {
-  background-image: image-url('img/nukumori.jpg');
-}
-.onsen_image2-3 {
-  background-image: image-url('img/madoka.jpg');
+  height: 1000px;
+  font-family: 'Shippori Mincho', 'HiraMinProN-W3', serif;
+  position: relative;
+  z-index: 1;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #ffffc6, #FFFFF0);
+    -webkit-clip-path: polygon(0 8%, 100% 0, 100% 92%, 0 100%);
+    clip-path: polygon(0 8%, 100% 0, 100% 92%, 0 100%);
+    z-index: -1;
+  }
 }
 
 
@@ -1094,22 +1050,24 @@ figcaption {
   height: 400px;
   font-family: 'Shippori Mincho', 'HiraMinProN-W3', serif;
 }
+
 .introduce-container3 {
   height: 1050px;
   font-family: 'Shippori Mincho', 'HiraMinProN-W3', serif;
-  background: linear-gradient(to right, #bbe2f1, #FFFFFF);
-  -webkit-clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
-  clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
-}
-
-.gallery3-1 {
-  background-image: image-url('img/manyou.jpg');
-}
-.gallery3-2 {
-  background-image: image-url('img/manyou_kannai.jpg');
-}
-.gallery3-3 {
-  background-image: image-url('img/tenbouashiyu.jpg');
+  position: relative;
+  z-index: 1;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #bbe2f1, #FFFFFF);
+    -webkit-clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+    clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+    z-index: -1;
+  }
 }
 
 .dining-container3 {
@@ -1117,20 +1075,6 @@ figcaption {
  font-family: 'Shippori Mincho', 'HiraMinProN-W3', serif;
 }
 
-[class^="dining_image"] {
-  width: 300px;
-  height: 250px;
-  background-size: cover;
-}
-.dining_image3-1 {
-  background-image: image-url('img/cafeteria.png');
-}
-.dining_image3-2 {
-  background-image: image-url('img/ikoidokoro.jpg');
-}
-.dining_image3-3 {
-  background-image: image-url('img/manyouan.jpg');
-}
 
 .food-box {
  height: 200px;
@@ -1146,15 +1090,6 @@ figcaption {
   text-underline-offset: 10px;
 }
 
-.food_image3-1 {
-  background-image: image-url('img/manyou_gozen.jpg');
-}
-.food_image3-2 {
-  background-image: image-url('img/manyou_donmono.jpg');
-}
-.food_image3-3 {
-  background-image: image-url('img/manyou_sweets.png');
-}
 
 .dining-box3 {
  height: 300px;
@@ -1187,24 +1122,23 @@ figcaption {
   text-underline-offset: 10px;
 }
 
-
-
 .onsen-container3 {
   height: 1100px;
-  background: linear-gradient(to right, #bbe2f1, #FFFFFF);
   font-family: 'Shippori Mincho', 'HiraMinProN-W3', serif;
-  -webkit-clip-path: polygon(0 7%, 100% 0, 100% 93%, 0 100%);
-  clip-path: polygon(0 7%, 100% 0, 100% 93%, 0 100%);
-}
-
-.onsen_image3-1 {
-  background-image: image-url('img/tenbouashiyu.jpg');
-}
-.onsen_image3-2 {
-  background-image: image-url('img/outdoor_bath.jpg');
-}
-.onsen_image3-3 {
-  background-image: image-url('img/bed_bath.jpg');
+  position: relative;
+  z-index: 1;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #bbe2f1, #FFFFFF);
+    -webkit-clip-path: polygon(0 7%, 100% 0, 100% 93%, 0 100%);
+    clip-path: polygon(0 7%, 100% 0, 100% 93%, 0 100%);
+    z-index: -1;
+  }
 }
 
 
@@ -1300,22 +1234,24 @@ figcaption {
   font-family: 'Shippori Mincho', 'HiraMinProN-W3', serif;
 }
 
+
 .introduce-container4 {
   height: 1000px;
   font-family: 'Shippori Mincho', 'HiraMinProN-W3', serif;
-  background: linear-gradient(to right, #ffe5e5, #FFFFFF);
-  -webkit-clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
-  clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
-}
-
-.gallery4-1 {
-  background-image: image-url('img/manten-yu2.jpg');
-}
-.gallery4-2 {
-  background-image: image-url('img/manten-kannnai.jpg');
-}
-.gallery4-3 {
-  background-image: image-url('img/manten_eat.jpg');
+  position: relative;
+  z-index: 1;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #ffe5e5, #FFFFFF);
+    -webkit-clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+    clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+    z-index: -1;
+  }
 }
 
 .dining-container4 {
@@ -1330,34 +1266,25 @@ figcaption {
  padding: 100px 0 70px 0;
 }
 
-.food_image4-1 {
-  background-image: image-url('img/manten_food1.jpg');
-}
-.food_image4-2 {
-  background-image: image-url('img/manten_food2.jpg');
-}
-.food_image4-3 {
-  background-image: image-url('img/manten_food3.jpg');
-}
 
 .onsen-container4 {
   height: 1100px;
-  background: linear-gradient(to right, #ffe5e5, #FFFFFF);
   font-family: 'Shippori Mincho', 'HiraMinProN-W3', serif;
-  -webkit-clip-path: polygon(0 7%, 100% 0, 100% 93%, 0 100%);
-  clip-path: polygon(0 7%, 100% 0, 100% 93%, 0 100%);
+  position: relative;
+  z-index: 1;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #ffe5e5, #FFFFFF);
+    -webkit-clip-path: polygon(0 7%, 100% 0, 100% 93%, 0 100%);
+    clip-path: polygon(0 7%, 100% 0, 100% 93%, 0 100%);
+    z-index: -1;
+  }
 }
-
-.onsen_image4-1 {
-  background-image: image-url('img/manten_spa1.jpg');
-}
-.onsen_image4-2 {
-  background-image: image-url('img/manten_spa2.jpg');
-}
-.onsen_image4-3 {
-  background-image: image-url('img/manten_spa3.jpg');
-}
-
 
 /*seeing画面*/
 .onsen-visual5 {
@@ -1453,53 +1380,49 @@ figcaption {
 .introduce-container5 {
   height: 1000px;
   font-family: 'Shippori Mincho', 'HiraMinProN-W3', serif;
-  background: linear-gradient(to right, #efffe0, #FFFFF0);
-  -webkit-clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
-  clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+  position: relative;
+  z-index: 1;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #efffe0, #FFFFF0);
+    -webkit-clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+    clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+    z-index: -1;
+  }
 }
 
-.gallery5-1 {
-  background-image: image-url('img/oyugiwa_exterior.jpg');
-}
-.gallery5-2 {
-  background-image: image-url('img/oyugiwa_terrace.jpg');
-}
-.gallery5-3 {
-  background-image: image-url('img/oyugiwa_kutsurogi.jpg');
-}
 
 .dining-container5 {
   height: 900px;
   font-family: 'Shippori Mincho', 'HiraMinProN-W3', serif;
 }
 
-.food_image5-1 {
-  background-image: image-url('img/oyugiwa_food1.jpg');
-}
-.food_image5-2 {
-  background-image: image-url('img/oyugiwa_food2.jpg');
-}
-.food_image5-3 {
-  background-image: image-url('img/oyugiwa_food3.jpg');
-}
-
 .onsen-container5 {
   height: 1100px;
-  background: linear-gradient(to right, #efffe0, #FFFFFF);
   font-family: 'Shippori Mincho', 'HiraMinProN-W3', serif;
-  -webkit-clip-path: polygon(0 7%, 100% 0, 100% 93%, 0 100%);
-  clip-path: polygon(0 7%, 100% 0, 100% 93%, 0 100%);
+  position: relative;
+  z-index: 1;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #efffe0, #FFFFF0);
+    -webkit-clip-path: polygon(0 7%, 100% 0, 100% 93%, 0 100%);
+    clip-path: polygon(0 7%, 100% 0, 100% 93%, 0 100%);
+    z-index: -1;
+  }
 }
 
-.onsen_image5-1 {
-  background-image: image-url('img/oyugiwa_onsen1.jpg');
-}
-.onsen_image5-2 {
-  background-image: image-url('img/oyugiwa_onsen2.jpg');
-}
-.onsen_image5-3 {
-  background-image: image-url('img/oyugiwa_onsen3.jpg');
-}
+
+
 
 /*looking画面*/
 .onsen-visual6 {
@@ -1593,62 +1516,52 @@ figcaption {
   font-family: 'Shippori Mincho', 'HiraMinProN-W3', serif;
 }
 
+
 .introduce-container6 {
   height: 1000px;
   font-family: 'Shippori Mincho', 'HiraMinProN-W3', serif;
-  background: linear-gradient(to right, #ffdd99, #FFFFF0);
-  -webkit-clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
-  clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+  position: relative;
+  z-index: 1;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #ffdd99, #FFFFF0);
+    -webkit-clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+    clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+    z-index: -1;
+  }
 }
 
-.gallery6-1 {
-  background-image: image-url('img/yukaraku_outside.jpeg');
-}
-.gallery6-2 {
-  background-image: image-url('img/yukaraku_kannai.jpg');
-}
-.gallery6-3 {
-  background-image: image-url('img/yukaraku_eat.jpg');
-  background-position: center center;
-}
 
 .dining-container6 {
  height: 900px;
  font-family: 'Shippori Mincho', 'HiraMinProN-W3', serif;
 }
 
-.food_image6-1 {
-  background-image: image-url('img/yukaraku_food1.jpeg');
-}
-
-.food_image6-2 {
-
-  background-image: image-url('img/yukaraku_food2.jpg');
-}
-
-.food_image6-3 {
-
-  background-image: image-url('img/yukaraku_food3.jpg');
-}
-
 
 .onsen-container6 {
   height: 1100px;
-  background: linear-gradient(to right, #ffdd99, #FFFFF0);
   font-family: 'Shippori Mincho', 'HiraMinProN-W3', serif;
-  -webkit-clip-path: polygon(0 7%, 100% 0, 100% 93%, 0 100%);
-  clip-path: polygon(0 7%, 100% 0, 100% 93%, 0 100%);
+  position: relative;
+  z-index: 1;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #ffdd99, #FFFFF0);
+    -webkit-clip-path: polygon(0 7%, 100% 0, 100% 93%, 0 100%);
+    clip-path: polygon(0 7%, 100% 0, 100% 93%, 0 100%);
+    z-index: -1;
+  }
 }
 
-.onsen_image6-1 {
-  background-image: image-url('img/yukaraku_onsen1.jpg');
-}
-.onsen_image6-2 {
-  background-image: image-url('img/yukaraku_onsen2.jpg');
-}
-.onsen_image6-3 {
-  background-image: image-url('img/yukaraku_onsen3.jpg');
-}
 
 .summary-container6 {
   height: 1250px;
@@ -1750,58 +1663,50 @@ figcaption {
 
 
 .introduce-container7 {
-  height: 1050px;
+  height: 1000px;
   font-family: 'Shippori Mincho', 'HiraMinProN-W3', serif;
-  background: linear-gradient(to right, #e5c1cd, #FFFFFF);
-  -webkit-clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
-  clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+  position: relative;
+  z-index: 1;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #e5c1cd, #FFFFFF);
+    -webkit-clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+    clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+    z-index: -1;
+  }
 }
 
-.gallery7-1 {
-  background-image: image-url('img/soukai_rest1.jpg');
-  background-position: center center;
-}
-.gallery7-2 {
-  background-image: image-url('img/soukai_room1.jpg');
-}
-.gallery7-3 {
-  background-image: image-url('img/soukai_relax1.jpg');
-}
 
 .dining-container7 {
   height: 850px;
   font-family: 'Shippori Mincho', 'HiraMinProN-W3', serif;
 }
 
-.food_image7-1 {
-  background-image: image-url('img/soukai_food1.jpg');
-}
-.food_image7-2 {
-  background-image: image-url('img/soukai_food2.jpg');
-}
-.food_image7-3 {
-  background-image: image-url('img/soukai_food3.jpg');
-}
 
 .onsen-container7 {
   height: 1100px;
-  background: linear-gradient(to right, #e5c1cd, #FFFFFF);
   font-family: 'Shippori Mincho', 'HiraMinProN-W3', serif;
-  -webkit-clip-path: polygon(0 7%, 100% 0, 100% 93%, 0 100%);
-  clip-path: polygon(0 7%, 100% 0, 100% 93%, 0 100%);
+  position: relative;
+  z-index: 1;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #e5c1cd, #FFFFFF);
+    -webkit-clip-path: polygon(0 7%, 100% 0, 100% 93%, 0 100%);
+    clip-path: polygon(0 7%, 100% 0, 100% 93%, 0 100%);
+    z-index: -1;
+  }
 }
 
-.onsen_image7-1 {
-  background-image: image-url('img/soukai_onsen1.jpg');
-}
-
-.onsen_image7-2 {
-  background-image: image-url('img/soukai_onsen2.jpg');
-}
-
-.onsen_image7-3 {
-  background-image: image-url('img/soukai_onsen3.jpg');
-}
 
 .traffic-text7 {
   text-align: justify;
@@ -1900,62 +1805,54 @@ figcaption {
   font-family: 'Shippori Mincho', 'HiraMinProN-W3', serif;
 }
 
+
 .introduce-container8 {
   height: 1000px;
   font-family: 'Shippori Mincho', 'HiraMinProN-W3', serif;
-  background: linear-gradient(to right, #dbd0e6, #FFFFFF);
-  -webkit-clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
-  clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+  position: relative;
+  z-index: 1;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #dbd0e6, #FFFFFF);
+    -webkit-clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+    clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+    z-index: -1;
+  }
 }
 
-.gallery8-1 {
-  background-image: image-url('img/yukemuri_kannai.jpg');
-}
-.gallery8-2 {
-
-  background-image: image-url('img/yukemuri_main1.jpg');
-}
-.gallery8-3 {
-
-  background-image: image-url('img/yukemuri_main2.jpg');
-}
 
 .dining-container8 {
  height: 900px;
  font-family: 'Shippori Mincho', 'HiraMinProN-W3', serif;
 }
 
-.food_image8-1 {
-  background-image: image-url('img/yukemuri_food1.jpg');
-}
-.food_image8-2 {
-  background-image: image-url('img/yukemuri_food2.jpg');
-}
-.food_image8-3 {
-  background-image: image-url('img/yukemuri_food3.jpg');
-}
-
 .onsen-container8 {
   height: 1100px;
-  background: linear-gradient(to right, #dbd0e6, #FFFFFF);
   font-family: 'Shippori Mincho', 'HiraMinProN-W3', serif;
-  -webkit-clip-path: polygon(0 7%, 100% 0, 100% 93%, 0 100%);
-  clip-path: polygon(0 7%, 100% 0, 100% 93%, 0 100%);
+  position: relative;
+  z-index: 1;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #dbd0e6, #FFFFFF);
+    -webkit-clip-path: polygon(0 7%, 100% 0, 100% 93%, 0 100%);
+    clip-path: polygon(0 7%, 100% 0, 100% 93%, 0 100%);
+    z-index: -1;
+  }
 }
 
-.onsen_image8-1 {
-  background-image: image-url('img/yukemuri_onsen1.jpg');
-}
-
-.onsen_image8-2 {
-  background-image: image-url('img/yukemuri_onsen2.jpg');
-}
-
-.onsen_image8-3 {
-  background-image: image-url('img/yukemuri_onsen3.jpg');
-}
 
 /*gaze画面*/
+
 .onsen-visual9 {
   height: 720px;
   background-image: image-url('img/serigaya2.jpg');
@@ -2046,59 +1943,50 @@ figcaption {
   font-family: 'Shippori Mincho', 'HiraMinProN-W3', serif;
 }
 
+
 .introduce-container9 {
-  height: 950px;
+  height: 1000px;
   font-family: 'Shippori Mincho', 'HiraMinProN-W3', serif;
-  background: linear-gradient(to right, #ffb7b7, #FFFFFF);
-  -webkit-clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
-  clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+  position: relative;
+  z-index: 1;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #ffb7b7, #FFFFFF);
+    -webkit-clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+    clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+    z-index: -1;
+  }
 }
 
-.gallery9-1 {
-  background-image: image-url('img/serigaya.jpg');
-}
-.gallery9-2 {
-  background-image: image-url('img/gokuraku_kannai.jpg');
-}
-.gallery9-3 {
-  background-image: image-url('img/gokuraku_dining1.jpg');
-}
 
 .dining-container9 {
  height: 900px;
  font-family: 'Shippori Mincho', 'HiraMinProN-W3', serif;
 }
 
-.food_image9-1 {
-  background-image: image-url('img/gokuraku_food1.jpg');
-}
-
-.food_image9-2 {
-  background-image: image-url('img/gokuraku_food2.jpg');
-  background-position: center center;
-}
-
-.food_image9-3 {
-  background-image: image-url('img/gokuraku_food3.jpg');
-  background-position: center center;
-}
 
 .onsen-container9 {
   height: 1100px;
-  background: linear-gradient(to right, #ffb7b7, #FFFFFF);
   font-family: 'Shippori Mincho', 'HiraMinProN-W3', serif;
-  -webkit-clip-path: polygon(0 7%, 100% 0, 100% 93%, 0 100%);
-  clip-path: polygon(0 7%, 100% 0, 100% 93%, 0 100%);
-}
-
-.onsen_image9-1 {
-  background-image: image-url('img/gokuraku_onsen1.jpg');
-}
-.onsen_image9-2 {
-  background-image: image-url('img/gokuraku_onsen2.jpg');
-}
-.onsen_image9-3 {
-  background-image: image-url('img/gokuraku_onsen3.jpg');
+  position: relative;
+  z-index: 1;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #ffb7b7, #FFFFFF);
+    -webkit-clip-path: polygon(0 7%, 100% 0, 100% 93%, 0 100%);
+    clip-path: polygon(0 7%, 100% 0, 100% 93%, 0 100%);
+    z-index: -1;
+  }
 }
 
 .summary-container9 {
@@ -2106,17 +1994,6 @@ figcaption {
   width: 1200px;
   font-family: 'Shippori Mincho', 'HiraMinProN-W3', serif;
   margin: 0 auto;
-}
-
-.map-image9 {
-  width: 100%;
-  height: 250px;
-  border-radius: 5px;
-  background-color: #fff;
-  background-image: image-url('img/gokuraku_map.jpg');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 
@@ -2163,7 +2040,7 @@ figcaption {
     background-position: left 15px, 15px top, bottom left, top left, top right, bottom right;
     background-size: 100% calc(100% - 30px), calc(100% - 30px) 100%, 20px 20px, 20px 20px, 20px 20px, 20px 20px;
     background-repeat: no-repeat;
-    animation: zoomIn 1s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
+    animation: fadeUp 0.8s ease forwards;
   }
 
   .b-blog__formbox {
@@ -2174,7 +2051,7 @@ figcaption {
     border: 5px solid #e8e8e8;
     border-radius: 10px;
     background: linear-gradient(to right, #FFF0F5, #FFFAFA);
-    animation: zoomIn 1s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
+    animation: fadeUp 0.8s ease forwards;
   }
   
   .b-new_comment_box {
@@ -2251,7 +2128,7 @@ figcaption {
   background-position: left 15px, 15px top, bottom left, top left, top right, bottom right;
   background-size: 100% calc(100% - 30px), calc(100% - 30px) 100%, 20px 20px, 20px 20px, 20px 20px, 20px 20px;
   background-repeat: no-repeat;
-  animation: zoomIn 1s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
+  animation: fadeUp 0.8s ease forwards;
 }
 .b-index__title-text {
   font-size: 24px;
@@ -2396,7 +2273,7 @@ figcaption {
   background-position: top left, top right, bottom left, bottom right, left 15px, 15px top;
   background-size: 20px 20px, 20px 20px,20px 20px,20px 20px, 100% calc(100% - 30px), calc(100% - 30px) 100%;
   background-repeat: no-repeat;
-  animation: zoomIn 1s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
+  animation: fadeUp 0.8s ease forwards;
 }
 
 .b-show_text {
@@ -2418,7 +2295,7 @@ figcaption {
   padding: 40px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.05);
   box-sizing: border-box;
-  animation: zoomIn 1s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
+  animation: fadeUp 0.8s ease forwards;
   position: relative;
 }
 
@@ -2589,7 +2466,7 @@ figcaption {
     background-size: 100% calc(100% - 30px), calc(100% - 30px) 100%, 20px 20px, 20px 20px, 20px 20px, 20px 20px;
     background-repeat: no-repeat;
     font-weight: bold;
-    animation: zoomIn 1s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
+    animation: fadeUp 0.8s ease forwards;
   }
 
   .b-edit__formbox {
@@ -2599,7 +2476,7 @@ figcaption {
     padding: 30px;
     border-radius: 10px;
     background: linear-gradient(to right, #FFF0F5, #FFFAFA);
-    animation: zoomIn 1s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
+    animation: fadeUp 0.8s ease forwards;
     box-sizing: border-box;
   }
 
@@ -2637,7 +2514,7 @@ figcaption {
   position: relative;
   padding: 10px 10px;
   font-weight: bold;
-  animation: zoomIn 1s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
+  animation: fadeUp 0.8s ease forwards;
   }
   @keyframes zoomIn {
     0% {
@@ -2666,7 +2543,7 @@ figcaption {
   padding: 25px;
   border-radius: 10px;
   background: linear-gradient(to right, #FFF0F5, #FFFAFA);
-  animation: zoomIn 1s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
+  animation: fadeUp 0.8s ease forwards;
   font-family: 'Shippori Mincho', 'HiraMinProN-W3', serif;
   font-size: 20px;
 }
@@ -2706,7 +2583,7 @@ figcaption {
   position: relative;
   padding: 10px 10px;
   font-weight: bold;
-  animation: zoomIn 1s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
+  animation: fadeUp 0.8s ease forwards;
   }
   @keyframes zoomIn {
     0% {
@@ -2740,7 +2617,7 @@ figcaption {
   font-family: 'Shippori Mincho', 'HiraMinProN-W3', serif;
   font-size: 20px;
   line-height: 50px;
-  animation: zoomIn 1s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
+  animation: fadeUp 0.8s ease forwards;
 }
 
 .highlight {
@@ -2887,7 +2764,7 @@ figcaption {
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.6);
   box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-  animation: zoomIn 1s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
+  animation: fadeUp 0.8s ease forwards;
   box-sizing: border-box;
 }
 
@@ -3014,7 +2891,6 @@ figcaption {
     height: 8px;
   }
 
-
   .yunokokoti-text {
     font-size: 16px;
     line-height: 2.0;
@@ -3026,6 +2902,13 @@ figcaption {
     margin: 0 auto;
     padding: 0 20px 40px 20px;
     box-sizing: border-box;
+  }
+
+  .browse-grid {
+    width: 100%;
+    margin-left: 0;
+    grid-template-columns: 1fr;
+    gap: 30px;
   }
 
   .grid-onsen {
@@ -3074,8 +2957,8 @@ figcaption {
     height: auto !important;
     min-height: auto !important;
     width: 100% !important;
-    -webkit-clip-path: polygon(0 2%, 100% 0, 100% 98%, 0 100%) !important;
-    clip-path: polygon(0 2%, 100% 0, 100% 98%, 0 100%) !important;
+    -webkit-clip-path: polygon(0 1%, 100% 0, 100% 99%, 0 100%) !important;
+    clip-path: polygon(0 1%, 100% 0, 100% 99%, 0 100%) !important;
     padding-top: 120px !important;
     padding-bottom: 60px !important;
     background: linear-gradient(to right, #FFE4E1, #FFFAFA);
@@ -3158,8 +3041,8 @@ figcaption {
   }
 
   .container3 {
-    -webkit-clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
-    clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
+    -webkit-clip-path: polygon(0 6%, 100% 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 6%, 100% 0, 100% 100%, 0 100%);
     padding-top: 80px;
     height: auto;
     padding-bottom: 50px;
@@ -3259,12 +3142,26 @@ figcaption {
     font-size: 15px !important;
   }
 
+
   .introduce-container {
     height: auto;
     padding-bottom: 50px;
-    -webkit-clip-path: polygon(0 1%, 100% 0, 100% 99%, 0 100%) !important;
-    clip-path: polygon(0 1%, 100% 0, 100% 99%, 0 100%) !important;
+    font-family: 'Shippori Mincho', 'HiraMinProN-W3', serif;
+    position: relative;
+    z-index: 1;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right, #fdeff2, #FFFAFA);
+      -webkit-clip-path: polygon(0 1%, 100% 0, 100% 99%, 0 100%) !important;
+      clip-path: polygon(0 1%, 100% 0, 100% 99%, 0 100%) !important;
+      z-index: -1;
     }
+}
 
   .introduce-title,
   .bedrock-title,
@@ -3294,24 +3191,32 @@ figcaption {
 }
 
 
-.dining-box,
-.food-box,
-.grid-gallery {
-  height: auto !important;
-  float: none !important;
-}
-
-[class^="food_image"] {
-  max-width: 300px;
-  margin: 0 auto 20px auto;
+  .dining-box,
+  .food-box,
+  .grid-gallery {
+    height: auto !important;
+    float: none !important;
 }
 
   .onsen-container {
     height: auto;
     padding-bottom: 50px;
-    -webkit-clip-path: polygon(0 2%, 100% 0, 100% 98%, 0 100%) !important;
-    clip-path: polygon(0 2%, 100% 0, 100% 98%, 0 100%) !important;
-  }
+    font-family: 'Shippori Mincho', 'HiraMinProN-W3', serif;
+    position: relative;
+    z-index: 1;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right, #fdeff2, #FFFAFA);
+      -webkit-clip-path: polygon(0 2%, 100% 0, 100% 98%, 0 100%) !important;
+      clip-path: polygon(0 2%, 100% 0, 100% 98%, 0 100%) !important;
+      z-index: -1;
+    }
+}
 
   .onsen-title {
     padding: 60px 0 50px 0;
@@ -3404,8 +3309,21 @@ figcaption {
   .introduce-container2 {
     height: auto;
     padding-bottom: 50px;
-    -webkit-clip-path: polygon(0 5vw, 100% 0, 100% calc(100% - 5vw), 0 100%) !important;
-    clip-path: polygon(0 5vw, 100% 0, 100% calc(100% - 5vw), 0 100%) !important;
+    font-family: 'Shippori Mincho', 'HiraMinProN-W3', serif;
+    position: relative;
+    z-index: 1;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right, #ffffc6, #FFFFF0);
+      -webkit-clip-path: polygon(0 5vw, 100% 0, 100% calc(100% - 5vw), 0 100%) !important;
+      clip-path: polygon(0 5vw, 100% 0, 100% calc(100% - 5vw), 0 100%) !important;
+      z-index: -1;
+    }
   }
 
   .dining-container2 {
@@ -3413,13 +3331,28 @@ figcaption {
     padding-bottom: 50px;
   }
 
+
   .onsen-container2 {
     height: auto;
     padding-bottom: 50px;
-    background: linear-gradient(to right, #ffffc6, #FFFFF0);
-    -webkit-clip-path: polygon(0 5vw, 100% 0, 100% calc(100% - 5vw), 0 100%) !important;
-    clip-path: polygon(0 5vw, 100% 0, 100% calc(100% - 5vw), 0 100%) !important;
+    font-family: 'Shippori Mincho', 'HiraMinProN-W3', serif;
+    position: relative;
+    z-index: 1;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right, #ffffc6, #FFFFF0);
+      -webkit-clip-path: polygon(0 5vw, 100% 0, 100% calc(100% - 5vw), 0 100%) !important;
+      clip-path: polygon(0 5vw, 100% 0, 100% calc(100% - 5vw), 0 100%) !important;
+      z-index: -1;
+    }
   }
+
+
 
   .summary-container2 {
     width: 100% !important;
@@ -3479,10 +3412,22 @@ figcaption {
   .introduce-container3 {
     height: auto;
     padding-bottom: 50px;
-
-    -webkit-clip-path: polygon(0 5vw, 100% 0, 100% calc(100% - 5vw), 0 100%) !important;
-    clip-path: polygon(0 5vw, 100% 0, 100% calc(100% - 5vw), 0 100%) !important;
-  }
+    font-family: 'Shippori Mincho', 'HiraMinProN-W3', serif;
+    position: relative;
+    z-index: 1;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right, #bbe2f1, #FFFFFF);
+      -webkit-clip-path: polygon(0 5vw, 100% 0, 100% calc(100% - 5vw), 0 100%) !important;
+      clip-path: polygon(0 5vw, 100% 0, 100% calc(100% - 5vw), 0 100%) !important;
+      z-index: -1;
+    }
+}
 
   .dining-container3 {
     height: auto;
@@ -3510,10 +3455,22 @@ figcaption {
   .onsen-container3 {
     height: auto;
     padding-bottom: 50px;
-    background: linear-gradient(to right, #bbe2f1, #FFFFFF);
-    -webkit-clip-path: polygon(0 5vw, 100% 0, 100% calc(100% - 5vw), 0 100%) !important;
-    clip-path: polygon(0 5vw, 100% 0, 100% calc(100% - 5vw), 0 100%) !important;
-  }
+    font-family: 'Shippori Mincho', 'HiraMinProN-W3', serif;
+    position: relative;
+    z-index: 1;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right, #bbe2f1, #FFFFFF);
+      -webkit-clip-path: polygon(0 5vw, 100% 0, 100% calc(100% - 5vw), 0 100%) !important;
+      clip-path: polygon(0 5vw, 100% 0, 100% calc(100% - 5vw), 0 100%) !important;
+      z-index: -1;
+    }
+}
 
   .tweet-container3 {
     width: 100% !important;
@@ -3522,7 +3479,7 @@ figcaption {
   }
 }
 
-// watch、seeing、looking のレスポンシブ
+// watch、seeing、looking 共通のレスポンシブ
 
 @media screen and (max-width: 768px) {
 
@@ -3577,12 +3534,24 @@ figcaption {
 
   .introduce-container4,
   .introduce-container5,
-  .introduce-container6 {
+  .introduce-container6  {
     height: auto;
     padding-bottom: 50px;
-    -webkit-clip-path: polygon(0 5vw, 100% 0, 100% calc(100% - 5vw), 0 100%) !important;
-    clip-path: polygon(0 5vw, 100% 0, 100% calc(100% - 5vw), 0 100%) !important;
+    font-family: 'Shippori Mincho', 'HiraMinProN-W3', serif;
+    position: relative;
+    z-index: 1;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      -webkit-clip-path: polygon(0 5vw, 100% 0, 100% calc(100% - 5vw), 0 100%) !important;
+      clip-path: polygon(0 5vw, 100% 0, 100% calc(100% - 5vw), 0 100%) !important;
+      z-index: -1;
   }
+}
 
   .dining-container4,
   .dining-container5,
@@ -3596,9 +3565,21 @@ figcaption {
   .onsen-container6 {
     height: auto;
     padding-bottom: 50px;
-    -webkit-clip-path: polygon(0 5vw, 100% 0, 100% calc(100% - 5vw), 0 100%) !important;
-    clip-path: polygon(0 5vw, 100% 0, 100% calc(100% - 5vw), 0 100%) !important;
+    font-family: 'Shippori Mincho', 'HiraMinProN-W3', serif;
+    position: relative;
+    z-index: 1;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      -webkit-clip-path: polygon(0 5vw, 100% 0, 100% calc(100% - 5vw), 0 100%) !important;
+      clip-path: polygon(0 5vw, 100% 0, 100% calc(100% - 5vw), 0 100%) !important;
+      z-index: -1;
   }
+}
 
   .tweet-container4,
   .tweet-container5,
@@ -3607,7 +3588,10 @@ figcaption {
     padding: 0 10px !important;
     box-sizing: border-box !important;
   }
+  
+
 // watch
+
   .food-title4 {
     padding: 30px 0 30px 0 !important;
     font-size: 24px !important;
@@ -3623,6 +3607,9 @@ figcaption {
     height: auto;
   }
 }
+
+
+// check,try,gaze 共通
 
 @media screen and (max-width: 768px) {
 
@@ -3675,14 +3662,35 @@ figcaption {
     padding: 30px 10px;
   }
 
+  // .introduce-container7,
+  // .introduce-container8,
+  // .introduce-container9 {
+  //   height: auto;
+  //   padding-bottom: 50px;
+  //   -webkit-clip-path: polygon(0 5vw, 100% 0, 100% calc(100% - 5vw), 0 100%) !important;
+  //   clip-path: polygon(0 5vw, 100% 0, 100% calc(100% - 5vw), 0 100%) !important;
+  // }
+
   .introduce-container7,
   .introduce-container8,
-  .introduce-container9 {
+  .introduce-container9  {
     height: auto;
     padding-bottom: 50px;
-    -webkit-clip-path: polygon(0 5vw, 100% 0, 100% calc(100% - 5vw), 0 100%) !important;
-    clip-path: polygon(0 5vw, 100% 0, 100% calc(100% - 5vw), 0 100%) !important;
+    font-family: 'Shippori Mincho', 'HiraMinProN-W3', serif;
+    position: relative;
+    z-index: 1;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      -webkit-clip-path: polygon(0 5vw, 100% 0, 100% calc(100% - 5vw), 0 100%) !important;
+      clip-path: polygon(0 5vw, 100% 0, 100% calc(100% - 5vw), 0 100%) !important;
+      z-index: -1;
   }
+}
 
   .dining-container7,
   .dining-container8,
@@ -3691,14 +3699,36 @@ figcaption {
     padding-bottom: 50px;
   }
 
+  // .onsen-container7,
+  // .onsen-container8,
+  // .onsen-container9 {
+  //   height: auto;
+  //   padding-bottom: 50px;
+  //   -webkit-clip-path: polygon(0 5vw, 100% 0, 100% calc(100% - 5vw), 0 100%) !important;
+  //   clip-path: polygon(0 5vw, 100% 0, 100% calc(100% - 5vw), 0 100%) !important;
+  // }
+
   .onsen-container7,
   .onsen-container8,
   .onsen-container9 {
     height: auto;
     padding-bottom: 50px;
-    -webkit-clip-path: polygon(0 5vw, 100% 0, 100% calc(100% - 5vw), 0 100%) !important;
-    clip-path: polygon(0 5vw, 100% 0, 100% calc(100% - 5vw), 0 100%) !important;
+    font-family: 'Shippori Mincho', 'HiraMinProN-W3', serif;
+    position: relative;
+    z-index: 1;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      -webkit-clip-path: polygon(0 5vw, 100% 0, 100% calc(100% - 5vw), 0 100%) !important;
+      clip-path: polygon(0 5vw, 100% 0, 100% calc(100% - 5vw), 0 100%) !important;
+      z-index: -1;
   }
+}
+
 
   .tweet-container7,
   .tweet-container8,
@@ -3907,7 +3937,7 @@ figcaption {
     background-position: left 15px, 15px top, bottom left, top left, top right, bottom right;
     background-size: 100% calc(100% - 30px), calc(100% - 30px) 100%, 20px 20px, 20px 20px, 20px 20px, 20px 20px;
     background-repeat: no-repeat;
-    animation: zoomIn 1s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
+    animation: fadeUp 0.8s ease forwards;
   }
   
   .b-new_comment_box {
@@ -3988,7 +4018,7 @@ figcaption {
     background-size: 100% calc(100% - 30px), calc(100% - 30px) 100%, 20px 20px, 20px 20px, 20px 20px, 20px 20px;
     background-repeat: no-repeat;
     font-weight: bold;
-    animation: zoomIn 1s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
+    animation: fadeUp 0.8s ease forwards;
   }
 
   .b-edit__formbox {

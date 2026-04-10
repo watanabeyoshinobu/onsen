@@ -40,23 +40,8 @@
 							</p>
 				</article>
 
-						<div class="grid-gallery">
-								<article class="movement">
-									<figure class="gallery2-1">
-										<figcaption>外観</figcaption>
-									</figure>
-								</article>
-								<article class="movement">
-									<figure class="gallery2-2">
-										<figcaption>メニュー表</figcaption>
-									</figure>
-								</article>
-								<article class="movement">
-									<figure class="gallery2-3">
-										<figcaption>うたた寝の湯</figcaption>
-									</figure>
-								</article>
-						</div>
+						<div class="vue-gallery-app" data-category="see"></div>
+
 			</div>
 
 			<div class="dining-container2">
@@ -71,35 +56,22 @@
 					</section>
 
 						<p class="food-title">王寿庵おすすめメニュー</p>
-							<div class="grid-gallery">
-								<article class="movement">
-									<figure class="food_image2-1">
-										<figcaption>厚切り！熟成とんかつ定食</figcaption>
-									</figure>
-								</article>
-								<article class="movement">
-									<figure class="food_image2-2">
-										<figcaption>天ぷらお刺身定食</figcaption>
-									</figure>
-								</article>
-								<article class="movement">
-									<figure class="food_image2-3">
-										<figcaption>海老天そば・うどん</figcaption>
-									</figure>
-								</article>
-							</div>
+							<div class="vue-gallery-app" data-category="see_food"></div>
 			</div>
 
 		  <main class="onsen-container2">
 				<p class="onsen-title">おふろの王様の温泉</p>
 					<p class="onsen-text">
 						おふろの王様の温泉についてのご紹介です。<br>
-						今回、個人的に特におすすめしたい温泉『高濃度炭酸風呂』、『アトラクションバス(内湯)』、『ジェットバス』のご紹介です。<br>
+						こちらのスーパー銭湯のおすすめしたい温泉は『なごみの湯(炭酸泉天然温泉)』、『ぬくもりの湯(天然温泉)』、『まどかの湯(天然温泉)』です。<br>
 						おふろの王様の温泉の温度は約40度とややぬるめになっている為、子供からお年寄りまで気軽に安心して入れる温泉になっております。<br>
 						温泉に入浴する際は『半身浴』にすることで、体の負担が減るので、ご高齢の方や乳幼児、持病のある方は負担ない入浴をしましょう。
 					</p>
 					<section class="main-onsen">
 						<p class="onsen-title2">温泉の種類</p>
+
+						<div class="vue-gallery-app" data-category="see_onsen"></div>
+
 							<div class="grid-onsen">
 								<article class="movement">
 									<figure class="onsen_image2-1">
@@ -217,5 +189,6 @@
 			<%= render "tweet" %>
 		</article>
 			<div id="user-modal" class="modal center-modal" tabindex="-1" role="dialog" aria-hidden="true"></div>
+			<%= javascript_pack_tag 'hello_vue' %>
 </body>
 

@@ -1,0 +1,18 @@
+<div id="withdrawModal" class="withdraw-modal-overlay">
+  <div class="withdraw-modal-window">
+    
+      <h2 class="mypage-title">退会確認</h2>
+
+    <div class="withdraw-content">
+      <p class="withdraw-warning">
+        会員登録情報が全て削除されます。<br>
+        本当によろしいですか？
+      </p>
+      <div class="processing-box">
+        <button type="button" class="btn-cancel" onclick="closeWithdrawModal()">戻る</button>
+        <%= link_to '退会する', users_path(@user), method: :delete, class: "btn-withdraw" %>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,14 +1,18 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
 
-def show_modal
+  def show_modal
+    # params[:id]（嘘のID）は無視して、それぞれのデータから @user を取り出すように設定
     if params[:tweet_id].present?
-      @comment = Tweet.find_by(id: params[:tweet_id])
-    else
+      @tweet = Tweet.find_by(id: params[:tweet_id])
+      @user = @tweet.user if @tweet.present?
+    elsif params[:comment_id].present?
       @comment = Comment.find_by(id: params[:comment_id])
+      @user = @comment.user if @comment.present?
     end
 
-    if @comment.present?
+    # @user が無事に見つかった時だけ、モーダルの画面を作る
+    if @user.present?
       respond_to :js
     else
       logger.error "Modal object not found. params: #{params.inspect}"

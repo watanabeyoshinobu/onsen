@@ -40,23 +40,8 @@
 								座り心地の良いソファーがあり、寛ぎながら読書したり、テレビを見たり、仮眠することも可能です。<br>
 							</p>
 				</article>
-					<div class="grid-gallery">
-								<article class="movement">
-									<figure class="villa-image1">
-										<figcaption>forest villa</figcaption>
-									</figure>
-								</article>
-								<article class="movement">
-									<figure class="villa-image2">
-										<figcaption>リクライニングベット</figcaption>
-									</figure>
-								</article>
-								<article class="movement">
-									<figure class="villa-image3">
-										<figcaption>クールダウンテラス</figcaption>
-									</figure>
-								</article>
-					</div>
+
+						<div class="vue-gallery-app" data-category="look"></div>
 
 					<section class="bedrock-box">
 						<p class="bedrock-title">forest villaの岩盤浴</p>
@@ -67,44 +52,7 @@
 								『美宝石房』だけは、女性のみの岩盤浴になっておりますのでご注意ください。<br>
 								横濱スパヒルズ　竜泉寺の湯に訪れた際は、是非一度岩盤浴を味わってください。
 							</p>
-							<div class="grid-gallery">
-								<article class="movement">
-									<figure class="bedrock-image1">
-										<figcaption>大汗汗蒸幕</figcaption>
-									</figure>
-								</article>
-
-								<article class="movement">
-									<figure class="bedrock-image2">
-										<figcaption>アロマソルトの間</figcaption>
-									</figure>
-								</article>
-
-								<article class="movement">
-									<figure class="bedrock-image3">
-										<figcaption>アロマザルツの間</figcaption>
-									</figure>
-								</article>
-
-								<article class="movement">
-									<figure class="bedrock-image4">
-										<figcaption>薬宝黄土房</figcaption>
-									</figure>
-								</article>
-
-								<article class="movement">
-									<figure class="bedrock-image5">
-										<figcaption>ブラックゲルマ房</figcaption>
-									</figure>
-								</article>
-
-								<article class="movement">
-									<figure class="bedrock-image6">
-										<figcaption>美宝石房(女性専用)</figcaption>
-									</figure>
-								</article>
-
-							</div>
+							 <div class="vue-gallery-app" data-category="bedrock"></div>
 					</section>
 			</div>
 			
@@ -114,28 +62,12 @@
 									<p class="dining-text">
 										横濱スパヒルズ　竜泉寺の湯のお食事処「湯上りキッチン　一休」をご紹介します。<br>
 										一休では、日本海の漁場から毎日直送される産直干物をメインに、100種類以上のお酒や飲み物を用意いています。<br>
-										魚以外にもお肉や蕎麦など、たくさんのお食事を用意されているので長時間滞在してても飽きないと思います。<br>
+										お米は新潟妙高市と提携し、奇跡の米とされる「妙高山麓こしひかり」全ての米飯メニューに使用しているとのことです。<br>
 									</p>
 					</article>
 					<div class="food-box">
 						<p class="food-title">一休のおすすめメニュー</p>
-							<div class="grid-gallery">
-								<article class="movement">
-									<figure class="food_image1-1">
-										<figcaption>唐揚げタルタル丼とそばセット</figcaption>
-									</figure>
-								</article>
-								<article class="movement">
-									<figure class="food_image1-2">
-										<figcaption>和風竜田揚げ定食</figcaption>
-									</figure>
-								</article>
-								<article class="movement">
-									<figure class="food_image1-3">
-										<figcaption>お刺身と天麩羅の花籠膳</figcaption>
-									</figure>
-								</article>
-							</div>
+							<div class="vue-gallery-app" data-category="look_food"></div>
 					</div>
 			</div>
 
@@ -148,24 +80,8 @@
 						温泉に入浴する際は『半身浴』にすることで、体の負担が減るので、ご高齢の方や乳幼児、持病のある方は負担ない入浴をしましょう。
 					</p>
 					<div class="main-onsen">
-						<p class="onsen-title2">おすすめな温泉</p>
-							<div class="grid-onsen">
-								<article class="movement">
-									<figure class="onsen_image1-1">
-										<figcaption>高濃度炭酸風呂</figcaption>
-									</figure>
-								</article>
-								<article class="movement">
-									<figure class="onsen_image1-2">
-										<figcaption>泡風呂</figcaption>
-									</figure>
-								</article>
-								<article class="movement">
-									<figure class="onsen_image1-3">
-										<figcaption>ジェットバス</figcaption>
-									</figure>
-								</article>
-							</div>
+						<p class="onsen-title2">おすすめの温泉</p>
+							<div class="vue-gallery-app" data-category="look_onsen"></div>
 					</div>
 			</main>
 
@@ -264,6 +180,5 @@
 			<%= render "tweet" %>
 		</article>
 			<div id="user-modal" class="modal center-modal" tabindex="-1" role="dialog" aria-hidden="true"></div>
+			<%= javascript_pack_tag 'hello_vue' %>
 </body>
-
-
