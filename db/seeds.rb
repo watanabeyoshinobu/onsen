@@ -236,7 +236,7 @@ GalleryItem.create!(
 GalleryItem.create!(
   name: '万葉庵(半個室)',
   description: '料亭を思わせる空間で、みなとみらいの景色を見ながらお食事ができます。',
-  image_filename: 'img/utatane.jpg',
+  image_filename: 'img/manyouan.jpg',
   category: 'dining'
 )
 

@@ -1,6 +1,7 @@
 ## [湯のここち](https://www.yunokokochi.com/)
 
 [![Image from Gyazo](https://i.gyazo.com/f7256969c21b503fcb971a5a8364cb9b.jpg)](https://i.gyazo.com/f7256969c21b503fcb971a5a8364cb9b)
+
 ## アプリの概要
 
 本作品をご覧いただきありがとうございます。
@@ -8,33 +9,48 @@
 また、投稿機能を通じて、温泉好きなユーザー同士が楽しく交流し、盛り上がれるようなコミュニティスペースも提供しています。
 公式ドキュメントや技術記事などを参考に、インフラ構築からフロントエンドまで独学で開発しました。
 
-アプリケーションURL: [湯のここち](https://www.yunokokochi.com/)
+**【公開URL】**
+
+* ユーザー画面（本編）: [湯のここち](https://www.yunokokochi.com/)
+* 管理画面（Admin）: [https://yunokokochi-admin.vercel.app/](https://yunokokochi-admin.vercel.app/)
+* ※管理画面（React）のソースコードは[こちら](https://github.com/watanabeyoshinobu/yunokokochi-admin)にて管理しています。
+
+## システム構成
+
+本アプリケーションは、エンドユーザーが利用する「メイン画面（Rails + Vue.js）」と、運営側が利用する「管理画面（React + Next.js）」を独立させ、それぞれ適切なインフラにデプロイして連携するモダンな構成を採用しています。
+
+* **ユーザー画面用システム:** AWS ECS (Fargate) 上にデプロイされた Ruby on Rails アプリケーション
+* **管理者用ダッシュボード:** Vercel 上にデプロイされた React (Next.js) アプリケーション
 
 ## 使用技術
 
-### フロントエンド
+### フロントエンド（ユーザー画面）
 * HTML/CSS
 * JavaScript
 * Vue.js
 
-### バックエンド
+### フロントエンド（管理画面）
+* React / Next.js
+* TypeScript
+* Tailwind CSS
+
+### バックエンド（API / アプリケーション）
 * Ruby 3.0.6
 * Ruby on Rails 6.1.3.2
 
-### インフラ
+### インフラ・デプロイ環境
 * AWS (IAM/VPC/EC2/RDS/S3/Route53/ACM/ALB/ECS/ECR/CLI)
+* Vercel (管理画面ホスティング用)
 * MySQL 8.0.27
 * Nginx
 * Puma
-* CircleCI
+* CircleCI (CI/CDパイプライン)
 * Terraform (Fargateを使用)
 
-### 開発環境
+### 開発環境・テスト等
 * VSCode
 * Docker / docker-compose
 * Vagrant
-
-### テスト、静的コード解析
 * Rubocop（静的コード解析）
 * RSpec（自動テスト）
 
@@ -51,6 +67,12 @@
 単なる情報発信サイトにとどまらず、同じ趣味を持つ方々がおすすめの施設を共有したり、感想を語り合って盛り上がれるコミュニティスペースがあれば素晴らしいと考え、ユーザー同士が「繋がる」ことができる投稿機能を取り入れました。
 
 ## 機能一覧 / 詳細
+
+### 管理画面機能 (React / Next.js)
+* **ダッシュボード:** 本日のいいね獲得数、新規クチコミ、総ユーザー数のサマリー表示
+* **施設情報管理:** 登録されている温泉施設の編集・削除機能
+* **クチコミ管理:** ユーザーから投稿されたクチコミの確認および管理
+
 ### ユーザー機能
 * 新規登録、ログイン、ログアウト、ユーザー情報編集
 * ゲストログイン機能
@@ -91,11 +113,30 @@
 各温泉施設の正確な位置を伝えるため、Google Maps APIを導入し、JavaScriptで緯度・経度（lat, lng）を細かく調整してピンポイントでマーカーを配置しました。また、APIキーは環境変数（`.env`）を用いて隠蔽し、GitHub等に漏洩しないようセキュリティ面にも細心の注意を払って実装しています。
 
 **3. モダンな技術スタックによる拡張性の高い開発**
-* Vue.js × Ruby on Rails を組み合わせ、スムーズな「いいね」や「フォロー」機能に加え、各詳細表示画面をVueコンポーネント化し、柔軟で拡張性の高いフロントエンドを構築しました。
-* Terraform × ECS × CircleCI によるインフラのCI/CDパイプラインを構築し、効率的で安全なデプロイ環境を整えています。
+* **Vue.js × Reactのハイブリッドなフロントエンド戦略:** メイン画面にはVue.jsを用いてスムーズな「いいね」や「フォロー」機能を実装。一方、管理画面にはReact/Next.jsを採用し、目的の異なる複数のモダンフレームワークを適切に使い分ける柔軟な開発体制を構築しました。
+* Terraform × ECS × CircleCI によるインフラのCI/CDパイプラインを構築し、Vercelとの連携を含めた効率的で安全なデプロイ環境を整えています。
 
 ## 今後の改良計画
 * Vue.js によるフロントエンドの更なるコンポーネント化とUXの向上
-* TypeScriptの型安全性の段階的な適用
+
+## 🛠️ 開発環境の構築（ローカル起動）
+Dockerを使用して、手元の環境でアプリケーションを起動する手順です。
+
+# 1. リポジトリのクローン
+git clone [https://github.com/watanabeyoshinobu/yunokokochi.git](https://github.com/watanabeyoshinobu/yunokokochi.git)
+
+# 2. ディレクトリへ移動
+cd yunokokochi
+
+# 3. Dockerコンテナのビルドと起動
+docker-compose up -d --build
+
+# 4. データベースの作成とマイグレーション
+docker-compose exec web rails db:create
+docker-compose exec web rails db:migrate
+
+# 5. （必要であれば）サンプルデータの投入
+docker-compose exec web rails db:seed
+
 
 最後まで読んで頂き、誠にありがとうございました！！
