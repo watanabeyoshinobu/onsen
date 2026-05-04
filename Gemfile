@@ -97,3 +97,4 @@ gem 'rmagick'
 
 gem 'mysql2'
 
+gem 'rack-cors'

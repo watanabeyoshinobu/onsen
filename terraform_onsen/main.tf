@@ -193,23 +193,13 @@ resource "aws_lb_listener" "http" {
 }
 
 # 13. ECRリポジトリ（Rails）
-resource "aws_ecr_repository" "rails" {
-  name                 = "onsen-rails-tf"
-  image_tag_mutability = "MUTABLE"
-  force_delete         = true  #追加
-  image_scanning_configuration {
-    scan_on_push = true
-  }
+data "aws_ecr_repository" "rails" {
+  name = "onsen-rails-tf"
 }
 
 # 13-2. ECRリポジトリ（Nginx）
-resource "aws_ecr_repository" "nginx" {
-  name                 = "onsen-nginx-tf"
-  image_tag_mutability = "MUTABLE"
-  force_delete         = true  #追加
-  image_scanning_configuration {
-    scan_on_push = true
-  }
+data "aws_ecr_repository" "nginx" {
+  name = "onsen-nginx-tf"
 }
 
 # 14. IAMロール（タスク実行）
@@ -303,9 +293,9 @@ resource "aws_ecs_task_definition" "main" {
   container_definitions = jsonencode([
     {
       name      = "onsen-container"
-      image     = "${aws_ecr_repository.rails.repository_url}:latest"
+      image     = "${data.aws_ecr_repository.rails.repository_url}:latest"
       essential = true
-      command = ["bundle", "exec", "puma", "-p", "3000"]
+      command   = ["bundle", "exec", "puma", "-b", "unix:/tmp/sockets/puma.sock"]
       portMappings = [
         {
           containerPort = 3000
@@ -331,7 +321,7 @@ resource "aws_ecs_task_definition" "main" {
       mountPoints = [
         {
           sourceVolume  = "tmp-socket"
-          containerPath = "/app/tmp/sockets"
+          containerPath = "/tmp/sockets"
         }
       ],
       logConfiguration = {
@@ -345,8 +335,9 @@ resource "aws_ecs_task_definition" "main" {
     },
     {
       name      = "onsen-nginx-container"
-      image     = "${aws_ecr_repository.nginx.repository_url}:latest"
+      image     = "${data.aws_ecr_repository.nginx.repository_url}:latest"
       essential = true
+      command   = ["/bin/sh", "-c", "sed -i 's|unix:///tmp/sockets/puma.sock|unix:/tmp/sockets/puma.sock|g' /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"]
       portMappings = [
         {
           containerPort = 80
@@ -363,7 +354,7 @@ resource "aws_ecs_task_definition" "main" {
       mountPoints = [
         {
           sourceVolume  = "tmp-socket"
-          containerPath = "/app/tmp/sockets"
+          containerPath = "/tmp/sockets"
         }
       ],
       logConfiguration = {
@@ -386,6 +377,8 @@ resource "aws_ecs_service" "main" {
   desired_count   = 1
   launch_type     = "FARGATE"
   enable_execute_command = true #追加
+  health_check_grace_period_seconds = 300
+
   network_configuration {
     subnets          = [aws_subnet.public_1a.id, aws_subnet.public_1c.id]
     security_groups  = [aws_security_group.app.id]
@@ -435,20 +428,26 @@ resource "aws_db_subnet_group" "main" {
 
 # 22. データベース本体 (MySQL)
 resource "aws_db_instance" "main" {
-  allocated_storage      = 20
-  storage_type           = "gp2"
-  engine                 = "mysql"
-  engine_version         = "8.0"
+  # allocated_storage      = 20
+  # storage_type           = "gp2"
+  # engine                 = "mysql"
+  # engine_version         = "8.0"
   instance_class         = "db.t3.micro"
   identifier             = "onsen-db"
-  username               = var.db_username
-  password               = var.db_password
-  parameter_group_name   = "default.mysql8.0"
+
+  # 追加：最新のスナップショットから復元する設定
+  snapshot_identifier    = "r8-4-29-latest-onsen-complete-backup-snapshot-dbinstance-ver"
+
+  # 移動：スナップショットに関する設定のため移動
   skip_final_snapshot    = true
   publicly_accessible    = true
   vpc_security_group_ids = [aws_security_group.db.id]
   db_subnet_group_name   = aws_db_subnet_group.main.name
-  db_name                = "onsen_production"
+
+  # username               = var.db_username
+  # password               = var.db_password
+  # parameter_group_name   = "default.mysql8.0"
+  # db_name                = "onsen_production"
 }
 
 # 23. 既存のRoute 53とACMの呼び出し

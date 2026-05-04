@@ -2,7 +2,7 @@ class Blog < ApplicationRecord
 	belongs_to :user
 	has_many :comments, dependent: :destroy
 	has_many :favorites, dependent: :destroy
-	has_many :posts, dependent: :destroy
+	# has_many :posts, dependent: :destroy
 	has_many :tweets
 
 	mount_uploader :image, ProfileImageUploader

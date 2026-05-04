@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many :blogs, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
-  has_many :tweets
+  has_many :tweets, dependent: :destroy
 
   has_many :relationships, dependent: :destroy
   has_many :followings, through: :relationships, source: :follow, dependent: :destroy

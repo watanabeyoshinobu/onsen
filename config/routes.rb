@@ -45,6 +45,13 @@ Rails.application.routes.draw do
 # Vue.jsがデータを取りに来るための設定
   namespace :api do
     resources :gallery_items, only: [:index]
+    
+  # Reactがデータを取得できるようにするための設定
+    namespace :v1 do
+      resources :users, only: [:index, :destroy]
+      resources :blogs, only: [:index, :destroy]
+      get 'dashboard', to: 'dashboards#index'
+    end
   end
 
 
