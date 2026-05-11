@@ -51,6 +51,9 @@ Rails.application.routes.draw do
       resources :users, only: [:index, :destroy]
       resources :blogs, only: [:index, :destroy]
       get 'dashboard', to: 'dashboards#index'
+
+      resources :comments, only: [:index, :destroy]
+      resources :tweets, only: [:index, :destroy]
     end
   end
 

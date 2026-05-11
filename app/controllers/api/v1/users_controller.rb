@@ -3,10 +3,16 @@ class Api::V1::UsersController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def index
-    users = User.all
+    users = User.page(params[:page]).per(15)
     
-    # 取得したデータをJSON形式に変換してReact（画面側）に返す
-    render json: users
+    render json: {
+      users: users,
+      meta: {
+        current_page: users.current_page,
+        total_pages: users.total_pages,
+        total_count: users.total_count
+      }
+    }
   end
 
   def destroy

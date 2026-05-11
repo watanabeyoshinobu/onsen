@@ -13,7 +13,7 @@
 <div class="b-tweet__formbox">
   <%= form_for @tweet do |f| %>
     <div class="b-content_box">
-      <%= f.text_area :tweet, class: 'form-control custom-textarea', rows: 4, placeholder: "今の気持ちをつぶやいてみましょう（500文字以内）" %>
+      <%= f.text_area :tweet, class: 'form-control custom-textarea', rows: 4, placeholder: "今の気持ちをつぶやいてみましょう（100文字以内）" %>
       <%= f.hidden_field :action_name, :value => controller.action_name %>
     </div>
 

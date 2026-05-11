@@ -5,7 +5,7 @@ class TweetsController < ApplicationController
 		@tweet.action_name = params[:tweet][:action_name]
     	@tweet.user_id = current_user.id
 		if @tweet.save
-		    flash[:notice] = 'コメントを投稿しました！'
+		    flash[:notice] = 'コメントを投稿しました'
 		    redirect_back(fallback_location: root_path)
 		else
 		    redirect_to :rollback, flash: {
