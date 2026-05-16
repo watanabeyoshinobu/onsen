@@ -436,7 +436,7 @@ resource "aws_db_instance" "main" {
   identifier             = "onsen-db"
 
   # 追加：最新のスナップショットから復元する設定
-  snapshot_identifier    = "r8-4-29-latest-onsen-complete-backup-snapshot-dbinstance-ver"
+  snapshot_identifier    = "r8-5-14-latest-onsen-complete-backup-snapshot-dbinstance-ver"
 
   # 移動：スナップショットに関する設定のため移動
   skip_final_snapshot    = true
